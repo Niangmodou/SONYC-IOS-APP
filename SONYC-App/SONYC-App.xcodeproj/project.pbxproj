@@ -99,13 +99,10 @@
 		528C6E6224ABF27500D7D6F1 /* SONYC-App */ = {
 			isa = PBXGroup;
 			children = (
-				528C6E6324ABF27500D7D6F1 /* AppDelegate.swift */,
-				528C6E6524ABF27500D7D6F1 /* SceneDelegate.swift */,
-				528C6E6724ABF27500D7D6F1 /* ViewController.swift */,
-				528C6E6924ABF27500D7D6F1 /* Main.storyboard */,
-				528C6E6C24ABF27C00D7D6F1 /* Assets.xcassets */,
-				528C6E6E24ABF27C00D7D6F1 /* LaunchScreen.storyboard */,
-				528C6E7124ABF27C00D7D6F1 /* Info.plist */,
+				528C6E9624ABF46100D7D6F1 /* Data Models */,
+				528C6E9524ABF45300D7D6F1 /* Storyboards */,
+				528C6E9424ABF42200D7D6F1 /* Support Files */,
+				528C6E9324ABF3E300D7D6F1 /* Controllers */,
 			);
 			path = "SONYC-App";
 			sourceTree = "<group>";
@@ -126,6 +123,41 @@
 				528C6E8724ABF27E00D7D6F1 /* Info.plist */,
 			);
 			path = "SONYC-AppUITests";
+			sourceTree = "<group>";
+		};
+		528C6E9324ABF3E300D7D6F1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				528C6E6724ABF27500D7D6F1 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		528C6E9424ABF42200D7D6F1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				528C6E6324ABF27500D7D6F1 /* AppDelegate.swift */,
+				528C6E6524ABF27500D7D6F1 /* SceneDelegate.swift */,
+				528C6E6C24ABF27C00D7D6F1 /* Assets.xcassets */,
+				528C6E7124ABF27C00D7D6F1 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		528C6E9524ABF45300D7D6F1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				528C6E6924ABF27500D7D6F1 /* Main.storyboard */,
+				528C6E6E24ABF27C00D7D6F1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		528C6E9624ABF46100D7D6F1 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,7 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WRXW3U8AZ5;
-				INFOPLIST_FILE = "SONYC-App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SONYC-App/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WRXW3U8AZ5;
-				INFOPLIST_FILE = "SONYC-App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SONYC-App/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
