@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		269E132124C94EDA00D09E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E132024C94EDA00D09E90 /* AppDelegate.swift */; };
+		269E132324C94EDA00D09E90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E132224C94EDA00D09E90 /* SceneDelegate.swift */; };
+		269E132524C94EDA00D09E90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E132424C94EDA00D09E90 /* ViewController.swift */; };
+		269E132824C94EDA00D09E90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 269E132624C94EDA00D09E90 /* Main.storyboard */; };
+		269E132B24C94EDA00D09E90 /* SonycApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 269E132924C94EDA00D09E90 /* SonycApp.xcdatamodeld */; };
+		269E132D24C94EDB00D09E90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 269E132C24C94EDB00D09E90 /* Assets.xcassets */; };
+		269E133024C94EDB00D09E90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 269E132E24C94EDB00D09E90 /* LaunchScreen.storyboard */; };
+		269E133B24C94EDC00D09E90 /* SonycAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E133A24C94EDC00D09E90 /* SonycAppTests.swift */; };
+		269E134624C94EDC00D09E90 /* SonycAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E134524C94EDC00D09E90 /* SonycAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		269E133724C94EDC00D09E90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 269E131524C94EDA00D09E90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 269E131C24C94EDA00D09E90;
+			remoteInfo = SonycApp;
+		};
+		269E134224C94EDC00D09E90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 269E131524C94EDA00D09E90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 269E131C24C94EDA00D09E90;
+			remoteInfo = SonycApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		269E131D24C94EDA00D09E90 /* SonycApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SonycApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		269E132024C94EDA00D09E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		269E132224C94EDA00D09E90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		269E132424C94EDA00D09E90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		269E132724C94EDA00D09E90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		269E132A24C94EDA00D09E90 /* SonycApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SonycApp.xcdatamodel; sourceTree = "<group>"; };
+		269E132C24C94EDB00D09E90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		269E132F24C94EDB00D09E90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		269E133124C94EDB00D09E90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		269E133624C94EDC00D09E90 /* SonycAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SonycAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		269E133A24C94EDC00D09E90 /* SonycAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonycAppTests.swift; sourceTree = "<group>"; };
+		269E133C24C94EDC00D09E90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		269E134124C94EDC00D09E90 /* SonycAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SonycAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		269E134524C94EDC00D09E90 /* SonycAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonycAppUITests.swift; sourceTree = "<group>"; };
+		269E134724C94EDC00D09E90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		269E131A24C94EDA00D09E90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		269E133324C94EDC00D09E90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		269E133E24C94EDC00D09E90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		269E131424C94EDA00D09E90 = {
+			isa = PBXGroup;
+			children = (
+				269E131F24C94EDA00D09E90 /* SonycApp */,
+				269E133924C94EDC00D09E90 /* SonycAppTests */,
+				269E134424C94EDC00D09E90 /* SonycAppUITests */,
+				269E131E24C94EDA00D09E90 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		269E131E24C94EDA00D09E90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				269E131D24C94EDA00D09E90 /* SonycApp.app */,
+				269E133624C94EDC00D09E90 /* SonycAppTests.xctest */,
+				269E134124C94EDC00D09E90 /* SonycAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		269E131F24C94EDA00D09E90 /* SonycApp */ = {
+			isa = PBXGroup;
+			children = (
+				269E132024C94EDA00D09E90 /* AppDelegate.swift */,
+				269E132224C94EDA00D09E90 /* SceneDelegate.swift */,
+				269E132424C94EDA00D09E90 /* ViewController.swift */,
+				269E132624C94EDA00D09E90 /* Main.storyboard */,
+				269E132C24C94EDB00D09E90 /* Assets.xcassets */,
+				269E132E24C94EDB00D09E90 /* LaunchScreen.storyboard */,
+				269E133124C94EDB00D09E90 /* Info.plist */,
+				269E132924C94EDA00D09E90 /* SonycApp.xcdatamodeld */,
+			);
+			path = SonycApp;
+			sourceTree = "<group>";
+		};
+		269E133924C94EDC00D09E90 /* SonycAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				269E133A24C94EDC00D09E90 /* SonycAppTests.swift */,
+				269E133C24C94EDC00D09E90 /* Info.plist */,
+			);
+			path = SonycAppTests;
+			sourceTree = "<group>";
+		};
+		269E134424C94EDC00D09E90 /* SonycAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				269E134524C94EDC00D09E90 /* SonycAppUITests.swift */,
+				269E134724C94EDC00D09E90 /* Info.plist */,
+			);
+			path = SonycAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		269E131C24C94EDA00D09E90 /* SonycApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 269E134A24C94EDC00D09E90 /* Build configuration list for PBXNativeTarget "SonycApp" */;
+			buildPhases = (
+				269E131924C94EDA00D09E90 /* Sources */,
+				269E131A24C94EDA00D09E90 /* Frameworks */,
+				269E131B24C94EDA00D09E90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SonycApp;
+			productName = SonycApp;
+			productReference = 269E131D24C94EDA00D09E90 /* SonycApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		269E133524C94EDC00D09E90 /* SonycAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 269E134D24C94EDC00D09E90 /* Build configuration list for PBXNativeTarget "SonycAppTests" */;
+			buildPhases = (
+				269E133224C94EDC00D09E90 /* Sources */,
+				269E133324C94EDC00D09E90 /* Frameworks */,
+				269E133424C94EDC00D09E90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				269E133824C94EDC00D09E90 /* PBXTargetDependency */,
+			);
+			name = SonycAppTests;
+			productName = SonycAppTests;
+			productReference = 269E133624C94EDC00D09E90 /* SonycAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		269E134024C94EDC00D09E90 /* SonycAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 269E135024C94EDC00D09E90 /* Build configuration list for PBXNativeTarget "SonycAppUITests" */;
+			buildPhases = (
+				269E133D24C94EDC00D09E90 /* Sources */,
+				269E133E24C94EDC00D09E90 /* Frameworks */,
+				269E133F24C94EDC00D09E90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				269E134324C94EDC00D09E90 /* PBXTargetDependency */,
+			);
+			name = SonycAppUITests;
+			productName = SonycAppUITests;
+			productReference = 269E134124C94EDC00D09E90 /* SonycAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		269E131524C94EDA00D09E90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Vanessa Johnson";
+				TargetAttributes = {
+					269E131C24C94EDA00D09E90 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					269E133524C94EDC00D09E90 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 269E131C24C94EDA00D09E90;
+					};
+					269E134024C94EDC00D09E90 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 269E131C24C94EDA00D09E90;
+					};
+				};
+			};
+			buildConfigurationList = 269E131824C94EDA00D09E90 /* Build configuration list for PBXProject "SonycApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 269E131424C94EDA00D09E90;
+			productRefGroup = 269E131E24C94EDA00D09E90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				269E131C24C94EDA00D09E90 /* SonycApp */,
+				269E133524C94EDC00D09E90 /* SonycAppTests */,
+				269E134024C94EDC00D09E90 /* SonycAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		269E131B24C94EDA00D09E90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				269E133024C94EDB00D09E90 /* LaunchScreen.storyboard in Resources */,
+				269E132D24C94EDB00D09E90 /* Assets.xcassets in Resources */,
+				269E132824C94EDA00D09E90 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		269E133424C94EDC00D09E90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		269E133F24C94EDC00D09E90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		269E131924C94EDA00D09E90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				269E132524C94EDA00D09E90 /* ViewController.swift in Sources */,
+				269E132124C94EDA00D09E90 /* AppDelegate.swift in Sources */,
+				269E132B24C94EDA00D09E90 /* SonycApp.xcdatamodeld in Sources */,
+				269E132324C94EDA00D09E90 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		269E133224C94EDC00D09E90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				269E133B24C94EDC00D09E90 /* SonycAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		269E133D24C94EDC00D09E90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				269E134624C94EDC00D09E90 /* SonycAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		269E133824C94EDC00D09E90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 269E131C24C94EDA00D09E90 /* SonycApp */;
+			targetProxy = 269E133724C94EDC00D09E90 /* PBXContainerItemProxy */;
+		};
+		269E134324C94EDC00D09E90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 269E131C24C94EDA00D09E90 /* SonycApp */;
+			targetProxy = 269E134224C94EDC00D09E90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		269E132624C94EDA00D09E90 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				269E132724C94EDA00D09E90 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		269E132E24C94EDB00D09E90 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				269E132F24C94EDB00D09E90 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		269E134824C94EDC00D09E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		269E134924C94EDC00D09E90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		269E134B24C94EDC00D09E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4NFBA37TDD;
+				INFOPLIST_FILE = SonycApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SONYC.SonycApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		269E134C24C94EDC00D09E90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4NFBA37TDD;
+				INFOPLIST_FILE = SonycApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SONYC.SonycApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		269E134E24C94EDC00D09E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4NFBA37TDD;
+				INFOPLIST_FILE = SonycAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SONYC.SonycAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SonycApp.app/SonycApp";
+			};
+			name = Debug;
+		};
+		269E134F24C94EDC00D09E90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4NFBA37TDD;
+				INFOPLIST_FILE = SonycAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SONYC.SonycAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SonycApp.app/SonycApp";
+			};
+			name = Release;
+		};
+		269E135124C94EDC00D09E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4NFBA37TDD;
+				INFOPLIST_FILE = SonycAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SONYC.SonycAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SonycApp;
+			};
+			name = Debug;
+		};
+		269E135224C94EDC00D09E90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4NFBA37TDD;
+				INFOPLIST_FILE = SonycAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SONYC.SonycAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SonycApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		269E131824C94EDA00D09E90 /* Build configuration list for PBXProject "SonycApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				269E134824C94EDC00D09E90 /* Debug */,
+				269E134924C94EDC00D09E90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		269E134A24C94EDC00D09E90 /* Build configuration list for PBXNativeTarget "SonycApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				269E134B24C94EDC00D09E90 /* Debug */,
+				269E134C24C94EDC00D09E90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		269E134D24C94EDC00D09E90 /* Build configuration list for PBXNativeTarget "SonycAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				269E134E24C94EDC00D09E90 /* Debug */,
+				269E134F24C94EDC00D09E90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		269E135024C94EDC00D09E90 /* Build configuration list for PBXNativeTarget "SonycAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				269E135124C94EDC00D09E90 /* Debug */,
+				269E135224C94EDC00D09E90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		269E132924C94EDA00D09E90 /* SonycApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				269E132A24C94EDA00D09E90 /* SonycApp.xcdatamodel */,
+			);
+			currentVersion = 269E132A24C94EDA00D09E90 /* SonycApp.xcdatamodel */;
+			path = SonycApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 269E131524C94EDA00D09E90 /* Project object */;
+}
