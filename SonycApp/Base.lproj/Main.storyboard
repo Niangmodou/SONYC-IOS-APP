@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FrB-vi-y6e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hKt-05-1su">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -388,7 +388,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="oQa-fL-rJH"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.33145418760000001" green="0.53137439490000005" blue="0.82356160879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" image="Icon_Happy Face"/>
+                                                <state key="normal" title="Happy" image="Icon_Happy Face"/>
                                                 <connections>
                                                     <action selector="selectOrDeselectFaces:" destination="nYT-NN-34D" eventType="touchUpInside" id="7mN-nl-27c"/>
                                                 </connections>
@@ -400,7 +400,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="HAg-At-Wnc"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.33145418760000001" green="0.53137439490000005" blue="0.82356160879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" image="Icon_meh face"/>
+                                                <state key="normal" title="Meh" image="Icon_meh face"/>
                                                 <connections>
                                                     <action selector="selectOrDeselectFaces:" destination="nYT-NN-34D" eventType="touchUpInside" id="IWk-Cs-nZy"/>
                                                 </connections>
@@ -412,7 +412,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="Aak-Wr-DTb"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.33145418760000001" green="0.53137439490000005" blue="0.82356160879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" image="Frustrated face"/>
+                                                <state key="normal" title="Frustrated" image="Frustrated face"/>
                                                 <connections>
                                                     <action selector="selectOrDeselectFaces:" destination="nYT-NN-34D" eventType="touchUpInside" id="3cz-8j-Z9u"/>
                                                 </connections>
@@ -423,8 +423,9 @@
                                                     <constraint firstAttribute="width" constant="40" id="3NH-b9-zBf"/>
                                                     <constraint firstAttribute="height" constant="40" id="hhO-Fr-1VR"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
                                                 <color key="tintColor" red="0.33145418760000001" green="0.53137439490000005" blue="0.82356160879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" image="Icon_Angry Face"/>
+                                                <state key="normal" title="Angry" image="Icon_Angry Face"/>
                                                 <connections>
                                                     <action selector="selectOrDeselectFaces:" destination="nYT-NN-34D" eventType="touchUpInside" id="q8g-VT-1Di"/>
                                                 </connections>
@@ -436,7 +437,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="wwm-Dx-6Ln"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.33145418760000001" green="0.53137439490000005" blue="0.82356160879999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" image="Icon_Annoyed Face"/>
+                                                <state key="normal" title="Annoyed" image="Icon_Annoyed Face"/>
                                                 <connections>
                                                     <action selector="selectOrDeselectFaces:" destination="nYT-NN-34D" eventType="touchUpInside" id="wgs-aP-rAx"/>
                                                 </connections>
@@ -448,7 +449,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="iYn-nX-lQS"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.32749384640000001" green="0.52754402160000002" blue="0.81571811439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" image="Icon_Dizzy Face"/>
+                                                <state key="normal" title="Dizzy" image="Icon_Dizzy Face"/>
                                                 <connections>
                                                     <action selector="selectOrDeselectFaces:" destination="nYT-NN-34D" eventType="touchUpInside" id="zjm-7G-I1U"/>
                                                 </connections>
@@ -483,6 +484,9 @@
                                         <state key="normal" title="Locate the noise">
                                             <color key="titleColor" red="0.24734693769999999" green="0.39176416400000003" blue="0.60786706209999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="locateTheNoise:" destination="nYT-NN-34D" eventType="touchUpInside" id="ZqZ-Eo-07W"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

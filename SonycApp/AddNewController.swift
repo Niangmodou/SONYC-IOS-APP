@@ -22,6 +22,7 @@ var checking: AKAudioFile!
 let calibrationOffset = 135
 var file: AKAudioFile!
  var mic: AKMicrophone!
+// let appDelegate = UIApplication.shared.delegate as! AppDelegate
 class AddNewController: UIViewController, AVAudioRecorderDelegate{
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -60,7 +61,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
      @IBOutlet weak var gaugeView: GaugeView!
     @IBOutlet weak var counterLabel: UILabel!
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
      @objc func updateAudioMeter(timer:Timer){
         if !(AudioKit.output == nil){
