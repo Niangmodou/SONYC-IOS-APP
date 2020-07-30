@@ -1,0 +1,29 @@
+PODS:
+  - AudioKit (4.10.1):
+    - AudioKit/Core (= 4.10.1)
+    - AudioKit/UI (= 4.10.1)
+  - AudioKit/Core (4.10.1)
+  - AudioKit/UI (4.10.1):
+    - AudioKit/Core
+  - FloatingPanel (1.7.5)
+  - SideMenu (6.4.8)
+
+DEPENDENCIES:
+  - AudioKit
+  - FloatingPanel
+  - SideMenu
+
+SPEC REPOS:
+  trunk:
+    - AudioKit
+    - FloatingPanel
+    - SideMenu
+
+SPEC CHECKSUMS:
+  AudioKit: b8e508a0af3dc7d53caf0ca1002b187a662f949e
+  FloatingPanel: bb17fd6fc7ae519f877f7bd30f4f6115a78acf07
+  SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
+
+PODFILE CHECKSUM: e3ba500ecf57a96f8489e7e06915f436b3a070ba
+
+COCOAPODS: 1.9.3

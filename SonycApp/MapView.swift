@@ -6,4 +6,105 @@
 //  Copyright © 2020 Vanessa Johnson. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import MapKit
+import CoreLocation
+import FloatingPanel
+
+class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
+//    FloatingPanelControllerDelegate
+
+    @IBOutlet weak var searchTextBox: UITextField!
+    
+    
+    @IBOutlet weak var goBackButton: UIButton!
+    @IBOutlet weak var buildingButton: UIButton!
+    @IBOutlet weak var streetButton: UIButton!
+    @IBOutlet weak var reportButton: UIButton!
+    @IBOutlet weak var historyButton: UIButton!
+    
+ 
+    
+    
+    @IBOutlet var mapView: MKMapView!
+    let manager = CLLocationManager()
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let slidingUp = FloatingPanelController()
+        slidingUp.delegate = self
+        mapView.delegate = self
+        
+        curvingButton(button: historyButton)
+         curvingButton(button: streetButton)
+         curvingButton(button: reportButton)
+         curvingButton(button: buildingButton)
+         curvingButtonRounder(button: goBackButton)
+        
+        addingBorder(button: historyButton)
+        addingBorder(button: reportButton)
+        addingBorder(button: streetButton)
+        addingBorder(button: buildingButton)
+        
+        addingBorderColorWhite(button: historyButton)
+        addingBorderColorWhite(button: reportButton)
+        addingBorderColorWhite(button: streetButton)
+        addingBorderColorWhite(button: buildingButton)
+        
+        
+        
+        //the goBackButton is hidden
+        goBackButtonHidden(button: goBackButton)
+        
+        guard let contentVC = storyboard?.instantiateViewController(identifier: "slideUp") as? SlideUpView
+            else{
+                return
+        }
+        
+        slidingUp.set(contentViewController: contentVC)
+        slidingUp.addPanel(toParent: self)
+        
+
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+    
+    @IBAction func buttonPressed(button: UIButton){
+        button.isSelected.toggle()
+        
+         button.layer.borderColor = UIColor.white.cgColor
+        if button.isSelected{
+             button.layer.borderColor = UIColor.faceSelected().cgColor
+        }
+        if button == reportButton{
+            button.setImage(UIImage(named: "Logo_311"), for: [.highlighted, .selected])
+        }
+        if button == streetButton{
+            button.setImage(UIImage(named: "Logo_Dot"), for: [.highlighted, .selected])
+        }
+        if button == historyButton{
+            button.setImage(UIImage(named: "Icon_History"), for: [.highlighted, .selected] )
+        }
+        
+        
+    }
+    
+    //makes the back button hidden
+    @IBAction func goBackButtonHidden(button: UIButton) {
+        button.isHidden = true
+    }
+    
+    //makes the textbox hidden
+    @IBAction func textBoxHidden(textbox: UITextField) {
+        textbox.isHidden = true
+    }
+    
+
+}
