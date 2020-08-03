@@ -90,6 +90,8 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         //connects player to tape
         player = try! AKAudioPlayer(file: tape)
         
+        //credit to : https://stackoverflow.com/questions/50805268/audiokit-how-to-get-real-time-floatchanneldata-from-microphone
+        //^from Aurelius Prochazka
         //the microphone
         mic = AKMicrophone()
         
@@ -101,6 +103,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         
         //mixer
         oscMixer = AKMixer(player,silence)
+        // ending credit above^
         
         if !isConnected{
             //AKSettings sample Rate
@@ -115,6 +118,8 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             // Start AudioKit engine
             try! AudioKit.start()
             
+            //credit to: https://stackoverflow.com/questions/50805268/audiokit-how-to-get-real-time-floatchanneldata-from-microphone
+            //^ from Aurelius Prochazka
             // Add a tap to the microphone
             mic.avAudioNode.installTap(
                 onBus: audioBus, bufferSize: AVAudioFrameCount(bufferSize), format: nil // I choose a buffer size of 1024
@@ -129,9 +134,12 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                     //samples array that will hold the audio samples
                     let samples = Array(UnsafeBufferPointer(start: &tail[offset], count: bufferSize))
                     
+                    //ending credit above
+                    
                     //applying the filter to the samples and applying calculations up to the log10 step
                     //also mutiplying the audio samples array by the dctHighPass array for float values: dctHighPass array -> interpolatedVectorFrom(magnitudes:  [0,   0,   1,    1],
                     //indices:     [0, 340, 350, 1024], count: bufferSize)
+                    
                     let arr = apply(dctMultiplier: EqualizationFilters.dctHighPass, toInput: samples)
                     
                     //does the rest of the spl calculations
@@ -162,6 +170,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                 
                 //continously updates the AudioMeter while the recording is happening
                 meterTimer = Timer.scheduledTimer(timeInterval:0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats: true)
+                
                 //saving data to core data
                 let context = appDelegate.persistentContainer.viewContext
                 
