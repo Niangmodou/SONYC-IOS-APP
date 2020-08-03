@@ -129,6 +129,8 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                     let samples = Array(UnsafeBufferPointer(start: &tail[offset], count: bufferSize))
                     
                     //applying the filter to the samples and applying calculations up to the log10 step
+                    //also mutiplying the audio samples array by the dctHighPass array for float values: dctHighPass array -> interpolatedVectorFrom(magnitudes:  [0,   0,   1,    1],
+                    //indices:     [0, 340, 350, 1024], count: bufferSize)
                     let arr = apply(dctMultiplier: EqualizationFilters.dctHighPass, toInput: samples)
                     
                     //does the rest of the spl calculations
@@ -146,6 +148,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                 
                 
             }
+            //increase the amount of recordings
             recordings += 1
             
             do{

@@ -12,11 +12,14 @@ import AudioToolbox
 import AVFoundation
 
 //credit to https://developer.apple.com/documentation/accelerate/equalizing_audio_with_vdsp for the 6 values below
-var biquadFilter: vDSP.Biquad<Float>?
 
+//Object for forward DCT operation
+//forward transform (type II)
 let forwardDCT = vDSP.DCT(count:  bufferSize,
                           transformType: .II)
 
+//Object for inverse DCT operation
+//inverse transform (type III)
 let inverseDCT = vDSP.DCT(count: bufferSize,
                           transformType: .III)
 
@@ -35,7 +38,7 @@ class FiltersConversions: UIViewController{
     
 }
 
-
+//equalizes the audio using a DCT-based filter
 //applies the a-weighted filter
 //this function up to the array called values, will be credited to: https://developer.apple.com/documentation/accelerate/equalizing_audio_with_vdsp
 //takes in a float array and returns a float array. (takes in the audio sample array)
@@ -43,7 +46,7 @@ func apply(dctMultiplier: [Float], toInput input: [Float]) -> [Float] {
     // Perform forward DCT.
     forwardDCT?.transform(input,
                           result: &forwardDCT_PreProcessed)
-    // Multiply frequency-domain data by `dctMultiplier`.
+    // Multiply frequency-domain data by (`dctMultiplier`-> filter values).
     vDSP.multiply(dctMultiplier,
                   forwardDCT_PreProcessed,
                   result: &forwardDCT_PostProcessed)
