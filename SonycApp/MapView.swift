@@ -27,7 +27,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     
     
     @IBOutlet var mapView: MKMapView!
-    let manager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
     
     
@@ -70,10 +70,16 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.delegate = self
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
+        self.locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+//        manager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
     
     @IBAction func buttonPressed(button: UIButton){
@@ -105,6 +111,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     @IBAction func textBoxHidden(textbox: UITextField) {
         textbox.isHidden = true
     }
+    
     
 
 }

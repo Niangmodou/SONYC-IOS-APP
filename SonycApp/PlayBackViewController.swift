@@ -16,6 +16,10 @@ import AudioKit
 
 class PlayBackViewController: UIViewController, AVAudioRecorderDelegate{
 
+    @IBOutlet weak var saveOnlyButton: UIButton!
+    @IBOutlet weak var reportButton: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var resumeButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
@@ -30,6 +34,10 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate{
 //        pauseButton.isHidden = true
 //        resumeButton.isHidden = true
         counterLabel.text = String(gaugeView.counter) + "db"
+        addingBorder(button: saveOnlyButton)
+        saveOnlyButton.layer.borderColor = UIColor.faceSelected().cgColor
+        curvingButton(button: saveOnlyButton)
+        curvingButton(button: reportButton)
     }
     
      @objc func keepDoing(){

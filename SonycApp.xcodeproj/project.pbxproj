@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		06A1B8B10BF3DFABB226B2AC /* Pods_SonycApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943B05580CC87F80DCEB6199 /* Pods_SonycApp.framework */; };
+		265D43B024D75C8E0027B148 /* selectLocationPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D43AF24D75C8E0027B148 /* selectLocationPopUp.swift */; };
+		265D43B224D75D940027B148 /* identifyPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D43B124D75D940027B148 /* identifyPopUp.swift */; };
+		265D43B424D75DD90027B148 /* confirmedPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D43B324D75DD90027B148 /* confirmedPopUp.swift */; };
 		26678FEE24CC651400067A9F /* EqualizationFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26678FED24CC651400067A9F /* EqualizationFilters.swift */; };
 		26678FF024CC654F00067A9F /* Filters&Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26678FEF24CC654F00067A9F /* Filters&Conversions.swift */; };
 		269E132124C94EDA00D09E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E132024C94EDA00D09E90 /* AppDelegate.swift */; };
@@ -51,6 +54,9 @@
 
 /* Begin PBXFileReference section */
 		21B91119390A55624E979AF5 /* Pods-SonycAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonycAppTests.release.xcconfig"; path = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		265D43AF24D75C8E0027B148 /* selectLocationPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectLocationPopUp.swift; sourceTree = "<group>"; };
+		265D43B124D75D940027B148 /* identifyPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = identifyPopUp.swift; sourceTree = "<group>"; };
+		265D43B324D75DD90027B148 /* confirmedPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confirmedPopUp.swift; sourceTree = "<group>"; };
 		26678FED24CC651400067A9F /* EqualizationFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizationFilters.swift; sourceTree = "<group>"; };
 		26678FEF24CC654F00067A9F /* Filters&Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filters&Conversions.swift"; sourceTree = "<group>"; };
 		269E131D24C94EDA00D09E90 /* SonycApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SonycApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +165,9 @@
 				269E136324C9507800D09E90 /* ButtonStyling.swift */,
 				26678FED24CC651400067A9F /* EqualizationFilters.swift */,
 				26678FEF24CC654F00067A9F /* Filters&Conversions.swift */,
+				265D43AF24D75C8E0027B148 /* selectLocationPopUp.swift */,
+				265D43B124D75D940027B148 /* identifyPopUp.swift */,
+				265D43B324D75DD90027B148 /* confirmedPopUp.swift */,
 			);
 			path = SonycApp;
 			sourceTree = "<group>";
@@ -444,7 +453,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				269E135624C94F9000D09E90 /* AddNewController.swift in Sources */,
+				265D43B024D75C8E0027B148 /* selectLocationPopUp.swift in Sources */,
 				269E135A24C94FC900D09E90 /* Colors.swift in Sources */,
+				265D43B224D75D940027B148 /* identifyPopUp.swift in Sources */,
 				269E135C24C94FEF00D09E90 /* ViewController2.swift in Sources */,
 				269E132524C94EDA00D09E90 /* ViewController.swift in Sources */,
 				26678FF024CC654F00067A9F /* Filters&Conversions.swift in Sources */,
@@ -455,6 +466,7 @@
 				269E136424C9507800D09E90 /* ButtonStyling.swift in Sources */,
 				269E132B24C94EDA00D09E90 /* SonycApp.xcdatamodeld in Sources */,
 				269E135E24C9500D00D09E90 /* MapView.swift in Sources */,
+				265D43B424D75DD90027B148 /* confirmedPopUp.swift in Sources */,
 				269E132324C94EDA00D09E90 /* SceneDelegate.swift in Sources */,
 				269E136024C9503300D09E90 /* SlideUpView.swift in Sources */,
 				269E135824C94FB500D09E90 /* GaugeView.swift in Sources */,

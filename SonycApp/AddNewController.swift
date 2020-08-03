@@ -33,13 +33,15 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
     var audioBus = 0
     var node: AKNode!
     var recorder: AKNodeRecorder!
-//     var player: AKAudioPlayer!
-    var player: AKPlayer!
+     var player: AKAudioPlayer!
+//    var player: AKPlayer!
 //    var player: AKAudioPlayer!
     var oscMixer: AKMixer!
     var tape: AKAudioFile!
     
    
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     @IBOutlet weak var stop: UIButton!
     
@@ -61,7 +63,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
      @IBOutlet weak var gaugeView: GaugeView!
     @IBOutlet weak var counterLabel: UILabel!
     
-//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
      @objc func updateAudioMeter(timer:Timer){
         if !(AudioKit.output == nil){
@@ -81,6 +83,9 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
     override func viewDidLoad() {
            super.viewDidLoad()
         createAReportButton.layer.cornerRadius = 20
+//        stopButton.isHidden = true
+//        playButton.isHidden = true
+        
         
          counterLabel.text = String(gaugeView.counter) + "db"
         recordingSession = AVAudioSession.sharedInstance()
@@ -99,7 +104,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         
         AKSettings.audioInputEnabled = true
         let tape = try! AKAudioFile()
-        player = try! AKPlayer(audioFile: tape)
+        player = try! AKAudioPlayer(file: tape)
 //         player = try! AKAudioPlayer(file: tape)
               mic = AKMicrophone()
               tracker = AKFrequencyTracker.init(mic)
@@ -141,13 +146,17 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                                    // We convert the content of the buffer to a swift array
                                      let samples = Array(UnsafeBufferPointer(start: &tail[offset], count: bufferSize))
                                      let arr = apply(dctMultiplier: EqualizationFilters.dctHighPass, toInput: samples)
-
                                     let array = decibelsConvert(array: arr)
                                     let decibels = applyMean(toInput: array)
                                     
                                     let minimumDecibels = Int(getMin(array: array))
                                     let maximumDecibels = Int(getMax(array: array))
                                     self!.keepDoing(decibels: decibels, min: minimumDecibels, max: maximumDecibels)
+//                                    self!.keepDoing(decibels: decibels)
+
+                                     
+                                    
+                        
                                  }
 
 
@@ -170,7 +179,11 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                                             
                                             recorder = try AKNodeRecorder(node: oscMixer, file: tape)
                                             try recorder.record()
+                                            print("this is the tape url")
                                             print(tape.url)
+                                            
+                                            print("This is the audiofile url of the recorder")
+                                            print(recorder.audioFile!.url)
                                             checking = returningFile(file: tape)
                                             
                                           
@@ -217,6 +230,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
 }
     @objc func keepDoing(decibels: Int, min: Int, max: Int){
                 DispatchQueue.main.async{
+//
    
                     self.gaugeView.counter = decibels
                     self.counterLabel.text = String(decibels) + " db"
@@ -226,16 +240,21 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
    
                     
                 }
+        
             }
     
     
     @IBAction func play(_ sender: Any) {
         do{
 
-            print(checking.url)
+//            print(checking.url)
         
 //            let playing = try AKAudioFile(forReading: checking.url)
-            player = try AKPlayer(audioFile: checking)
+            let playing = try AKAudioFile(forReading: checking.url)
+//            player = try AKPlayer(audioFile: playing)
+            player = try AKAudioPlayer(file: playing)
+            print("in the play action this is the checking url")
+            print(playing.url)
 //             player = try AKAudioPlayer(file: checking)
            
 //    let delay = AKDelay(player)
@@ -248,7 +267,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
 //            let mix = AKMixer(player)
 //            AudioKit.output = mix
 //            player.connect(to: oscMixer)
-                AudioKit.output = oscMixer
+                AudioKit.output = player
                try AudioKit.start()
            
             

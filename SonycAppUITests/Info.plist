@@ -18,6 +18,8 @@
 	<string>1.0</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Needed</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Needed</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>
