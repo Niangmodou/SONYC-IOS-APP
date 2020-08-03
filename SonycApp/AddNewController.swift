@@ -67,15 +67,16 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         createAReportButton.layer.cornerRadius = 20
         
         
-        
+        //counterLabel will be the same as the gaugeView meter
         counterLabel.text = String(gaugeView.counter) + "db"
         recordingSession = AVAudioSession.sharedInstance()
         
-        
+        //keeps track of the up to date recordings
         if let number: Int = UserDefaults.standard.object(forKey: "recordings") as? Int {
             recordings = number
         }
         
+        //permission for microphone
         AVAudioSession.sharedInstance().requestRecordPermission{(hasPermission) in
             if hasPermission{
                 print("Accepted")
