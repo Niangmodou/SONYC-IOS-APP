@@ -12,8 +12,7 @@ import CoreLocation
 import FloatingPanel
 
 class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
-//    FloatingPanelControllerDelegate
-
+    
     @IBOutlet weak var searchTextBox: UITextField!
     
     
@@ -23,7 +22,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var historyButton: UIButton!
     
- 
+    
     
     
     @IBOutlet var mapView: MKMapView!
@@ -37,17 +36,20 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         slidingUp.delegate = self
         mapView.delegate = self
         
+        //button styling
         curvingButton(button: historyButton)
-         curvingButton(button: streetButton)
-         curvingButton(button: reportButton)
-         curvingButton(button: buildingButton)
-         curvingButtonRounder(button: goBackButton)
+        curvingButton(button: streetButton)
+        curvingButton(button: reportButton)
+        curvingButton(button: buildingButton)
+        curvingButtonRounder(button: goBackButton)
         
+        //adding borders to buttons
         addingBorder(button: historyButton)
         addingBorder(button: reportButton)
         addingBorder(button: streetButton)
         addingBorder(button: buildingButton)
         
+        //adding border color (white)
         addingBorderColorWhite(button: historyButton)
         addingBorderColorWhite(button: reportButton)
         addingBorderColorWhite(button: streetButton)
@@ -66,14 +68,14 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         slidingUp.set(contentViewController: contentVC)
         slidingUp.addPanel(toParent: self)
         
-
+        
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        //finding the user's location
         self.locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
-//        manager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -82,12 +84,13 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         }
     }
     
+    //if the buttons/clips are pressed
     @IBAction func buttonPressed(button: UIButton){
         button.isSelected.toggle()
         
-         button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderColor = UIColor.white.cgColor
         if button.isSelected{
-             button.layer.borderColor = UIColor.faceSelected().cgColor
+            button.layer.borderColor = UIColor.faceSelected().cgColor
         }
         if button == reportButton{
             button.setImage(UIImage(named: "Logo_311"), for: [.highlighted, .selected])
@@ -113,5 +116,5 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     }
     
     
-
+    
 }

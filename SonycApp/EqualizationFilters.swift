@@ -6,6 +6,9 @@
 //  Copyright © 2020 Vanessa Johnson. All rights reserved.
 //
 
+
+//this file will be credited to: https://developer.apple.com/documentation/accelerate/equalizing_audio_with_vdsp
+
 import Accelerate
 
 enum EqualizationMode: String, CaseIterable {
@@ -16,21 +19,21 @@ enum EqualizationMode: String, CaseIterable {
     case biquadLowPass = "Biquad Low-Pass"
     case biquadHighPass = "Biquad High-Pass"
     case flat = "Flat"
-
+    
     func dctMultiplier() -> [Float]? {
         let multiplier: [Float]?
         
         switch self {
-            case .dctHighPass:
-                multiplier = EqualizationFilters.dctHighPass
-            case .dctLowPass:
-                multiplier = EqualizationFilters.dctLowPass
-            case .dctBandPass:
-                multiplier = EqualizationFilters.dctBandPass
-            case .dctBandStop:
-                multiplier = EqualizationFilters.dctBandStop
-            default:
-                multiplier = nil
+        case .dctHighPass:
+            multiplier = EqualizationFilters.dctHighPass
+        case .dctLowPass:
+            multiplier = EqualizationFilters.dctLowPass
+        case .dctBandPass:
+            multiplier = EqualizationFilters.dctBandPass
+        case .dctBandStop:
+            multiplier = EqualizationFilters.dctBandStop
+        default:
+            multiplier = nil
         }
         
         return multiplier
@@ -40,12 +43,12 @@ enum EqualizationMode: String, CaseIterable {
         let coefficients: [Double]?
         
         switch self {
-            case .biquadHighPass:
-                coefficients = EqualizationFilters.biquadHighPass
-            case .biquadLowPass:
-                coefficients = EqualizationFilters.biquadLowPass
-            default:
-                coefficients = nil
+        case .biquadHighPass:
+            coefficients = EqualizationFilters.biquadHighPass
+        case .biquadLowPass:
+            coefficients = EqualizationFilters.biquadLowPass
+        default:
+            coefficients = nil
         }
         
         return coefficients
@@ -53,12 +56,12 @@ enum EqualizationMode: String, CaseIterable {
     
     var category: Category {
         switch self {
-            case .biquadLowPass, .biquadHighPass:
-                return .biquad(biquadCoefficients()!)
-            case .dctBandStop, .dctBandPass, .dctLowPass, .dctHighPass:
-                return .dct(dctMultiplier()!)
-            case .flat:
-                return .passThrough
+        case .biquadLowPass, .biquadHighPass:
+            return .biquad(biquadCoefficients()!)
+        case .dctBandStop, .dctBandPass, .dctLowPass, .dctHighPass:
+            return .dct(dctMultiplier()!)
+        case .flat:
+            return .passThrough
         }
     }
     
@@ -77,7 +80,7 @@ struct EqualizationFilters {
         let b2 = 0.0005
         let a1 = -1.979
         let a2 = 0.98
-
+        
         return [b0, b1, b2, a1, a2]
     }()
     
@@ -102,7 +105,7 @@ struct EqualizationFilters {
                                       indices:     [0, 200, 210, 1024],
                                       count: bufferSize)
     }()
-
+    
     static let dctBandPass: [Float] = {
         return interpolatedVectorFrom(magnitudes:  [0,   0,   1,   1,   0,    0],
                                       indices:     [0, 290, 300, 380, 390, 1024],
@@ -134,5 +137,5 @@ struct EqualizationFilters {
         
         return c
     }
-
+    
 }

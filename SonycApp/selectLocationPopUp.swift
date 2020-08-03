@@ -14,6 +14,6 @@ class selectLocationPopUp: UIViewController{
     @IBOutlet weak var popUpView: UIView!
     
     override func viewDidLoad() {
-          popUpView.layer.masksToBounds = true
+        popUpView.layer.masksToBounds = true
     }
 }

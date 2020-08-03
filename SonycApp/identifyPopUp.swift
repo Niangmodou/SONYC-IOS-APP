@@ -14,11 +14,12 @@ class identifyPopUp: UIViewController{
     
     @IBOutlet weak var popUpView: UIView!
     override func viewDidLoad() {
-       curvingButton(button: gotItButton)
-          popUpView.layer.masksToBounds = true
+        //button styling, curving button borders
+        curvingButton(button: gotItButton)
+        popUpView.layer.masksToBounds = true
     }
     
-    
+    //dimissing the popup
     @IBAction func closePopUp(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

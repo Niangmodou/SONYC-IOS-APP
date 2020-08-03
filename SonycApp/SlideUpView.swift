@@ -14,11 +14,11 @@ import AudioToolbox
 import AudioKit
 
 let context = appDelegate.persistentContainer.viewContext
-                                                                 
-                                                let entity = NSEntityDescription.entity(forEntityName: "Audio", in: context)
-                                                let newTask = NSManagedObject(entity: entity!, insertInto: context)
+//core data details
+let entity = NSEntityDescription.entity(forEntityName: "Audio", in: context)
+let newTask = NSManagedObject(entity: entity!, insertInto: context)
 class SlideUpView: UIViewController {
-
+    
     @IBOutlet weak var topView: UIView!
     
     
@@ -49,19 +49,19 @@ class SlideUpView: UIViewController {
     @IBOutlet weak var frustratedFaceButton: UIButton!
     @IBOutlet weak var happyFaceButton: UIButton!
     
-       @IBOutlet var locationButtonArray: [UIButton]!
-     @IBOutlet var iAmButtonsArray: [UIButton]!
+    @IBOutlet var locationButtonArray: [UIButton]!
+    @IBOutlet var iAmButtonsArray: [UIButton]!
     
-     @IBOutlet var faceButtonArray: [UIButton]!
+    @IBOutlet var faceButtonArray: [UIButton]!
     
     
     @IBOutlet weak var identifyNoiseSourceButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
-                                                                 
-//
+        
+        
+        //
         //button styling
         curvingButton(button: homeButton)
         curvingButton(button: elsewhereButton)
@@ -73,12 +73,12 @@ class SlideUpView: UIViewController {
         curvingButton(button: walkingButton)
         curvingButtonRounder(button: mehFaceButton)
         curvingButtonRounder(button: dizzyFaceButton)
-         curvingButtonRounder(button: annoyedFaceButton)
-         curvingButtonRounder(button: angryFaceButton)
-         curvingButtonRounder(button: frustratedFaceButton)
-         curvingButtonRounder(button: happyFaceButton)
-         curvingButtonRounder(button: identifyNoiseSourceButton)
-     
+        curvingButtonRounder(button: annoyedFaceButton)
+        curvingButtonRounder(button: angryFaceButton)
+        curvingButtonRounder(button: frustratedFaceButton)
+        curvingButtonRounder(button: happyFaceButton)
+        curvingButtonRounder(button: identifyNoiseSourceButton)
+        
         //adding borders
         addingBorder(button: homeButton)
         addingBorder(button: elsewhereButton)
@@ -109,46 +109,48 @@ class SlideUpView: UIViewController {
     //for the first row of buttons, home or elsewhere
     @IBAction func selectOrDeselect(_ sender: UIButton) {
         locationButtonArray.forEach({ $0.backgroundColor = UIColor.white
-             sender.isSelected = false
+            sender.isSelected = false
         })
-            sender.backgroundColor = UIColor.buttonSelected()
-         sender.isSelected = true
+        sender.backgroundColor = UIColor.buttonSelected()
+        sender.isSelected = true
         if sender == homeButton{
             
         }
         else if sender == elsewhereButton{
-                  
-              }
+            
+        }
+        //saving button information in core data
         newTask.setValue(sender.title(for: .normal), forKey: "inOrOut")
     }
     
     //for the second row of buttons, I am section of buttons
     @IBAction func selectOrDeselectIAmButtons(_ sender: UIButton) {
-          iAmButtonsArray.forEach({ $0.backgroundColor = UIColor.white
-             sender.isSelected = false
-          })
-              sender.backgroundColor = UIColor.buttonSelected()
-         sender.isSelected = true
+        iAmButtonsArray.forEach({ $0.backgroundColor = UIColor.white
+            sender.isSelected = false
+        })
+        sender.backgroundColor = UIColor.buttonSelected()
+        sender.isSelected = true
         if sender == sleepingButton{
-                  sender.setImage(UIImage(named:"Logo_Sleeping Man.png"), for: [.highlighted, .selected])
-              }
+            sender.setImage(UIImage(named:"Logo_Sleeping Man.png"), for: [.highlighted, .selected])
+        }
         if sender == parentingButton{
-                  
-              }
+            
+        }
         if sender == workingButton{
-                  
-              }
+            
+        }
         if sender == walkingButton{
-                  
-              }
+            
+        }
         if sender == othersButton{
-                  
-              }
+            
+        }
         if sender == restingButton{
-                  
-              }
+            
+        }
+        //saving button information in core data
         newTask.setValue(sender.title(for: .normal), forKey: "iAm")
-      }
+    }
     
     
     //the face buttons
@@ -156,7 +158,7 @@ class SlideUpView: UIViewController {
         
         sender.layer.borderWidth = 2
         faceButtonArray.forEach({ $0.layer.borderColor = UIColor.gray.cgColor
-             sender.isSelected = false
+            sender.isSelected = false
         })
         sender.layer.borderColor = UIColor.faceSelected().cgColor
         sender.isSelected = true
@@ -164,33 +166,34 @@ class SlideUpView: UIViewController {
         
         
         if sender == mehFaceButton{
-                  
-              }
+            
+        }
         if sender == dizzyFaceButton{
-                  
-              }
+            
+        }
         if sender == annoyedFaceButton{
-                  
-              }
+            
+        }
         if sender == angryFaceButton{
-                  
-              }
+            
+        }
         if sender == happyFaceButton{
-                  
-              }
+            
+        }
         if sender == frustratedFaceButton{
-                  
-              }
+            
+        }
+        //saving button information in core data
         newTask.setValue(sender.title(for: .normal), forKey: "faceButton")
-          }
+    }
     
     //locate the noise button action
     @IBAction func locateTheNoise(_ sender: Any) {
         
-       
+        
     }
     
     
-  
-
+    
+    
 }

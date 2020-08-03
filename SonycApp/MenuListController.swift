@@ -7,6 +7,8 @@
 //
 import Foundation
 import UIKit
+
+//credit to https://www.youtube.com/watch?v=iq-tWW45Vhk (Create Side Menu in App (Swift 5) Xcode 11 | 2020). Specific changes were made to conform to the project
 class MenuListController: UITableViewController{
     
     var items = ["Recordings"]
@@ -28,9 +30,9 @@ class MenuListController: UITableViewController{
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
-        let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "recordings") ; // recordings the storyboard ID
-        self.present(vc, animated: true, completion: nil);
+            let storyboard = UIStoryboard(name: "Main", bundle: nil);
+            let vc = storyboard.instantiateViewController(withIdentifier: "recordings") ; // recordings the storyboard ID
+            self.present(vc, animated: true, completion: nil);
         }
     }
 }

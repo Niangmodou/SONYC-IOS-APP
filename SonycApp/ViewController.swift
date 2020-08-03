@@ -12,8 +12,6 @@ import CoreData
 import AVFoundation
 import SideMenu
 
-//var decibelsAvg: Float!
-//var decibelsPeak: Float!
 var recordings = 0
    var meterTimer: Timer!
    var meterTimer2: Timer!
