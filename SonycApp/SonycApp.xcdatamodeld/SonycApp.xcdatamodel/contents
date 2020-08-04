@@ -4,9 +4,10 @@
         <attribute name="faceButton" optional="YES" attributeType="String"/>
         <attribute name="iAm" optional="YES" attributeType="String"/>
         <attribute name="inOrOut" optional="YES" attributeType="String"/>
+        <attribute name="path" optional="YES" attributeType="URI"/>
         <attribute name="recordings" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Audio" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Audio" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

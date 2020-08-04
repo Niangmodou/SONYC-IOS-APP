@@ -32,6 +32,8 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //for the slide up panel 
         let slidingUp = FloatingPanelController()
         slidingUp.delegate = self
         mapView.delegate = self

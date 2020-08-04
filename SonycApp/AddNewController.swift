@@ -137,8 +137,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                     //ending credit above
                     
                     //applying the filter to the samples and applying calculations up to the log10 step
-                    //also mutiplying the audio samples array by the dctHighPass array for float values: dctHighPass array -> interpolatedVectorFrom(magnitudes:  [0,   0,   1,    1],
-                    //indices:     [0, 340, 350, 1024], count: bufferSize)
+                    //also mutiplying the audio samples array by the dctHighPass array for float values: dctHighPass array -> interpolatedVectorFrom(magnitudes:  [0,   0,   1,    1], indices:     [0, 340, 350, 1024], count: bufferSize)
                     
                     let arr = apply(dctMultiplier: EqualizationFilters.dctHighPass, toInput: samples)
                     
@@ -161,27 +160,30 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             recordings += 1
             
             do{
-                //records to tape
+                //records to tape, takes in a node (the mixer)
                 recorder = try AKNodeRecorder(node: oscMixer, file: tape)
                 //starts recording
                 try recorder.record()
                 
-                checking = returningFile(file: tape)
-                
                 //continously updates the AudioMeter while the recording is happening
                 meterTimer = Timer.scheduledTimer(timeInterval:0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats: true)
                 
-                //saving data to core data
+                //saving data to core data -> allows for retrieval when the app closes and opens up again
                 let context = appDelegate.persistentContainer.viewContext
                 
+                //the entity that was made in the SonycApp.xcdatamodeld (Audio)
                 let entity = NSEntityDescription.entity(forEntityName: "Audio", in: context)
+                
+                //the object of the entity
                 let newTask = NSManagedObject(entity: entity!, insertInto: context)
                 
+                //set and save the recording number of the file
                 newTask.setValue("\(recordings)",forKey: "recordings")
                 UserDefaults.standard.set(recordings, forKey: "recordings");
                 
                 
                 do{
+                    //save the changes made to the persistent container to save the changes to the files/information being saved
                     try context.save()
                 }
                 catch{
@@ -191,18 +193,19 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                 //end of core data saving
             }
             catch{
-                print("Something went wrong")
+                print(error)
             }
             
         }
-        
+        //sets isConnected to true
         self.isConnected = true
     }
-    //keeps updating the gauge values
+    //keeps updating the gauge values and the values of the min, avg, and max label values
     @objc func keepDoing(decibels: Int, min: Int, max: Int){
         DispatchQueue.main.async{
             
             self.gaugeView.counter = decibels
+            //adds on the db text onto the number of the decibels converted to a string
             self.counterLabel.text = String(decibels) + " db"
             self.avgDecibels.text = String(decibels) + " db"
             self.minDecibels.text = String(min) + " db"
@@ -216,9 +219,11 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
     
     @IBAction func play(_ sender: Any) {
         do{
-            
-            //playing is the audiofile
-            let playing = try AKAudioFile(forReading: checking.url)
+            //retrieving the url of the audio recorded file from core data
+            let url = newTask.value(forKey: "path")
+
+            //the audio file that will be connected to the player , that is read at the url from above
+            let playing = try AKAudioFile(forReading: url as! URL)
             
             //the player is connected to the playing file
             player = try AKAudioPlayer(file: playing)
@@ -240,20 +245,26 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         
     }
     
-    func returningFile(file: AKAudioFile) -> AKAudioFile{
-        return file
-    }
-    
     @IBAction func stop(button: UIButton) {
         do{
+            //saves the url of the recorded audiofile
+            newTask.setValue(recorder.audioFile?.url, forKey: "path")
+            do{
+                //saves the url information in core data to be able to access it at a later time
+                try context.save()
+            }
+            catch{
+                print(error)
+            }
             //stop the mic
             mic.stop()
             //stop the recorder
             recorder.stop()
             
+            //stops the AudioKit
             try AudioKit.stop()
             
-            //checking how long it was recording for
+            //checking how long the recording was for
             let dur = String(format: "%0.3f seconds", recorder.recordedDuration)
             AKLog("Stopped. (\(dur) recorded)")
             
@@ -274,6 +285,8 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             print(error)
         }
         self.isConnected = false
+        
+        //stops the timer
         meterTimer.invalidate()
         //save the amount of recordings that were recorded
         UserDefaults.standard.set(recordings, forKey: "recordings")
