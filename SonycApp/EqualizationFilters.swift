@@ -7,7 +7,7 @@
 //
 
 
-//this file will be credited to: https://developer.apple.com/documentation/accelerate/equalizing_audio_with_vdsp
+//this file will be credited to: https://developer.apple.com/documentation/accelerate/equalizing_audio_with_vdsp with changes to conform to the specific project
 
 import Accelerate
 

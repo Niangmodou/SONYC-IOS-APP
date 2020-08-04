@@ -62,6 +62,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         //the goBackButton is hidden
         goBackButtonHidden(button: goBackButton)
         
+          //the slide up view controller will be the view controller with the identifier of slideUp
         guard let contentVC = storyboard?.instantiateViewController(identifier: "slideUp") as? SlideUpView
             else{
                 return
