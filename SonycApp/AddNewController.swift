@@ -33,7 +33,8 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
     var player: AKAudioPlayer!
     var oscMixer: AKMixer!
     var tape: AKAudioFile!
-    
+    var paths: [NSManagedObject]!
+     let settings = [AVFormatIDKey: Int(kAudioFormatMPEG4AAC), AVSampleRateKey: 12000, AVNumberOfChannelsKey:1, AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
     
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
@@ -88,7 +89,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         let tape = try! AKAudioFile()
         
         //connects player to tape
-        player = try! AKAudioPlayer(file: tape)
+//        player = try! AKAudioPlayer(file: tape)
         
         //credit to : https://stackoverflow.com/questions/50805268/audiokit-how-to-get-real-time-floatchanneldata-from-microphone
         //^from Aurelius Prochazka
@@ -102,7 +103,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         silence = AKBooster(tracker,gain:0)
         
         //mixer
-        oscMixer = AKMixer(player,silence)
+        oscMixer = AKMixer(silence)
         // ending credit above^
         
         if !isConnected{
@@ -114,6 +115,8 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             
             //the AudioKit output
             AudioKit.output = oscMixer
+         
+//            AudioKit.output =
             
             // Start AudioKit engine
             try! AudioKit.start()
@@ -156,14 +159,18 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                 
                 
             }
-            //increase the amount of recordings
-            recordings += 1
             
             do{
+                 //increase the amount of recordings
+                recordings += 1
                 //records to tape, takes in a node (the mixer)
+//                  let filename = getDirectory().appendingPathComponent("\(recordings).m4a")
+                let tape = try AKAudioFile()
+                
                 recorder = try AKNodeRecorder(node: oscMixer, file: tape)
                 //starts recording
                 try recorder.record()
+               
                 
                 //continously updates the AudioMeter while the recording is happening
                 meterTimer = Timer.scheduledTimer(timeInterval:0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats: true)
@@ -176,6 +183,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                 
                 //the object of the entity
                 let newTask = NSManagedObject(entity: entity!, insertInto: context)
+                
                 
                 //set and save the recording number of the file
                 newTask.setValue("\(recordings)",forKey: "recordings")
@@ -216,14 +224,14 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         
     }
     
-    
+    //temporary play button
     @IBAction func play(_ sender: Any) {
         do{
-            //retrieving the url of the audio recorded file from core data
-            let url = newTask.value(forKey: "path")
-
+            //url of file
+//             let filename = getDirectory().appendingPathComponent("\(recordings).m4a")
+            
             //the audio file that will be connected to the player , that is read at the url from above
-            let playing = try AKAudioFile(forReading: url as! URL)
+            let playing = try AKAudioFile(forReading: recorder.audioFile!.url)
             
             //the player is connected to the playing file
             player = try AKAudioPlayer(file: playing)
@@ -231,7 +239,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             //the audioKit output is the player
             AudioKit.output = player
             try AudioKit.start()
-            
+//
             //starts and plays the player
             player.start()
             player.play()
@@ -244,18 +252,9 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         
         
     }
-    
+    //temporary stop button
     @IBAction func stop(button: UIButton) {
         do{
-            //saves the url of the recorded audiofile
-            newTask.setValue(recorder.audioFile?.url, forKey: "path")
-            do{
-                //saves the url information in core data to be able to access it at a later time
-                try context.save()
-            }
-            catch{
-                print(error)
-            }
             //stop the mic
             mic.stop()
             //stop the recorder
