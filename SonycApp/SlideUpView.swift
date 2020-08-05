@@ -123,7 +123,7 @@ class SlideUpView: UIViewController {
     
     //for the second row of buttons, I am section of buttons
     @IBAction func selectOrDeselectIAmButtons(_ sender: UIButton) {
-         //all the buttons have a background color of white and are not selected
+        //all the buttons have a background color of white and are not selected
         iAmButtonsArray.forEach({ $0.backgroundColor = UIColor.white
             sender.isSelected = false
         })
@@ -133,7 +133,7 @@ class SlideUpView: UIViewController {
         if sender == sleepingButton{
             sender.setImage(UIImage(named:"Logo_Sleeping Man.png"), for: [.highlighted, .selected])
         }
-   
+        
         //saving button information in core data
         newTask.setValue(sender.title(for: .normal), forKey: "iAm")
     }
@@ -144,7 +144,7 @@ class SlideUpView: UIViewController {
         
         sender.layer.borderWidth = 2
         
-         //all the buttons have a border color of gray and are not selected
+        //all the buttons have a border color of gray and are not selected
         faceButtonArray.forEach({ $0.layer.borderColor = UIColor.gray.cgColor
             sender.isSelected = false
         })
@@ -152,7 +152,7 @@ class SlideUpView: UIViewController {
         //when a button is pressed, the border color changes to the custom color below. Is selected and only 1 button is selected at 1 time
         sender.layer.borderColor = UIColor.faceSelected().cgColor
         sender.isSelected = true
-
+        
         //saving button information in core data
         newTask.setValue(sender.title(for: .normal), forKey: "faceButton")
     }

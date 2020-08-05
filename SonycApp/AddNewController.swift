@@ -34,7 +34,6 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
     var oscMixer: AKMixer!
     var tape: AKAudioFile!
     var paths: [NSManagedObject]!
-     let settings = [AVFormatIDKey: Int(kAudioFormatMPEG4AAC), AVSampleRateKey: 12000, AVNumberOfChannelsKey:1, AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
     
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
@@ -88,9 +87,6 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         //the audioFile the recording will record to
         let tape = try! AKAudioFile()
         
-        //connects player to tape
-//        player = try! AKAudioPlayer(file: tape)
-        
         //credit to : https://stackoverflow.com/questions/50805268/audiokit-how-to-get-real-time-floatchanneldata-from-microphone
         //^from Aurelius Prochazka
         //the microphone
@@ -115,8 +111,6 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             
             //the AudioKit output
             AudioKit.output = oscMixer
-         
-//            AudioKit.output =
             
             // Start AudioKit engine
             try! AudioKit.start()
@@ -140,7 +134,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                     //ending credit above
                     
                     //applying the filter to the samples and applying calculations up to the log10 step
-                    //also mutiplying the audio samples array by the dctHighPass array for float values: dctHighPass array -> interpolatedVectorFrom(magnitudes:  [0,   0,   1,    1], indices:     [0, 340, 350, 1024], count: bufferSize)
+                    //also multiplying the audio samples array by the dctHighPass array for float values: dctHighPass array -> interpolatedVectorFrom(magnitudes:  [0,   0,   1,    1], indices:     [0, 340, 350, 1024], count: bufferSize)
                     
                     let arr = apply(dctMultiplier: EqualizationFilters.dctHighPass, toInput: samples)
                     
@@ -152,7 +146,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                     
                     //gets the minimum decibel value from the array of audio samples
                     let minimumDecibels = Int(getMin(array: array))
-                     //gets the maximum decibel value from the array of audio samples
+                    //gets the maximum decibel value from the array of audio samples
                     let maximumDecibels = Int(getMax(array: array))
                     self!.keepDoing(decibels: decibels, min: minimumDecibels, max: maximumDecibels)
                 }
@@ -161,16 +155,14 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             }
             
             do{
-                 //increase the amount of recordings
+                //increase the amount of recordings
                 recordings += 1
-                //records to tape, takes in a node (the mixer)
-//                  let filename = getDirectory().appendingPathComponent("\(recordings).m4a")
-                let tape = try AKAudioFile()
                 
+                 //records to tape, takes in a node (the mixer)
                 recorder = try AKNodeRecorder(node: oscMixer, file: tape)
                 //starts recording
                 try recorder.record()
-               
+                
                 
                 //continously updates the AudioMeter while the recording is happening
                 meterTimer = Timer.scheduledTimer(timeInterval:0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats: true)
@@ -227,10 +219,8 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
     //temporary play button
     @IBAction func play(_ sender: Any) {
         do{
-            //url of file
-//             let filename = getDirectory().appendingPathComponent("\(recordings).m4a")
             
-            //the audio file that will be connected to the player , that is read at the url from above
+            //the audio file that will be connected to the player , that is read at the url that the recorder records to
             let playing = try AKAudioFile(forReading: recorder.audioFile!.url)
             
             //the player is connected to the playing file
@@ -239,7 +229,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             //the audioKit output is the player
             AudioKit.output = player
             try AudioKit.start()
-//
+            //
             //starts and plays the player
             player.start()
             player.play()

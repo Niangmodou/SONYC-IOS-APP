@@ -25,7 +25,7 @@ class ViewController2: UITableViewController {
     var player: AKAudioPlayer!
     
     @IBOutlet var myTableView: UITableView!
- 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,14 +79,14 @@ class ViewController2: UITableViewController {
             player = try AKAudioPlayer(file: reading)
             AudioKit.output = player
             try AudioKit.start()
-         
+            
             
             
         }
         catch{
             print(error)
         }
-       
+        
         
     }
     
