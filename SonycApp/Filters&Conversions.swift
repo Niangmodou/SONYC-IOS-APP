@@ -61,26 +61,7 @@ func apply(dctMultiplier: [Float], toInput input: [Float]) -> [Float] {
                 Float(bufferSize/2),
                 result: &inverseDCT_Result)
     
-    //a new array that has the squares all the values in the audio sample array to make sure they are all positive later on
-    var values: [Float] = inverseDCT_Result
-    values.enumerated().forEach{ index, value in
-        values[index] = powf(value, 2.0)
-    }
-    
-    //a new array that has the square root values of the squared ones beforehand^
-    var values1: [Float] = values
-    values1.enumerated().forEach{ index, value in
-        values1[index] = sqrtf(value)
-    }
-    
-    
-    // a new array that calculates the log of the previous values.
-    var values2: [Float] = values1
-    values2.enumerated().forEach{ index, value in
-        values2[index] = log10(value)
-    }
-    //returns there values
-    return values2
+    return inverseDCT_Result
 }
 
 //gets the average of the decibels
@@ -104,8 +85,27 @@ func applyMean(toInput input: [Float]) -> Int{
 //takes in a float array and returns a float array
 func decibelsConvert(array: [Float]) -> [Float]{
     
+    //a new array that has the squares all the values in the audio sample array to make sure they are all positive later on
+    var values: [Float] = array
+    values.enumerated().forEach{ index, value in
+        values[index] = powf(value, 2.0)
+    }
+    
+    //a new array that has the square root values of the squared ones beforehand^
+    var values1: [Float] = values
+    values1.enumerated().forEach{ index, value in
+        values1[index] = sqrtf(value)
+    }
+    
+    
+    // a new array that calculates the log of the previous values.
+    var values2: [Float] = values1
+    values2.enumerated().forEach{ index, value in
+        values2[index] = log10(value)
+    }
+    
     //array that stores value from the inputted array multipled by 20
-    var dbs: [Float] = array
+    var dbs: [Float] = values2
     dbs.enumerated().forEach{ index, value in
         dbs[index] =  20 * value
     }

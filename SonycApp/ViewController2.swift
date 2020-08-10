@@ -29,17 +29,16 @@ class ViewController2: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //does not show the cells that are not in use
         myTableView.tableFooterView = UIView()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //            audioFiles = [NSManagedObject]()
-        
-        
+        //persistentContainer that is needed to use core data to store information within the app.
         let context = appDelegate.persistentContainer.viewContext
         
-        
+        //requesting the data that is stored
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Audio")
         request.returnsObjectsAsFaults = false
         do{
@@ -52,9 +51,11 @@ class ViewController2: UITableViewController {
         catch{
             print("failed")
         }
+        //reloads the table view to see the changes
         myTableView.reloadData()
     }
     
+    //has the same number of cells as the amout of elements in the audioFiles array
     override func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         return audioFiles.count;
     }
@@ -65,29 +66,9 @@ class ViewController2: UITableViewController {
         return cell
     }
     
+    //stores the indexPath.row in the variable position to help with the transfer of the url over.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //                let path = getDirectory().appendingPathComponent("\(indexPath.row + 1).m4a")
-        let filename = getDirectory().appendingPathComponent("\(recordings).m4a")
-        
-        
-        
-        
-        
         position = indexPath.row
-        do{
-            reading = try AKAudioFile(forReading: filename)
-            player = try AKAudioPlayer(file: reading)
-            AudioKit.output = player
-            try AudioKit.start()
-            
-            
-            
-        }
-        catch{
-            print(error)
-        }
-        
-        
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -129,11 +110,14 @@ class ViewController2: UITableViewController {
     
 }
 
+//getDirectiory of the file url
 func getDirectory() -> URL{
     let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     let documentDirectory = paths[0]
     return documentDirectory
 }
+
+//transfersOver the url of the file being referenced
 func transferOver() -> URL{
     return  getDirectory().appendingPathComponent("\(position + 1).m4a")
 }

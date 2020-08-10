@@ -17,6 +17,7 @@ let context = appDelegate.persistentContainer.viewContext
 //core data details
 let entity = NSEntityDescription.entity(forEntityName: "Audio", in: context)
 let newTask = NSManagedObject(entity: entity!, insertInto: context)
+
 class SlideUpView: UIViewController {
     
     @IBOutlet weak var topView: UIView!
@@ -103,7 +104,6 @@ class SlideUpView: UIViewController {
         
         myView.roundCorners(cornerRadius: 20.0)
         
-        
     }
     
     //for the first row of buttons, home or elsewhere
@@ -159,8 +159,11 @@ class SlideUpView: UIViewController {
     
     //locate the noise button action
     @IBAction func locateTheNoise(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc = storyboard.instantiateViewController(withIdentifier: "details") ; // details the storyboard ID
+        self.present(vc, animated: true, completion: nil);
         
     }
+    
     
 }

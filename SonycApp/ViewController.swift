@@ -20,10 +20,10 @@ var audioRecorder:AVAudioRecorder!
 var audioPlayer: AVAudioPlayer!
 var decibelsArray:[Float] = [];
 class ViewController: UIViewController, AVAudioRecorderDelegate{
+    //podfile for slide out menu
     var menu: SideMenuNavigationController?
     
     @IBOutlet weak var timerLabel: UILabel!
-    
     
     @IBOutlet weak var decibelsLabel: UILabel!
     
@@ -36,6 +36,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //populates the dictionary of images and respected keywords
+        fillDict()
         menu = SideMenuNavigationController(rootViewController: MenuListController())
         menu?.leftSide = true
         menu?.setNavigationBarHidden(true, animated: false)
@@ -53,13 +55,15 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
                 print("Accepted")
             }
         }
+        
     }
     
+    //button for the hamburger that makes the slide out happen
     @IBAction func didTapHamburger(){
         present(menu!, animated: true)
     }
     
-    
+    //record starts the audioEngine and the recorder and presents the new page
     @IBAction func record(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "secondScreen") ; // MySecondSecreen the storyboard ID

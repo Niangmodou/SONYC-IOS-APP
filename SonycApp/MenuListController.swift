@@ -10,7 +10,7 @@ import UIKit
 
 //credit to https://www.youtube.com/watch?v=iq-tWW45Vhk (Create Side Menu in App (Swift 5) Xcode 11 | 2020). Specific changes were made to conform to the project
 class MenuListController: UITableViewController{
-    
+    //array for access to the recordings
     var items = ["Recordings"]
     
     override func viewDidLoad() {
@@ -19,6 +19,7 @@ class MenuListController: UITableViewController{
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
+    //shows one button since there is only 1 element in the array
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -28,6 +29,7 @@ class MenuListController: UITableViewController{
         cell.textLabel?.text = items[indexPath.row]
         return cell
     }
+    //when the cell is pressed, it goes to a new screen to the recordings that were previously made
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
             let storyboard = UIStoryboard(name: "Main", bundle: nil);

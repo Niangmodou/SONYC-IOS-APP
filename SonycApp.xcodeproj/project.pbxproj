@@ -13,6 +13,9 @@
 		265D43B424D75DD90027B148 /* confirmedPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D43B324D75DD90027B148 /* confirmedPopUp.swift */; };
 		26678FEE24CC651400067A9F /* EqualizationFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26678FED24CC651400067A9F /* EqualizationFilters.swift */; };
 		26678FF024CC654F00067A9F /* Filters&Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26678FEF24CC654F00067A9F /* Filters&Conversions.swift */; };
+		2671C55F24E0758F00AB0DCF /* SavedRecordings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C55E24E0758F00AB0DCF /* SavedRecordings.swift */; };
+		2671C56524E0BB3500AB0DCF /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C56424E0BB3500AB0DCF /* TableCell.swift */; };
+		26748FEC24DF3DAA0071D5AB /* WordsMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26748FEB24DF3DAA0071D5AB /* WordsMapping.swift */; };
 		269E132124C94EDA00D09E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E132024C94EDA00D09E90 /* AppDelegate.swift */; };
 		269E132324C94EDA00D09E90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E132224C94EDA00D09E90 /* SceneDelegate.swift */; };
 		269E132524C94EDA00D09E90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E132424C94EDA00D09E90 /* ViewController.swift */; };
@@ -59,6 +62,9 @@
 		265D43B324D75DD90027B148 /* confirmedPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confirmedPopUp.swift; sourceTree = "<group>"; };
 		26678FED24CC651400067A9F /* EqualizationFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizationFilters.swift; sourceTree = "<group>"; };
 		26678FEF24CC654F00067A9F /* Filters&Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filters&Conversions.swift"; sourceTree = "<group>"; };
+		2671C55E24E0758F00AB0DCF /* SavedRecordings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecordings.swift; sourceTree = "<group>"; };
+		2671C56424E0BB3500AB0DCF /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		26748FEB24DF3DAA0071D5AB /* WordsMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsMapping.swift; sourceTree = "<group>"; };
 		269E131D24C94EDA00D09E90 /* SonycApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SonycApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		269E132024C94EDA00D09E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		269E132224C94EDA00D09E90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 				265D43AF24D75C8E0027B148 /* selectLocationPopUp.swift */,
 				265D43B124D75D940027B148 /* identifyPopUp.swift */,
 				265D43B324D75DD90027B148 /* confirmedPopUp.swift */,
+				26748FEB24DF3DAA0071D5AB /* WordsMapping.swift */,
+				2671C55E24E0758F00AB0DCF /* SavedRecordings.swift */,
+				2671C56424E0BB3500AB0DCF /* TableCell.swift */,
 			);
 			path = SonycApp;
 			sourceTree = "<group>";
@@ -462,12 +471,15 @@
 				269E132124C94EDA00D09E90 /* AppDelegate.swift in Sources */,
 				269E136224C9505F00D09E90 /* PlayBackViewController.swift in Sources */,
 				269E135424C94F6C00D09E90 /* MenuListController.swift in Sources */,
+				2671C55F24E0758F00AB0DCF /* SavedRecordings.swift in Sources */,
 				26678FEE24CC651400067A9F /* EqualizationFilters.swift in Sources */,
 				269E136424C9507800D09E90 /* ButtonStyling.swift in Sources */,
+				26748FEC24DF3DAA0071D5AB /* WordsMapping.swift in Sources */,
 				269E132B24C94EDA00D09E90 /* SonycApp.xcdatamodeld in Sources */,
 				269E135E24C9500D00D09E90 /* MapView.swift in Sources */,
 				265D43B424D75DD90027B148 /* confirmedPopUp.swift in Sources */,
 				269E132324C94EDA00D09E90 /* SceneDelegate.swift in Sources */,
+				2671C56524E0BB3500AB0DCF /* TableCell.swift in Sources */,
 				269E136024C9503300D09E90 /* SlideUpView.swift in Sources */,
 				269E135824C94FB500D09E90 /* GaugeView.swift in Sources */,
 			);
