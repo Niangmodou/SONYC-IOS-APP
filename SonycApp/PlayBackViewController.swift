@@ -19,6 +19,14 @@ var audioPlay: AVAudioPlayer!
 class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessageComposeViewControllerDelegate{
     var feeling:String!
     var youAre:String!
+    var min: String!
+    var avg: String!
+    var max: String!
+    
+    
+    @IBOutlet weak var maxDecibelsLabel: UILabel!
+    @IBOutlet weak var avgDecibelsLabel: UILabel!
+    @IBOutlet weak var minDecibelsLabel: UILabel!
     @IBOutlet weak var youFeelImage: UIImageView!
     @IBOutlet weak var youAreImage: UIImageView!
     @IBOutlet weak var youAreLabel: UILabel!
@@ -36,19 +44,30 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        counterLabel.text = String(gaugeView.counter) + "db"
+        if recorder.isRecording{
+            counterLabel.text = String(gaugeView.counter) + "db"
+        }
         addingBorder(button: saveOnlyButton)
         saveOnlyButton.layer.borderColor = UIColor.faceSelected().cgColor
         curvingButton(button: saveOnlyButton)
         curvingButton(button: reportButton)
         feeling = (newTask.value(forKey: "faceButton") as! String)
         youAre = (newTask.value(forKey: "iAm") as! String)
+        min = (newTask.value(forKey: "min") as! String)
+        avg = (newTask.value(forKey: "averageDec") as! String)
+        max = (newTask.value(forKey: "max") as! String)
         
         //information that will be stored in the recording details of the card
         //images and label for the file.
         youFeelImage.image = wordsToImage[feeling]
         youAreImage.image = wordsToImage[youAre]
         youAreLabel.text = newTask.value(forKey: "iAm") as? String
+        dateLabel.text = newTask.value(forKey: "date") as? String
+        timeLabel.text = newTask.value(forKey: "time") as? String
+        minDecibelsLabel.text = min + " db"
+        avgDecibelsLabel.text = avg + " db"
+        maxDecibelsLabel.text = max + " db"
+        
         
         
         
@@ -87,7 +106,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         if audioEngine.isRunning
         {
             progressView.setProgress(Float(audioPlay.currentTime/audioPlay.duration), animated: true)
-           
+            
         }
     }
     @objc func keep(decibels: Int, min: Int, max: Int){
@@ -119,6 +138,10 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
             print("Can't send message");
         }
     }
+    
+//    @IBAction func saveOnly(_ sender: Any) {
+//        count = count + 1
+//    }
     
     
 }
@@ -161,6 +184,8 @@ func playFile(){
         //if the AVAudioplayer is done playing, it stops the audioEngine
         if !audioPlay.isPlaying{
             audioEngine.stop()
+            playerNode.stop()
+            playerNode.removeTap(onBus: 0)
         }
     }
     catch{
@@ -188,3 +213,4 @@ func stopAndResetAudio(){
     audioEngine.stop()
     audioEngine.reset()
 }
+

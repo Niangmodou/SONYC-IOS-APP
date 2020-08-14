@@ -23,11 +23,13 @@ var audioEngine: AVAudioEngine!
 var micTapped = false
 var recorder: AVAudioRecorder!
 var playerNode = AVAudioPlayerNode()
-// var player: AVAudioPlayer!
-var nodeTime: AVAudioTime!
-var playerTime: AVAudioTime!
 var duration: Float!
-//var skipFrame = 0
+var big: Float = -1000
+var small: Float = 100000
+var maxArray: [Float] = [50]
+var minArray: [Float] = [50]
+var avgArray: [Float] = [50]
+var avgDec: Int!
 class AddNewController: UIViewController, AVAudioRecorderDelegate{
     var isConnected = false
     var audioBus = 0
@@ -41,8 +43,6 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
     @IBOutlet weak var createAReportButton: UIButton!
     @IBOutlet weak var decibelsLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
-    
-    var recordings = 0
     var recordingSession: AVAudioSession!
     
     @IBOutlet weak var gaugeView: GaugeView!
@@ -117,7 +117,15 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
                 let minimumDecibels = Int(getMin(array: array))
                 //gets the maximum decibel value from the array of audio samples
                 let maximumDecibels = Int(getMax(array: array))
-                self!.keepDoing(decibels: decibels, min: minimumDecibels, max: maximumDecibels)
+                
+                let avgDec = Int(getAvg(decibels: decibels))
+                //                self!.keepDoing(decibels: Int(decibels), min: minimumDecibels, max: maximumDecibels)
+                if recorder.isRecording{
+                    self!.keepDoing(decibels: avgDec, min: minimumDecibels, max: maximumDecibels)
+                    newTask.setValue(String(avgDec), forKey: "averageDec")
+                    newTask.setValue(String(minimumDecibels), forKey: "min")
+                    newTask.setValue(String(maximumDecibels), forKey: "max")
+                }
                 
             }
             
@@ -125,7 +133,6 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
         }
         micTapped = true
         startEngine()
-        //        }
         
         
         do{
@@ -139,24 +146,28 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             let settings = [AVFormatIDKey: Int(kAudioFormatMPEG4AAC), AVSampleRateKey: 12000, AVNumberOfChannelsKey:1, AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
             //records to tape, takes in a node (the mixer)
             recorder = try AVAudioRecorder(url: filename, settings: settings)
-            //                recorder = try AKNodeRecorder(node: oscMixer, file: tape)
-            //starts recording
-            recorder.record()
+            //starts recording for 10 seconds
+            recorder.record(forDuration: 10)
+            
             
             //saving data to core data -> allows for retrieval when the app closes and opens up again
-            let context = appDelegate.persistentContainer.viewContext
+//            let context = appDelegate.persistentContainer.viewContext
             
             //the entity that was made in the SonycApp.xcdatamodeld (Audio)
-            let entity = NSEntityDescription.entity(forEntityName: "Audio", in: context)
+//            let entity = NSEntityDescription.entity(forEntityName: "Audio", in: context)
             
             //the object of the entity
-            let newTask = NSManagedObject(entity: entity!, insertInto: context)
-            
+//            let newTask = NSManagedObject(entity: entity!, insertInto: context)
             
             //set and save the recording number of the file
             newTask.setValue("\(recordings)",forKey: "recordings")
             newTask.setValue(filename, forKey: "path")
             UserDefaults.standard.set(recordings, forKey: "recordings");
+            let dateNow = getDate()
+            let timeNow = getTime()
+            
+            newTask.setValue(dateNow, forKey: "date")
+            newTask.setValue(timeNow, forKey: "time")
             
             
             do{
@@ -165,6 +176,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             }
             catch{
                 print("failed saving")
+                print(error)
             }
             let _ = navigationController?.popViewController(animated: true)
             //end of core data saving
@@ -194,7 +206,52 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
     //also stops the audioEngine and stored the stage of the recordings in the userDefaults
     @IBAction func createReport(_ sender: Any) {
         stopAndResetAudio()
-        UserDefaults.standard.set(recordings, forKey: "recordings")
+        //        UserDefaults.standard.set(recordings, forKey: "recordings")
     }
     
+}
+
+//takes in a float array and returns a single float
+
+func getMin(array: [Float]) -> Float{
+    small = array.min()!
+    if(small >= 0){
+        minArray.append(small)
+    }
+    return minArray.min()!
+}
+
+//takes in a float array and returns a single float
+func getMax(array: [Float]) -> Float{
+    big = array.max()!
+    if(big < 200){
+        maxArray.append(big)
+    }
+    return maxArray.max()!
+}
+
+func getAvg(decibels: Float)-> Float{
+    if (decibels >= 0 && decibels <= 200){
+        avgArray.append(decibels)
+    }
+    let sumArray = avgArray.reduce(0, +)
+    let avg = sumArray/avgArray.count
+    return Float(avg)
+    
+}
+
+func getDate() -> String{
+    let date = Date()
+    let format = DateFormatter()
+    format.dateFormat = "MMM dd"
+    let result = format.string(from: date)
+    return result
+}
+
+func getTime() -> String{
+    let date = Date()
+    let time = DateFormatter()
+    time.dateFormat = "h:mm"
+    let newString = time.string(from: date)
+    return newString
 }

@@ -19,6 +19,7 @@ var recordingSession: AVAudioSession!
 var audioRecorder:AVAudioRecorder!
 var audioPlayer: AVAudioPlayer!
 var decibelsArray:[Float] = [];
+//let appDelegate = UIApplication.shared.delegate as! AppDelegate
 class ViewController: UIViewController, AVAudioRecorderDelegate{
     //podfile for slide out menu
     var menu: SideMenuNavigationController?

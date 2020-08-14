@@ -66,7 +66,7 @@ func apply(dctMultiplier: [Float], toInput input: [Float]) -> [Float] {
 
 //gets the average of the decibels
 //takes in a float array and returns an int, the average of the array
-func applyMean(toInput input: [Float]) -> Int{
+func applyMean(toInput input: [Float]) -> Float{
     
     //adds up the entered array
     let sumArray = input.reduce(0, +)
@@ -74,9 +74,10 @@ func applyMean(toInput input: [Float]) -> Int{
     //calculates the average of the array by dividing the sum by the amount of values in the inputted array
     let avgArrayValue = sumArray / Float(input.count)
     //converts to integer
-    let intAvgArrayValue = Int(avgArrayValue)
+    //    let intAvgArrayValue = Int(avgArrayValue)
     
-    return intAvgArrayValue
+    return avgArrayValue
+    //    return intAvgArrayValue
     
 }
 
@@ -122,23 +123,8 @@ func decibelsConvert(array: [Float]) -> [Float]{
     dbs3.enumerated().forEach{ index, value in
         dbs3[index] =  abs(value)
     }
-    
     return dbs3
     
-}
-
-//takes in a float array and returns a single float
-func getMin(array: [Float]) -> Float{
-    let small = array.min()!
-    if(array.min()! < small){
-        let small = array.min()!
-    }
-    return small
-}
-
-//takes in a float array and returns a single float
-func getMax(array: [Float]) -> Float{
-    return array.max()!
 }
 
 

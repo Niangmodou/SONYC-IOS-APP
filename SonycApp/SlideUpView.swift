@@ -13,6 +13,7 @@ import Accelerate
 import AudioToolbox
 import AudioKit
 
+//let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let context = appDelegate.persistentContainer.viewContext
 //core data details
 let entity = NSEntityDescription.entity(forEntityName: "Audio", in: context)
