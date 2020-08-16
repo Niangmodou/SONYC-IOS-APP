@@ -5,13 +5,9 @@
 //  Created by Vanessa Johnson on 7/23/20.
 //  Copyright © 2020 Vanessa Johnson. All rights reserved.
 //
-import Foundation
 import UIKit
 import CoreData
 import AVFoundation
-import Accelerate
-import AudioToolbox
-import AudioKit
 
 //let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let context = appDelegate.persistentContainer.viewContext
@@ -120,6 +116,8 @@ class SlideUpView: UIViewController {
         
         //saving button information in core data
         newTask.setValue(sender.title(for: .normal), forKey: "inOrOut")
+        savingData()
+        let _ = navigationController?.popViewController(animated: true)
     }
     
     //for the second row of buttons, I am section of buttons
@@ -137,6 +135,8 @@ class SlideUpView: UIViewController {
         
         //saving button information in core data
         newTask.setValue(sender.title(for: .normal), forKey: "iAm")
+        savingData()
+        let _ = navigationController?.popViewController(animated: true)
     }
     
     
@@ -156,6 +156,8 @@ class SlideUpView: UIViewController {
         
         //saving button information in core data
         newTask.setValue(sender.title(for: .normal), forKey: "faceButton")
+        savingData()
+        let _ = navigationController?.popViewController(animated: true)
     }
     
     //locate the noise button action
@@ -163,6 +165,9 @@ class SlideUpView: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "details") ; // details the storyboard ID
         self.present(vc, animated: true, completion: nil);
+        savingData()
+        let _ = navigationController?.popViewController(animated: true)
+        
         
     }
     

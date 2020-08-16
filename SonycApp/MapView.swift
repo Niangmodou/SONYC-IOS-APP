@@ -14,21 +14,14 @@ import FloatingPanel
 class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var searchTextBox: UITextField!
-    
-    
     @IBOutlet weak var goBackButton: UIButton!
     @IBOutlet weak var buildingButton: UIButton!
     @IBOutlet weak var streetButton: UIButton!
     @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var historyButton: UIButton!
     
-    
-    
-    
     @IBOutlet var mapView: MKMapView!
     let locationManager = CLLocationManager()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,8 +97,11 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         if button == historyButton{
             button.setImage(UIImage(named: "Icon_History"), for: [.highlighted, .selected] )
         }
-        
-        
+        //stores which button was selected when the report was made
+        newTask.setValue(button.title(for: .normal), forKey: "locationType")
+        //saving the data stored
+        savingData()
+        let _ = navigationController?.popViewController(animated: true)
     }
     
     //makes the back button hidden

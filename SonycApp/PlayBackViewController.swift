@@ -5,14 +5,10 @@
 //  Created by Vanessa Johnson on 7/23/20.
 //  Copyright © 2020 Vanessa Johnson. All rights reserved.
 //
-
-import Foundation
 import UIKit
 import CoreData
 import AVFoundation
-import Accelerate
 import AudioToolbox
-import AudioKit
 import MessageUI
 
 var audioPlay: AVAudioPlayer!
@@ -22,8 +18,10 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     var min: String!
     var avg: String!
     var max: String!
+    var locationType: String!
     
     
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var maxDecibelsLabel: UILabel!
     @IBOutlet weak var avgDecibelsLabel: UILabel!
     @IBOutlet weak var minDecibelsLabel: UILabel!
@@ -40,13 +38,12 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var progressView: UIProgressView!
     
+    @IBOutlet weak var locationTypeLabel: UILabel!
+    @IBOutlet weak var locationTypeImage: UIImageView!
     @IBOutlet weak var gaugeView: GaugeView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if recorder.isRecording{
-            counterLabel.text = String(gaugeView.counter) + "db"
-        }
         addingBorder(button: saveOnlyButton)
         saveOnlyButton.layer.borderColor = UIColor.faceSelected().cgColor
         curvingButton(button: saveOnlyButton)
@@ -56,66 +53,66 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         min = (newTask.value(forKey: "min") as! String)
         avg = (newTask.value(forKey: "averageDec") as! String)
         max = (newTask.value(forKey: "max") as! String)
+        locationType = (newTask.value(forKey: "locationType") as! String)
         
         //information that will be stored in the recording details of the card
         //images and label for the file.
+        locationTypeImage.image = wordsToImage[locationType]
         youFeelImage.image = wordsToImage[feeling]
         youAreImage.image = wordsToImage[youAre]
         youAreLabel.text = newTask.value(forKey: "iAm") as? String
         dateLabel.text = newTask.value(forKey: "date") as? String
         timeLabel.text = newTask.value(forKey: "time") as? String
+        locationTypeLabel.text = newTask.value(forKey: "locationType") as? String
         minDecibelsLabel.text = min + " db"
         avgDecibelsLabel.text = avg + " db"
         maxDecibelsLabel.text = max + " db"
         
-        
-        
-        
     }
     
-    @objc func keepDoing(){
-        
+    @IBAction func saveOnlyAction(_ sender: Any) {
+        audioPlay.stop()
     }
-    
     //have to connect the fastFoward and the rewind to the playerNode
     @IBAction func fastForward(_ sender: Any) {
-        var time: TimeInterval = audioPlayer.currentTime
+        var time: TimeInterval = audioPlay.currentTime
         time += 1.0 // Go forward by 1 second
-        audioPlayer.currentTime = time
+        audioPlay.currentTime = time
     }
     
     
     @IBAction func rewind(_ sender: Any) {
-        var time: TimeInterval = audioPlayer.currentTime
+        var time: TimeInterval = audioPlay.currentTime
         time -= 1.0 // Go back by 1 second
-        audioPlayer.currentTime = time
+        audioPlay.currentTime = time
     }
     
     //plays the file and shows the progress on the progress view.
     @IBAction func play(button: UIButton) {
         button.isSelected.toggle()
-        if button.isSelected{
+        if (button.isSelected){
+            //playing the file
             playFile()
+            //progressview progress
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
             progressView.setProgress(Float(audioPlay.currentTime/audioPlay.duration), animated: false)
+            button.setImage(UIImage(named: "pause.fill"), for: [.highlighted, .selected])
+        }
+        else{
+            //pauses the audio
+            audioPlay.pause()
+            button.setImage(UIImage(systemName: "play.fill"), for: .normal)
         }
     }
     
     //updates the progress view while the audiofile is playing
     @objc func updateAudioProgressView(){
-        if audioEngine.isRunning
+        //while the audioPlay is playing
+        if audioPlay.isPlaying
         {
+            //updates the progressview based on the audioPlay
             progressView.setProgress(Float(audioPlay.currentTime/audioPlay.duration), animated: true)
-            
         }
-    }
-    @objc func keep(decibels: Int, min: Int, max: Int){
-        DispatchQueue.main.async{
-            
-            self.gaugeView.counter = decibels
-            self.counterLabel.text = String(decibels) + " db"
-        }
-        
     }
     
     //auto function needed for the MFMessageComposeViewControllerDelegate to be used
@@ -139,11 +136,6 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         }
     }
     
-//    @IBAction func saveOnly(_ sender: Any) {
-//        count = count + 1
-//    }
-    
-    
 }
 
 //converts the url of where the file is to an AVAudioFile format inorder to connect it to the playerNode.
@@ -160,32 +152,15 @@ func readableAudioFileFrom(url: URL) -> AVAudioFile {
 //starts the engine if it was not already started
 func playFile(){
     do{
-        let playerNode = AVAudioPlayerNode()
-        let audioFile = readableAudioFileFrom(url: transferOver())
-        audioEngine.attach(playerNode)
-        audioEngine.connect(playerNode, to: audioEngine.outputNode, format: audioFile.processingFormat)
-        startEngine()
-        //scheduling the file to be played and removes the tap
-        playerNode.scheduleFile(audioFile, at: nil) {
-            playerNode.removeTap(onBus: 0)
-        }
-        //installing the tap on the playerNode
-        playerNode.installTap(onBus: 0, bufferSize: AVAudioFrameCount(bufferSize), format: playerNode.outputFormat(forBus: 0)) { (buffer, when) in
-            let sampleData = UnsafeBufferPointer(start: buffer.floatChannelData![0], count: Int(buffer.frameLength))
-        }
+        let name = newTask.value(forKey: "path")
+        let filename = getDirectory().appendingPathComponent(name as! String)
         
-        //also have an AVAudioPlayer that will also play the contains of the url and is connected to the progress view to show the progress of the file playing
-        //since the playerNode is playing, the audioPlayer volume is set to 0 so both aren't being played and listened to at the same time.
-        audioPlay = try AVAudioPlayer(contentsOf: transferOver())
-        playerNode.play()
-        audioPlay.volume = 0.0
+        audioPlay = try AVAudioPlayer(contentsOf: filename)
         audioPlay.play()
         
         //if the AVAudioplayer is done playing, it stops the audioEngine
         if !audioPlay.isPlaying{
-            audioEngine.stop()
-            playerNode.stop()
-            playerNode.removeTap(onBus: 0)
+            
         }
     }
     catch{

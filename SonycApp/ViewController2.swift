@@ -5,26 +5,17 @@
 //  Created by Vanessa Johnson on 7/23/20.
 //  Copyright © 2020 Vanessa Johnson. All rights reserved.
 //
-import Foundation
+
 import UIKit
 import CoreData
 import AVFoundation
-import Accelerate
-import AudioToolbox
-import AudioKit
+
 var position: Int = 0
-var reading: AKAudioFile!
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//var audioFiles = [NSManagedObject]()
-//var files = 0;
+var audioFiles = [NSManagedObject]()
 class ViewController2: UITableViewController {
-    var audioFiles = [NSManagedObject]()
-    var decibelsArray = [NSManagedObject]()
     var recordingSession: AVAudioSession!
     var audioRecorder:AVAudioRecorder!
-    var audioPlayer: AVAudioPlayer!
-    var player: AKAudioPlayer!
-    
     @IBOutlet var myTableView: UITableView!
     
     
@@ -32,40 +23,34 @@ class ViewController2: UITableViewController {
         super.viewDidLoad()
         //does not show the cells that are not in use
         myTableView.tableFooterView = UIView()
-        print(audioFiles.count)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         //persistentContainer that is needed to use core data to store information within the app.
-        //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
         //requesting the data that is stored
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Audio")
         request.returnsObjectsAsFaults = false
-//        files = files + 1
-                do{
-                    let result = try context.fetch(request)
-                    for data in result as! [NSManagedObject]{
-                        self.audioFiles.append(data)
-                        //                self.decibelsArray.append(data)
-                    }
-                }
-                catch{
-                    print("failed")
-                }
+        do{
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject]{
+                audioFiles.append(data)
+            }
+        }
+        catch{
+            print("failed")
+        }
         //reloads the table view to see the changes
-        print(audioFiles.count)
         myTableView.reloadData()
     }
     
     //has the same number of cells as the amout of elements in the audioFiles array
     override func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return files
-                return audioFiles.count;
+        return audioFiles.count;
     }
     
+    //for the textLabel for the cells of the tables
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = String(indexPath.row + 1)
@@ -77,38 +62,39 @@ class ViewController2: UITableViewController {
         position = indexPath.row
     }
     
+    //for deleting elements out of the tableview
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        //            let path = getDirectory().appendingPathComponent("\(indexPath.row + 1).m4a")
         if editingStyle == .delete {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
-            context.delete(self.audioFiles[indexPath.row])
+            context.delete(audioFiles[indexPath.row])
             
             do{
-                     try context.save()
-                     self.audioFiles.removeAll()
-                     //                self.numbers.remove(at: indexPath.row)
-//                     let context = appDelegate.persistentContainer.viewContext
-                     
-                     
-//                     let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Audio")
-//                     request.returnsObjectsAsFaults = false
-//                     do{
-//                         let result = try context.fetch(request)
-//                         for data in result as! [NSManagedObject]{
-//                             self.audioFiles.append(data)
-//                         }
-//                     }
-//                     catch{
-//                         print("failed")
-//                     }
-                     UserDefaults.standard.set(audioFiles.count, forKey: "recordings");
-                     self.myTableView.reloadData()
-                     
-                 }
-                 catch{
-                     print("problem")
-                 }
+                //saves the context after deleting
+                try context.save()
+                audioFiles.removeAll()
+                
+                let context = appDelegate.persistentContainer.viewContext
+                
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Audio")
+                request.returnsObjectsAsFaults = false
+                do{
+                    let result = try context.fetch(request)
+                    for data in result as! [NSManagedObject]{
+                        audioFiles.append(data)
+                    }
+                }
+                catch{
+                    print("failed")
+                }
+                UserDefaults.standard.set(audioFiles.count, forKey: "recordings");
+                //reloads the tableView
+                self.myTableView.reloadData()
+                
+            }
+            catch{
+                print("problem")
+            }
         }
         
     }

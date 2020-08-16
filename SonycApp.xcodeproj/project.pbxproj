@@ -15,6 +15,7 @@
 		26678FF024CC654F00067A9F /* Filters&Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26678FEF24CC654F00067A9F /* Filters&Conversions.swift */; };
 		2671C55F24E0758F00AB0DCF /* SavedRecordings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C55E24E0758F00AB0DCF /* SavedRecordings.swift */; };
 		2671C56524E0BB3500AB0DCF /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C56424E0BB3500AB0DCF /* TableCell.swift */; };
+		26741F4224E9B27E0079C11C /* PlayBackFromRecordings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26741F4124E9B27E0079C11C /* PlayBackFromRecordings.swift */; };
 		26748FEC24DF3DAA0071D5AB /* WordsMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26748FEB24DF3DAA0071D5AB /* WordsMapping.swift */; };
 		269E132124C94EDA00D09E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E132024C94EDA00D09E90 /* AppDelegate.swift */; };
 		269E132324C94EDA00D09E90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E132224C94EDA00D09E90 /* SceneDelegate.swift */; };
@@ -64,6 +65,7 @@
 		26678FEF24CC654F00067A9F /* Filters&Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filters&Conversions.swift"; sourceTree = "<group>"; };
 		2671C55E24E0758F00AB0DCF /* SavedRecordings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecordings.swift; sourceTree = "<group>"; };
 		2671C56424E0BB3500AB0DCF /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		26741F4124E9B27E0079C11C /* PlayBackFromRecordings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackFromRecordings.swift; sourceTree = "<group>"; };
 		26748FEB24DF3DAA0071D5AB /* WordsMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsMapping.swift; sourceTree = "<group>"; };
 		269E131D24C94EDA00D09E90 /* SonycApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SonycApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		269E132024C94EDA00D09E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				26748FEB24DF3DAA0071D5AB /* WordsMapping.swift */,
 				2671C55E24E0758F00AB0DCF /* SavedRecordings.swift */,
 				2671C56424E0BB3500AB0DCF /* TableCell.swift */,
+				26741F4124E9B27E0079C11C /* PlayBackFromRecordings.swift */,
 			);
 			path = SonycApp;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			files = (
 				269E135624C94F9000D09E90 /* AddNewController.swift in Sources */,
 				265D43B024D75C8E0027B148 /* selectLocationPopUp.swift in Sources */,
+				26741F4224E9B27E0079C11C /* PlayBackFromRecordings.swift in Sources */,
 				269E135A24C94FC900D09E90 /* Colors.swift in Sources */,
 				265D43B224D75D940027B148 /* identifyPopUp.swift in Sources */,
 				269E135C24C94FEF00D09E90 /* ViewController2.swift in Sources */,

@@ -39,6 +39,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
         super.viewDidLoad()
         //populates the dictionary of images and respected keywords
         fillDict()
+        //for the side menu
         menu = SideMenuNavigationController(rootViewController: MenuListController())
         menu?.leftSide = true
         menu?.setNavigationBarHidden(true, animated: false)
@@ -56,7 +57,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
                 print("Accepted")
             }
         }
-        
     }
     
     //button for the hamburger that makes the slide out happen
@@ -67,7 +67,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
     //record starts the audioEngine and the recorder and presents the new page
     @IBAction func record(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "secondScreen") ; // MySecondSecreen the storyboard ID
+        let vc = storyboard.instantiateViewController(withIdentifier: "secondScreen") ; // MySecondSecreen is the storyboard ID
         self.present(vc, animated: true, completion: nil);
         
     }
