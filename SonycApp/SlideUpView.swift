@@ -125,6 +125,9 @@ class SlideUpView: UIViewController {
         //all the buttons have a background color of white and are not selected
         iAmButtonsArray.forEach({ $0.backgroundColor = UIColor.white
             sender.isSelected = false
+            if sender == sleepingButton{
+                sender.setImage(UIImage(named:"Icon_Sleeping man.png"), for: .normal)
+            }
         })
         //when a button is pressed, the background color changes to the custom color below. Is selected and only 1 button is selected at 1 time
         sender.backgroundColor = UIColor.buttonSelected()
