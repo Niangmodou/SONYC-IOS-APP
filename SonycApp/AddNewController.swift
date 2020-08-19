@@ -78,7 +78,6 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             micTapped = false
             return
         }
-        //        if !isConnected{
         //AKSettings sample Rate
         AKSettings.sampleRate = 44100
         

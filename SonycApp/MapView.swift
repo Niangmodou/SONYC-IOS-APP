@@ -79,12 +79,6 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
             self.manager.startUpdatingLocation()
         }
     }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let first = locations.first else{
-            return
-        }
-        print("\(first.coordinate.longitude) | \(first.coordinate.latitude)")
-    }
     
     //if the buttons/clips are pressed
     @IBAction func buttonPressed(button: UIButton){

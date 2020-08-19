@@ -169,8 +169,6 @@ func prepareToPlayFile(){
 }
 
 //plays the file
-//attaches the playerNode to the audioEngine and connects the node to the audioEngine's output node
-//starts the engine if it was not already started
 func playFile(){
     audioPlay.play()
 }
