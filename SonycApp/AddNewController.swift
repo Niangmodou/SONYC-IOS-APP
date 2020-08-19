@@ -153,7 +153,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
             recorder.record(forDuration: 10)
             //when the 10 seconds is up, if it was not stopped before, the recorder is stopped and it goes to a new screen
             tenSecondsUp()
-    
+            
             
             //set and save the recording number of the file
             newTask.setValue("\(recordings)",forKey: "recordings")
@@ -206,7 +206,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate{
     //goes to the afterRecord screen that shows the map to store other information for the audiofile
     func nextScreen(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "afterRecord") ; //afterRecord is the storyboard ID
+        let vc = storyboard.instantiateViewController(withIdentifier: "map") ; //afterRecord is the storyboard ID
         self.present(vc, animated: true, completion: nil);
     }
     

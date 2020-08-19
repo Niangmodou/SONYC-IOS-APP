@@ -41,6 +41,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     @IBOutlet weak var locationTypeLabel: UILabel!
     @IBOutlet weak var locationTypeImage: UIImageView!
     @IBOutlet weak var gaugeView: GaugeView!
+    var playing = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,11 +68,14 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         minDecibelsLabel.text = min + " db"
         avgDecibelsLabel.text = avg + " db"
         maxDecibelsLabel.text = max + " db"
+        prepareToPlayFile()
         
     }
     
     @IBAction func saveOnlyAction(_ sender: Any) {
-        audioPlay.stop()
+        if playing{
+            audioPlay.stop()
+        }
     }
     //have to connect the fastFoward and the rewind to the playerNode
     @IBAction func fastForward(_ sender: Any) {
@@ -97,12 +101,15 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
             progressView.setProgress(Float(audioPlay.currentTime/audioPlay.duration), animated: false)
             button.setImage(UIImage(named: "pause.fill"), for: [.highlighted, .selected])
+            playing = true
         }
         else{
             //pauses the audio
             audioPlay.pause()
             button.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            playing = false
         }
+        playing = false
     }
     
     //updates the progress view while the audiofile is playing
@@ -147,26 +154,25 @@ func readableAudioFileFrom(url: URL) -> AVAudioFile {
     return audioFile
 }
 
-//plays the file
-//attaches the playerNode to the audioEngine and connects the node to the audioEngine's output node
-//starts the engine if it was not already started
-func playFile(){
+//prepare to play the audio file
+func prepareToPlayFile(){
     do{
         let name = newTask.value(forKey: "path")
         let filename = getDirectory().appendingPathComponent(name as! String)
         
         audioPlay = try AVAudioPlayer(contentsOf: filename)
-        audioPlay.play()
-        
-        //if the AVAudioplayer is done playing, it stops the audioEngine
-        if !audioPlay.isPlaying{
-            
-        }
+        audioPlay.prepareToPlay()
     }
     catch{
         print(error)
     }
-    
+}
+
+//plays the file
+//attaches the playerNode to the audioEngine and connects the node to the audioEngine's output node
+//starts the engine if it was not already started
+func playFile(){
+    audioPlay.play()
 }
 
 //function that starts and stop the audioEngine

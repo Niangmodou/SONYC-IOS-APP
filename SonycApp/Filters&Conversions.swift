@@ -126,5 +126,12 @@ func decibelsConvert(array: [Float]) -> [Float]{
     return dbs3
     
 }
+//getDirectiory of the file url
+func getDirectory() -> URL{
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    let documentDirectory = paths[0]
+    return documentDirectory
+}
+
 
 

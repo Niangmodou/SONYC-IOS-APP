@@ -15,7 +15,7 @@ import AudioToolbox
 //array full of the views/cards that will show the recording details of each recording.
 var viewArray: [UIView]!
 var audioCards = [NSManagedObject]()
-var positionRecording: Int!
+var positionRecording: Int!;
 
 class SavedRecordings: UITableViewController{
     var average: String!
@@ -29,8 +29,6 @@ class SavedRecordings: UITableViewController{
         //does not show the cells that are not in use
         myTableView.tableFooterView = UIView()
         
-        
-        
     }
     override func viewDidAppear(_ animated: Bool) {
         //persistentContainer
@@ -42,8 +40,10 @@ class SavedRecordings: UITableViewController{
         do{
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject]{
-                audioCards.append(data)
-                //                self.decibelsArray.append(data)
+                //if the audioFile is not in core data, add it
+                if (!audioCards.contains(data)){
+                    audioCards.append(data)
+                }
             }
         }
         catch{
@@ -61,6 +61,7 @@ class SavedRecordings: UITableViewController{
     //customized cells based on the information stored in each audio file
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "saved", for: indexPath) as! TableCell
+        //have the index be the same as the indexPath.row
         positionRecording = indexPath.row
         cell.dateAndTimeLabel.text = (audioCards[indexPath.row].value(forKey: "date") as! String) + " " + (audioCards[indexPath.row].value(forKey: "time") as! String)
         cell.avgDecibels.text = (audioCards[indexPath.row].value(forKey: "averageDec") as! String)
@@ -70,6 +71,7 @@ class SavedRecordings: UITableViewController{
     
     //gets the element that is being accessed
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //have the index be the same as the indexPath.row
         positionRecording = indexPath.row
     }
     //size of the cell is 100 (height)
@@ -82,14 +84,14 @@ class SavedRecordings: UITableViewController{
         if editingStyle == .delete {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
+            //deletes the audioFile from core data
             context.delete(audioCards[indexPath.row])
-            context.delete(audioFiles[indexPath.row])
             
             do{
+                //save that update
                 try context.save()
-                audioCards.removeAll()
-                audioFiles.removeAll()
-                UserDefaults.standard.set(audioCards.count, forKey: "savedRecording");
+                //remove the audioFile from the array
+                audioCards.remove(at: indexPath.row)
                 self.myTableView.reloadData()
                 
             }

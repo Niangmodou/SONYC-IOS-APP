@@ -21,7 +21,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     @IBOutlet weak var historyButton: UIButton!
     
     @IBOutlet var mapView: MKMapView!
-    let locationManager = CLLocationManager()
+    let manager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,15 +69,21 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         //finding the user's location
-        self.locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
+        self.manager.requestWhenInUseAuthorization()
+        self.manager.desiredAccuracy = kCLLocationAccuracyBest
+        self.manager.delegate = self
+        self.manager.startUpdatingLocation()
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
+            self.manager.delegate = self
+            self.manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            self.manager.startUpdatingLocation()
         }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let first = locations.first else{
+            return
+        }
+        print("\(first.coordinate.longitude) | \(first.coordinate.latitude)")
     }
     
     //if the buttons/clips are pressed

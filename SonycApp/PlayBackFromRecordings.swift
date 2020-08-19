@@ -62,6 +62,7 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
         minDecibelsLabel.text = min + " db"
         avgDecibelsLabel.text = avg + " db"
         maxDecibelsLabel.text = max + " db"
+        prepareToPlayFileBack()
         
     }
     
@@ -108,8 +109,9 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
     }
     
 }
-//plays the audio file back
-func playFileBack(){
+
+//prepare to play the audio file
+func prepareToPlayFileBack(){
     //get the name of the file that was stored
     let name = (audioCards[positionRecording].value(forKey: "path"))
     //creates the filename for the file
@@ -117,9 +119,14 @@ func playFileBack(){
     do{
         //plays the audio file
         audioPlay = try AVAudioPlayer(contentsOf: filename)
-        audioPlay.play()
+        audioPlay.prepareToPlay()
     }
     catch{
         print(error)
     }
+}
+
+//plays the audio file back
+func playFileBack(){
+    audioPlay.play()
 }
