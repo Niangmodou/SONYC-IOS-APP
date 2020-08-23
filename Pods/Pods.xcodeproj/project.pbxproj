@@ -6,212 +6,304 @@
 	objectVersion = 51;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		CF5EDB66CAC2972B9BC27EFA2073CB2B /* AudioKit */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7F62874C35AE2674095E5AF51C37ABE4 /* Build configuration list for PBXAggregateTarget "AudioKit" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = AudioKit;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		071D52F82B602FB85E35CA8583EEF456 /* FloatingPanelSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9C940A8C576C704797B1BA6727289A /* FloatingPanelSurfaceView.swift */; };
-		0741320F4029C077E6C87F24FBBE1921 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBD01DD130C68F90C58A4A46F88407E /* CSV.swift */; };
-		08B5B89F28224381711F45A680C292D9 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC9F23707F4640E89B8F879765CC3F /* SideMenu-dummy.m */; };
-		09A0A5D3733F69E93F553ABBCF02FB77 /* SideMenuTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A03534B473001903F70786F76B6322F /* SideMenuTransitionController.swift */; };
-		154DA87F9CFE7544E755F5D133AD4E2E /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752951A45ECBC16803D6C64A5C71CAE /* Parser.swift */; };
-		18E8699E19BF79678DE08904FCB53F2B /* String+Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF771D84CF30EEAA9F0FA974E8A22EA /* String+Lines.swift */; };
-		27D830F1CAC60B99CC0A135F583BFFF2 /* SideMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D870ECF00CCFB7856032498A85FF0B57 /* SideMenuPresentationController.swift */; };
-		28D7321533DE0E44AECAC02E53890C6A /* Pods-SonycAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C80AFCFDF0ACC5CB67C8BC824D7FE6 /* Pods-SonycAppTests-dummy.m */; };
-		2C000FFD2D40FD9F728E1F83134FDB1B /* FloatingPanel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED114DA778480E110B1982979DDBF64A /* FloatingPanel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2ED518A3FA8DCBE08E621AC5C32844A9 /* SideMenuPushCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356DB906A18CC10CEA6CD2A403C284E8 /* SideMenuPushCoordinator.swift */; };
-		3846AFE38D1B63A9F0D9073C4ABC6DAA /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEC65EE70DE7048CD2D803F37DD0C1 /* SideMenuNavigationController.swift */; };
-		3D408305B29250792B2CDDC90990ECAC /* FloatingPanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45B977573E0068C881F2AE37A48B994 /* FloatingPanelCore.swift */; };
-		3E18B004D34ED5441A193684EEB25BD3 /* SideMenuPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD77C3F3D06AF84F4160EE406E3A94 /* SideMenuPresentationStyle.swift */; };
-		4347A612809F617F215232F2E67689D0 /* Pods-SonycApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5992229ACD283FC93854F686880B23 /* Pods-SonycApp-dummy.m */; };
-		4B4E1088A7E4CA7904A6AC2EF3AF943E /* Pods-SonycAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DFFA3A58E7CDBB4039890C6A727EA30D /* Pods-SonycAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4E88B70410F6837FBD463EA4B6C33155 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965D620717F2D06B41FE83317A8C074E /* Extensions.swift */; };
-		5D7F9243C47FDAE33C85C4E38E3420F2 /* EnumeratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44F68DD6BF0CE181DE9A6ADC34D5B19 /* EnumeratedView.swift */; };
-		77AF2098DDCCAAE0CE4A20725C466905 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D01A5603FE641432FBBC9F3FBED33AE /* SideMenuManager.swift */; };
-		77F00B520B2FC5CB46192FEB262F992A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		7C60989A42FEDB364B54911420C197A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		7CCD127285212A1F1D9D5098C0D00D75 /* Pods-SonycApp-SonycAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE130CCFCF25BA370035A76F6F487CA6 /* Pods-SonycApp-SonycAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7FA96F5D3B8F4CE9C95C35D1CD4D6A91 /* FloatingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06150564E84773CDEDC01B6E9F28B252 /* FloatingPanelController.swift */; };
-		837565F200CD03AD302FB1FEADDBD6DB /* ParsingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AEA9E22BE1B1736727B50F57041B5F /* ParsingState.swift */; };
-		86AA9FC981C6AD5D03CA1D4BFD51FD1D /* SwiftCSV-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBA03B4FC2FA3B451011A9BBB53CC6 /* SwiftCSV-dummy.m */; };
-		890FF25D0CCFF9BADECBA64DCCEFF4FF /* SideMenuAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4CFBAB978DD6DB4ED78AFA93861393 /* SideMenuAnimationController.swift */; };
-		8C06632AA14D12278B1277AC0CC6A0B2 /* SideMenuInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44939C25EF3F09604F634A430F250BA /* SideMenuInteractionController.swift */; };
-		8C2D85D1416E5DE3574A0B95254B74AB /* Pods-SonycApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 143278E030C63102D77E469336FCE245 /* Pods-SonycApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		905A503F069C27E841BAD9F4EFD4F1AF /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C8527FD82BC80BECB758F97245A38C /* Protected.swift */; };
-		91EFAD4682DE8A7F47FAC4717E0232F7 /* Pods-SonycApp-SonycAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE427243A511359C27C5EF312B0F4C /* Pods-SonycApp-SonycAppUITests-dummy.m */; };
-		970E5351EB7A3C92CD346BCDCC6652A3 /* FloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50651EE1CE9B1C2FB18A4E17A6B53ED4 /* FloatingPanelLayout.swift */; };
-		A04D8B3B3650926C5F7D42B22A67DE7D /* FloatingPanelBackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525DD55885B8FC84212F93059C4E766 /* FloatingPanelBackdropView.swift */; };
-		A3673FD39025DE753731C568DB5E23B9 /* FloatingPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAA99D3F9DB3D52005E46DC5B9796D2 /* FloatingPanelView.swift */; };
-		A49977EF1D94933CE588A5F237D5DD7C /* GrabberHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63524F391AED6AABD1A5310C0EAA40D /* GrabberHandleView.swift */; };
-		A696FE118006841FB09A5E76C11B8978 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC98B254091B21875A8F107ED86CA1 /* Logger.swift */; };
-		A6DB10D310FD18E8B6C25EA33D81DF4E /* FloatingPanel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D64C139C28263106AC133385914FC86E /* FloatingPanel-dummy.m */; };
-		A86CFB0F97C95200549E59C87E18DD82 /* SwiftCSV-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 811BD32AA9DD30B4FAD3DB01D52D2B63 /* SwiftCSV-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		071D52F82B602FB85E35CA8583EEF456 /* FloatingPanelSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDF590847525CB1B15E42E7EADD449 /* FloatingPanelSurfaceView.swift */; };
+		0741320F4029C077E6C87F24FBBE1921 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B032AB416B4D9EA70A4B7E1B48167EC /* CSV.swift */; };
+		082F230E358EA3BDDDDB5A620440583E /* Pods-SonycAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DFFA3A58E7CDBB4039890C6A727EA30D /* Pods-SonycAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08B5B89F28224381711F45A680C292D9 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6EFFE9B68DC931DE0CE0F2CFA360D4 /* SideMenu-dummy.m */; };
+		09A0A5D3733F69E93F553ABBCF02FB77 /* SideMenuTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8198434AA453D563D885993A40B15 /* SideMenuTransitionController.swift */; };
+		0EF88DEF4AB6E4F65D270270D3757546 /* Pods-SonycAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C80AFCFDF0ACC5CB67C8BC824D7FE6 /* Pods-SonycAppTests-dummy.m */; };
+		154DA87F9CFE7544E755F5D133AD4E2E /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3775FD5E749B92A6D7B8A2CB16E4897 /* Parser.swift */; };
+		18E8699E19BF79678DE08904FCB53F2B /* String+Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F78B2F7EE3FF1BE1ADE4D7617E06 /* String+Lines.swift */; };
+		27D830F1CAC60B99CC0A135F583BFFF2 /* SideMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E70FAF4EDB6548D8FE4D7F92908B526 /* SideMenuPresentationController.swift */; };
+		2C000FFD2D40FD9F728E1F83134FDB1B /* FloatingPanel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A5531AB9F085898735868B08D838DC5 /* FloatingPanel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2ED518A3FA8DCBE08E621AC5C32844A9 /* SideMenuPushCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E713CF7892CF41E99032CC6873131208 /* SideMenuPushCoordinator.swift */; };
+		3846AFE38D1B63A9F0D9073C4ABC6DAA /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5853E9DC6C4FDAFFBFDEDF09A71ED /* SideMenuNavigationController.swift */; };
+		3D408305B29250792B2CDDC90990ECAC /* FloatingPanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5425A4C74FFE07CD020F98C562A5B5 /* FloatingPanelCore.swift */; };
+		3E18B004D34ED5441A193684EEB25BD3 /* SideMenuPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F07D232A95271EEBC9149DAF635152 /* SideMenuPresentationStyle.swift */; };
+		4E88B70410F6837FBD463EA4B6C33155 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF118B98ED6067800F0F4021A1439AA0 /* Extensions.swift */; };
+		5D7F9243C47FDAE33C85C4E38E3420F2 /* EnumeratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BBB95AFDF9419EAE8C4AEF25D91E7 /* EnumeratedView.swift */; };
+		5ED09C9507948DF0FB2AC4833CA7A25D /* Pods-SonycApp-SonycAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE427243A511359C27C5EF312B0F4C /* Pods-SonycApp-SonycAppUITests-dummy.m */; };
+		77AF2098DDCCAAE0CE4A20725C466905 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C662A87BE4A7690EFB64169F3606C532 /* SideMenuManager.swift */; };
+		799D7B00BD545C9A97AC1809F3F25560 /* Pods-SonycApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5992229ACD283FC93854F686880B23 /* Pods-SonycApp-dummy.m */; };
+		7FA96F5D3B8F4CE9C95C35D1CD4D6A91 /* FloatingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B92717AA430C937A5DDA6AA52BA0CF /* FloatingPanelController.swift */; };
+		837565F200CD03AD302FB1FEADDBD6DB /* ParsingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB07C6F0CF1545925BCFE676B2C7BC /* ParsingState.swift */; };
+		86AA9FC981C6AD5D03CA1D4BFD51FD1D /* SwiftCSV-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 533986BA9B4513DB9AF6784B8E3C1400 /* SwiftCSV-dummy.m */; };
+		890FF25D0CCFF9BADECBA64DCCEFF4FF /* SideMenuAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274C24349446A9AA2DC01FC4AB00DCA /* SideMenuAnimationController.swift */; };
+		8C06632AA14D12278B1277AC0CC6A0B2 /* SideMenuInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE48A9B635A41D10F22B47B4AE16EB9 /* SideMenuInteractionController.swift */; };
+		905A503F069C27E841BAD9F4EFD4F1AF /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99293E8DD4DAC03E3699F027A5CF5483 /* Protected.swift */; };
+		909F2B51F0ABECD087B7849F876379CD /* Pods-SonycApp-SonycAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE130CCFCF25BA370035A76F6F487CA6 /* Pods-SonycApp-SonycAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		970E5351EB7A3C92CD346BCDCC6652A3 /* FloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5739D9670CC56943AF3EA5A218570F /* FloatingPanelLayout.swift */; };
+		A04D8B3B3650926C5F7D42B22A67DE7D /* FloatingPanelBackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAA6B0B813B9BE516B81006285B827A /* FloatingPanelBackdropView.swift */; };
+		A3673FD39025DE753731C568DB5E23B9 /* FloatingPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852569DACF763CFDE943E32EE57B47D4 /* FloatingPanelView.swift */; };
+		A49977EF1D94933CE588A5F237D5DD7C /* GrabberHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFCA20AD935500CD0388BC4F5980DF /* GrabberHandleView.swift */; };
+		A696FE118006841FB09A5E76C11B8978 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01087ABCD2708EF7BE4E62E13FE9DB /* Logger.swift */; };
+		A6DB10D310FD18E8B6C25EA33D81DF4E /* FloatingPanel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4BFA9720598D54F2EB274EB0BAC80E /* FloatingPanel-dummy.m */; };
+		A86CFB0F97C95200549E59C87E18DD82 /* SwiftCSV-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E4A94FFAD3C161F61AADC1F66C17B3C /* SwiftCSV-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAE1B9134D32C7B612C5CEAE638F0D9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		AC3A9BBBC696D7F15419180CBE24DE2A /* NamedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BF6F0826DA0987F8A40B1B452A7A2 /* NamedView.swift */; };
+		AC3A9BBBC696D7F15419180CBE24DE2A /* NamedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC7AC62D8DF252A7338CFC8AFB7306 /* NamedView.swift */; };
+		AC53A268EB1FB6B4257E550D884BD2FA /* Pods-SonycApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 143278E030C63102D77E469336FCE245 /* Pods-SonycApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B27B12C5D2EF1BE7B3CBBBC8FA98110E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		B31A8515386081B70C5A5ACC5150F203 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		BB0A7D66FCF088A2548AD2ECB19A699E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		C17DD90FDB535CC886156FEA4A17B02C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
-		C798DA148F7F666F393F2009DDF73E35 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB7247A7E2411CA5EBC29572AC18A48 /* Initializable.swift */; };
-		C96A55C2A869A97AC4CA628A7F2A2A21 /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A113FB041003519A4C3E4C9D2BFDB787 /* UITableViewVibrantCell.swift */; };
-		CF925E8C4C99A77E1C9FE0049826FCE4 /* FloatingPanelBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0FC8AA2AD1BACEBF06057525F1871 /* FloatingPanelBehavior.swift */; };
-		D13AC4B3EDF1F6A5973A039FCE488B92 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF19764D23E4A43DD5849DAD80D4638 /* UIExtensions.swift */; };
-		D1BD7393C7934049B3E51D9C5A5CD8A0 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C25A07213FD60BA72EA6B6556B052A /* Print.swift */; };
-		D3D22BB8C279DC03EA91BFE3F5412477 /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB6E56BB2EB89F1FA096EBC429F3CE /* Deprecations.swift */; };
-		D777716F0B6C0754B7B0230531743BC4 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87E895E4718FCB37AFA33456602F3A24 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E4326632509DC119D9F20A4ADF1A5EDB /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA659D081D351756D63918FD29CD31 /* Description.swift */; };
-		E62E543CA9182791942A0DE76D3E6C6C /* FloatingPanelTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91EB76B5F05BA478672E3D5B33C232F /* FloatingPanelTransitioning.swift */; };
-		F8A1C9CE3ECB5C0A7E4BDE655F76AC54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		C798DA148F7F666F393F2009DDF73E35 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB577B75F8CB1B1BFBBB56F0273C5F /* Initializable.swift */; };
+		C96A55C2A869A97AC4CA628A7F2A2A21 /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F895E1F7C981067F96746A91595A0DA4 /* UITableViewVibrantCell.swift */; };
+		CCD3937CC5999077B6E4C209143C4C58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		CF925E8C4C99A77E1C9FE0049826FCE4 /* FloatingPanelBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F35244223663F21AE15039932B955A /* FloatingPanelBehavior.swift */; };
+		D13AC4B3EDF1F6A5973A039FCE488B92 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589CA6893B38D74AFF29FC7057D6844 /* UIExtensions.swift */; };
+		D1BD7393C7934049B3E51D9C5A5CD8A0 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6786AA3B12A6409F4E6E1BB8367B14BD /* Print.swift */; };
+		D3D22BB8C279DC03EA91BFE3F5412477 /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55339D1116F03C341908FD162E10DBBF /* Deprecations.swift */; };
+		D777716F0B6C0754B7B0230531743BC4 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5CCC81BE1DDEF221909B5D6FA2E0FE8 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB524EB2E23DCD8F26595764B582B9F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		E4326632509DC119D9F20A4ADF1A5EDB /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D7BEC11B4F3097C5058807BEB932B /* Description.swift */; };
+		E62E543CA9182791942A0DE76D3E6C6C /* FloatingPanelTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD140628E6F0AE0CE00B65BBB13DA844 /* FloatingPanelTransitioning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		141B16900316BFDA07D7B570C6AA109A /* PBXContainerItemProxy */ = {
+		55D8E1BCC113E25477C539C7E4677E0C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C4A0A7D8591B67FB75E2E8D215E3735B;
-			remoteInfo = SideMenu;
+			remoteGlobalIDString = 4874E7E655CEB4C01E4572AD903AEA21;
+			remoteInfo = FloatingPanel;
 		};
-		4E4DCE5A3D58B56FB9958C4B2FAAF65A /* PBXContainerItemProxy */ = {
+		586CEA84EC412D777B634CC5ACF92302 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4874E7E655CEB4C01E4572AD903AEA21;
+			remoteInfo = FloatingPanel;
+		};
+		B35EA758F3C6140085FFEFF4080E969D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B7465E4C13FFC9CE6D359E31F65D6825;
 			remoteInfo = SwiftCSV;
 		};
-		51C4640861B86022D550E2A2C7C842CF /* PBXContainerItemProxy */ = {
+		B7B63633CDE41929AC4BC6C989AD764B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4A0A7D8591B67FB75E2E8D215E3735B;
+			remoteInfo = SideMenu;
+		};
+		CF039A0A4FB0107C5A27A55657D65140 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = ED4CF05D6F9AD53D39CC38CA8F5C769A;
 			remoteInfo = "Pods-SonycApp";
 		};
-		522E2DB86C5A71DE89012B572BD9EBC2 /* PBXContainerItemProxy */ = {
+		DF466255D7F09DF1D9942612A42BA5F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C4A0A7D8591B67FB75E2E8D215E3735B;
-			remoteInfo = SideMenu;
+			remoteGlobalIDString = CF5EDB66CAC2972B9BC27EFA2073CB2B;
+			remoteInfo = AudioKit;
 		};
-		B46F2BB3EDE42B46B9F06FA7D78D12D8 /* PBXContainerItemProxy */ = {
+		E3273FFCA686ABED4C691900F8DEE49B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4874E7E655CEB4C01E4572AD903AEA21;
-			remoteInfo = FloatingPanel;
+			remoteGlobalIDString = CF5EDB66CAC2972B9BC27EFA2073CB2B;
+			remoteInfo = AudioKit;
 		};
-		CA8C34017C28E8A9B4836F6D4F658796 /* PBXContainerItemProxy */ = {
+		E5376614FDDB9F84CD776BFCBFADE935 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B7465E4C13FFC9CE6D359E31F65D6825;
 			remoteInfo = SwiftCSV;
 		};
-		FA8D04F467FDF5B77386FBB08DC82869 /* PBXContainerItemProxy */ = {
+		E62E9D9A23856DF6287230D6154BA460 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4874E7E655CEB4C01E4572AD903AEA21;
-			remoteInfo = FloatingPanel;
+			remoteGlobalIDString = C4A0A7D8591B67FB75E2E8D215E3735B;
+			remoteInfo = SideMenu;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		017C107C4CAD785976170976C78C0FD2 /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = iOS/AudioKit.framework/Headers/EZAudio.h; sourceTree = "<group>"; };
+		033B8A59E63550F2818758ED8F4E1E89 /* EZPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZPlot.h; path = iOS/AudioKitUI.framework/Headers/EZPlot.h; sourceTree = "<group>"; };
+		03F5106DE6177E30895CF9AEE1B1AD1C /* SideMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.release.xcconfig; sourceTree = "<group>"; };
 		043D6D3EF9BDFA5A43CFFC1AB1575F12 /* Pods-SonycApp-SonycAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycApp-SonycAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		06150564E84773CDEDC01B6E9F28B252 /* FloatingPanelController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelController.swift; path = Framework/Sources/FloatingPanelController.swift; sourceTree = "<group>"; };
-		0752951A45ECBC16803D6C64A5C71CAE /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = SwiftCSV/Parser.swift; sourceTree = "<group>"; };
-		09D169D1BA93B4DE32C6E2CBAE2EB17A /* FloatingPanel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FloatingPanel.release.xcconfig; sourceTree = "<group>"; };
-		09F0D3E91670749E9FDC24A16860C496 /* SwiftCSV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftCSV.debug.xcconfig; sourceTree = "<group>"; };
-		0BAA99D3F9DB3D52005E46DC5B9796D2 /* FloatingPanelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelView.swift; path = Framework/Sources/FloatingPanelView.swift; sourceTree = "<group>"; };
+		04B2E1F994F4B79BB751F466E580238D /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = iOS/AudioKit.framework/Headers/EZMicrophone.h; sourceTree = "<group>"; };
+		04DB07C6F0CF1545925BCFE676B2C7BC /* ParsingState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParsingState.swift; path = SwiftCSV/ParsingState.swift; sourceTree = "<group>"; };
+		0589CA6893B38D74AFF29FC7057D6844 /* UIExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIExtensions.swift; path = Framework/Sources/UIExtensions.swift; sourceTree = "<group>"; };
+		0653493F91FF9178A2240A22D9B54F84 /* EZAudioFileMarker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFileMarker.h; path = iOS/AudioKit.framework/Headers/EZAudioFileMarker.h; sourceTree = "<group>"; };
+		0667C3EA1FDFE8E73E7AAF80DC8225EA /* SwiftCSV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftCSV.debug.xcconfig; sourceTree = "<group>"; };
+		0B16E04204F78B00916BEE21AD54CECC /* EZAudioDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDisplayLink.h; path = iOS/AudioKitUI.framework/Headers/EZAudioDisplayLink.h; sourceTree = "<group>"; };
+		0C1D7BEC11B4F3097C5058807BEB932B /* Description.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Description.swift; path = SwiftCSV/Description.swift; sourceTree = "<group>"; };
+		0C753D668466417DD416DE42B48F55B9 /* AKInterop.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKInterop.h; path = iOS/AudioKit.framework/Headers/AKInterop.h; sourceTree = "<group>"; };
+		0EE48A9B635A41D10F22B47B4AE16EB9 /* SideMenuInteractionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuInteractionController.swift; path = Pod/Classes/SideMenuInteractionController.swift; sourceTree = "<group>"; };
+		11AE9BEC79687AA583E378C04D85AF06 /* AKAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKAudioUnit.h; sourceTree = "<group>"; };
 		143278E030C63102D77E469336FCE245 /* Pods-SonycApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SonycApp-umbrella.h"; sourceTree = "<group>"; };
-		15C8527FD82BC80BECB758F97245A38C /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Pod/Classes/Protected.swift; sourceTree = "<group>"; };
+		14688E6936E11BC55343C43BA6646E6E /* EZAudioFloatData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatData.h; path = iOS/AudioKit.framework/Headers/EZAudioFloatData.h; sourceTree = "<group>"; };
 		183AB06C4F5D6C43D08E0DBA1BBA7786 /* Pods-SonycApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SonycApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1AF19764D23E4A43DD5849DAD80D4638 /* UIExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIExtensions.swift; path = Framework/Sources/UIExtensions.swift; sourceTree = "<group>"; };
-		23CD77C3F3D06AF84F4160EE406E3A94 /* SideMenuPresentationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationStyle.swift; path = Pod/Classes/SideMenuPresentationStyle.swift; sourceTree = "<group>"; };
-		28FB1AE0B7A7245506014129E4CFFF3B /* FloatingPanel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FloatingPanel-Info.plist"; sourceTree = "<group>"; };
-		2E96D97A87751DD2F5CF7972710B64F8 /* SideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SideMenu-Info.plist"; sourceTree = "<group>"; };
-		2EBD01DD130C68F90C58A4A46F88407E /* CSV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSV.swift; path = SwiftCSV/CSV.swift; sourceTree = "<group>"; };
-		2ECB6E56BB2EB89F1FA096EBC429F3CE /* Deprecations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecations.swift; path = Pod/Classes/Deprecations.swift; sourceTree = "<group>"; };
+		198615285C1C0F4D8E7D0055993BB7D5 /* AudioKitUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AudioKitUI.h; path = iOS/AudioKitUI.framework/Headers/AudioKitUI.h; sourceTree = "<group>"; };
+		1C1B823E6C4A07977E1990F24D2C174B /* FloatingPanel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FloatingPanel-Info.plist"; sourceTree = "<group>"; };
+		1E88391533ACE601F0ACD82BBFACE33D /* TPCircularBuffer+AudioBufferList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TPCircularBuffer+AudioBufferList.h"; path = "iOS/AudioKit.framework/Headers/TPCircularBuffer+AudioBufferList.h"; sourceTree = "<group>"; };
+		2263FFFD397C016AA421C2B39AB52865 /* AudioKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AudioKit.h; path = iOS/AudioKit.framework/Headers/AudioKit.h; sourceTree = "<group>"; };
+		27035B837E82C3EC60DF83BD1F699954 /* AudioKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AudioKit.debug.xcconfig; sourceTree = "<group>"; };
+		27C83E0A323AD9201BFA01F9B4841F61 /* AKGeneratorAudioUnitBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKGeneratorAudioUnitBase.h; path = iOS/AudioKit.framework/Headers/AKGeneratorAudioUnitBase.h; sourceTree = "<group>"; };
+		2E3737FAFE2A606765F7B135CF5FABA9 /* AKDynaRageCompressorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKDynaRageCompressorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKDynaRageCompressorAudioUnit.h; sourceTree = "<group>"; };
+		2E4A94FFAD3C161F61AADC1F66C17B3C /* SwiftCSV-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCSV-umbrella.h"; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		356DB906A18CC10CEA6CD2A403C284E8 /* SideMenuPushCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPushCoordinator.swift; path = Pod/Classes/SideMenuPushCoordinator.swift; sourceTree = "<group>"; };
+		3559ABBB933D5B88E2F57317751BE5E4 /* EZAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlayer.h; path = iOS/AudioKit.framework/Headers/EZAudioPlayer.h; sourceTree = "<group>"; };
 		36BF1BB3F7F007716CB99D8E14ACAF07 /* Pods-SonycAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		38C80AFCFDF0ACC5CB67C8BC824D7FE6 /* Pods-SonycAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SonycAppTests-dummy.m"; sourceTree = "<group>"; };
-		38CA659D081D351756D63918FD29CD31 /* Description.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Description.swift; path = SwiftCSV/Description.swift; sourceTree = "<group>"; };
-		41AEA9E22BE1B1736727B50F57041B5F /* ParsingState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParsingState.swift; path = SwiftCSV/ParsingState.swift; sourceTree = "<group>"; };
-		43451246C229129903AAE3D8343B2C8C /* FloatingPanel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FloatingPanel.modulemap; sourceTree = "<group>"; };
+		3963380E00E960B5B0B83A0B40F4FAC5 /* AKLazyTap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKLazyTap.h; path = iOS/AudioKit.framework/Headers/AKLazyTap.h; sourceTree = "<group>"; };
+		39938345B44BE0B89A2BB870BAC62C27 /* AKFMOscillatorBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKFMOscillatorBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKFMOscillatorBankAudioUnit.h; sourceTree = "<group>"; };
+		39B92717AA430C937A5DDA6AA52BA0CF /* FloatingPanelController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelController.swift; path = Framework/Sources/FloatingPanelController.swift; sourceTree = "<group>"; };
+		3E4BFA9720598D54F2EB274EB0BAC80E /* FloatingPanel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FloatingPanel-dummy.m"; sourceTree = "<group>"; };
+		3E70FAF4EDB6548D8FE4D7F92908B526 /* SideMenuPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationController.swift; path = Pod/Classes/SideMenuPresentationController.swift; sourceTree = "<group>"; };
 		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		437038BE33CFC6CB9D2A239D9A7F57C9 /* AudioEngineUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AudioEngineUnit.h; path = iOS/AudioKit.framework/Headers/AudioEngineUnit.h; sourceTree = "<group>"; };
+		453A1B5916B69EEE2434457BA7DB659F /* SwiftCSV-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCSV-prefix.pch"; sourceTree = "<group>"; };
 		46E6C29CDD9A0FABD2EEE4BD521CF2E1 /* Pods-SonycApp-SonycAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SonycApp-SonycAppUITests.modulemap"; sourceTree = "<group>"; };
+		4A916FC25EEDCDD7D8A730FA50FB068C /* FloatingPanel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FloatingPanel.release.xcconfig; sourceTree = "<group>"; };
+		4C2C642DD25FE5CF2BCC7D74A2247D73 /* FloatingPanel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FloatingPanel.modulemap; sourceTree = "<group>"; };
 		4D5992229ACD283FC93854F686880B23 /* Pods-SonycApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SonycApp-dummy.m"; sourceTree = "<group>"; };
-		4DE15EBBBA738F0AD9A08B386219DF76 /* SwiftCSV-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftCSV-Info.plist"; sourceTree = "<group>"; };
+		4DCB5CE88232BF3D1B71425239006AC8 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = iOS/AudioKit.framework; sourceTree = "<group>"; };
+		4E01087ABCD2708EF7BE4E62E13FE9DB /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Framework/Sources/Logger.swift; sourceTree = "<group>"; };
 		4E4188420C47F7CC702F26D4FDD27767 /* Pods-SonycAppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycAppTests-Info.plist"; sourceTree = "<group>"; };
-		50651EE1CE9B1C2FB18A4E17A6B53ED4 /* FloatingPanelLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelLayout.swift; path = Framework/Sources/FloatingPanelLayout.swift; sourceTree = "<group>"; };
+		4E5739D9670CC56943AF3EA5A218570F /* FloatingPanelLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelLayout.swift; path = Framework/Sources/FloatingPanelLayout.swift; sourceTree = "<group>"; };
+		516E8E7283A705E2161FE75BADA682E0 /* FloatingPanel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FloatingPanel-prefix.pch"; sourceTree = "<group>"; };
+		51720B9EF31D5E626E332817A6667BD0 /* AKDiskStreamerAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKDiskStreamerAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKDiskStreamerAudioUnit.h; sourceTree = "<group>"; };
+		5180A9CBEDA0731E5F76DCC535A2B02E /* soundpipeextension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = soundpipeextension.h; path = iOS/AudioKit.framework/Headers/soundpipeextension.h; sourceTree = "<group>"; };
+		525474520B1EB9312C85CBCDE9343C32 /* AKSamplerMetronome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKSamplerMetronome.h; path = iOS/AudioKit.framework/Headers/AKSamplerMetronome.h; sourceTree = "<group>"; };
+		5274C24349446A9AA2DC01FC4AB00DCA /* SideMenuAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuAnimationController.swift; path = Pod/Classes/SideMenuAnimationController.swift; sourceTree = "<group>"; };
+		533986BA9B4513DB9AF6784B8E3C1400 /* SwiftCSV-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftCSV-dummy.m"; sourceTree = "<group>"; };
+		54B523D14E985A5A35A55C8E0BED96DC /* dr_wav.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dr_wav.h; path = iOS/AudioKit.framework/Headers/dr_wav.h; sourceTree = "<group>"; };
+		55339D1116F03C341908FD162E10DBBF /* Deprecations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecations.swift; path = Pod/Classes/Deprecations.swift; sourceTree = "<group>"; };
+		560BBB95AFDF9419EAE8C4AEF25D91E7 /* EnumeratedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumeratedView.swift; path = SwiftCSV/EnumeratedView.swift; sourceTree = "<group>"; };
+		56363CCB2D98BD48BED440B9B0C06890 /* EZRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZRecorder.h; path = iOS/AudioKit.framework/Headers/EZRecorder.h; sourceTree = "<group>"; };
+		5717FAB4A8072BAED1A5D2ADF5DA0AAE /* AKOscillatorBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOscillatorBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKOscillatorBankAudioUnit.h; sourceTree = "<group>"; };
 		58A075ECFF2C1C4D3023F6B9893921B7 /* Pods-SonycApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SonycApp.modulemap"; sourceTree = "<group>"; };
-		58DC9F23707F4640E89B8F879765CC3F /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		58DF6F5990F2DF023ACD13AC574B11BF /* AKPhaseDistortionOscillatorFilterSynthAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPhaseDistortionOscillatorFilterSynthAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPhaseDistortionOscillatorFilterSynthAudioUnit.h; sourceTree = "<group>"; };
+		59AFCA20AD935500CD0388BC4F5980DF /* GrabberHandleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GrabberHandleView.swift; path = Framework/Sources/GrabberHandleView.swift; sourceTree = "<group>"; };
 		5A6CBEAC7212DCE694AC28667C36D2D1 /* SwiftCSV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftCSV.framework; path = SwiftCSV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ADC98B254091B21875A8F107ED86CA1 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Framework/Sources/Logger.swift; sourceTree = "<group>"; };
-		5AF0FC8AA2AD1BACEBF06057525F1871 /* FloatingPanelBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelBehavior.swift; path = Framework/Sources/FloatingPanelBehavior.swift; sourceTree = "<group>"; };
-		60BBA03B4FC2FA3B451011A9BBB53CC6 /* SwiftCSV-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftCSV-dummy.m"; sourceTree = "<group>"; };
-		6525DD55885B8FC84212F93059C4E766 /* FloatingPanelBackdropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelBackdropView.swift; path = Framework/Sources/FloatingPanelBackdropView.swift; sourceTree = "<group>"; };
-		66391457EE4F7BFA66861A95C6B10B77 /* FloatingPanel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FloatingPanel.debug.xcconfig; sourceTree = "<group>"; };
+		5AC8DC426B0F39E7375CF9AD744F0362 /* AKFrequencyTrackerAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKFrequencyTrackerAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKFrequencyTrackerAudioUnit.h; sourceTree = "<group>"; };
+		5B032AB416B4D9EA70A4B7E1B48167EC /* CSV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSV.swift; path = SwiftCSV/CSV.swift; sourceTree = "<group>"; };
+		5BCD14FF30EAFC8444B919F6F84EA770 /* AKPresetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPresetManager.h; path = iOS/AudioKit.framework/Headers/AKPresetManager.h; sourceTree = "<group>"; };
+		5CA2F3E31015321BFAF6B5ADFEA6112F /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
+		618D02E0D467221DDF7704C6CB358F74 /* AKBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKBankAudioUnit.h; sourceTree = "<group>"; };
 		66B6285E1A482495B01C3AE421A45E4D /* Pods-SonycAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6A03534B473001903F70786F76B6322F /* SideMenuTransitionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransitionController.swift; path = Pod/Classes/SideMenuTransitionController.swift; sourceTree = "<group>"; };
+		67335A90A822EACFBCD9C5D9E8ABE26E /* AudioKit-Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AudioKit-Swift.h"; path = "iOS/AudioKit.framework/Headers/AudioKit-Swift.h"; sourceTree = "<group>"; };
+		6786AA3B12A6409F4E6E1BB8367B14BD /* Print.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Print.swift; path = Pod/Classes/Print.swift; sourceTree = "<group>"; };
 		6B1692758C1AE89BADA513C3DD49F88F /* Pods-SonycApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SonycApp-frameworks.sh"; sourceTree = "<group>"; };
+		6B5425A4C74FFE07CD020F98C562A5B5 /* FloatingPanelCore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelCore.swift; path = Framework/Sources/FloatingPanelCore.swift; sourceTree = "<group>"; };
+		6B62A98EAC952D3A8FBC7760A23E7286 /* AKTimelineTap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKTimelineTap.h; path = iOS/AudioKit.framework/Headers/AKTimelineTap.h; sourceTree = "<group>"; };
 		6FAAB7D3DE9B2564509ABD18687E938E /* FloatingPanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FloatingPanel.framework; path = FloatingPanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D51E54FCAA41E8E41B6DADC5D4F7F1 /* Pods-SonycAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SonycAppTests.modulemap"; sourceTree = "<group>"; };
-		7CAF9DF01C7ADDA493C5260C8EFE380D /* SwiftCSV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftCSV.release.xcconfig; sourceTree = "<group>"; };
+		762D03C2C7A0582367FEE4AE67387696 /* AKOperationGeneratorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOperationGeneratorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKOperationGeneratorAudioUnit.h; sourceTree = "<group>"; };
+		773F4292A305B1CFD0D9DCA73EA9BBA6 /* AKOperationEffectAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOperationEffectAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKOperationEffectAudioUnit.h; sourceTree = "<group>"; };
+		793F427B3CB408131B942A59482D77A7 /* soundpipe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = soundpipe.h; path = iOS/AudioKit.framework/Headers/soundpipe.h; sourceTree = "<group>"; };
+		7ABA5BCA27F9C44E0386BFAADA414CC9 /* AKModulatedDelay_Typedefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKModulatedDelay_Typedefs.h; path = iOS/AudioKit.framework/Headers/AKModulatedDelay_Typedefs.h; sourceTree = "<group>"; };
 		7CC6C3872DA3B4D1A6081B2D713BE3E9 /* Pods_SonycApp_SonycAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SonycApp_SonycAppUITests.framework; path = "Pods-SonycApp-SonycAppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DBBD0B317CD5EB3D671D0D0B11B6A6C /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
-		7E9C940A8C576C704797B1BA6727289A /* FloatingPanelSurfaceView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelSurfaceView.swift; path = Framework/Sources/FloatingPanelSurfaceView.swift; sourceTree = "<group>"; };
-		811BD32AA9DD30B4FAD3DB01D52D2B63 /* SwiftCSV-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCSV-umbrella.h"; sourceTree = "<group>"; };
-		87B431595F0845E8C868F03D6A2BDCA8 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
-		87E895E4718FCB37AFA33456602F3A24 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
-		89C25A07213FD60BA72EA6B6556B052A /* Print.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Print.swift; path = Pod/Classes/Print.swift; sourceTree = "<group>"; };
+		7E8B98B231E6C2F23117E7E638D4C055 /* AKTimeline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKTimeline.h; path = iOS/AudioKit.framework/Headers/AKTimeline.h; sourceTree = "<group>"; };
+		7FDD78E6D5807F7713FBA139735BA28C /* AKMandolinAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKMandolinAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKMandolinAudioUnit.h; sourceTree = "<group>"; };
+		8367D7B9E20D0AEE5C88F36ADEB7D0DA /* AKMorphingOscillatorFilterSynthAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKMorphingOscillatorFilterSynthAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKMorphingOscillatorFilterSynthAudioUnit.h; sourceTree = "<group>"; };
+		852569DACF763CFDE943E32EE57B47D4 /* FloatingPanelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelView.swift; path = Framework/Sources/FloatingPanelView.swift; sourceTree = "<group>"; };
 		8A187FC9A4A38075510E7EF48531F482 /* Pods-SonycApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycApp-Info.plist"; sourceTree = "<group>"; };
-		8D01A5603FE641432FBBC9F3FBED33AE /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
+		8A5531AB9F085898735868B08D838DC5 /* FloatingPanel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FloatingPanel-umbrella.h"; sourceTree = "<group>"; };
 		8E650D71B5B582DAEE51E8B74D4E9FCD /* Pods-SonycApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycApp.release.xcconfig"; sourceTree = "<group>"; };
+		8F8436B9A86F033976B5D1420948F116 /* AKAmplitudeTrackerAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKAmplitudeTrackerAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKAmplitudeTrackerAudioUnit.h; sourceTree = "<group>"; };
+		8FCC7AC62D8DF252A7338CFC8AFB7306 /* NamedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NamedView.swift; path = SwiftCSV/NamedView.swift; sourceTree = "<group>"; };
+		8FE16BCF8B24FFB01808D93123A0EA15 /* AKSampler_Typedefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKSampler_Typedefs.h; path = iOS/AudioKit.framework/Headers/AKSampler_Typedefs.h; sourceTree = "<group>"; };
 		90FE427243A511359C27C5EF312B0F4C /* Pods-SonycApp-SonycAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SonycApp-SonycAppUITests-dummy.m"; sourceTree = "<group>"; };
-		965D620717F2D06B41FE83317A8C074E /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Pod/Classes/Extensions.swift; sourceTree = "<group>"; };
-		9B5342690AA17A9E0C66774E29B70E7D /* SideMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.debug.xcconfig; sourceTree = "<group>"; };
+		9392509BA0D79AE4101E08F9AA28A6E8 /* AudioKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AudioKit.release.xcconfig; sourceTree = "<group>"; };
+		968E0B61D2DE30CA502F122F8B8A73A3 /* AKMorphingOscillatorBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKMorphingOscillatorBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKMorphingOscillatorBankAudioUnit.h; sourceTree = "<group>"; };
+		99293E8DD4DAC03E3699F027A5CF5483 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Pod/Classes/Protected.swift; sourceTree = "<group>"; };
+		9AF5E047CA52254B1F0D9B1A35F862BD /* SwiftCSV-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftCSV-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9FEB81A0400615107750B539D9243F1C /* SideMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.release.xcconfig; sourceTree = "<group>"; };
-		A113FB041003519A4C3E4C9D2BFDB787 /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
+		9F49F78B2F7EE3FF1BE1ADE4D7617E06 /* String+Lines.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Lines.swift"; path = "SwiftCSV/String+Lines.swift"; sourceTree = "<group>"; };
+		A06298051EDD794819897D52C0385E97 /* ExceptionCatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ExceptionCatcher.h; path = iOS/AudioKit.framework/Headers/ExceptionCatcher.h; sourceTree = "<group>"; };
+		A3CB577B75F8CB1B1BFBBB56F0273C5F /* Initializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Initializable.swift; path = Pod/Classes/Initializable.swift; sourceTree = "<group>"; };
 		A3CFBDAF9B044DB46C8259397DC78933 /* Pods_SonycApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SonycApp.framework; path = "Pods-SonycApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A45B977573E0068C881F2AE37A48B994 /* FloatingPanelCore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelCore.swift; path = Framework/Sources/FloatingPanelCore.swift; sourceTree = "<group>"; };
-		A49D8DB8E01FEBA9A1414292B70FFDEC /* SwiftCSV.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftCSV.modulemap; sourceTree = "<group>"; };
-		AE4CFBAB978DD6DB4ED78AFA93861393 /* SideMenuAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuAnimationController.swift; path = Pod/Classes/SideMenuAnimationController.swift; sourceTree = "<group>"; };
+		A787848087C2B4D14E2F27C803C8F185 /* AKSequencerEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKSequencerEngine.h; path = iOS/AudioKit.framework/Headers/AKSequencerEngine.h; sourceTree = "<group>"; };
+		AD140628E6F0AE0CE00B65BBB13DA844 /* FloatingPanelTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelTransitioning.swift; path = Framework/Sources/FloatingPanelTransitioning.swift; sourceTree = "<group>"; };
+		ADA6E530873C107D4815B1A51F318FF2 /* AKOscillatorFilterSynthAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOscillatorFilterSynthAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKOscillatorFilterSynthAudioUnit.h; sourceTree = "<group>"; };
+		ADACC53822916F1603F27060A3B5D165 /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = iOS/AudioKit.framework/Headers/TPCircularBuffer.h; sourceTree = "<group>"; };
+		B342BDCFD5457CC75F73664109C29EED /* SwiftCSV.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftCSV.modulemap; sourceTree = "<group>"; };
+		B3A8198434AA453D563D885993A40B15 /* SideMenuTransitionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransitionController.swift; path = Pod/Classes/SideMenuTransitionController.swift; sourceTree = "<group>"; };
+		B4884BA947F4A3FF3105B17CCC591FC9 /* AKBalancerAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKBalancerAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKBalancerAudioUnit.h; sourceTree = "<group>"; };
 		B4D2463FA89E4DB37FCE111B6E7A0EDE /* Pods_SonycAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SonycAppTests.framework; path = "Pods-SonycAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B63524F391AED6AABD1A5310C0EAA40D /* GrabberHandleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GrabberHandleView.swift; path = Framework/Sources/GrabberHandleView.swift; sourceTree = "<group>"; };
-		B81A61F4D4D9D34718436849819C4746 /* SwiftCSV-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCSV-prefix.pch"; sourceTree = "<group>"; };
-		B9515625869921F362DA0D53AC863331 /* FloatingPanel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FloatingPanel-prefix.pch"; sourceTree = "<group>"; };
-		BDB7247A7E2411CA5EBC29572AC18A48 /* Initializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Initializable.swift; path = Pod/Classes/Initializable.swift; sourceTree = "<group>"; };
+		B67A1185AEC70362A46D33AFAEF24E36 /* SideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SideMenu-Info.plist"; sourceTree = "<group>"; };
+		B781251BD535D0E982CD56F8342B462E /* AKAudioUnitBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKAudioUnitBase.h; path = iOS/AudioKit.framework/Headers/AKAudioUnitBase.h; sourceTree = "<group>"; };
+		BABDF590847525CB1B15E42E7EADD449 /* FloatingPanelSurfaceView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelSurfaceView.swift; path = Framework/Sources/FloatingPanelSurfaceView.swift; sourceTree = "<group>"; };
+		BB30FB64A88136D5D7542376B8F500B4 /* AKFMOscillatorFilterSynthAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKFMOscillatorFilterSynthAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKFMOscillatorFilterSynthAudioUnit.h; sourceTree = "<group>"; };
+		BC07C26D6ADFD1E77B453C5D0F371F30 /* AKSporthStack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKSporthStack.h; path = iOS/AudioKit.framework/Headers/AKSporthStack.h; sourceTree = "<group>"; };
+		BCAA271CB71DBFF124001C7005B36E0F /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
+		BDAA6B0B813B9BE516B81006285B827A /* FloatingPanelBackdropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelBackdropView.swift; path = Framework/Sources/FloatingPanelBackdropView.swift; sourceTree = "<group>"; };
+		BE6EFFE9B68DC931DE0CE0F2CFA360D4 /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		C09A05D7F86AEF4995F8B6F04E04564C /* AudioKitUI-Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AudioKitUI-Swift.h"; path = "iOS/AudioKitUI.framework/Headers/AudioKitUI-Swift.h"; sourceTree = "<group>"; };
+		C25E45EAC35DFE90D48D458C8D6595B7 /* AKRenderTap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKRenderTap.h; path = iOS/AudioKit.framework/Headers/AKRenderTap.h; sourceTree = "<group>"; };
+		C662A87BE4A7690EFB64169F3606C532 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
 		C8D762F016D4F82DFC8D0186AAFA1D4E /* Pods-SonycApp-SonycAppUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycApp-SonycAppUITests-Info.plist"; sourceTree = "<group>"; };
+		C91DBDE7A1F017C44D6991E3C2B67086 /* FloatingPanel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FloatingPanel.debug.xcconfig; sourceTree = "<group>"; };
 		CE130CCFCF25BA370035A76F6F487CA6 /* Pods-SonycApp-SonycAppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SonycApp-SonycAppUITests-umbrella.h"; sourceTree = "<group>"; };
-		D44939C25EF3F09604F634A430F250BA /* SideMenuInteractionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuInteractionController.swift; path = Pod/Classes/SideMenuInteractionController.swift; sourceTree = "<group>"; };
+		CEB156B43644402D0D5C922F980CD90C /* EZAudioFFT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFFT.h; path = iOS/AudioKit.framework/Headers/EZAudioFFT.h; sourceTree = "<group>"; };
+		D0F1B9CF07B95CBAB5E37A6A287D8BD4 /* EZAudioFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFile.h; path = iOS/AudioKit.framework/Headers/EZAudioFile.h; sourceTree = "<group>"; };
+		D2F07D232A95271EEBC9149DAF635152 /* SideMenuPresentationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationStyle.swift; path = Pod/Classes/SideMenuPresentationStyle.swift; sourceTree = "<group>"; };
+		D3775FD5E749B92A6D7B8A2CB16E4897 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = SwiftCSV/Parser.swift; sourceTree = "<group>"; };
+		D4BAD96A158803154865537ECF82BA7D /* AKCallbackInstrumentAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKCallbackInstrumentAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKCallbackInstrumentAudioUnit.h; sourceTree = "<group>"; };
 		D4C6BA7CF1A66970A008A11929D64306 /* Pods-SonycAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		D64C139C28263106AC133385914FC86E /* FloatingPanel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FloatingPanel-dummy.m"; sourceTree = "<group>"; };
+		D57E695C70C090AC6CE3385BF5EFB944 /* AKPhaseDistortionOscillatorBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPhaseDistortionOscillatorBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPhaseDistortionOscillatorBankAudioUnit.h; sourceTree = "<group>"; };
+		D5CCC81BE1DDEF221909B5D6FA2E0FE8 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
 		D7C9F2E168B4F55A5CC965E5BB6EDC66 /* Pods-SonycApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycApp.debug.xcconfig"; sourceTree = "<group>"; };
-		D870ECF00CCFB7856032498A85FF0B57 /* SideMenuPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationController.swift; path = Pod/Classes/SideMenuPresentationController.swift; sourceTree = "<group>"; };
-		DF3BF6F0826DA0987F8A40B1B452A7A2 /* NamedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NamedView.swift; path = SwiftCSV/NamedView.swift; sourceTree = "<group>"; };
+		D978E8082BA4D578380FB511112B4532 /* AKMicrophoneTrackerEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKMicrophoneTrackerEngine.h; path = iOS/AudioKit.framework/Headers/AKMicrophoneTrackerEngine.h; sourceTree = "<group>"; };
+		D99F9DCE131B695DB89CC144D2F3B8DF /* SideMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.debug.xcconfig; sourceTree = "<group>"; };
 		DFFA3A58E7CDBB4039890C6A727EA30D /* Pods-SonycAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SonycAppTests-umbrella.h"; sourceTree = "<group>"; };
+		E0F35244223663F21AE15039932B955A /* FloatingPanelBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelBehavior.swift; path = Framework/Sources/FloatingPanelBehavior.swift; sourceTree = "<group>"; };
+		E115401E6DB0B5F25E97D99937A3204C /* AKPWMOscillatorFilterSynthAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPWMOscillatorFilterSynthAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPWMOscillatorFilterSynthAudioUnit.h; sourceTree = "<group>"; };
+		E2244147EDE4DF11B158FBDC8200C84F /* TPCircularBuffer+Unit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TPCircularBuffer+Unit.h"; path = "iOS/AudioKit.framework/Headers/TPCircularBuffer+Unit.h"; sourceTree = "<group>"; };
 		E3A5E94A07249154A24EACA504D923C0 /* Pods-SonycApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		E5788C202895B3581087ED8ABDB53A31 /* EZAudioFloatConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatConverter.h; path = iOS/AudioKit.framework/Headers/EZAudioFloatConverter.h; sourceTree = "<group>"; };
+		E59F0DA7D0AB3F97B57167B964176647 /* EZAudioDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDevice.h; path = iOS/AudioKit.framework/Headers/EZAudioDevice.h; sourceTree = "<group>"; };
+		E5D5853E9DC6C4FDAFFBFDEDF09A71ED /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuNavigationController.swift; path = Pod/Classes/SideMenuNavigationController.swift; sourceTree = "<group>"; };
+		E6672E6138563C298B4A800ED8C6540E /* AKOfflineRenderAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKOfflineRenderAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKOfflineRenderAudioUnit.h; sourceTree = "<group>"; };
+		E691FC72E7C744F6DF9B9D0DBABDF197 /* AKTesterAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKTesterAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKTesterAudioUnit.h; sourceTree = "<group>"; };
+		E713CF7892CF41E99032CC6873131208 /* SideMenuPushCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPushCoordinator.swift; path = Pod/Classes/SideMenuPushCoordinator.swift; sourceTree = "<group>"; };
+		E7BCA7BE4807CC15B257651FCB523BC2 /* SwiftCSV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftCSV.release.xcconfig; sourceTree = "<group>"; };
+		E8BB8A84EB9F80B31E90D061CE13C4A0 /* EZAudioUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioUtilities.h; path = iOS/AudioKit.framework/Headers/EZAudioUtilities.h; sourceTree = "<group>"; };
+		EA18ED09CAF94618966D7C6AFC13AA1E /* AKFilterSynthAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKFilterSynthAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKFilterSynthAudioUnit.h; sourceTree = "<group>"; };
+		EAEC702C1E03CA85C65CD31F61ABBAE3 /* AKWaveTableAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKWaveTableAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKWaveTableAudioUnit.h; sourceTree = "<group>"; };
 		EB116664A560991AD2C2086BA3295159 /* Pods-SonycApp-SonycAppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SonycApp-SonycAppUITests-frameworks.sh"; sourceTree = "<group>"; };
-		ED114DA778480E110B1982979DDBF64A /* FloatingPanel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FloatingPanel-umbrella.h"; sourceTree = "<group>"; };
-		F44F68DD6BF0CE181DE9A6ADC34D5B19 /* EnumeratedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumeratedView.swift; path = SwiftCSV/EnumeratedView.swift; sourceTree = "<group>"; };
-		F4FEC65EE70DE7048CD2D803F37DD0C1 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuNavigationController.swift; path = Pod/Classes/SideMenuNavigationController.swift; sourceTree = "<group>"; };
+		EDE1A2C852C74F4DEA2EB33F9B962BD5 /* EZOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZOutput.h; path = iOS/AudioKit.framework/Headers/EZOutput.h; sourceTree = "<group>"; };
+		EF118B98ED6067800F0F4021A1439AA0 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Pod/Classes/Extensions.swift; sourceTree = "<group>"; };
+		EF8348E5633D3A184430CA4401679A8C /* vocwrapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vocwrapper.h; path = iOS/AudioKit.framework/Headers/vocwrapper.h; sourceTree = "<group>"; };
+		F21B3E3825302210A8CF309903C96540 /* AKPWMOscillatorBankAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKPWMOscillatorBankAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKPWMOscillatorBankAudioUnit.h; sourceTree = "<group>"; };
+		F2607488465ADB1D7A7E0BCD8F985BAE /* AKParameterAutomation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKParameterAutomation.h; path = iOS/AudioKit.framework/Headers/AKParameterAutomation.h; sourceTree = "<group>"; };
 		F5C47B9AE85EA6DD747331BBFBB6EA2A /* Pods-SonycApp-SonycAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SonycApp-SonycAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F7C5ACC1EEEB9CE2324C45005F846AD0 /* Pods-SonycApp-SonycAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycApp-SonycAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F7D689D64A3100D85B706AC7AE41A6EB /* Pods-SonycAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SonycAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F91EB76B5F05BA478672E3D5B33C232F /* FloatingPanelTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelTransitioning.swift; path = Framework/Sources/FloatingPanelTransitioning.swift; sourceTree = "<group>"; };
+		F8211844EDC5C0BFEBCE057D8F53FB9C /* AKRhinoGuitarProcessorAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AKRhinoGuitarProcessorAudioUnit.h; path = iOS/AudioKit.framework/Headers/AKRhinoGuitarProcessorAudioUnit.h; sourceTree = "<group>"; };
+		F895E1F7C981067F96746A91595A0DA4 /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
 		FA1F3AB3EBE90398FF2DC95BAF322846 /* Pods-SonycApp-SonycAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycApp-SonycAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FEF771D84CF30EEAA9F0FA974E8A22EA /* String+Lines.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Lines.swift"; path = "SwiftCSV/String+Lines.swift"; sourceTree = "<group>"; };
+		FB04300111DAA5E0A5ADA8716E3C4FF8 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = iOS/AudioKitUI.framework; sourceTree = "<group>"; };
+		FD1AEE973CE39582F84A64DBC7A86814 /* BufferedAudioUnit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BufferedAudioUnit.h; path = iOS/AudioKit.framework/Headers/BufferedAudioUnit.h; sourceTree = "<group>"; };
+		FF5E7720049156E28CC548B875DDFBA3 /* EZAudioPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlot.h; path = iOS/AudioKitUI.framework/Headers/EZAudioPlot.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		05E16E08DFE61BEA583BD1D9F30730DD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				77F00B520B2FC5CB46192FEB262F992A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0E25907FC421D8E714ADD71C47A8FDC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -221,11 +313,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		216249ABDB6E953D42FD198C022551F8 /* Frameworks */ = {
+		31ECEA947B3EA267D6935468C312B2EA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C60989A42FEDB364B54911420C197A1 /* Foundation.framework in Frameworks */,
+				CCD3937CC5999077B6E4C209143C4C58 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,11 +329,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD8CA56FF4EC7EE2DBB3CD1E6428C601 /* Frameworks */ = {
+		97C745956392E7EEA647EF97D4F714AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8A1C9CE3ECB5C0A7E4BDE655F76AC54 /* Foundation.framework in Frameworks */,
+				DB524EB2E23DCD8F26595764B582B9F9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D3AB976F006A0F0C4BCC973F3AC6285 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB0A7D66FCF088A2548AD2ECB19A699E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +356,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0073895819FD674ACA60AD1A4CF284D6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				198615285C1C0F4D8E7D0055993BB7D5 /* AudioKitUI.h */,
+				C09A05D7F86AEF4995F8B6F04E04564C /* AudioKitUI-Swift.h */,
+				0B16E04204F78B00916BEE21AD54CECC /* EZAudioDisplayLink.h */,
+				FF5E7720049156E28CC548B875DDFBA3 /* EZAudioPlot.h */,
+				033B8A59E63550F2818758ED8F4E1E89 /* EZPlot.h */,
+				EBC696B144061694F500E7BE5DC03738 /* Frameworks */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,64 +377,84 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		23133D213D8834C0CC23ACF7127408C1 /* Support Files */ = {
+		1D6E73ED8DBBE2D6BB19C66073D5B3A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A49D8DB8E01FEBA9A1414292B70FFDEC /* SwiftCSV.modulemap */,
-				60BBA03B4FC2FA3B451011A9BBB53CC6 /* SwiftCSV-dummy.m */,
-				4DE15EBBBA738F0AD9A08B386219DF76 /* SwiftCSV-Info.plist */,
-				B81A61F4D4D9D34718436849819C4746 /* SwiftCSV-prefix.pch */,
-				811BD32AA9DD30B4FAD3DB01D52D2B63 /* SwiftCSV-umbrella.h */,
-				09F0D3E91670749E9FDC24A16860C496 /* SwiftCSV.debug.xcconfig */,
-				7CAF9DF01C7ADDA493C5260C8EFE380D /* SwiftCSV.release.xcconfig */,
+				4DCB5CE88232BF3D1B71425239006AC8 /* AudioKit.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftCSV";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2EC716739A7013C3CE4112A369E39423 /* Pods */ = {
+		1DE9E17DD9EA7DAC3D31C3B08B765AB2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				37622CB51C1E87041971CB4043A6BBB6 /* FloatingPanel */,
-				A980BE8FF859EFEE26712619A55F9988 /* SideMenu */,
-				E81592897F57892D4D7564C54E8E9BCF /* SwiftCSV */,
+				27035B837E82C3EC60DF83BD1F699954 /* AudioKit.debug.xcconfig */,
+				9392509BA0D79AE4101E08F9AA28A6E8 /* AudioKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AudioKit";
+			sourceTree = "<group>";
+		};
+		3652C301EE559F99BC334D7A264E54B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F554C41D962BCC00C27C26821AFA5A74 /* AudioKit */,
+				9218B175DA8A088BB426B54E3615369A /* FloatingPanel */,
+				CA00FBC1EE9174F039B6413DEA141B6B /* SideMenu */,
+				8F049DF56E3E33AE61AA46B2AB16A3E3 /* SwiftCSV */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		37622CB51C1E87041971CB4043A6BBB6 /* FloatingPanel */ = {
+		6F38664592C9B9343EC670663B7A3923 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6525DD55885B8FC84212F93059C4E766 /* FloatingPanelBackdropView.swift */,
-				5AF0FC8AA2AD1BACEBF06057525F1871 /* FloatingPanelBehavior.swift */,
-				06150564E84773CDEDC01B6E9F28B252 /* FloatingPanelController.swift */,
-				A45B977573E0068C881F2AE37A48B994 /* FloatingPanelCore.swift */,
-				50651EE1CE9B1C2FB18A4E17A6B53ED4 /* FloatingPanelLayout.swift */,
-				7E9C940A8C576C704797B1BA6727289A /* FloatingPanelSurfaceView.swift */,
-				F91EB76B5F05BA478672E3D5B33C232F /* FloatingPanelTransitioning.swift */,
-				0BAA99D3F9DB3D52005E46DC5B9796D2 /* FloatingPanelView.swift */,
-				B63524F391AED6AABD1A5310C0EAA40D /* GrabberHandleView.swift */,
-				5ADC98B254091B21875A8F107ED86CA1 /* Logger.swift */,
-				1AF19764D23E4A43DD5849DAD80D4638 /* UIExtensions.swift */,
-				509405A472E09D292EF43B3B8F96413E /* Support Files */,
-			);
-			name = FloatingPanel;
-			path = FloatingPanel;
-			sourceTree = "<group>";
-		};
-		509405A472E09D292EF43B3B8F96413E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				43451246C229129903AAE3D8343B2C8C /* FloatingPanel.modulemap */,
-				D64C139C28263106AC133385914FC86E /* FloatingPanel-dummy.m */,
-				28FB1AE0B7A7245506014129E4CFFF3B /* FloatingPanel-Info.plist */,
-				B9515625869921F362DA0D53AC863331 /* FloatingPanel-prefix.pch */,
-				ED114DA778480E110B1982979DDBF64A /* FloatingPanel-umbrella.h */,
-				66391457EE4F7BFA66861A95C6B10B77 /* FloatingPanel.debug.xcconfig */,
-				09D169D1BA93B4DE32C6E2CBAE2EB17A /* FloatingPanel.release.xcconfig */,
+				4C2C642DD25FE5CF2BCC7D74A2247D73 /* FloatingPanel.modulemap */,
+				3E4BFA9720598D54F2EB274EB0BAC80E /* FloatingPanel-dummy.m */,
+				1C1B823E6C4A07977E1990F24D2C174B /* FloatingPanel-Info.plist */,
+				516E8E7283A705E2161FE75BADA682E0 /* FloatingPanel-prefix.pch */,
+				8A5531AB9F085898735868B08D838DC5 /* FloatingPanel-umbrella.h */,
+				C91DBDE7A1F017C44D6991E3C2B67086 /* FloatingPanel.debug.xcconfig */,
+				4A916FC25EEDCDD7D8A730FA50FB068C /* FloatingPanel.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FloatingPanel";
+			sourceTree = "<group>";
+		};
+		8F049DF56E3E33AE61AA46B2AB16A3E3 /* SwiftCSV */ = {
+			isa = PBXGroup;
+			children = (
+				5B032AB416B4D9EA70A4B7E1B48167EC /* CSV.swift */,
+				0C1D7BEC11B4F3097C5058807BEB932B /* Description.swift */,
+				560BBB95AFDF9419EAE8C4AEF25D91E7 /* EnumeratedView.swift */,
+				8FCC7AC62D8DF252A7338CFC8AFB7306 /* NamedView.swift */,
+				D3775FD5E749B92A6D7B8A2CB16E4897 /* Parser.swift */,
+				04DB07C6F0CF1545925BCFE676B2C7BC /* ParsingState.swift */,
+				9F49F78B2F7EE3FF1BE1ADE4D7617E06 /* String+Lines.swift */,
+				E98F3E8AFE1A4108DA81D8CDD8EA4FF9 /* Support Files */,
+			);
+			name = SwiftCSV;
+			path = SwiftCSV;
+			sourceTree = "<group>";
+		};
+		9218B175DA8A088BB426B54E3615369A /* FloatingPanel */ = {
+			isa = PBXGroup;
+			children = (
+				BDAA6B0B813B9BE516B81006285B827A /* FloatingPanelBackdropView.swift */,
+				E0F35244223663F21AE15039932B955A /* FloatingPanelBehavior.swift */,
+				39B92717AA430C937A5DDA6AA52BA0CF /* FloatingPanelController.swift */,
+				6B5425A4C74FFE07CD020F98C562A5B5 /* FloatingPanelCore.swift */,
+				4E5739D9670CC56943AF3EA5A218570F /* FloatingPanelLayout.swift */,
+				BABDF590847525CB1B15E42E7EADD449 /* FloatingPanelSurfaceView.swift */,
+				AD140628E6F0AE0CE00B65BBB13DA844 /* FloatingPanelTransitioning.swift */,
+				852569DACF763CFDE943E32EE57B47D4 /* FloatingPanelView.swift */,
+				59AFCA20AD935500CD0388BC4F5980DF /* GrabberHandleView.swift */,
+				4E01087ABCD2708EF7BE4E62E13FE9DB /* Logger.swift */,
+				0589CA6893B38D74AFF29FC7057D6844 /* UIExtensions.swift */,
+				6F38664592C9B9343EC670663B7A3923 /* Support Files */,
+			);
+			name = FloatingPanel;
+			path = FloatingPanel;
 			sourceTree = "<group>";
 		};
 		A5A80030742663543E33ABBBF358B335 /* Pods-SonycApp-SonycAppUITests */ = {
@@ -341,42 +474,100 @@
 			path = "Target Support Files/Pods-SonycApp-SonycAppUITests";
 			sourceTree = "<group>";
 		};
-		A980BE8FF859EFEE26712619A55F9988 /* SideMenu */ = {
+		A6799CF385BE0E4C4F6CF8567962D422 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2ECB6E56BB2EB89F1FA096EBC429F3CE /* Deprecations.swift */,
-				965D620717F2D06B41FE83317A8C074E /* Extensions.swift */,
-				BDB7247A7E2411CA5EBC29572AC18A48 /* Initializable.swift */,
-				89C25A07213FD60BA72EA6B6556B052A /* Print.swift */,
-				15C8527FD82BC80BECB758F97245A38C /* Protected.swift */,
-				AE4CFBAB978DD6DB4ED78AFA93861393 /* SideMenuAnimationController.swift */,
-				D44939C25EF3F09604F634A430F250BA /* SideMenuInteractionController.swift */,
-				8D01A5603FE641432FBBC9F3FBED33AE /* SideMenuManager.swift */,
-				F4FEC65EE70DE7048CD2D803F37DD0C1 /* SideMenuNavigationController.swift */,
-				D870ECF00CCFB7856032498A85FF0B57 /* SideMenuPresentationController.swift */,
-				23CD77C3F3D06AF84F4160EE406E3A94 /* SideMenuPresentationStyle.swift */,
-				356DB906A18CC10CEA6CD2A403C284E8 /* SideMenuPushCoordinator.swift */,
-				6A03534B473001903F70786F76B6322F /* SideMenuTransitionController.swift */,
-				A113FB041003519A4C3E4C9D2BFDB787 /* UITableViewVibrantCell.swift */,
-				C0C146DE30D308486C24CB92A56FDDB0 /* Support Files */,
+				8F8436B9A86F033976B5D1420948F116 /* AKAmplitudeTrackerAudioUnit.h */,
+				11AE9BEC79687AA583E378C04D85AF06 /* AKAudioUnit.h */,
+				B781251BD535D0E982CD56F8342B462E /* AKAudioUnitBase.h */,
+				B4884BA947F4A3FF3105B17CCC591FC9 /* AKBalancerAudioUnit.h */,
+				618D02E0D467221DDF7704C6CB358F74 /* AKBankAudioUnit.h */,
+				D4BAD96A158803154865537ECF82BA7D /* AKCallbackInstrumentAudioUnit.h */,
+				51720B9EF31D5E626E332817A6667BD0 /* AKDiskStreamerAudioUnit.h */,
+				2E3737FAFE2A606765F7B135CF5FABA9 /* AKDynaRageCompressorAudioUnit.h */,
+				EA18ED09CAF94618966D7C6AFC13AA1E /* AKFilterSynthAudioUnit.h */,
+				39938345B44BE0B89A2BB870BAC62C27 /* AKFMOscillatorBankAudioUnit.h */,
+				BB30FB64A88136D5D7542376B8F500B4 /* AKFMOscillatorFilterSynthAudioUnit.h */,
+				5AC8DC426B0F39E7375CF9AD744F0362 /* AKFrequencyTrackerAudioUnit.h */,
+				27C83E0A323AD9201BFA01F9B4841F61 /* AKGeneratorAudioUnitBase.h */,
+				0C753D668466417DD416DE42B48F55B9 /* AKInterop.h */,
+				3963380E00E960B5B0B83A0B40F4FAC5 /* AKLazyTap.h */,
+				7FDD78E6D5807F7713FBA139735BA28C /* AKMandolinAudioUnit.h */,
+				D978E8082BA4D578380FB511112B4532 /* AKMicrophoneTrackerEngine.h */,
+				7ABA5BCA27F9C44E0386BFAADA414CC9 /* AKModulatedDelay_Typedefs.h */,
+				968E0B61D2DE30CA502F122F8B8A73A3 /* AKMorphingOscillatorBankAudioUnit.h */,
+				8367D7B9E20D0AEE5C88F36ADEB7D0DA /* AKMorphingOscillatorFilterSynthAudioUnit.h */,
+				E6672E6138563C298B4A800ED8C6540E /* AKOfflineRenderAudioUnit.h */,
+				773F4292A305B1CFD0D9DCA73EA9BBA6 /* AKOperationEffectAudioUnit.h */,
+				762D03C2C7A0582367FEE4AE67387696 /* AKOperationGeneratorAudioUnit.h */,
+				5717FAB4A8072BAED1A5D2ADF5DA0AAE /* AKOscillatorBankAudioUnit.h */,
+				ADA6E530873C107D4815B1A51F318FF2 /* AKOscillatorFilterSynthAudioUnit.h */,
+				F2607488465ADB1D7A7E0BCD8F985BAE /* AKParameterAutomation.h */,
+				D57E695C70C090AC6CE3385BF5EFB944 /* AKPhaseDistortionOscillatorBankAudioUnit.h */,
+				58DF6F5990F2DF023ACD13AC574B11BF /* AKPhaseDistortionOscillatorFilterSynthAudioUnit.h */,
+				5BCD14FF30EAFC8444B919F6F84EA770 /* AKPresetManager.h */,
+				F21B3E3825302210A8CF309903C96540 /* AKPWMOscillatorBankAudioUnit.h */,
+				E115401E6DB0B5F25E97D99937A3204C /* AKPWMOscillatorFilterSynthAudioUnit.h */,
+				C25E45EAC35DFE90D48D458C8D6595B7 /* AKRenderTap.h */,
+				F8211844EDC5C0BFEBCE057D8F53FB9C /* AKRhinoGuitarProcessorAudioUnit.h */,
+				8FE16BCF8B24FFB01808D93123A0EA15 /* AKSampler_Typedefs.h */,
+				525474520B1EB9312C85CBCDE9343C32 /* AKSamplerMetronome.h */,
+				A787848087C2B4D14E2F27C803C8F185 /* AKSequencerEngine.h */,
+				BC07C26D6ADFD1E77B453C5D0F371F30 /* AKSporthStack.h */,
+				E691FC72E7C744F6DF9B9D0DBABDF197 /* AKTesterAudioUnit.h */,
+				7E8B98B231E6C2F23117E7E638D4C055 /* AKTimeline.h */,
+				6B62A98EAC952D3A8FBC7760A23E7286 /* AKTimelineTap.h */,
+				EAEC702C1E03CA85C65CD31F61ABBAE3 /* AKWaveTableAudioUnit.h */,
+				437038BE33CFC6CB9D2A239D9A7F57C9 /* AudioEngineUnit.h */,
+				2263FFFD397C016AA421C2B39AB52865 /* AudioKit.h */,
+				67335A90A822EACFBCD9C5D9E8ABE26E /* AudioKit-Swift.h */,
+				FD1AEE973CE39582F84A64DBC7A86814 /* BufferedAudioUnit.h */,
+				54B523D14E985A5A35A55C8E0BED96DC /* dr_wav.h */,
+				A06298051EDD794819897D52C0385E97 /* ExceptionCatcher.h */,
+				017C107C4CAD785976170976C78C0FD2 /* EZAudio.h */,
+				E59F0DA7D0AB3F97B57167B964176647 /* EZAudioDevice.h */,
+				CEB156B43644402D0D5C922F980CD90C /* EZAudioFFT.h */,
+				D0F1B9CF07B95CBAB5E37A6A287D8BD4 /* EZAudioFile.h */,
+				0653493F91FF9178A2240A22D9B54F84 /* EZAudioFileMarker.h */,
+				E5788C202895B3581087ED8ABDB53A31 /* EZAudioFloatConverter.h */,
+				14688E6936E11BC55343C43BA6646E6E /* EZAudioFloatData.h */,
+				3559ABBB933D5B88E2F57317751BE5E4 /* EZAudioPlayer.h */,
+				E8BB8A84EB9F80B31E90D061CE13C4A0 /* EZAudioUtilities.h */,
+				04B2E1F994F4B79BB751F466E580238D /* EZMicrophone.h */,
+				EDE1A2C852C74F4DEA2EB33F9B962BD5 /* EZOutput.h */,
+				56363CCB2D98BD48BED440B9B0C06890 /* EZRecorder.h */,
+				793F427B3CB408131B942A59482D77A7 /* soundpipe.h */,
+				5180A9CBEDA0731E5F76DCC535A2B02E /* soundpipeextension.h */,
+				ADACC53822916F1603F27060A3B5D165 /* TPCircularBuffer.h */,
+				1E88391533ACE601F0ACD82BBFACE33D /* TPCircularBuffer+AudioBufferList.h */,
+				E2244147EDE4DF11B158FBDC8200C84F /* TPCircularBuffer+Unit.h */,
+				EF8348E5633D3A184430CA4401679A8C /* vocwrapper.h */,
+				1D6E73ED8DBBE2D6BB19C66073D5B3A3 /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		CA00FBC1EE9174F039B6413DEA141B6B /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				55339D1116F03C341908FD162E10DBBF /* Deprecations.swift */,
+				EF118B98ED6067800F0F4021A1439AA0 /* Extensions.swift */,
+				A3CB577B75F8CB1B1BFBBB56F0273C5F /* Initializable.swift */,
+				6786AA3B12A6409F4E6E1BB8367B14BD /* Print.swift */,
+				99293E8DD4DAC03E3699F027A5CF5483 /* Protected.swift */,
+				5274C24349446A9AA2DC01FC4AB00DCA /* SideMenuAnimationController.swift */,
+				0EE48A9B635A41D10F22B47B4AE16EB9 /* SideMenuInteractionController.swift */,
+				C662A87BE4A7690EFB64169F3606C532 /* SideMenuManager.swift */,
+				E5D5853E9DC6C4FDAFFBFDEDF09A71ED /* SideMenuNavigationController.swift */,
+				3E70FAF4EDB6548D8FE4D7F92908B526 /* SideMenuPresentationController.swift */,
+				D2F07D232A95271EEBC9149DAF635152 /* SideMenuPresentationStyle.swift */,
+				E713CF7892CF41E99032CC6873131208 /* SideMenuPushCoordinator.swift */,
+				B3A8198434AA453D563D885993A40B15 /* SideMenuTransitionController.swift */,
+				F895E1F7C981067F96746A91595A0DA4 /* UITableViewVibrantCell.swift */,
+				E01BC71BD1F13EB4CC67392747DAB13E /* Support Files */,
 			);
 			name = SideMenu;
 			path = SideMenu;
-			sourceTree = "<group>";
-		};
-		C0C146DE30D308486C24CB92A56FDDB0 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7DBBD0B317CD5EB3D671D0D0B11B6A6C /* SideMenu.modulemap */,
-				58DC9F23707F4640E89B8F879765CC3F /* SideMenu-dummy.m */,
-				2E96D97A87751DD2F5CF7972710B64F8 /* SideMenu-Info.plist */,
-				87B431595F0845E8C868F03D6A2BDCA8 /* SideMenu-prefix.pch */,
-				87E895E4718FCB37AFA33456602F3A24 /* SideMenu-umbrella.h */,
-				9B5342690AA17A9E0C66774E29B70E7D /* SideMenu.debug.xcconfig */,
-				9FEB81A0400615107750B539D9243F1C /* SideMenu.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SideMenu";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -384,7 +575,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				2EC716739A7013C3CE4112A369E39423 /* Pods */,
+				3652C301EE559F99BC334D7A264E54B5 /* Pods */,
 				E4C78BB9507453B74368759FF4D845D7 /* Products */,
 				F48B1C6C70734AFE1392D4010D9BB785 /* Targets Support Files */,
 			);
@@ -405,6 +596,21 @@
 			);
 			name = "Pods-SonycApp";
 			path = "Target Support Files/Pods-SonycApp";
+			sourceTree = "<group>";
+		};
+		E01BC71BD1F13EB4CC67392747DAB13E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CA2F3E31015321BFAF6B5ADFEA6112F /* SideMenu.modulemap */,
+				BE6EFFE9B68DC931DE0CE0F2CFA360D4 /* SideMenu-dummy.m */,
+				B67A1185AEC70362A46D33AFAEF24E36 /* SideMenu-Info.plist */,
+				BCAA271CB71DBFF124001C7005B36E0F /* SideMenu-prefix.pch */,
+				D5CCC81BE1DDEF221909B5D6FA2E0FE8 /* SideMenu-umbrella.h */,
+				D99F9DCE131B695DB89CC144D2F3B8DF /* SideMenu.debug.xcconfig */,
+				03F5106DE6177E30895CF9AEE1B1AD1C /* SideMenu.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SideMenu";
 			sourceTree = "<group>";
 		};
 		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
@@ -445,20 +651,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E81592897F57892D4D7564C54E8E9BCF /* SwiftCSV */ = {
+		E98F3E8AFE1A4108DA81D8CDD8EA4FF9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2EBD01DD130C68F90C58A4A46F88407E /* CSV.swift */,
-				38CA659D081D351756D63918FD29CD31 /* Description.swift */,
-				F44F68DD6BF0CE181DE9A6ADC34D5B19 /* EnumeratedView.swift */,
-				DF3BF6F0826DA0987F8A40B1B452A7A2 /* NamedView.swift */,
-				0752951A45ECBC16803D6C64A5C71CAE /* Parser.swift */,
-				41AEA9E22BE1B1736727B50F57041B5F /* ParsingState.swift */,
-				FEF771D84CF30EEAA9F0FA974E8A22EA /* String+Lines.swift */,
-				23133D213D8834C0CC23ACF7127408C1 /* Support Files */,
+				B342BDCFD5457CC75F73664109C29EED /* SwiftCSV.modulemap */,
+				533986BA9B4513DB9AF6784B8E3C1400 /* SwiftCSV-dummy.m */,
+				9AF5E047CA52254B1F0D9B1A35F862BD /* SwiftCSV-Info.plist */,
+				453A1B5916B69EEE2434457BA7DB659F /* SwiftCSV-prefix.pch */,
+				2E4A94FFAD3C161F61AADC1F66C17B3C /* SwiftCSV-umbrella.h */,
+				0667C3EA1FDFE8E73E7AAF80DC8225EA /* SwiftCSV.debug.xcconfig */,
+				E7BCA7BE4807CC15B257651FCB523BC2 /* SwiftCSV.release.xcconfig */,
 			);
-			name = SwiftCSV;
-			path = SwiftCSV;
+			name = "Support Files";
+			path = "../Target Support Files/SwiftCSV";
+			sourceTree = "<group>";
+		};
+		EBC696B144061694F500E7BE5DC03738 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB04300111DAA5E0A5ADA8716E3C4FF8 /* AudioKitUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F48B1C6C70734AFE1392D4010D9BB785 /* Targets Support Files */ = {
@@ -471,22 +684,33 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		F554C41D962BCC00C27C26821AFA5A74 /* AudioKit */ = {
+			isa = PBXGroup;
+			children = (
+				A6799CF385BE0E4C4F6CF8567962D422 /* Core */,
+				1DE9E17DD9EA7DAC3D31C3B08B765AB2 /* Support Files */,
+				0073895819FD674ACA60AD1A4CF284D6 /* UI */,
+			);
+			name = AudioKit;
+			path = AudioKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2249DDD64247BAB0575CC2C38588A841 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082F230E358EA3BDDDDB5A620440583E /* Pods-SonycAppTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28761BD3C505CCB36997450A19676357 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D777716F0B6C0754B7B0230531743BC4 /* SideMenu-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		637802FB14AA157D71882100A16AAAA9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C2D85D1416E5DE3574A0B95254B74AB /* Pods-SonycApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,19 +730,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC29E4D2EC3D8360E3F40549AF2B4D61 /* Headers */ = {
+		9C6EE3F416BAAECD600ECD4785134239 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CCD127285212A1F1D9D5098C0D00D75 /* Pods-SonycApp-SonycAppUITests-umbrella.h in Headers */,
+				909F2B51F0ABECD087B7849F876379CD /* Pods-SonycApp-SonycAppUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C773D2598307FD0BC0BF8A8196F28583 /* Headers */ = {
+		FA51D21A669ACE08A377BCAFFDAC5900 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4E1088A7E4CA7904A6AC2EF3AF943E /* Pods-SonycAppTests-umbrella.h in Headers */,
+				AC53A268EB1FB6B4257E550D884BD2FA /* Pods-SonycApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,17 +769,17 @@
 		};
 		ACC627FA69B7E4E3F9169ED12547BADA /* Pods-SonycAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2DF9106A2C784A9690B113E3B8610ADA /* Build configuration list for PBXNativeTarget "Pods-SonycAppTests" */;
+			buildConfigurationList = 4B9565520B9A34964093921676433E7C /* Build configuration list for PBXNativeTarget "Pods-SonycAppTests" */;
 			buildPhases = (
-				C773D2598307FD0BC0BF8A8196F28583 /* Headers */,
-				19E93A11BB25F7991772F91470829690 /* Sources */,
-				216249ABDB6E953D42FD198C022551F8 /* Frameworks */,
-				36CA589640C3161BE2FF0151824FDC39 /* Resources */,
+				2249DDD64247BAB0575CC2C38588A841 /* Headers */,
+				91479B246D45620910371559794BA7FC /* Sources */,
+				9D3AB976F006A0F0C4BCC973F3AC6285 /* Frameworks */,
+				F550094D3C838774E1191997BD333FF0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				13AD0DDBEB3C21E2EEE0C46607BF707C /* PBXTargetDependency */,
+				67DB2663B1C4F3302355424CF90D0F93 /* PBXTargetDependency */,
 			);
 			name = "Pods-SonycAppTests";
 			productName = "Pods-SonycAppTests";
@@ -582,19 +806,20 @@
 		};
 		C1AE02AC6A364E249C2489D784F57CA3 /* Pods-SonycApp-SonycAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A8B017BF94905C1283922051A0D016B5 /* Build configuration list for PBXNativeTarget "Pods-SonycApp-SonycAppUITests" */;
+			buildConfigurationList = A0C11B30AA45237BDCC06EE8B4C7BE1A /* Build configuration list for PBXNativeTarget "Pods-SonycApp-SonycAppUITests" */;
 			buildPhases = (
-				BC29E4D2EC3D8360E3F40549AF2B4D61 /* Headers */,
-				97A1B59E107A36FCCB9A3F3AB54158FF /* Sources */,
-				CD8CA56FF4EC7EE2DBB3CD1E6428C601 /* Frameworks */,
-				F7C7013B78B3FC52B1ABB54D6426E2BB /* Resources */,
+				9C6EE3F416BAAECD600ECD4785134239 /* Headers */,
+				05C6AA89BC8FC923B4319517B09F4269 /* Sources */,
+				97C745956392E7EEA647EF97D4F714AE /* Frameworks */,
+				F18E4949261D6B4F34E6EA6072D22FA8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5B94DED5299F73CC232CA7918DB80482 /* PBXTargetDependency */,
-				6EEE18FBF6B47D0DDCDBE17747384182 /* PBXTargetDependency */,
-				41474D044807E9073D232BC30E977431 /* PBXTargetDependency */,
+				D371B376FD417124953734E4F78EEF10 /* PBXTargetDependency */,
+				09E3AE459EE9EA8308300192BA5C53FD /* PBXTargetDependency */,
+				2223E7BDD0CC72D2DE7D62AB81A51435 /* PBXTargetDependency */,
+				6D526710898C13C6E2182E6E885103BB /* PBXTargetDependency */,
 			);
 			name = "Pods-SonycApp-SonycAppUITests";
 			productName = "Pods-SonycApp-SonycAppUITests";
@@ -621,19 +846,20 @@
 		};
 		ED4CF05D6F9AD53D39CC38CA8F5C769A /* Pods-SonycApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E50660C04BA7924752ABE9332BE4B5E /* Build configuration list for PBXNativeTarget "Pods-SonycApp" */;
+			buildConfigurationList = 4EDA2735ECCDE2740B430AF401E866DB /* Build configuration list for PBXNativeTarget "Pods-SonycApp" */;
 			buildPhases = (
-				637802FB14AA157D71882100A16AAAA9 /* Headers */,
-				44936627EAC0A660E58FE1EBB5771AB4 /* Sources */,
-				05E16E08DFE61BEA583BD1D9F30730DD /* Frameworks */,
-				8AADDBDE2CB48A93EF08A009E6970E7B /* Resources */,
+				FA51D21A669ACE08A377BCAFFDAC5900 /* Headers */,
+				4BC351680C29FD2D2CDC96D003D276E8 /* Sources */,
+				31ECEA947B3EA267D6935468C312B2EA /* Frameworks */,
+				7EE7D46A0364702E0F29B1D321E08136 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E3A928B379F29A7013A10C7EB511E168 /* PBXTargetDependency */,
-				3094F9BCD50CEDF46976BE8A3695FAEA /* PBXTargetDependency */,
-				BBB6BE8C370CFCBE9DB8CB44556262FB /* PBXTargetDependency */,
+				877D2BE323E7D07FF61B0E432348AA90 /* PBXTargetDependency */,
+				7FD6AA129A84815AE81F7F1B457558DB /* PBXTargetDependency */,
+				8BBC65166A4A6E11DEB6A3EC7AF3BDFC /* PBXTargetDependency */,
+				EA8F5333B893BEE7F630D888F671234C /* PBXTargetDependency */,
 			);
 			name = "Pods-SonycApp";
 			productName = "Pods-SonycApp";
@@ -662,6 +888,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				CF5EDB66CAC2972B9BC27EFA2073CB2B /* AudioKit */,
 				4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */,
 				ED4CF05D6F9AD53D39CC38CA8F5C769A /* Pods-SonycApp */,
 				C1AE02AC6A364E249C2489D784F57CA3 /* Pods-SonycApp-SonycAppUITests */,
@@ -673,13 +900,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		36CA589640C3161BE2FF0151824FDC39 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5FDD3CD220FC9D412FCF202F7E122871 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -687,7 +907,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8AADDBDE2CB48A93EF08A009E6970E7B /* Resources */ = {
+		7EE7D46A0364702E0F29B1D321E08136 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -708,7 +928,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F7C7013B78B3FC52B1ABB54D6426E2BB /* Resources */ = {
+		F18E4949261D6B4F34E6EA6072D22FA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F550094D3C838774E1191997BD333FF0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -718,19 +945,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		19E93A11BB25F7991772F91470829690 /* Sources */ = {
+		05C6AA89BC8FC923B4319517B09F4269 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28D7321533DE0E44AECAC02E53890C6A /* Pods-SonycAppTests-dummy.m in Sources */,
+				5ED09C9507948DF0FB2AC4833CA7A25D /* Pods-SonycApp-SonycAppUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		44936627EAC0A660E58FE1EBB5771AB4 /* Sources */ = {
+		4BC351680C29FD2D2CDC96D003D276E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4347A612809F617F215232F2E67689D0 /* Pods-SonycApp-dummy.m in Sources */,
+				799D7B00BD545C9A97AC1809F3F25560 /* Pods-SonycApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,11 +998,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97A1B59E107A36FCCB9A3F3AB54158FF /* Sources */ = {
+		91479B246D45620910371559794BA7FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91EFAD4682DE8A7F47FAC4717E0232F7 /* Pods-SonycApp-SonycAppUITests-dummy.m in Sources */,
+				0EF88DEF4AB6E4F65D270270D3757546 /* Pods-SonycAppTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,51 +1028,141 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		13AD0DDBEB3C21E2EEE0C46607BF707C /* PBXTargetDependency */ = {
+		09E3AE459EE9EA8308300192BA5C53FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FloatingPanel;
+			target = 4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */;
+			targetProxy = 586CEA84EC412D777B634CC5ACF92302 /* PBXContainerItemProxy */;
+		};
+		2223E7BDD0CC72D2DE7D62AB81A51435 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SideMenu;
+			target = C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */;
+			targetProxy = E62E9D9A23856DF6287230D6154BA460 /* PBXContainerItemProxy */;
+		};
+		67DB2663B1C4F3302355424CF90D0F93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-SonycApp";
 			target = ED4CF05D6F9AD53D39CC38CA8F5C769A /* Pods-SonycApp */;
-			targetProxy = 51C4640861B86022D550E2A2C7C842CF /* PBXContainerItemProxy */;
+			targetProxy = CF039A0A4FB0107C5A27A55657D65140 /* PBXContainerItemProxy */;
 		};
-		3094F9BCD50CEDF46976BE8A3695FAEA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SideMenu;
-			target = C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */;
-			targetProxy = 141B16900316BFDA07D7B570C6AA109A /* PBXContainerItemProxy */;
-		};
-		41474D044807E9073D232BC30E977431 /* PBXTargetDependency */ = {
+		6D526710898C13C6E2182E6E885103BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftCSV;
 			target = B7465E4C13FFC9CE6D359E31F65D6825 /* SwiftCSV */;
-			targetProxy = CA8C34017C28E8A9B4836F6D4F658796 /* PBXContainerItemProxy */;
+			targetProxy = E5376614FDDB9F84CD776BFCBFADE935 /* PBXContainerItemProxy */;
 		};
-		5B94DED5299F73CC232CA7918DB80482 /* PBXTargetDependency */ = {
+		7FD6AA129A84815AE81F7F1B457558DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FloatingPanel;
 			target = 4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */;
-			targetProxy = B46F2BB3EDE42B46B9F06FA7D78D12D8 /* PBXContainerItemProxy */;
+			targetProxy = 55D8E1BCC113E25477C539C7E4677E0C /* PBXContainerItemProxy */;
 		};
-		6EEE18FBF6B47D0DDCDBE17747384182 /* PBXTargetDependency */ = {
+		877D2BE323E7D07FF61B0E432348AA90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AudioKit;
+			target = CF5EDB66CAC2972B9BC27EFA2073CB2B /* AudioKit */;
+			targetProxy = DF466255D7F09DF1D9942612A42BA5F3 /* PBXContainerItemProxy */;
+		};
+		8BBC65166A4A6E11DEB6A3EC7AF3BDFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SideMenu;
 			target = C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */;
-			targetProxy = 522E2DB86C5A71DE89012B572BD9EBC2 /* PBXContainerItemProxy */;
+			targetProxy = B7B63633CDE41929AC4BC6C989AD764B /* PBXContainerItemProxy */;
 		};
-		BBB6BE8C370CFCBE9DB8CB44556262FB /* PBXTargetDependency */ = {
+		D371B376FD417124953734E4F78EEF10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AudioKit;
+			target = CF5EDB66CAC2972B9BC27EFA2073CB2B /* AudioKit */;
+			targetProxy = E3273FFCA686ABED4C691900F8DEE49B /* PBXContainerItemProxy */;
+		};
+		EA8F5333B893BEE7F630D888F671234C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftCSV;
 			target = B7465E4C13FFC9CE6D359E31F65D6825 /* SwiftCSV */;
-			targetProxy = 4E4DCE5A3D58B56FB9958C4B2FAAF65A /* PBXContainerItemProxy */;
-		};
-		E3A928B379F29A7013A10C7EB511E168 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FloatingPanel;
-			target = 4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */;
-			targetProxy = FA8D04F467FDF5B77386FBB08DC82869 /* PBXContainerItemProxy */;
+			targetProxy = B35EA758F3C6140085FFEFF4080E969D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0CC8DFE1637A537A262CD2F0E6E3441B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E650D71B5B582DAEE51E8B74D4E9FCD /* Pods-SonycApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycApp/Pods-SonycApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycApp/Pods-SonycApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0DCCF7160BD2BDF5362EEE6E0C818A7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36BF1BB3F7F007716CB99D8E14ACAF07 /* Pods-SonycAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		13967C5C8F4B10B3EE4D6C208A0A7BEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -910,86 +1227,9 @@
 			};
 			name = Debug;
 		};
-		153CA0DD22064032DB988233BD614987 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7C9F2E168B4F55A5CC965E5BB6EDC66 /* Pods-SonycApp.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SonycApp/Pods-SonycApp-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SonycApp/Pods-SonycApp.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		17EBE3AAC6D7B19E0CB58F709CB17146 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36BF1BB3F7F007716CB99D8E14ACAF07 /* Pods-SonycAppTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		1C8A687A8AC1620ECDFCDED2FAC17C9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FEB81A0400615107750B539D9243F1C /* SideMenu.release.xcconfig */;
+			baseConfigurationReference = 03F5106DE6177E30895CF9AEE1B1AD1C /* SideMenu.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1024,47 +1264,9 @@
 			};
 			name = Release;
 		};
-		1E17CBA6B979F53147F8625038CC22A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66B6285E1A482495B01C3AE421A45E4D /* Pods-SonycAppTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		45B6D36435972CBBC59A481A20E44C4A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B5342690AA17A9E0C66774E29B70E7D /* SideMenu.debug.xcconfig */;
+			baseConfigurationReference = D99F9DCE131B695DB89CC144D2F3B8DF /* SideMenu.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1100,7 +1302,7 @@
 		};
 		58B62F74CEEF30DE4B633F456F350179 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09F0D3E91670749E9FDC24A16860C496 /* SwiftCSV.debug.xcconfig */;
+			baseConfigurationReference = 0667C3EA1FDFE8E73E7AAF80DC8225EA /* SwiftCSV.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1127,6 +1329,121 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		64C04897EA4DC965821C67581440138A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 043D6D3EF9BDFA5A43CFFC1AB1575F12 /* Pods-SonycApp-SonycAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7001F69031D5C69EE8B09F1D6EBE122C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA1F3AB3EBE90398FF2DC95BAF322846 /* Pods-SonycApp-SonycAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		75F623D8B268C33BD155C9631CE28690 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66B6285E1A482495B01C3AE421A45E4D /* Pods-SonycAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1195,7 +1512,7 @@
 		};
 		8C99E11C628E1D571F2070B959E5AB79 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09D169D1BA93B4DE32C6E2CBAE2EB17A /* FloatingPanel.release.xcconfig */;
+			baseConfigurationReference = 4A916FC25EEDCDD7D8A730FA50FB068C /* FloatingPanel.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1230,86 +1547,9 @@
 			};
 			name = Release;
 		};
-		98158825990369AF37004C77BE5CF9FF /* Release */ = {
+		90C48E8FB9EEC22771CE985F915E7D09 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 043D6D3EF9BDFA5A43CFFC1AB1575F12 /* Pods-SonycApp-SonycAppUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		98BD542DAE9F504409926530FF03F464 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA1F3AB3EBE90398FF2DC95BAF322846 /* Pods-SonycApp-SonycAppUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CEA08E8DAA7A54130DC1969999CFFCDD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E650D71B5B582DAEE51E8B74D4E9FCD /* Pods-SonycApp.release.xcconfig */;
+			baseConfigurationReference = D7C9F2E168B4F55A5CC965E5BB6EDC66 /* Pods-SonycApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1340,15 +1580,14 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		DBA43334BF2EE90EA4F8C961236FA6E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CAF9DF01C7ADDA493C5260C8EFE380D /* SwiftCSV.release.xcconfig */;
+			baseConfigurationReference = E7BCA7BE4807CC15B257651FCB523BC2 /* SwiftCSV.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1384,7 +1623,7 @@
 		};
 		EC041AABABF9CC69FAC10B0017CC53DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66391457EE4F7BFA66861A95C6B10B77 /* FloatingPanel.debug.xcconfig */;
+			baseConfigurationReference = C91DBDE7A1F017C44D6991E3C2B67086 /* FloatingPanel.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1418,32 +1657,65 @@
 			};
 			name = Debug;
 		};
+		ECEDEAF1E322AA7806CCD116D2D6DDAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9392509BA0D79AE4101E08F9AA28A6E8 /* AudioKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA107F9694D02644C7F29C77FBC1F005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27035B837E82C3EC60DF83BD1F699954 /* AudioKit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0E50660C04BA7924752ABE9332BE4B5E /* Build configuration list for PBXNativeTarget "Pods-SonycApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				153CA0DD22064032DB988233BD614987 /* Debug */,
-				CEA08E8DAA7A54130DC1969999CFFCDD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2DF9106A2C784A9690B113E3B8610ADA /* Build configuration list for PBXNativeTarget "Pods-SonycAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1E17CBA6B979F53147F8625038CC22A7 /* Debug */,
-				17EBE3AAC6D7B19E0CB58F709CB17146 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13967C5C8F4B10B3EE4D6C208A0A7BEB /* Debug */,
 				871B6E28ABA34DAE69824AB9D22D3B7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B9565520B9A34964093921676433E7C /* Build configuration list for PBXNativeTarget "Pods-SonycAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75F623D8B268C33BD155C9631CE28690 /* Debug */,
+				0DCCF7160BD2BDF5362EEE6E0C818A7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EDA2735ECCDE2740B430AF401E866DB /* Build configuration list for PBXNativeTarget "Pods-SonycApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90C48E8FB9EEC22771CE985F915E7D09 /* Debug */,
+				0CC8DFE1637A537A262CD2F0E6E3441B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1457,6 +1729,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		7F62874C35AE2674095E5AF51C37ABE4 /* Build configuration list for PBXAggregateTarget "AudioKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA107F9694D02644C7F29C77FBC1F005 /* Debug */,
+				ECEDEAF1E322AA7806CCD116D2D6DDAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		92707F899E1CD6FD63DCC66A3882B68C /* Build configuration list for PBXNativeTarget "SideMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1466,11 +1747,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A8B017BF94905C1283922051A0D016B5 /* Build configuration list for PBXNativeTarget "Pods-SonycApp-SonycAppUITests" */ = {
+		A0C11B30AA45237BDCC06EE8B4C7BE1A /* Build configuration list for PBXNativeTarget "Pods-SonycApp-SonycAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98BD542DAE9F504409926530FF03F464 /* Debug */,
-				98158825990369AF37004C77BE5CF9FF /* Release */,
+				7001F69031D5C69EE8B09F1D6EBE122C /* Debug */,
+				64C04897EA4DC965821C67581440138A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

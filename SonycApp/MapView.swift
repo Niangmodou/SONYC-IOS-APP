@@ -116,14 +116,17 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
             button.layer.borderColor = UIColor.faceSelected().cgColor
         }
         if button == reportButton{
-            button.setImage(UIImage(named: "Logo_311"), for: [.highlighted, .selected])
+            button.setImage(UIImage(named: "Logo_311.png"), for: [.highlighted, .selected])
             
         }
         if button == streetButton{
-            button.setImage(UIImage(named: "Logo_Dot"), for: [.highlighted, .selected])
+            button.setImage(UIImage(named: "Logo_Dot.png"), for: [.highlighted, .selected])
         }
         if button == historyButton{
-            button.setImage(UIImage(named: "Icon_History"), for: [.highlighted, .selected] )
+            button.setImage(UIImage(named: "Icon_History.png"), for: [.highlighted, .selected] )
+        }
+        if button == buildingButton{
+            button.setImage(UIImage(named: "Icon_History.png"), for: [.highlighted, .selected] )
         }
         //stores which button was selected when the report was made
         newTask.setValue(button.title(for: .normal), forKey: "locationType")

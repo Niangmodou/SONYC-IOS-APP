@@ -192,7 +192,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
         slidingUp.set(contentViewController: contentVC)
         slidingUp.addPanel(toParent: self)
         slidingUp.hide()
-  
+        
     }
     //keeps updating the gauge values and the values of the min, avg, and max label values
     @objc func keepDoing(decibels: Int, min: Int, max: Int){
@@ -217,7 +217,9 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
     //goes to the next screen when the 10 seconds is over
     func tenSecondsUp(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
-            slidingUp.show()
+            if (!slidingUp.isBeingPresented){
+                slidingUp.show()
+            }
             
         }
     }
