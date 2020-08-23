@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Audio" representedClassName="Audio" syncable="YES" codeGenerationType="class">
+        <attribute name="averageDec" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="faceButton" optional="YES" attributeType="String"/>
+        <attribute name="iAm" optional="YES" attributeType="String"/>
+        <attribute name="inOrOut" optional="YES" attributeType="String"/>
+        <attribute name="locationType" optional="YES" attributeType="String"/>
+        <attribute name="max" optional="YES" attributeType="String"/>
+        <attribute name="min" optional="YES" attributeType="String"/>
+        <attribute name="path" optional="YES" attributeType="String"/>
+        <attribute name="recordings" optional="YES" attributeType="String"/>
+        <attribute name="savedRecording" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ReportIncident" representedClassName="ReportIncident" syncable="YES" codeGenerationType="class">
+        <attribute name="borough" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="String"/>
+        <attribute name="endDate" optional="YES" attributeType="String"/>
+        <attribute name="house_num" optional="YES" attributeType="String"/>
+        <attribute name="incidentType" optional="YES" attributeType="String"/>
+        <attribute name="job_type" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sonycType" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="String"/>
+        <attribute name="street" optional="YES" attributeType="String"/>
+        <attribute name="unique_id" optional="YES" attributeType="String"/>
+        <attribute name="zipcode" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Audio" positionX="-63" positionY="-18" width="128" height="223"/>
+        <element name="ReportIncident" positionX="-63" positionY="72" width="128" height="238"/>
+    </elements>
+</model>
