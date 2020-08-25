@@ -10,6 +10,7 @@ import CoreData
 import AVFoundation
 import AudioToolbox
 import MessageUI
+import MapKit
 
 var audioPlay: AVAudioPlayer!
 class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessageComposeViewControllerDelegate{
@@ -21,6 +22,8 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     var locationType: String!
     
     
+    @IBOutlet weak var warningImage: UIImageView!
+    @IBOutlet weak var mapViewReportDetails: MKMapView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var maxDecibelsLabel: UILabel!
     @IBOutlet weak var avgDecibelsLabel: UILabel!
@@ -64,7 +67,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         youAreLabel.text = newTask.value(forKey: "iAm") as? String
         dateLabel.text = newTask.value(forKey: "date") as? String
         timeLabel.text = newTask.value(forKey: "time") as? String
-        locationTypeLabel.text = newTask.value(forKey: "locationType") as? String
+        locationTypeLabel.text = "This is \(newTask.value(forKey: "locationType")as! String) \(newTask.value(forKey: "noiseType")as! String)"
         minDecibelsLabel.text = min + " db"
         avgDecibelsLabel.text = avg + " db"
         maxDecibelsLabel.text = max + " db"

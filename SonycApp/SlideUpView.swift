@@ -17,14 +17,13 @@ let newTask = NSManagedObject(entity: entity!, insertInto: context)
 
 class SlideUpView: UIViewController {
     
-    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var constructionButton: UIButton!
     
-    
-    @IBOutlet weak var middleView: UIView!
-    
-    
-    @IBOutlet weak var bottomView: UIView!
-    
+    @IBOutlet weak var noiseTypeOtherButton: UIButton!
+    @IBOutlet weak var garbageButton: UIButton!
+    @IBOutlet weak var deliveryButton: UIButton!
+    @IBOutlet weak var musicButton: UIButton!
+    @IBOutlet weak var nightLifeButton: UIButton!
     @IBOutlet weak var elsewhereButton: UIButton!
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var myView: UIView!
@@ -51,6 +50,7 @@ class SlideUpView: UIViewController {
     @IBOutlet var iAmButtonsArray: [UIButton]!
     
     @IBOutlet var faceButtonArray: [UIButton]!
+    @IBOutlet var noiseTypeArray: [UIButton]!
     
     
     @IBOutlet weak var identifyNoiseSourceButton: UIButton!
@@ -69,6 +69,16 @@ class SlideUpView: UIViewController {
         curvingButton(button: othersButton)
         curvingButton(button: restingButton)
         curvingButton(button: walkingButton)
+        curvingButton(button: constructionButton)
+        curvingButton(button: nightLifeButton)
+        curvingButton(button: musicButton)
+        curvingButton(button: deliveryButton)
+        curvingButton(button: garbageButton)
+        curvingButton(button: noiseTypeOtherButton)
+        
+        
+        
+        
         curvingButtonRounder(button: mehFaceButton)
         curvingButtonRounder(button: dizzyFaceButton)
         curvingButtonRounder(button: annoyedFaceButton)
@@ -88,6 +98,13 @@ class SlideUpView: UIViewController {
         addingBorder(button: walkingButton)
         addingBorder(button: identifyNoiseSourceButton)
         
+        addingBorder(button: constructionButton)
+        addingBorder(button: nightLifeButton)
+        addingBorder(button: musicButton)
+        addingBorder(button: deliveryButton)
+        addingBorder(button: garbageButton)
+        addingBorder(button: noiseTypeOtherButton)
+        
         //adding border colors
         addingBorderColorBlack(button: homeButton)
         addingBorderColorBlack(button: elsewhereButton)
@@ -98,9 +115,31 @@ class SlideUpView: UIViewController {
         addingBorderColorBlack(button: restingButton)
         addingBorderColorBlack(button: walkingButton)
         addingBorderColorBlack(button: identifyNoiseSourceButton)
+        addingBorderColorBlack(button: constructionButton)
+        addingBorderColorBlack(button: nightLifeButton)
+        addingBorderColorBlack(button: musicButton)
+        addingBorderColorBlack(button: deliveryButton)
+        addingBorderColorBlack(button: garbageButton)
+        addingBorderColorBlack(button: noiseTypeOtherButton)
         
         myView.roundCorners(cornerRadius: 20.0)
         
+    }
+    //noise type buttons
+    @IBAction func noiseTypeButtonsSelect(_ sender: UIButton) {
+        //all the buttons have a background color of white and are not selected
+        noiseTypeArray.forEach({ $0.backgroundColor = UIColor.white
+            sender.isSelected = false
+        })
+        
+        //when a button is pressed, the background color changes to the custom color below. Is selected and only 1 button is selected at 1 time
+        sender.backgroundColor = UIColor.buttonSelected()
+        sender.isSelected = true
+        
+        //saving button information in core data
+        newTask.setValue(sender.title(for: .normal), forKey: "noiseType")
+        savingData()
+        let _ = navigationController?.popViewController(animated: true)
     }
     
     //for the first row of buttons, home or elsewhere
