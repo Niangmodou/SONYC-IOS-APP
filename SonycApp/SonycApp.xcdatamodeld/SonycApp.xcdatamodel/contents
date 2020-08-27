@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Audio" representedClassName="Audio" syncable="YES" codeGenerationType="class">
+        <attribute name="api" optional="YES" attributeType="String"/>
         <attribute name="averageDec" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="faceButton" optional="YES" attributeType="String"/>
@@ -12,8 +13,14 @@
         <attribute name="noiseType" optional="YES" attributeType="String"/>
         <attribute name="path" optional="YES" attributeType="String"/>
         <attribute name="recordings" optional="YES" attributeType="String"/>
+        <attribute name="reportAddress" optional="YES" attributeType="String"/>
+        <attribute name="reportLatitude" optional="YES" attributeType="String"/>
+        <attribute name="reportLongitude" optional="YES" attributeType="String"/>
         <attribute name="savedRecording" optional="YES" attributeType="String"/>
         <attribute name="time" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ReportHistory" representedClassName="ReportHistory" syncable="YES" codeGenerationType="class">
+        <attribute name="api" optional="YES" attributeType="String"/>
     </entity>
     <entity name="ReportIncident" representedClassName="ReportIncident" syncable="YES" codeGenerationType="class">
         <attribute name="borough" optional="YES" attributeType="String"/>
@@ -31,7 +38,8 @@
         <attribute name="zipcode" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Audio" positionX="-63" positionY="-18" width="128" height="238"/>
+        <element name="Audio" positionX="-63" positionY="-18" width="128" height="298"/>
         <element name="ReportIncident" positionX="-63" positionY="72" width="128" height="238"/>
+        <element name="ReportHistory" positionX="-63" positionY="126" width="128" height="58"/>
     </elements>
 </model>

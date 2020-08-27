@@ -20,6 +20,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     var avg: String!
     var max: String!
     var locationType: String!
+    var location: String!
     
     
     @IBOutlet weak var warningImage: UIImageView!
@@ -43,7 +44,6 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     
     @IBOutlet weak var locationTypeLabel: UILabel!
     @IBOutlet weak var locationTypeImage: UIImageView!
-    @IBOutlet weak var gaugeView: GaugeView!
     var playing = false;
     
     override func viewDidLoad() {
@@ -57,7 +57,9 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         min = (newTask.value(forKey: "min") as! String)
         avg = (newTask.value(forKey: "averageDec") as! String)
         max = (newTask.value(forKey: "max") as! String)
-        locationType = "Home"//(newTask.value(forKey: "locationType") as! String)
+        locationType = (newTask.value(forKey: "locationType") as! String)
+        location = (newTask.value(forKey: "reportAddress") as! String)
+               
         
         //information that will be stored in the recording details of the card
         //images and label for the file.
@@ -68,6 +70,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         dateLabel.text = newTask.value(forKey: "date") as? String
         timeLabel.text = newTask.value(forKey: "time") as? String
         locationTypeLabel.text = "This is \(newTask.value(forKey: "locationType")as! String) \(newTask.value(forKey: "noiseType")as! String)"
+        locationLabel.text = location
         minDecibelsLabel.text = min + " db"
         avgDecibelsLabel.text = avg + " db"
         maxDecibelsLabel.text = max + " db"
