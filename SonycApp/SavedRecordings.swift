@@ -64,8 +64,9 @@ class SavedRecordings: UITableViewController{
         //have the index be the same as the indexPath.row
         positionRecording = indexPath.row
         cell.dateAndTimeLabel.text = (audioCards[indexPath.row].value(forKey: "date") as! String) + " " + (audioCards[indexPath.row].value(forKey: "time") as! String)
-        cell.avgDecibels.text = (audioCards[indexPath.row].value(forKey: "averageDec") as! String)
+        cell.avgDecibels.text = (audioCards[indexPath.row].value(forKey: "averageDec") as! String) + " db"
         cell.imageCard.image = wordsToImage[audioCards[indexPath.row].value(forKey: "locationType") as! String]
+        cell.locationLabel.text = (audioCards[indexPath.row].value(forKey: "reportAddress") as! String)
         return cell
     }
     

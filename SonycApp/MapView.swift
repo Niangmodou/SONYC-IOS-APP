@@ -40,7 +40,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     override func viewDidLoad() {
         super.viewDidLoad()
         //deleteAllData()
-         setUpSearchBar()
+        setUpSearchBar()
         getData()
         
         //for the slide up panel 
@@ -93,37 +93,37 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     }
     
     /*
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        //finding the user's location
-        self.manager.requestWhenInUseAuthorization()
-        self.manager.desiredAccuracy = kCLLocationAccuracyBest
-        self.manager.delegate = self
-        self.manager.startUpdatingLocation()
-        if CLLocationManager.locationServicesEnabled() {
-            self.manager.delegate = self
-            self.manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            self.manager.startUpdatingLocation()
-        }
-    }
-    */
+     override func viewDidDisappear(_ animated: Bool) {
+     super.viewDidDisappear(animated)
+     //finding the user's location
+     self.manager.requestWhenInUseAuthorization()
+     self.manager.desiredAccuracy = kCLLocationAccuracyBest
+     self.manager.delegate = self
+     self.manager.startUpdatingLocation()
+     if CLLocationManager.locationServicesEnabled() {
+     self.manager.delegate = self
+     self.manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+     self.manager.startUpdatingLocation()
+     }
+     }
+     */
     func setUpSearchBar() {
-           searchBar.delegate = self
-       }
+        searchBar.delegate = self
+    }
     
     //Function to process the search query when the search button has been clicked
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         //UIApplication.shared.beginIgnoringInteractionEvents()
         /*
-        let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.style = UIActivityIndicatorView.Style.gray
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        
-        activityIndicator.startAnimating()
-        
-        self.view.addSubview(activityIndicator)
-        */
+         let activityIndicator = UIActivityIndicatorView()
+         activityIndicator.style = UIActivityIndicatorView.Style.gray
+         activityIndicator.center = self.view.center
+         activityIndicator.hidesWhenStopped = true
+         
+         activityIndicator.startAnimating()
+         
+         self.view.addSubview(activityIndicator)
+         */
         //searchBar.resignFirstResponder()
         //dismiss(animated: true, completion: nil)
         
@@ -156,7 +156,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
                 let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!)
                 
                 self.centerMapOnLocation(coordinate, mapView: self.mapView)
-
+                
             }
             
         }
@@ -192,24 +192,24 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     
     //makes the back button hidden
     /*
-    @IBAction func goBackButtonHidden(button: UIButton) {
-        button.isHidden = true
-    }
- */
+     @IBAction func goBackButtonHidden(button: UIButton) {
+     button.isHidden = true
+     }
+     */
     
     //makes the textbox hidden
     @IBAction func textBoxHidden(textbox: UITextField) {
         textbox.isHidden = true
     }
-               
-       //Function to plot annotations onto Map
+    
+    //Function to plot annotations onto Map
     func plotAnnotations(data: [NSManagedObject]) {
         
         for each in data {
             let latitude = each.value(forKey: "latitude")
             let longitude = each.value(forKey: "longitude")
             let title = each.value(forKey: "sonycType")
-
+            
             //Creating and plotting the DOB annotation on the map
             plotAnnotation(title: title as! String, latitude: latitude as! CLLocationDegrees, longitude: longitude as! CLLocationDegrees)
         }
@@ -226,7 +226,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         mapView.addAnnotation(loc)
     }
     
-        //Function to center map on New York City
+    //Function to center map on New York City
     func centerMapOnLocation(_ location: CLLocationCoordinate2D, mapView: MKMapView) {
         let regionRadius: CLLocationDistance = 5000
         let coordinateRegion = MKCoordinateRegion(center: location,
@@ -239,7 +239,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ReportIncident")
         fetchRequest.returnsObjectsAsFaults = false
-
+        
         do{
             let results = try managedContext.fetch(fetchRequest)
             for managedObject in results{
@@ -252,60 +252,60 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     }
     
     //Fucntion to add image to an annotation
-       func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-           //print("hi")
-           var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
-           
-           if annotationView == nil {
-               annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
-           }
-           
-           if annotation.title == "311 pin" {
-               annotationView?.image = UIImage(named: "Pin_311_non-color.png")
-           }else if annotation.title == "DOB" || annotation.title == "AHV" {
-               print("hi")
-               annotationView?.image = UIImage(named: "Pin_dob_non-color.png")
-           }else if annotation.title == "Current"{
-               print("hi1")
-               annotationView?.image = UIImage(named: "Location_Original.png")
-           }else if annotation.title == "Map Search"{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        //print("hi")
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
+        }
+        
+        if annotation.title == "311 pin" {
+            annotationView?.image = UIImage(named: "Pin_311_non-color.png")
+        }else if annotation.title == "DOB" || annotation.title == "AHV" {
+            print("hi")
+            annotationView?.image = UIImage(named: "Pin_dob_non-color.png")
+        }else if annotation.title == "Current"{
+            print("hi1")
+            annotationView?.image = UIImage(named: "Location_Original.png")
+        }else if annotation.title == "Map Search"{
             print("yo")
-            }
-           
-           return annotationView
-       }
+        }
+        
+        return annotationView
+    }
     
-   private func getData(){
-           guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
-               return
-           }
-           
-           let context = appDelegate.persistentContainer.viewContext
-           let fetch = NSFetchRequest<NSManagedObject>(entityName: "ReportIncident")
-           
-           do{
-               //Loading data from CoreData
-               allData = try context.fetch(fetch)
-               
-               //Plot Annotations on the Map
-               plotAnnotations(data: allData)
-               
-               //Sort Data array
-               /*
-               allData.sort(by: {
-                   guard let first: Float = ($0.value(forKey: "distance") as! Float) else {}
-                   guard let second: Float = ($1.value(forKey: "distance") as! Float) else {}
-                   
-                   return first < second
-                   
-               })
-               */
-               
-           }catch let error{
-               print("Error: \(error)")
-           }
-       }
-
+    private func getData(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+            return
+        }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        let fetch = NSFetchRequest<NSManagedObject>(entityName: "ReportIncident")
+        
+        do{
+            //Loading data from CoreData
+            allData = try context.fetch(fetch)
+            
+            //Plot Annotations on the Map
+            plotAnnotations(data: allData)
+            
+            //Sort Data array
+            /*
+             allData.sort(by: {
+             guard let first: Float = ($0.value(forKey: "distance") as! Float) else {}
+             guard let second: Float = ($1.value(forKey: "distance") as! Float) else {}
+             
+             return first < second
+             
+             })
+             */
+            
+        }catch let error{
+            print("Error: \(error)")
+        }
+    }
+    
     //Function to get logo image based on type
     func getImage(reportType: String) -> UIImage {
         var image: UIImage!
@@ -337,48 +337,48 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         return text
     }
     
-       //Function to get current user's address based on lat and lon
-       func getCurrentLocation() -> String {
-           var center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
-    
-           let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
-           
-           var addressString : String = ""
-           
-           let ceo: CLGeocoder = CLGeocoder()
-           
-           ceo.reverseGeocodeLocation(loc, completionHandler:
-               {(placemarks, error) in
-                   if (error != nil)
-                   {
-                       print("reverse geodcode fail: \(error!.localizedDescription)")
-                   }
-                   let pm = placemarks! as [CLPlacemark]
-
-                   if pm.count > 0 {
-                       let pm = placemarks![0]
-                       if pm.subLocality != nil {
-                           addressString = addressString + pm.subLocality! + ", "
-                       }
-                       if pm.thoroughfare != nil {
-                           addressString = addressString + pm.thoroughfare! + ", "
-                       }
-                       if pm.locality != nil {
-                           addressString = addressString + pm.locality! + ", "
-                       }
-                       if pm.country != nil {
-                           addressString = addressString + pm.country! + ", "
-                       }
-                       if pm.postalCode != nil {
-                           addressString = addressString + pm.postalCode! + " "
-                       }
-
-
-                 }
-           })
-           
-           return addressString
-       }
+    //Function to get current user's address based on lat and lon
+    func getCurrentLocation() -> String {
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
+        
+        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        
+        var addressString : String = ""
+        
+        let ceo: CLGeocoder = CLGeocoder()
+        
+        ceo.reverseGeocodeLocation(loc, completionHandler:
+            {(placemarks, error) in
+                if (error != nil)
+                {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                }
+                let pm = placemarks! as [CLPlacemark]
+                
+                if pm.count > 0 {
+                    let pm = placemarks![0]
+                    if pm.subLocality != nil {
+                        addressString = addressString + pm.subLocality! + ", "
+                    }
+                    if pm.thoroughfare != nil {
+                        addressString = addressString + pm.thoroughfare! + ", "
+                    }
+                    if pm.locality != nil {
+                        addressString = addressString + pm.locality! + ", "
+                    }
+                    if pm.country != nil {
+                        addressString = addressString + pm.country! + ", "
+                    }
+                    if pm.postalCode != nil {
+                        addressString = addressString + pm.postalCode! + " "
+                    }
+                    
+                    
+                }
+        })
+        
+        return addressString
+    }
     
     func filterData() {
         /*
@@ -414,7 +414,7 @@ extension MapView: UITableViewDataSource {
         if api == "DOB" {
             let house = currentRow.value(forKey: "house_num") as! String
             let street = currentRow.value(forKey: "street") as! String
-        
+            
             address = "\(house) \(street)"
             
             startDate = (currentRow.value(forKey: "startDate") as! String)
@@ -443,7 +443,7 @@ extension MapView: UITableViewDataSource {
         let location = "\(borough),NY \(zipcode)"
         
         let currLocation = getCurrentLocation()
-    
+        
         if api == "311" {
             print("BENCHMARK 3 ---------------------")
             cell.configure(id: id,
@@ -485,10 +485,10 @@ extension MapView: UITableViewDelegate{
         let longitude = currentRow.value(forKey: "longitude") as! CLLocationDegrees
         print(latitude, longitude)
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-       
+        
         //Focusing map on that location
         centerMapOnLocation(location, mapView: mapView)
-
+        
     }
     
 }

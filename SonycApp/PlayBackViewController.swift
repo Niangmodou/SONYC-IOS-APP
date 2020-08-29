@@ -59,7 +59,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         max = (newTask.value(forKey: "max") as! String)
         locationType = (newTask.value(forKey: "locationType") as! String)
         location = (newTask.value(forKey: "reportAddress") as! String)
-               
+        
         
         //information that will be stored in the recording details of the card
         //images and label for the file.

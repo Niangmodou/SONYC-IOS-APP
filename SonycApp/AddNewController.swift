@@ -13,7 +13,6 @@ import AVFoundation
 import Accelerate
 import AudioToolbox
 import FloatingPanel
-import AudioKit
 
 let bufferSize = 1024
 let calibrationOffset = 135
@@ -74,16 +73,12 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
                 print("Accepted")
             }
         }
-        
-        AKSettings.audioInputEnabled = true
         //deals with the tap of the microphone
         if micTapped {
             mic.removeTap(onBus: 0)
             micTapped = false
             return
         }
-        //AKSettings sample Rate
-        AKSettings.sampleRate = 44100
         
         let micFormat = mic.inputFormat(forBus: audioBus)
         //installs the tap on the microphone
@@ -191,6 +186,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
         
         slidingUp.set(contentViewController: contentVC)
         slidingUp.addPanel(toParent: self)
+        //hides the slide up panel until the recording session is finished
         slidingUp.hide()
         
     }
@@ -211,10 +207,11 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
     //also stops the audioEngine and stored the stage of the recordings in the userDefaults
     @IBAction func createReport(_ sender: Any) {
         stopAndResetAudio()
+        //shows the slide up panel when the recording is finished
         slidingUp.show()
     }
     
-    //goes to the next screen when the 10 seconds is over
+    //shows the slideup panel after 10 seconds if it is not already showing
     func tenSecondsUp(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
             if (!slidingUp.isBeingPresented){
@@ -222,12 +219,6 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
             }
             
         }
-    }
-    //goes to the afterRecord screen that shows the map to store other information for the audiofile
-    func nextScreen(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "map") ; //afterRecord is the storyboard ID
-        self.present(vc, animated: true, completion: nil);
     }
     
 }

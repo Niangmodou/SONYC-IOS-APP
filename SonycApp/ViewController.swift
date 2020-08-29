@@ -110,12 +110,12 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
                 print(error?.localizedDescription ?? "Response Error")
                 return
             }
-           print(dataResponse)
+            print(dataResponse)
             //Retrieving the json data from the data response returned from the server
             do{
                 print("hi 311")
-                 let jsonResult = try JSONSerialization.jsonObject(with: dataResponse, options: []) as? [Dictionary<String, AnyObject>]
-                               
+                let jsonResult = try JSONSerialization.jsonObject(with: dataResponse, options: []) as? [Dictionary<String, AnyObject>]
+                
                 let apiType = "311"
                 print("BENCHMARK 0 ---------------------")
                 self.saveToCoreData(jsonResponse: jsonResult as Any, api: apiType)
@@ -129,7 +129,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
     //Function to get DOB permit data
     func getDOBPermitData(){
         let url = URL(string: "https://data.cityofnewyork.us/resource/ipu4-2q9a.json?zip_code=10001")
-    
+        
         let task = URLSession.shared.dataTask(with: url!){ (data,response,error) in
             //Making a call to the API and retrieving the data response
             guard let dataResponse = data, error == nil else{
@@ -155,17 +155,17 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
         let geocoder: CLGeocoder = CLGeocoder()
         var zipcode: String!
         /*
-        geocoder.reverseGeocodeLocation(location) {(placemarks, error) in
-            if error != nil {
-                print("Reverse Geocode Fail: \(error!.localizedDescription)")
-            }
-            
-            guard let placemark = placemarks?.first else {
-                return
-            }
-            print( placemark.postalCode as Any)
-            zipcode = placemark.postalCode
-        }
+         geocoder.reverseGeocodeLocation(location) {(placemarks, error) in
+         if error != nil {
+         print("Reverse Geocode Fail: \(error!.localizedDescription)")
+         }
+         
+         guard let placemark = placemarks?.first else {
+         return
+         }
+         print( placemark.postalCode as Any)
+         zipcode = placemark.postalCode
+         }
          */
         
         return "10001"
@@ -201,7 +201,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
                     
                     let zipcode = self.getZipcode(location: reportLoc)
                     
-        
+                    
                     let distance = Double(self.getDistance(reportLocation: reportLoc))
                     let roundedDistance = Double(round(100*distance!)/100)
                     let roundedDistanceString = String(roundedDistance)
@@ -271,14 +271,14 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
                             //print(y)
                             let roundedDistanceString = String(roundedDistance)
                             
-                    
+                            
                             let newEntity = NSManagedObject(entity: entity!,
                                                             insertInto: context)
                             
                             newEntity.setValue(job_type, forKey: "job_type")
                             newEntity.setValue(id, forKey: "unique_id")
                             newEntity.setValue(api, forKey: "sonycType")
-                                
+                            
                             //Stores location data
                             newEntity.setValue(house, forKey: "house_num")
                             newEntity.setValue(latitude, forKey: "latitude")
@@ -291,7 +291,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
                             //Storing Date information
                             newEntity.setValue(startDate, forKey: "startDate")
                             newEntity.setValue(endDate, forKey: "endDate")
-                        
+                            
                             
                         }else{
                             print("error")

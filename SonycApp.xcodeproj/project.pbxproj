@@ -30,7 +30,6 @@
 		269E135624C94F9000D09E90 /* AddNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E135524C94F9000D09E90 /* AddNewController.swift */; };
 		269E135824C94FB500D09E90 /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E135724C94FB500D09E90 /* GaugeView.swift */; };
 		269E135A24C94FC900D09E90 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E135924C94FC900D09E90 /* Colors.swift */; };
-		269E135C24C94FEF00D09E90 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E135B24C94FEF00D09E90 /* ViewController2.swift */; };
 		269E135E24C9500D00D09E90 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E135D24C9500D00D09E90 /* MapView.swift */; };
 		269E136024C9503300D09E90 /* SlideUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E135F24C9503300D09E90 /* SlideUpView.swift */; };
 		269E136224C9505F00D09E90 /* PlayBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E136124C9505F00D09E90 /* PlayBackViewController.swift */; };
@@ -88,7 +87,6 @@
 		269E135524C94F9000D09E90 /* AddNewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewController.swift; sourceTree = "<group>"; };
 		269E135724C94FB500D09E90 /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
 		269E135924C94FC900D09E90 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		269E135B24C94FEF00D09E90 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		269E135D24C9500D00D09E90 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		269E135F24C9503300D09E90 /* SlideUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpView.swift; sourceTree = "<group>"; };
 		269E136124C9505F00D09E90 /* PlayBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 				269E135524C94F9000D09E90 /* AddNewController.swift */,
 				269E135724C94FB500D09E90 /* GaugeView.swift */,
 				269E135924C94FC900D09E90 /* Colors.swift */,
-				269E135B24C94FEF00D09E90 /* ViewController2.swift */,
 				269E135D24C9500D00D09E90 /* MapView.swift */,
 				269E135F24C9503300D09E90 /* SlideUpView.swift */,
 				269E136124C9505F00D09E90 /* PlayBackViewController.swift */,
@@ -477,7 +474,6 @@
 				5201CC4324EF1931006532B1 /* MapCardCell.swift in Sources */,
 				269E135A24C94FC900D09E90 /* Colors.swift in Sources */,
 				265D43B224D75D940027B148 /* identifyPopUp.swift in Sources */,
-				269E135C24C94FEF00D09E90 /* ViewController2.swift in Sources */,
 				269E132524C94EDA00D09E90 /* ViewController.swift in Sources */,
 				26678FF024CC654F00067A9F /* Filters&Conversions.swift in Sources */,
 				269E132124C94EDA00D09E90 /* AppDelegate.swift in Sources */,

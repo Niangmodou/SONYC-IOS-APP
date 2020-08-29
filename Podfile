@@ -8,7 +8,6 @@ target 'SonycApp' do
   # Pods for SonycApp
 	pod 'FloatingPanel'
 	pod 'SideMenu'
-	pod 'AudioKit'
 	pod 'SwiftCSV'
 
   target 'SonycAppTests' do

@@ -1,33 +1,24 @@
 PODS:
-  - AudioKit (4.10.1):
-    - AudioKit/Core (= 4.10.1)
-    - AudioKit/UI (= 4.10.1)
-  - AudioKit/Core (4.10.1)
-  - AudioKit/UI (4.10.1):
-    - AudioKit/Core
   - FloatingPanel (1.7.5)
   - SideMenu (6.4.8)
   - SwiftCSV (0.5.6)
 
 DEPENDENCIES:
-  - AudioKit
   - FloatingPanel
   - SideMenu
   - SwiftCSV
 
 SPEC REPOS:
   trunk:
-    - AudioKit
     - FloatingPanel
     - SideMenu
     - SwiftCSV
 
 SPEC CHECKSUMS:
-  AudioKit: b8e508a0af3dc7d53caf0ca1002b187a662f949e
   FloatingPanel: bb17fd6fc7ae519f877f7bd30f4f6115a78acf07
   SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
   SwiftCSV: efb4a15dd7f2f1212b3d6986f97a3369ff6c5100
 
-PODFILE CHECKSUM: 03216c858c0fd161ced3c45304f73041e13e313f
+PODFILE CHECKSUM: 534c73629e645e9dd327ea921e40d40d133a1279
 
 COCOAPODS: 1.9.3
