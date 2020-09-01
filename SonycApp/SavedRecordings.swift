@@ -16,6 +16,8 @@ import AudioToolbox
 var viewArray: [UIView]!
 var audioCards = [NSManagedObject]()
 var positionRecording: Int!;
+//the select button is not selected
+var buttonSelected = false;
 
 class SavedRecordings: UITableViewController{
     var average: String!
@@ -23,13 +25,61 @@ class SavedRecordings: UITableViewController{
     var timeStored: String!
     var locationImage: String!
     
+    @IBOutlet weak var selectButton: UIButton!
     @IBOutlet var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         //does not show the cells that are not in use
         myTableView.tableFooterView = UIView()
+        myTableView.allowsMultipleSelectionDuringEditing = true
         
     }
+    
+    //action for selecting mutiple table cells to do a mutliple deleting of data
+    @IBAction func selectAndDelete(button: UIButton) {
+        self.myTableView.setEditing(true, animated: true)
+        button.isSelected.toggle()
+        //if the select button is pressed, it will turn into a delete button where you can select the audio files that you wish to delete
+        if button.isSelected || button.isHighlighted{
+            button.setTitle("Delete", for: [.highlighted, .selected])
+            //shows that the select button is selected
+            buttonSelected = true
+        }
+        else{
+            //shows that the select button is not selected
+            buttonSelected = false
+        }
+        
+        if let selectedRows = tableView.indexPathsForSelectedRows {
+            //temporary array to hold the audio files that need to be deleted
+            var tempAudioCards = [NSManagedObject]()
+            for indexPath in selectedRows  {
+                tempAudioCards.append(audioCards[indexPath.row])
+            }
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            for item in tempAudioCards {
+                if let index = audioCards.firstIndex(of: item) {
+                    do{
+                        //delets the file from core data
+                        context.delete(audioCards[index])
+                        //removes the file from the array
+                        audioCards.remove(at: index)
+                        //updates the tableview
+                        myTableView.beginUpdates()
+                        myTableView.deleteRows(at: selectedRows, with: .automatic)
+                        myTableView.endUpdates()
+                        try context.save()
+                        self.myTableView.reloadData()
+                    }
+                    catch{
+                        print(error)
+                    }
+                }
+            }
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         //persistentContainer
         let context = appDelegate.persistentContainer.viewContext
@@ -53,6 +103,7 @@ class SavedRecordings: UITableViewController{
         myTableView.reloadData()
     }
     
+    
     //shows the cards of the recordings that were already made
     override func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         return audioCards.count;
@@ -74,6 +125,12 @@ class SavedRecordings: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //have the index be the same as the indexPath.row
         positionRecording = indexPath.row
+        //only goes to the recording details screen if the select button was not pressed so deleting will not occur
+        if (buttonSelected == false){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil);
+            let vc = storyboard.instantiateViewController(withIdentifier: "recordingDetailsSaved") ; // recordings the storyboard ID
+            self.present(vc, animated: true, completion: nil);
+        }
     }
     //size of the cell is 100 (height)
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

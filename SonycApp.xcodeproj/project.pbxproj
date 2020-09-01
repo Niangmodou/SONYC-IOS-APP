@@ -35,7 +35,6 @@
 		269E136224C9505F00D09E90 /* PlayBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E136124C9505F00D09E90 /* PlayBackViewController.swift */; };
 		269E136424C9507800D09E90 /* ButtonStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E136324C9507800D09E90 /* ButtonStyling.swift */; };
 		5201CC4324EF1931006532B1 /* MapCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5201CC4224EF1930006532B1 /* MapCardCell.swift */; };
-		525E57AD24EDCE34007B82D5 /* ReportsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525E57AC24EDCE33007B82D5 /* ReportsTableView.swift */; };
 		935D2A3F765034DB00C8D521 /* Pods_SonycApp_SonycAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D2AF6086CEC7FBC9E4A489 /* Pods_SonycApp_SonycAppUITests.framework */; };
 		E0A05538836F55AB1196B323 /* Pods_SonycAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904A9F7AA3E478EDA5BFF82F /* Pods_SonycAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,7 +92,6 @@
 		269E136324C9507800D09E90 /* ButtonStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyling.swift; sourceTree = "<group>"; };
 		28D2AF6086CEC7FBC9E4A489 /* Pods_SonycApp_SonycAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SonycApp_SonycAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5201CC4224EF1930006532B1 /* MapCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCardCell.swift; sourceTree = "<group>"; };
-		525E57AC24EDCE33007B82D5 /* ReportsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsTableView.swift; sourceTree = "<group>"; };
 		904A9F7AA3E478EDA5BFF82F /* Pods_SonycAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SonycAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		943B05580CC87F80DCEB6199 /* Pods_SonycApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SonycApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DCA628391D3372F336056F4 /* Pods-SonycApp-SonycAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonycApp-SonycAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				2671C55E24E0758F00AB0DCF /* SavedRecordings.swift */,
 				2671C56424E0BB3500AB0DCF /* TableCell.swift */,
 				26741F4124E9B27E0079C11C /* PlayBackFromRecordings.swift */,
-				525E57AC24EDCE33007B82D5 /* ReportsTableView.swift */,
 				5201CC4224EF1930006532B1 /* MapCardCell.swift */,
 			);
 			path = SonycApp;
@@ -468,7 +465,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				269E135624C94F9000D09E90 /* AddNewController.swift in Sources */,
-				525E57AD24EDCE34007B82D5 /* ReportsTableView.swift in Sources */,
 				265D43B024D75C8E0027B148 /* selectLocationPopUp.swift in Sources */,
 				26741F4224E9B27E0079C11C /* PlayBackFromRecordings.swift in Sources */,
 				5201CC4324EF1931006532B1 /* MapCardCell.swift in Sources */,

@@ -49,7 +49,7 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
         max = (audioCards[positionRecording].value(forKey: "max") as! String)
         locationType = (audioCards[positionRecording].value(forKey: "locationType") as! String)
         path = (audioCards[positionRecording].value(forKey: "path") as! String)
-        location = (newTask.value(forKey: "reportAddress") as! String)
+        location = (audioCards[positionRecording].value(forKey: "reportAddress") as! String)
         
         
         //information that will be stored in the recording details of the card

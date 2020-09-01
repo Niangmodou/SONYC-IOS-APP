@@ -6,8 +6,9 @@
 //  Copyright © 2020 Vanessa Johnson. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import CoreData
+import AVFoundation
 
 class MapCardCell: UITableViewCell {
     
@@ -40,8 +41,6 @@ class MapCardCell: UITableViewCell {
         newTask.setValue(reportLongitude, forKey: "reportLongitude")
         
         savingData()
-        
-        
     }
     
     /*
