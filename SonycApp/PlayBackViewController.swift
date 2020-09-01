@@ -136,6 +136,9 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     //is connected to the report button
     //will send the recording details to 311
     @IBAction func sendText(_ sender: Any) {
+        if playing{
+            audioPlay.stop()
+        }
         let controller = MFMessageComposeViewController()
         controller.messageComposeDelegate = self
         controller.body = "Testing Out"
