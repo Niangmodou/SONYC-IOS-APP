@@ -994,6 +994,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recordings" id="6Jd-s1-EEk">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="bDJ-av-NOt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1un-j9-rmx">
+                                <rect key="frame" x="20" y="13" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelAction:" destination="fr9-ak-lM2" eventType="touchUpInside" id="3wU-jv-oZ2"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Select" style="plain" id="bCm-QH-b7J">
                             <button key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FBF-a3-rbK">
                                 <rect key="frame" x="302" y="13" width="92" height="30"/>
@@ -1015,6 +1027,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="1un-j9-rmx" id="ItD-y3-aj0"/>
                         <outlet property="myTableView" destination="j75-ax-zpR" id="63v-qp-QJ2"/>
                         <outlet property="selectButton" destination="FBF-a3-rbK" id="r4a-tt-zVq"/>
                     </connections>

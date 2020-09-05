@@ -25,30 +25,38 @@ class SavedRecordings: UITableViewController{
     var timeStored: String!
     var locationImage: String!
     
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         //does not show the cells that are not in use
         myTableView.tableFooterView = UIView()
+        //allows the tableview to be edited for the multiple selection
         myTableView.allowsMultipleSelectionDuringEditing = true
+        //hides the cancel button when it is pressed
+        cancelButton.isHidden = true
         
     }
     
+    @IBAction func cancelAction(_ sender: Any) {
+        //makes sure the the table view cannot be editing anymore
+        self.myTableView.setEditing(false, animated: true)
+        cancelButton.isHidden = true
+        //deselects and un-highlights the select button
+        selectButton.isSelected = false
+        selectButton.isHighlighted = false
+        
+    }
     //action for selecting mutiple table cells to do a mutliple deleting of data
     @IBAction func selectAndDelete(button: UIButton) {
+        //allows the table view to be edited
         self.myTableView.setEditing(true, animated: true)
         button.isSelected.toggle()
         //if the select button is pressed, it will turn into a delete button where you can select the audio files that you wish to delete
-        if button.isSelected || button.isHighlighted{
-            button.setTitle("Delete", for: [.highlighted, .selected])
-            //shows that the select button is selected
-            buttonSelected = true
-        }
-        else{
-            //shows that the select button is not selected
-            buttonSelected = false
-        }
+        button.setTitle("Delete", for: [.highlighted, .selected])
+        //shows that the select button is selected
+        buttonSelected = true
         
         if let selectedRows = tableView.indexPathsForSelectedRows {
             //temporary array to hold the audio files that need to be deleted
@@ -63,13 +71,8 @@ class SavedRecordings: UITableViewController{
                     do{
                         //delets the file from core data
                         context.delete(audioCards[index])
-                        //removes the file from the array
-                        audioCards.remove(at: index)
-                        //updates the tableview
-                        myTableView.beginUpdates()
-                        myTableView.deleteRows(at: selectedRows, with: .automatic)
-                        myTableView.endUpdates()
                         try context.save()
+                        audioCards.remove(at: index)
                         self.myTableView.reloadData()
                     }
                     catch{
@@ -78,6 +81,8 @@ class SavedRecordings: UITableViewController{
                 }
             }
         }
+        cancelButton.isHidden = false
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -157,6 +162,7 @@ class SavedRecordings: UITableViewController{
                 print("problem")
             }
         }
+        
         
     }
     
