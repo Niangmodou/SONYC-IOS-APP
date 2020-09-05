@@ -80,6 +80,7 @@ class SavedRecordings: UITableViewController{
                     }
                 }
             }
+            cancelButton.isHidden = true
         }
         cancelButton.isHidden = false
         
