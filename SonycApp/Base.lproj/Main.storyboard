@@ -1921,7 +1921,7 @@
                                             <constraint firstAttribute="width" constant="85" id="jIe-KB-16H"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title=" History" image="Pin_History_non-color.png">
+                                        <state key="normal" title=" History" image="Icon_History_original.png">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="selected" image="Icon_History.png"/>
@@ -1996,6 +1996,7 @@
         <image name="Icon_Dizzy Face.png" width="40" height="41"/>
         <image name="Icon_Happy Face.png" width="40" height="40"/>
         <image name="Icon_History.png" width="21" height="21"/>
+        <image name="Icon_History_original.png" width="16" height="16"/>
         <image name="Icon_Indoor.png" width="26" height="22"/>
         <image name="Icon_Outdoor.png" width="26" height="19"/>
         <image name="Icon_Parenting.png" width="20" height="21"/>
@@ -2016,7 +2017,6 @@
         <image name="Logo_music.png" width="17" height="24"/>
         <image name="Logo_nightlife.png" width="25" height="25"/>
         <image name="Logo_truck.png" width="24" height="17"/>
-        <image name="Pin_History_non-color.png" width="22" height="34"/>
         <image name="backward.end.fill" catalog="system" width="128" height="102"/>
         <image name="dob.png" width="1350" height="660"/>
         <image name="forward.end.fill" catalog="system" width="128" height="102"/>
