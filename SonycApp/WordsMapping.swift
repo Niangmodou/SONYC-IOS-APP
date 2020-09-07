@@ -39,4 +39,11 @@ func fillDict(){
     wordsToImage[" Building"] = UIImage(named: "Logo_Building.png");
     wordsToImage[" Street"] = UIImage(named: "Logo_Dot.png");
     wordsToImage[" Report"] = UIImage(named: "Logo_311.png");
+    
+    //noisetype
+    wordsToImage[" Construction"] = UIImage(named: "Logo_construction.png");
+    wordsToImage[" Nightlife"] = UIImage(named: "Logo_nightlife.png");
+    wordsToImage[" Music"] = UIImage(named: "Logo_music.png");
+    wordsToImage[" Delivery"] = UIImage(named: "Logo_truck.png");
+    wordsToImage[" Garbage"] = UIImage(named: "Logo_garbage.png");
 }

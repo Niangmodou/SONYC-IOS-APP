@@ -36,6 +36,8 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
     var tape: AVAudioFile!
     var paths: [NSManagedObject]!
     var testRecorder: AVAudioRecorder!
+    //checks if the slide up view is showing
+    var isShowing = false;
     
     //the amounts of decibels
     @IBOutlet weak var minDecibels: UILabel!
@@ -209,12 +211,14 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
         stopAndResetAudio()
         //shows the slide up panel when the recording is finished
         slidingUp.show()
+        //the slideup view is showing
+        isShowing = true
     }
     
     //shows the slideup panel after 10 seconds if it is not already showing
     func tenSecondsUp(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
-            if (!slidingUp.isBeingPresented){
+            if (self.isShowing == false){
                 slidingUp.show()
             }
             

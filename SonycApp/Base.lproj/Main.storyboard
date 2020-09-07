@@ -334,7 +334,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OW6-f6-S1B">
-                                        <rect key="frame" x="31" y="50" width="325" height="135"/>
+                                        <rect key="frame" x="31" y="50" width="350" height="135"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kb-EK-HIa">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="21"/>
@@ -345,70 +345,70 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-gg-5Ud">
-                                                <rect key="frame" x="0.0" y="31" width="120" height="40"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-gg-5Ud">
+                                                <rect key="frame" x="0.0" y="31" width="135" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="O5P-FA-hRa"/>
+                                                    <constraint firstAttribute="width" constant="135" id="O5P-FA-hRa"/>
                                                     <constraint firstAttribute="height" constant="40" id="PXK-pd-qnt"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Construction">
+                                                <state key="normal" title=" Construction" image="Logo_construction.png">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="noiseTypeButtonsSelect:" destination="nYT-NN-34D" eventType="touchUpInside" id="Pb8-as-C3s"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBr-0t-SkB">
-                                                <rect key="frame" x="130" y="31" width="99" height="40"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBr-0t-SkB">
+                                                <rect key="frame" x="140" y="31" width="99" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="99" id="eqB-3k-iAn"/>
                                                     <constraint firstAttribute="height" constant="40" id="uRu-oJ-XB4"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Nightlife">
+                                                <state key="normal" title=" Nightlife" image="Logo_nightlife.png">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="noiseTypeButtonsSelect:" destination="nYT-NN-34D" eventType="touchUpInside" id="mhr-ZH-hHI"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3E-tb-2fd">
-                                                <rect key="frame" x="239" y="31" width="87" height="40"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3E-tb-2fd">
+                                                <rect key="frame" x="250" y="31" width="87" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="0aP-rk-pp2"/>
                                                     <constraint firstAttribute="width" constant="87" id="Z4W-Qa-P2j"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Music">
+                                                <state key="normal" title=" Music" image="Logo_music.png">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="noiseTypeButtonsSelect:" destination="nYT-NN-34D" eventType="touchUpInside" id="42k-gk-vol"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbK-ec-azV">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbK-ec-azV">
                                                 <rect key="frame" x="0.0" y="81" width="102" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="HXN-7R-08P"/>
                                                     <constraint firstAttribute="width" constant="102" id="Ir8-Jq-EZB"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Delivery">
+                                                <state key="normal" title=" Delivery" image="Logo_truck.png">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="noiseTypeButtonsSelect:" destination="nYT-NN-34D" eventType="touchUpInside" id="dg6-PZ-DfU"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-Lm-Ugl">
-                                                <rect key="frame" x="114" y="81" width="93" height="40"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-Lm-Ugl">
+                                                <rect key="frame" x="120" y="81" width="110" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3RK-CK-MA0"/>
-                                                    <constraint firstAttribute="width" constant="93" id="oVb-tt-c5N"/>
+                                                    <constraint firstAttribute="width" constant="110" id="oVb-tt-c5N"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Garbage">
+                                                <state key="normal" title=" Garbage" image="Logo_garbage.png">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -416,7 +416,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9e-SO-GlI">
-                                                <rect key="frame" x="219" y="81" width="87" height="40"/>
+                                                <rect key="frame" x="240" y="81" width="87" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="87" id="Esy-hE-FDF"/>
                                                     <constraint firstAttribute="height" constant="40" id="iMA-0N-yeg"/>
@@ -432,19 +432,19 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="325" id="Ctr-U2-r1F"/>
+                                            <constraint firstAttribute="width" constant="350" id="Ctr-U2-r1F"/>
                                             <constraint firstItem="qBr-0t-SkB" firstAttribute="top" secondItem="OW6-f6-S1B" secondAttribute="top" constant="31" id="Dte-eQ-KCQ"/>
-                                            <constraint firstItem="r3E-tb-2fd" firstAttribute="leading" secondItem="qBr-0t-SkB" secondAttribute="trailing" constant="10" id="EQq-Ry-Z6i"/>
-                                            <constraint firstItem="qBr-0t-SkB" firstAttribute="leading" secondItem="Pfc-gg-5Ud" secondAttribute="trailing" constant="10" id="O10-vO-3nl"/>
+                                            <constraint firstItem="r3E-tb-2fd" firstAttribute="leading" secondItem="qBr-0t-SkB" secondAttribute="trailing" constant="11" id="EQq-Ry-Z6i"/>
+                                            <constraint firstItem="qBr-0t-SkB" firstAttribute="leading" secondItem="Pfc-gg-5Ud" secondAttribute="trailing" constant="5" id="O10-vO-3nl"/>
                                             <constraint firstItem="V9e-SO-GlI" firstAttribute="top" secondItem="r3E-tb-2fd" secondAttribute="bottom" constant="10" id="Q8H-Do-7E2"/>
                                             <constraint firstItem="r3E-tb-2fd" firstAttribute="top" secondItem="OW6-f6-S1B" secondAttribute="top" constant="31" id="Tiz-Tr-8HU"/>
                                             <constraint firstItem="Pfc-gg-5Ud" firstAttribute="leading" secondItem="OW6-f6-S1B" secondAttribute="leading" id="WD0-YB-FtQ"/>
                                             <constraint firstItem="xbK-ec-azV" firstAttribute="top" secondItem="Pfc-gg-5Ud" secondAttribute="bottom" constant="10" id="Z6h-Mc-LiJ"/>
                                             <constraint firstItem="4Kb-EK-HIa" firstAttribute="leading" secondItem="OW6-f6-S1B" secondAttribute="leading" id="b5B-FA-vba"/>
                                             <constraint firstItem="NIM-Lm-Ugl" firstAttribute="top" secondItem="qBr-0t-SkB" secondAttribute="bottom" constant="10" id="bLT-Du-aYz"/>
-                                            <constraint firstItem="V9e-SO-GlI" firstAttribute="leading" secondItem="NIM-Lm-Ugl" secondAttribute="trailing" constant="12" id="cBV-NV-X2e"/>
+                                            <constraint firstItem="V9e-SO-GlI" firstAttribute="leading" secondItem="NIM-Lm-Ugl" secondAttribute="trailing" constant="10" id="cBV-NV-X2e"/>
                                             <constraint firstItem="Pfc-gg-5Ud" firstAttribute="top" secondItem="4Kb-EK-HIa" secondAttribute="bottom" constant="10" id="d4r-3C-xgr"/>
-                                            <constraint firstItem="NIM-Lm-Ugl" firstAttribute="leading" secondItem="xbK-ec-azV" secondAttribute="trailing" constant="12" id="gbH-Fc-xwQ"/>
+                                            <constraint firstItem="NIM-Lm-Ugl" firstAttribute="leading" secondItem="xbK-ec-azV" secondAttribute="trailing" constant="18" id="gbH-Fc-xwQ"/>
                                             <constraint firstItem="xbK-ec-azV" firstAttribute="leading" secondItem="OW6-f6-S1B" secondAttribute="leading" id="n5r-z3-0SU"/>
                                             <constraint firstItem="4Kb-EK-HIa" firstAttribute="top" secondItem="OW6-f6-S1B" secondAttribute="top" id="r3v-0E-uUY"/>
                                         </constraints>
@@ -465,7 +465,7 @@
                                     <constraint firstItem="Bwi-Uc-hDj" firstAttribute="top" secondItem="bY7-XC-dZt" secondAttribute="bottom" constant="25" id="hSO-Kz-GXC"/>
                                     <constraint firstAttribute="trailing" secondItem="bY7-XC-dZt" secondAttribute="trailing" constant="58" id="qdV-yS-FV4"/>
                                     <constraint firstItem="ZpJ-Uu-UH7" firstAttribute="leading" secondItem="Gid-Pf-E5A" secondAttribute="leading" constant="30" id="qwt-E0-6zZ"/>
-                                    <constraint firstItem="OW6-f6-S1B" firstAttribute="centerX" secondItem="W3o-Xg-nPZ" secondAttribute="centerX" id="xu3-dy-SAl"/>
+                                    <constraint firstItem="OW6-f6-S1B" firstAttribute="centerX" secondItem="W3o-Xg-nPZ" secondAttribute="centerX" constant="12.5" id="xu3-dy-SAl"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2011,6 +2011,11 @@
         <image name="Logo_Dot.png" width="40" height="21"/>
         <image name="Logo_Dot_not color.png" width="21" height="12"/>
         <image name="Logo_Sleeping man.png" width="33" height="21"/>
+        <image name="Logo_construction.png" width="23" height="21"/>
+        <image name="Logo_garbage.png" width="20" height="20"/>
+        <image name="Logo_music.png" width="17" height="24"/>
+        <image name="Logo_nightlife.png" width="25" height="25"/>
+        <image name="Logo_truck.png" width="24" height="17"/>
         <image name="Pin_History_non-color.png" width="22" height="34"/>
         <image name="backward.end.fill" catalog="system" width="128" height="102"/>
         <image name="dob.png" width="1350" height="660"/>

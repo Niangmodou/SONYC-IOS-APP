@@ -79,8 +79,8 @@ class SavedRecordings: UITableViewController{
                         print(error)
                     }
                 }
+                cancelButton.isHidden = true
             }
-            cancelButton.isHidden = true
         }
         cancelButton.isHidden = false
         
