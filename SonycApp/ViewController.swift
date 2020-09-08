@@ -21,12 +21,12 @@ var recordingSession: AVAudioSession!
 var audioRecorder:AVAudioRecorder!
 var audioPlayer: AVAudioPlayer!
 var decibelsArray:[Float] = [];
-//let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 class ViewController: UIViewController, AVAudioRecorderDelegate{
     //podfile for slide out menu
     var menu: SideMenuNavigationController?
     
+    @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var decibelsLabel: UILabel!
@@ -42,6 +42,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
         super.viewDidLoad()
         //Getting API data
         loadData()
+        //styling for the sensor button
+        curvingButtonSensor(button: recordButton)
         
         //populates the dictionary of images and respected keywords
         fillDict()

@@ -42,6 +42,10 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         //deleteAllData()
         setUpSearchBar()
         getData()
+        buildingButton.isHidden = true
+        streetButton.isHidden = true
+        reportButton.isHidden = true
+        historyButton.isHidden = true
         
         //for the slide up panel 
         let slidingUp = FloatingPanelController()

@@ -21,6 +21,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     var max: String!
     var locationType: String!
     var location: String!
+    var noiseType: String!
     
     
     @IBOutlet weak var warningImage: UIImageView!
@@ -36,9 +37,6 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var counterLabel: UILabel!
-    @IBOutlet weak var resumeButton: UIButton!
-    @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var progressView: UIProgressView!
     
@@ -57,23 +55,23 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         min = (newTask.value(forKey: "min") as! String)
         avg = (newTask.value(forKey: "averageDec") as! String)
         max = (newTask.value(forKey: "max") as! String)
-        locationType = (newTask.value(forKey: "locationType") as! String)
+        noiseType = (newTask.value(forKey: "noiseType") as! String)
         location = (newTask.value(forKey: "reportAddress") as! String)
         
         
         //information that will be stored in the recording details of the card
         //images and label for the file.
-        locationTypeImage.image = wordsToImage[locationType]
-        youFeelImage.image = wordsToImage[feeling]
-        youAreImage.image = wordsToImage[youAre]
-        youAreLabel.text = newTask.value(forKey: "iAm") as? String
-        dateLabel.text = newTask.value(forKey: "date") as? String
-        timeLabel.text = newTask.value(forKey: "time") as? String
-        locationTypeLabel.text = "This is \(newTask.value(forKey: "locationType")as! String) \(newTask.value(forKey: "noiseType")as! String)"
-        locationLabel.text = location
-        minDecibelsLabel.text = min + " db"
-        avgDecibelsLabel.text = avg + " db"
-        maxDecibelsLabel.text = max + " db"
+        locationTypeImage?.image = wordsToImage[noiseType]
+        youFeelImage?.image = wordsToImage[feeling]
+        youAreImage?.image = wordsToImage[youAre]
+        youAreLabel?.text = newTask.value(forKey: "iAm") as? String
+        dateLabel?.text = newTask.value(forKey: "date") as? String
+        timeLabel?.text = newTask.value(forKey: "time") as? String
+        locationTypeLabel?.text = "This is \(newTask.value(forKey: "noiseType")as! String)"
+        locationLabel?.text = location
+        minDecibelsLabel?.text = min + " db"
+        avgDecibelsLabel?.text = avg + " db"
+        maxDecibelsLabel?.text = max + " db"
         prepareToPlayFile()
         
     }

@@ -18,7 +18,6 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
     var min: String!
     var avg: String!
     var max: String!
-    var locationType: String!
     var path: String!
     var location: String!
     
@@ -30,8 +29,6 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
     @IBOutlet weak var youFeelImage: UIImageView!
     @IBOutlet weak var youAreImage: UIImageView!
     @IBOutlet weak var youAreLabel: UILabel!
-    @IBOutlet weak var saveOnlyButton: UIButton!
-    @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
@@ -47,24 +44,21 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
         min = (audioCards[positionRecording].value(forKey: "min") as! String)
         avg = (audioCards[positionRecording].value(forKey: "averageDec") as! String)
         max = (audioCards[positionRecording].value(forKey: "max") as! String)
-        locationType = (audioCards[positionRecording].value(forKey: "locationType") as! String)
         path = (audioCards[positionRecording].value(forKey: "path") as! String)
         location = (audioCards[positionRecording].value(forKey: "reportAddress") as! String)
         
         
         //information that will be stored in the recording details of the card
         //images and label for the file.
-        locationTypeImage.image = wordsToImage[locationType]
-        youFeelImage.image = wordsToImage[feeling]
-        youAreImage.image = wordsToImage[youAre]
-        youAreLabel.text = (audioCards[positionRecording].value(forKey: "iAm") as! String)
-        dateLabel.text = (audioCards[positionRecording].value(forKey: "date") as! String)
-        timeLabel.text = (audioCards[positionRecording].value(forKey: "time") as! String)
-        locationTypeLabel.text = (audioCards[positionRecording].value(forKey: "locationType") as! String)
-        locationLabel.text = location
-        minDecibelsLabel.text = min + " db"
-        avgDecibelsLabel.text = avg + " db"
-        maxDecibelsLabel.text = max + " db"
+        youFeelImage?.image = wordsToImage[feeling]
+        youAreImage?.image = wordsToImage[youAre]
+        youAreLabel?.text = (audioCards[positionRecording].value(forKey: "iAm") as! String)
+        dateLabel?.text = (audioCards[positionRecording].value(forKey: "date") as! String)
+        timeLabel?.text = (audioCards[positionRecording].value(forKey: "time") as! String)
+        locationLabel?.text = location
+        minDecibelsLabel?.text = min + " db"
+        avgDecibelsLabel?.text = avg + " db"
+        maxDecibelsLabel?.text = max + " db"
         prepareToPlayFileBack()
         
     }

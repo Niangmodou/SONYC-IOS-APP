@@ -34,6 +34,10 @@ func curvingButtonRounder(button: UIButton){
     button.layer.cornerRadius = 20;
 }
 
+func curvingButtonSensor(button: UIButton){
+    button.layer.cornerRadius = 140;
+}
+
 extension UIView{
     //rounds the corners of the UIView
     func roundCorners(cornerRadius: Double){

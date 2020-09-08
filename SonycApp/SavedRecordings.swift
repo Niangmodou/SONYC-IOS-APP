@@ -35,7 +35,9 @@ class SavedRecordings: UITableViewController{
         //allows the tableview to be edited for the multiple selection
         myTableView.allowsMultipleSelectionDuringEditing = true
         //hides the cancel button when it is pressed
-        cancelButton.isHidden = true
+        if(selectButton.titleLabel?.text == "Select"){
+            cancelButton.isHidden = true
+        }
         
     }
     
@@ -79,7 +81,6 @@ class SavedRecordings: UITableViewController{
                         print(error)
                     }
                 }
-                cancelButton.isHidden = true
             }
         }
         cancelButton.isHidden = false
@@ -120,10 +121,10 @@ class SavedRecordings: UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "saved", for: indexPath) as! TableCell
         //have the index be the same as the indexPath.row
         positionRecording = indexPath.row
-        cell.dateAndTimeLabel.text = (audioCards[indexPath.row].value(forKey: "date") as! String) + " " + (audioCards[indexPath.row].value(forKey: "time") as! String)
-        cell.avgDecibels.text = (audioCards[indexPath.row].value(forKey: "averageDec") as! String) + " db"
-        cell.imageCard.image = wordsToImage[audioCards[indexPath.row].value(forKey: "locationType") as! String]
-        cell.locationLabel.text = (audioCards[indexPath.row].value(forKey: "reportAddress") as! String)
+        cell.dateAndTimeLabel?.text = (audioCards[indexPath.row].value(forKey: "date") as! String) + " " + (audioCards[indexPath.row].value(forKey: "time") as! String)
+        cell.avgDecibels?.text = (audioCards[indexPath.row].value(forKey: "averageDec") as! String) + " db"
+        cell.imageCard?.image = wordsToImage[audioCards[indexPath.row].value(forKey: "noiseType") as! String]
+        cell.locationLabel?.text = (audioCards[indexPath.row].value(forKey: "reportAddress") as! String)
         return cell
     }
     
