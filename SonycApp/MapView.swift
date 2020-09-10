@@ -11,6 +11,7 @@ import MapKit
 import CoreLocation
 import FloatingPanel
 import CoreData
+import MapKitGoogleStyler
 
 class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate,UISearchBarDelegate {
     
@@ -46,6 +47,8 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         streetButton.isHidden = true
         reportButton.isHidden = true
         historyButton.isHidden = true
+        
+        configureTileOverlay()
         
         //for the slide up panel 
         let slidingUp = FloatingPanelController()
@@ -142,8 +145,8 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
             if response == nil {
                 print("Error")
             }else{
-                let annotations = self.mapView.annotations
-                self.mapView.removeAnnotations(annotations)
+                //let annotations = self.mapView.annotations
+                //self.mapView.removeAnnotations(annotations)
                 
                 let latitude = response?.boundingRegion.center.latitude
                 let longitude = response?.boundingRegion.center.longitude
@@ -273,7 +276,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
             print("hi1")
             annotationView?.image = UIImage(named: "Location_Original.png")
         }else if annotation.title == "Map Search"{
-            print("yo")
+            annotationView?.image = UIImage(named: "Icon_Pink location.png")
         }
         
         return annotationView
@@ -343,7 +346,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     
     //Function to get current user's address based on lat and lon
     func getCurrentLocation() -> String {
-        var center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
+        let center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
         
         let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
         
@@ -384,10 +387,29 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         return addressString
     }
     
-    func filterData() {
-        /*
-         
-         */
+    //Styling Mapview to look like Google Maps
+    private func configureTileOverlay() {
+        // We first need to have the path of the overlay configuration JSON
+        guard let overlayFileURLString = Bundle.main.path(forResource: "overlay", ofType: "json") else {
+                return
+        }
+        let overlayFileURL = URL(fileURLWithPath: overlayFileURLString)
+        
+        // After that, you can create the tile overlay using MapKitGoogleStyler
+        guard let tileOverlay = try? MapKitGoogleStyler.buildOverlay(with: overlayFileURL) else {
+            return
+        }
+        
+        // And finally add it to your MKMapView
+        mapView.addOverlay(tileOverlay)
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if let tileOverlay = overlay as? MKTileOverlay {
+            return MKTileOverlayRenderer(tileOverlay: tileOverlay)
+        } else {
+            return MKOverlayRenderer(overlay: overlay)
+        }
     }
     
 }

@@ -23,6 +23,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     var location: String!
     var noiseType: String!
     
+    @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var warningImage: UIImageView!
     @IBOutlet weak var mapViewReportDetails: MKMapView!
@@ -74,6 +75,36 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         maxDecibelsLabel?.text = max + " db"
         prepareToPlayFile()
         
+        let latitude = (newTask.value(forKey: "reportLatitude") as! NSString).floatValue
+        let longitude = (newTask.value(forKey: "reportLongitude") as! NSString).floatValue
+        
+        print(latitude, longitude)
+        let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
+            
+        centerMapOnLocation(location, mapView: mapView)
+        plotAnnotation(title: "report",
+                       latitude: CLLocationDegrees(latitude),
+                       longitude: CLLocationDegrees(longitude))
+        
+    }
+    
+    func centerMapOnLocation(_ location: CLLocationCoordinate2D, mapView: MKMapView)  {
+        let regionRadius: CLLocationDistance = 5000
+        let coordinateRegion = MKCoordinateRegion(center: location,
+                                                  latitudinalMeters: regionRadius * 0.0625,
+                                                  longitudinalMeters: regionRadius * 0.0625)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    //Function to plot annotations on the map
+    func plotAnnotation(title: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees){
+        
+        let loc = MKPointAnnotation()
+        
+        loc.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        loc.title = title
+        
+        mapView.addAnnotation(loc)
     }
     
     @IBAction func saveOnlyAction(_ sender: Any) {
