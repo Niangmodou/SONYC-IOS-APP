@@ -19,44 +19,97 @@ var positionRecording: Int!;
 //the select button is not selected
 var buttonSelected = false;
 
-class SavedRecordings: UITableViewController{
+class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var average: String!
     var dateStored: String!
     var timeStored: String!
     var locationImage: String!
+    var barTool = UIBarButtonItem.init()
+    var barTool2 = UIBarButtonItem.init()
+    let cancelButton = UIButton.init()
+    let selectButton = UIButton.init()
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.identifier, for: indexPath)
+        positionRecording = indexPath.row
+        
+        TableCell.date.text = (audioCards[indexPath.row].value(forKey: "date") as? String)
+        TableCell.averageDecibels.text = (audioCards[indexPath.row].value(forKey: "averageDec") as? String ?? "no avg") + " db"
+        TableCell.time.text = (audioCards[indexPath.row].value(forKey: "time") as? String)
+        TableCell.picture.image = wordsToImage[audioCards[indexPath.row].value(forKey: "noiseType") as? String ?? "other"]
+        TableCell.location.text = (audioCards[indexPath.row].value(forKey: "reportAddress") as? String)
+        savingData()
+        let _ = navigationController?.popViewController(animated: true)
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100;
+    }
     
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var selectButton: UIButton!
-    @IBOutlet var myTableView: UITableView!
+    
+    public let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(TableCell.self, forCellReuseIdentifier: TableCell.identifier)
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        fillDict()
         //does not show the cells that are not in use
-        myTableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         //allows the tableview to be edited for the multiple selection
-        myTableView.allowsMultipleSelectionDuringEditing = true
-        //hides the cancel button when it is pressed
-        if(selectButton.titleLabel?.text == "Select"){
-            cancelButton.isHidden = true
-        }
+        tableView.allowsMultipleSelectionDuringEditing = true
+        tableView.backgroundColor = UIColor.white
+        tableView.dataSource = self
+        tableView.delegate = self
+        view.addSubview(tableView)
+        
+        cancelButton.frame = CGRect(x: screenWidth/60, y: 0, width: screenWidth/3, height: screenHeight/30)
+        cancelButton.titleLabel?.textColor = UIColor.black
+        cancelButton.titleLabel?.text = "Cancel"
+        cancelButton.addTarget(self, action: #selector(cancelAction(_:)), for: .touchUpInside)
+        let cancelButtonX = cancelButton.frame.width + cancelButton.frame.origin.x
+        selectButton.frame = CGRect(x: cancelButtonX + screenWidth/3, y: 0, width: screenWidth/3, height: screenHeight/30)
+        selectButton.addTarget(self, action: #selector(selectAndDelete(button:)), for: .touchUpInside)
+        selectButton.titleLabel?.textColor = UIColor.black
+        selectButton.titleLabel?.text = "Select"
+        
+        
+        barTool = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelAction(_:)))
+        barTool2 = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(selectAndDelete(button:)))
+        
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.rightBarButtonItem = barTool2
+        
+        
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
         
     }
     
-    @IBAction func cancelAction(_ sender: Any) {
+    @objc func cancelAction(_ sender: Any) {
         //makes sure the the table view cannot be editing anymore
-        self.myTableView.setEditing(false, animated: true)
+        self.tableView.setEditing(false, animated: true)
         cancelButton.isHidden = true
         //deselects and un-highlights the select button
         selectButton.isSelected = false
         selectButton.isHighlighted = false
+        self.navigationItem.leftBarButtonItem = nil
         
     }
-    //action for selecting mutiple table cells to do a mutliple deleting of data
-    @IBAction func selectAndDelete(button: UIButton) {
+    //    //action for selecting mutiple table cells to do a mutliple deleting of data
+    @objc func selectAndDelete(button: UIBarButtonItem) {
         //allows the table view to be edited
-        self.myTableView.setEditing(true, animated: true)
-        button.isSelected.toggle()
+        self.tableView.setEditing(true, animated: true)
+        self.navigationItem.leftBarButtonItem = barTool
+        //        button.isSelected.toggle()
         //if the select button is pressed, it will turn into a delete button where you can select the audio files that you wish to delete
-        button.setTitle("Delete", for: [.highlighted, .selected])
+        //        button.setTitle("Delete", for: [.highlighted, .selected])
+        button.title = "Delete"
         //shows that the select button is selected
         buttonSelected = true
         
@@ -75,7 +128,7 @@ class SavedRecordings: UITableViewController{
                         context.delete(audioCards[index])
                         try context.save()
                         audioCards.remove(at: index)
-                        self.myTableView.reloadData()
+                        self.tableView.reloadData()
                     }
                     catch{
                         print(error)
@@ -83,10 +136,9 @@ class SavedRecordings: UITableViewController{
                 }
             }
         }
-        cancelButton.isHidden = false
         
     }
-    
+    //
     override func viewDidAppear(_ animated: Bool) {
         //persistentContainer
         let context = appDelegate.persistentContainer.viewContext
@@ -107,29 +159,18 @@ class SavedRecordings: UITableViewController{
             print("failed")
         }
         //reloads the table view to see the changes
-        myTableView.reloadData()
+        tableView.reloadData()
     }
     
     
     //shows the cards of the recordings that were already made
-    override func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         return audioCards.count;
     }
     
-    //customized cells based on the information stored in each audio file
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "saved", for: indexPath) as! TableCell
-        //have the index be the same as the indexPath.row
-        positionRecording = indexPath.row
-        cell.dateAndTimeLabel?.text = (audioCards[indexPath.row].value(forKey: "date") as! String) + " " + (audioCards[indexPath.row].value(forKey: "time") as! String)
-        cell.avgDecibels?.text = (audioCards[indexPath.row].value(forKey: "averageDec") as! String) + " db"
-        cell.imageCard?.image = wordsToImage[audioCards[indexPath.row].value(forKey: "noiseType") as! String]
-        cell.locationLabel?.text = (audioCards[indexPath.row].value(forKey: "reportAddress") as! String)
-        return cell
-    }
     
     //gets the element that is being accessed
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //have the index be the same as the indexPath.row
         positionRecording = indexPath.row
         //only goes to the recording details screen if the select button was not pressed so deleting will not occur
@@ -139,13 +180,9 @@ class SavedRecordings: UITableViewController{
             self.present(vc, animated: true, completion: nil);
         }
     }
-    //size of the cell is 100 (height)
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100;
-    }
     
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
@@ -157,7 +194,7 @@ class SavedRecordings: UITableViewController{
                 try context.save()
                 //remove the audioFile from the array
                 audioCards.remove(at: indexPath.row)
-                self.myTableView.reloadData()
+                self.tableView.reloadData()
                 
             }
             catch{
@@ -167,5 +204,4 @@ class SavedRecordings: UITableViewController{
         
         
     }
-    
 }

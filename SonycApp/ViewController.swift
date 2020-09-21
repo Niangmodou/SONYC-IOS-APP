@@ -22,18 +22,12 @@ var audioRecorder:AVAudioRecorder!
 var audioPlayer: AVAudioPlayer!
 var decibelsArray:[Float] = [];
 
+let recordButton = UIButton.init(type: .custom)
+let tapToLogin = UILabel.init()
+
 class ViewController: UIViewController, AVAudioRecorderDelegate{
     //podfile for slide out menu
     var menu: SideMenuNavigationController?
-    
-    @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet weak var timerLabel: UILabel!
-    
-    @IBOutlet weak var decibelsLabel: UILabel!
-    
-    
-    @IBOutlet weak var gaugeView: GaugeView!
-    @IBOutlet weak var counterLabel: UILabel!
     
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -43,7 +37,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
         //Getting API data
         loadData()
         //styling for the sensor button
-        curvingButtonSensor(button: recordButton)
         
         //populates the dictionary of images and respected keywords
         fillDict()
@@ -55,6 +48,21 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         recordingSession = AVAudioSession.sharedInstance()
+        
+        tapToLogin.frame = CGRect(x: screenWidth/2 - (screenWidth/5), y: screenHeight/5, width: screenWidth/2, height: 40)
+        tapToLogin.text = "Tap to Login"
+        tapToLogin.font = UIFont.boldSystemFont(ofSize: 30)
+        self.view.addSubview(tapToLogin)
+        
+        recordButton.frame = CGRect(x: screenWidth/6, y: screenHeight/3, width: screenWidth/1.5, height: screenHeight/3)
+        recordButton.setBackgroundImage(UIImage(named: "logo.png"), for: .normal)
+        recordButton.addTarget(self, action: #selector(record(_:)), for: .touchUpInside)
+        self.view.addSubview(recordButton)
+        
+        
+        
+        
+        
         // Do any additional setup after loading the view.
         if let number: Int = UserDefaults.standard.object(forKey: "recordings") as? Int {
             recordings = number
@@ -73,7 +81,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
     }
     
     //record starts the audioEngine and the recorder and presents the new page
-    @IBAction func record(_ sender: Any) {
+    @objc func record(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "secondScreen") ; // MySecondSecreen is the storyboard ID
         self.present(vc, animated: true, completion: nil);

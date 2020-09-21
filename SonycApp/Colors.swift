@@ -33,3 +33,9 @@ extension UIColor{
         return #colorLiteral(red: 0.2600978017, green: 0.537869513, blue: 0.8470811844, alpha: 1)
     }
 }
+
+extension UIColor{
+    class func button() -> UIColor{
+        return #colorLiteral(red: 0.1835027337, green: 0.3611916304, blue: 0.568879962, alpha: 1)
+    }
+}

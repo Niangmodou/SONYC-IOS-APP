@@ -31,6 +31,20 @@ var avgDec: Int!
 let slidingUp = FloatingPanelController()
 
 class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanelControllerDelegate{
+    let minDecibels = UILabel.init()
+    let avgDecibels = UILabel.init()
+    let maxDecibels = UILabel.init()
+    //stops the recording if it is stronger than 10 seconds
+    let createAReportButton = UIButton.init(type: .custom)
+    //the gaugeView
+    let gaugeView = GaugeView.init()
+    //the counter label that shows the amount of decibels coming in
+    let counterLabel = UILabel.init()
+    let currentSoundTitle = UILabel.init()
+    let min = UILabel.init()
+    let avg = UILabel.init()
+    let max = UILabel.init()
+    
     var isConnected = false
     var audioBus = 0
     var tape: AVAudioFile!
@@ -38,29 +52,71 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
     var testRecorder: AVAudioRecorder!
     //checks if the slide up view is showing
     var isShowing = false;
-    
-    //the amounts of decibels
-    @IBOutlet weak var minDecibels: UILabel!
-    @IBOutlet weak var avgDecibels: UILabel!
-    @IBOutlet weak var maxDecibels: UILabel!
-    //stops the recording if it is stronger than 10 seconds
-    @IBOutlet weak var createAReportButton: UIButton!
     var recordingSession: AVAudioSession!
-    //the gaugeView
-    @IBOutlet weak var gaugeView: GaugeView!
-    //the counter label that shows the amount of decibels coming in
-    @IBOutlet weak var counterLabel: UILabel!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gaugeView.frame = CGRect(x: 15, y: screenHeight/6, width: screenWidth - 30, height: screenHeight/2.3)
+        gaugeView.counterColor = UIColor.specificBlue()
+        gaugeView.outlineColor = UIColor.specificBlueFill()
+        gaugeView.backgroundColor = UIColor.white
+        gaugeView.outlineColor.setFill()
+        gaugeView.draw(CGRect(x: 15, y: screenHeight/6, width: screenWidth - 30, height: screenHeight/2.3))
+        
+        let gaugeViewLocationX = gaugeView.frame.origin.x + gaugeView.frame.width
+        let gaugeViewLocationY = gaugeView.frame.origin.y + gaugeView.frame.height
+        currentSoundTitle.frame = CGRect(x: screenWidth/7, y: screenHeight/10, width: screenWidth - 30, height: screenHeight/50)
+        currentSoundTitle.text = "Current Sound Level (dBA)"
+        currentSoundTitle.font = UIFont.boldSystemFont(ofSize: 25)
+        min.frame = CGRect(x: gaugeView.frame.origin.x + screenWidth/9, y: gaugeViewLocationY + screenHeight/42, width: screenWidth/8, height: screenHeight/50)
+        min.text = "Min"
+        let minLocationX = min.frame.width + min.frame.origin.x
+        let minLocationY = min.frame.height + min.frame.origin.y
+        avg.frame = CGRect(x: minLocationX + screenWidth/6, y: gaugeViewLocationY + screenHeight/42, width: screenWidth/8, height: screenHeight/50)
+        avg.text = "Avg"
+        let avgLocationX = avg.frame.width + avg.frame.origin.x
+        let avgLocationY = avg.frame.height + avg.frame.origin.y
+        max.frame = CGRect(x: avgLocationX + screenWidth/6, y: gaugeViewLocationY + screenHeight/42, width: screenWidth/8, height: screenHeight/50)
+        max.text = "Max"
+        let maxLocationY = max.frame.height + max.frame.origin.y
+        minDecibels.frame = CGRect(x: min.frame.origin.x, y: minLocationY + screenHeight/24, width: screenWidth/7, height: screenHeight/50)
+        minDecibels.text = "0 db"
+        avgDecibels.frame = CGRect(x: avg.frame.origin.x, y: avgLocationY + screenHeight/24, width: screenWidth/7, height: screenHeight/50)
+        avgDecibels.text = "0 db"
+        maxDecibels.frame = CGRect(x: max.frame.origin.x, y: maxLocationY + screenHeight/24, width: screenWidth/7, height: screenHeight/50)
+        maxDecibels.text = "0 db"
+        createAReportButton.frame = CGRect(x: 15, y: minLocationY + screenHeight/6, width: screenWidth - 30, height: screenHeight/20)
+        createAReportButton.setTitle(" Create a Report", for: .normal)
+        createAReportButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        createAReportButton.setTitleColor(UIColor.black, for: .normal)
+        createAReportButton.layer.borderWidth = 1.0
         createAReportButton.layer.cornerRadius = 20
+        createAReportButton.layer.borderColor = UIColor.black.cgColor
+        createAReportButton.layer.backgroundColor = UIColor.faceSelected().cgColor
+        createAReportButton.addTarget(self, action: #selector(createReport(_:)), for: .touchUpInside)
+        
+        counterLabel.frame = CGRect(x: gaugeViewLocationX/2.1, y: gaugeViewLocationY/1.7, width: screenWidth/7, height: screenHeight/20)
+        counterLabel.text = "0 db"
+        
+        self.view.addSubview(gaugeView)
+        self.view.addSubview(currentSoundTitle)
+        self.view.addSubview(min)
+        self.view.addSubview(avg)
+        self.view.addSubview(max)
+        self.view.addSubview(minDecibels)
+        self.view.addSubview(avgDecibels)
+        self.view.addSubview(maxDecibels)
+        self.view.addSubview(counterLabel)
+        self.view.addSubview(createAReportButton)
+        
         audioEngine = AVAudioEngine()
         //the input to the audioEngine is the microphone
         mic = audioEngine.inputNode
         //counterLabel will be the same as the gaugeView meter
-        counterLabel.text = String(gaugeView.counter) + "db"
+        counterLabel.text = String(gaugeView.counter) + " db"
         
         recordingSession = AVAudioSession.sharedInstance()
         
@@ -103,10 +159,10 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
                 
                 //applying the filter to the samples
                 //also multiplying the audio samples array by the dctHighPass array for float values: dctHighPass array -> interpolatedVectorFrom(magnitudes:  [0,   0,   1,    1], indices:     [0, 340, 350, 1024], count: bufferSize)
-                let arr = apply(dctMultiplier: EqualizationFilters.dctHighPass, toInput: samples)
+                let arr1 = apply(dctMultiplier: EqualizationFilters.dctBandStop, toInput: samples)
                 
                 //does the spl calculations
-                let array = decibelsConvert(array: arr)
+                let array = decibelsConvert(array: arr1)
                 
                 //finds the average decibels
                 let decibels = applyMean(toInput: array)

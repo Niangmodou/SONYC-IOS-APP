@@ -14,136 +14,365 @@ let context = appDelegate.persistentContainer.viewContext
 //core data details
 let entity = NSEntityDescription.entity(forEntityName: "Audio", in: context)
 let newTask = NSManagedObject(entity: entity!, insertInto: context)
+let constructionButton = UIButton.init(type: .custom)
+let nightLifeButton = UIButton.init(type: .custom)
+let musicButton = UIButton.init(type: .custom)
+let deliveryButton = UIButton.init(type: .custom)
+let garbageButton = UIButton.init(type: .custom)
+let noiseTypeOtherButton = UIButton.init(type: .custom)
+let homeButton = UIButton.init(type: .custom)
+let elsewhereButton = UIButton.init(type: .custom)
+let sleepingButton = UIButton.init(type: .custom)
+let parentingButton = UIButton.init(type: .custom)
+let workingButton = UIButton.init(type: .custom)
+let othersButton = UIButton.init(type: .custom)
+let restingButton = UIButton.init(type: .custom)
+let walkingButton = UIButton.init(type: .custom)
+let mehFaceButton = UIButton.init(type: .custom)
+let dizzyFaceButton = UIButton.init(type: .custom)
+let annoyedFaceButton = UIButton.init(type: .custom)
+let angryFaceButton = UIButton.init(type: .custom)
+let frustratedFaceButton = UIButton.init(type: .custom)
+let happyFaceButton = UIButton.init(type: .custom)
+let identifyNoiseSourceButton = UIButton.init(type: .custom)
+var screenWidth = UIScreen.main.fixedCoordinateSpace.bounds.width
+var screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
+
 
 class SlideUpView: UIViewController {
+    let locationButtonArray: [UIButton]! = [homeButton, elsewhereButton]
+    let iAmButtonsArray: [UIButton]! = [sleepingButton, parentingButton, workingButton,othersButton,restingButton,walkingButton]
     
-    @IBOutlet weak var constructionButton: UIButton!
+    let faceButtonArray: [UIButton]! = [mehFaceButton,dizzyFaceButton,annoyedFaceButton,angryFaceButton,frustratedFaceButton,happyFaceButton]
+    let noiseTypeArray: [UIButton]! = [constructionButton, nightLifeButton, musicButton, deliveryButton,garbageButton,noiseTypeOtherButton]
     
-    @IBOutlet weak var noiseTypeOtherButton: UIButton!
-    @IBOutlet weak var garbageButton: UIButton!
-    @IBOutlet weak var deliveryButton: UIButton!
-    @IBOutlet weak var musicButton: UIButton!
-    @IBOutlet weak var nightLifeButton: UIButton!
-    @IBOutlet weak var elsewhereButton: UIButton!
-    @IBOutlet weak var homeButton: UIButton!
-    @IBOutlet weak var myView: UIView!
-    
-    @IBOutlet weak var sleepingButton: UIButton!
-    
-    @IBOutlet weak var parentingButton: UIButton!
-    @IBOutlet weak var workingButton: UIButton!
-    
-    @IBOutlet weak var othersButton: UIButton!
-    @IBOutlet weak var restingButton: UIButton!
-    
-    @IBOutlet weak var walkingButton: UIButton!
-    
-    @IBOutlet weak var mehFaceButton: UIButton!
-    
-    @IBOutlet weak var dizzyFaceButton: UIButton!
-    @IBOutlet weak var annoyedFaceButton: UIButton!
-    @IBOutlet weak var angryFaceButton: UIButton!
-    @IBOutlet weak var frustratedFaceButton: UIButton!
-    @IBOutlet weak var happyFaceButton: UIButton!
-    
-    @IBOutlet var locationButtonArray: [UIButton]!
-    @IBOutlet var iAmButtonsArray: [UIButton]!
-    
-    @IBOutlet var faceButtonArray: [UIButton]!
-    @IBOutlet var noiseTypeArray: [UIButton]!
-    
-    
-    @IBOutlet weak var identifyNoiseSourceButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let noiseTypeLabel = UILabel.init()
+        noiseTypeLabel.frame = CGRect(x: 15, y: screenHeight/9, width: screenWidth/3.5, height: 40)
+        noiseTypeLabel.text = "Noise Type"
+        noiseTypeLabel.textColor = UIColor.black
+        self.view.addSubview(noiseTypeLabel)
+        
+        constructionButton.frame = CGRect(x: 15, y: screenHeight/6, width: screenWidth/3.5, height: 40)
+        let constructionButtonLocationX = constructionButton.frame.origin.x + constructionButton.frame.width
+        let constructionButtonLocationY = constructionButton.frame.origin.y + constructionButton.frame.height
+        constructionButton.setTitle(" Construction", for: .normal)
+        constructionButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        constructionButton.setTitleColor(UIColor.black, for: .normal)
+        constructionButton.setImage(UIImage(named: "Logo_construction.png"), for: .normal)
+        constructionButton.layer.borderWidth = 2.0
+        constructionButton.layer.cornerRadius = 10
+        constructionButton.layer.borderColor = UIColor.black.cgColor
+        constructionButton.addTarget(self, action: #selector(noiseTypeButtonsSelect(_:)), for: .touchUpInside)
+        self.view.addSubview(constructionButton)
         
         
-        //
-        //button styling
-        curvingButton(button: homeButton)
-        curvingButton(button: elsewhereButton)
-        curvingButton(button: sleepingButton)
-        curvingButton(button: parentingButton)
-        curvingButton(button: workingButton)
-        curvingButton(button: othersButton)
-        curvingButton(button: restingButton)
-        curvingButton(button: walkingButton)
-        curvingButton(button: constructionButton)
-        curvingButton(button: nightLifeButton)
-        curvingButton(button: musicButton)
-        curvingButton(button: deliveryButton)
-        curvingButton(button: garbageButton)
-        curvingButton(button: noiseTypeOtherButton)
+        nightLifeButton.frame = CGRect(x: constructionButtonLocationX + screenWidth/24, y: screenHeight/6, width: screenWidth/3.5, height: 40)
+        let nightLifeButtonLocationX = nightLifeButton.frame.origin.x + nightLifeButton.frame.width
+        let nightLifeButtonLocationY = nightLifeButton.frame.origin.y + nightLifeButton.frame.height
+        nightLifeButton.setTitle(" NightLife", for: .normal)
+        nightLifeButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        nightLifeButton.setTitleColor(UIColor.black, for: .normal)
+        nightLifeButton.setImage(UIImage(named: "Logo_nightlife.png"), for: .normal)
+        nightLifeButton.layer.borderWidth = 2.0
+        nightLifeButton.layer.cornerRadius = 10
+        nightLifeButton.layer.borderColor = UIColor.black.cgColor
+        nightLifeButton.addTarget(self, action: #selector(noiseTypeButtonsSelect(_:)), for: .touchUpInside)
+        self.view.addSubview(nightLifeButton)
         
         
+        musicButton.frame = CGRect(x: nightLifeButtonLocationX + screenWidth/24, y: screenHeight/6, width: screenWidth/3.5, height: 40)
+        let musicButtonLocationX = musicButton.frame.origin.x + musicButton.frame.width
+        let musicButtonLocationY = musicButton.frame.origin.y + musicButton.frame.height
+        musicButton.setTitle(" Music", for: .normal)
+        musicButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        musicButton.setTitleColor(UIColor.black, for: .normal)
+        musicButton.setImage(UIImage(named: "Logo_music.png"), for: .normal)
+        musicButton.layer.borderWidth = 2.0
+        musicButton.layer.cornerRadius = 10
+        musicButton.layer.borderColor = UIColor.black.cgColor
+        musicButton.addTarget(self, action: #selector(noiseTypeButtonsSelect(_:)), for: .touchUpInside)
+        self.view.addSubview(musicButton)
+        
+        deliveryButton.frame = CGRect(x: 15, y: constructionButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+//                let deliveryButtonLocation = deliveryButton.frame.origin.x + deliveryButton.frame.width
+        let deliveryButtonLocationY = deliveryButton.frame.origin.y + deliveryButton.frame.height
+        deliveryButton.setTitle(" Delivery", for: .normal)
+        deliveryButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        deliveryButton.setTitleColor(UIColor.black, for: .normal)
+        deliveryButton.setImage(UIImage(named: "Logo_truck.png"), for: .normal)
+        deliveryButton.layer.borderWidth = 2.0
+        deliveryButton.layer.cornerRadius = 10
+        deliveryButton.layer.borderColor = UIColor.black.cgColor
+        deliveryButton.addTarget(self, action: #selector(noiseTypeButtonsSelect(_:)), for: .touchUpInside)
+        self.view.addSubview(deliveryButton)
+        
+        garbageButton.frame = CGRect(x: nightLifeButton.frame.origin.x, y: nightLifeButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        //        let garbageButtonLocation = garbageButton.frame.origin.x + garbageButton.frame.width
+        garbageButton.setTitle(" Garbage", for: .normal)
+        garbageButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        garbageButton.setTitleColor(UIColor.black, for: .normal)
+        garbageButton.setImage(UIImage(named: "Logo_garbage.png"), for: .normal)
+        garbageButton.layer.borderWidth = 2.0
+        garbageButton.layer.cornerRadius = 10
+        garbageButton.layer.borderColor = UIColor.black.cgColor
+        garbageButton.addTarget(self, action: #selector(noiseTypeButtonsSelect(_:)), for: .touchUpInside)
+        self.view.addSubview(garbageButton)
         
         
-        curvingButtonRounder(button: mehFaceButton)
-        curvingButtonRounder(button: dizzyFaceButton)
-        curvingButtonRounder(button: annoyedFaceButton)
-        curvingButtonRounder(button: angryFaceButton)
-        curvingButtonRounder(button: frustratedFaceButton)
+        noiseTypeOtherButton.frame = CGRect(x: musicButton.frame.origin.x, y: musicButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        noiseTypeOtherButton.setTitle("Other", for: .normal)
+        noiseTypeOtherButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        noiseTypeOtherButton.setTitleColor(UIColor.black, for: .normal)
+        noiseTypeOtherButton.layer.borderWidth = 2.0
+        noiseTypeOtherButton.layer.cornerRadius = 10
+        noiseTypeOtherButton.layer.borderColor = UIColor.black.cgColor
+        noiseTypeOtherButton.addTarget(self, action: #selector(noiseTypeButtonsSelect(_:)), for: .touchUpInside)
+        self.view.addSubview(noiseTypeOtherButton)
+        
+        let locationLabel = UILabel.init()
+        locationLabel.frame = CGRect(x: 15, y: deliveryButtonLocationY + screenHeight/30, width: screenWidth/3, height: 40)
+        let locationLabelLocationX = locationLabel.frame.origin.x + locationLabel.frame.width
+        let locationLabelLocationY = locationLabel.frame.origin.y + locationLabel.frame.height
+        locationLabel.text = "Location"
+        locationLabel.textColor = UIColor.black
+        self.view.addSubview(locationLabel)
+        
+        homeButton.frame = CGRect(x: 15, y: locationLabelLocationY + screenHeight/36, width: screenWidth/3, height: 40)
+        let homeButtonLocationX = locationLabel.frame.origin.x + locationLabel.frame.width
+        let homeButtonLocationY = locationLabel.frame.origin.y + locationLabel.frame.height
+        homeButton.setTitle(" Home", for: .normal)
+        homeButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        homeButton.setTitleColor(UIColor.black, for: .normal)
+        homeButton.setImage(UIImage(named: "Icon_Indoor.png"), for: .normal)
+        homeButton.layer.borderWidth = 2.0
+        homeButton.layer.cornerRadius = 10
+        homeButton.layer.borderColor = UIColor.black.cgColor
+        homeButton.addTarget(self, action: #selector(selectOrDeselect(_:)), for: .touchUpInside)
+        self.view.addSubview(homeButton)
+        
+        elsewhereButton.frame = CGRect(x: homeButtonLocationX + screenWidth/4, y: locationLabelLocationY + screenHeight/36, width: screenWidth/3, height: 40)
+        elsewhereButton.setTitle(" Elsewhere", for: .normal)
+        elsewhereButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        elsewhereButton.setTitleColor(UIColor.black, for: .normal)
+        elsewhereButton.setImage(UIImage(named: "Icon_Outdoor.png"), for: .normal)
+        elsewhereButton.layer.borderWidth = 2.0
+        elsewhereButton.layer.cornerRadius = 10
+        elsewhereButton.layer.borderColor = UIColor.black.cgColor
+        elsewhereButton.addTarget(self, action: #selector(selectOrDeselect(_:)), for: .touchUpInside)
+        self.view.addSubview(elsewhereButton)
+        
+        let iAmLabel = UILabel.init()
+        iAmLabel.frame = CGRect(x: 15, y: homeButtonLocationY + screenHeight/10, width: screenWidth/10, height: 40)
+        let iAmLabelLocationX = iAmLabel.frame.origin.x + iAmLabel.frame.width
+        let iAmLabelLocationY = iAmLabel.frame.origin.y + iAmLabel.frame.height
+        iAmLabel.text = "I am"
+        iAmLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        iAmLabel.textColor = UIColor.black
+        self.view.addSubview(iAmLabel)
+        
+        sleepingButton.frame = CGRect(x: 15, y: iAmLabelLocationY + screenHeight/36, width: screenWidth/3.5, height: 40)
+        let sleepingButtonLocationX = sleepingButton.frame.origin.x + sleepingButton.frame.width
+        let sleepingButtonLocationY = sleepingButton.frame.origin.y + sleepingButton.frame.height
+        sleepingButton.setTitle(" Sleeping", for: .normal)
+        sleepingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        sleepingButton.setTitleColor(UIColor.black, for: .normal)
+        sleepingButton.setImage(UIImage(named: "Icon_Sleeping man.png"), for: .normal)
+        sleepingButton.layer.borderWidth = 2.0
+        sleepingButton.layer.cornerRadius = 10
+        sleepingButton.layer.borderColor = UIColor.black.cgColor
+        sleepingButton.addTarget(self, action: #selector(selectOrDeselectIAmButtons(_:)), for: .touchUpInside)
+        self.view.addSubview(sleepingButton)
+        
+        
+        workingButton.frame = CGRect(x: sleepingButtonLocationX + screenWidth/36, y: iAmLabelLocationY + screenHeight/36, width: screenWidth/3.5, height: 40)
+        let workingButtonLocationX = workingButton.frame.origin.x + workingButton.frame.width
+        let workingButtonLocationY = workingButton.frame.origin.y + workingButton.frame.height
+        workingButton.setTitle(" Working", for: .normal)
+        workingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        workingButton.setTitleColor(UIColor.black, for: .normal)
+        workingButton.setImage(UIImage(named: "Icon_Working man.png"), for: .normal)
+        workingButton.layer.borderWidth = 2.0
+        workingButton.layer.cornerRadius = 10
+        workingButton.layer.borderColor = UIColor.black.cgColor
+        workingButton.addTarget(self, action: #selector(selectOrDeselectIAmButtons(_:)), for: .touchUpInside)
+        self.view.addSubview(workingButton)
+        
+        
+        restingButton.frame = CGRect(x: workingButtonLocationX + screenWidth/36, y: iAmLabelLocationY + screenHeight/36, width: screenWidth/3.5, height: 40)
+        let restingButtonLocationY = restingButton.frame.origin.y + restingButton.frame.height
+        restingButton.setTitle(" Resting", for: .normal)
+        restingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        restingButton.setTitleColor(UIColor.black, for: .normal)
+        restingButton.setImage(UIImage(named: "Icon_Resting man.png"), for: .normal)
+        restingButton.layer.borderWidth = 2.0
+        restingButton.layer.cornerRadius = 10
+        restingButton.layer.borderColor = UIColor.black.cgColor
+        restingButton.addTarget(self, action: #selector(selectOrDeselectIAmButtons(_:)), for: .touchUpInside)
+        self.view.addSubview(restingButton)
+        
+        walkingButton.frame = CGRect(x: 15, y: sleepingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        let walkingButtonLocationY = walkingButton.frame.origin.y + walkingButton.frame.height
+        walkingButton.setTitle(" Walking", for: .normal)
+        walkingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        walkingButton.setTitleColor(UIColor.black, for: .normal)
+        walkingButton.setImage(UIImage(named: "Icon_Walking.png"), for: .normal)
+        walkingButton.layer.borderWidth = 2.0
+        walkingButton.layer.cornerRadius = 10
+        walkingButton.layer.borderColor = UIColor.black.cgColor
+        walkingButton.addTarget(self, action: #selector(selectOrDeselectIAmButtons(_:)), for: .touchUpInside)
+        self.view.addSubview(walkingButton)
+        
+        parentingButton.frame = CGRect(x: workingButton.frame.origin.x, y: workingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        parentingButton.setTitle(" Parenting", for: .normal)
+        parentingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        parentingButton.setTitleColor(UIColor.black, for: .normal)
+        parentingButton.setImage(UIImage(named: "Icon_Parenting.png"), for: .normal)
+        parentingButton.layer.borderWidth = 2.0
+        parentingButton.layer.cornerRadius = 10
+        parentingButton.layer.borderColor = UIColor.black.cgColor
+        parentingButton.addTarget(self, action: #selector(selectOrDeselectIAmButtons(_:)), for: .touchUpInside)
+        self.view.addSubview(parentingButton)
+        
+        
+        othersButton.frame = CGRect(x: restingButton.frame.origin.x, y: restingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        othersButton.setTitle("Other", for: .normal)
+        othersButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        othersButton.setTitleColor(UIColor.black, for: .normal)
+        othersButton.layer.borderWidth = 2.0
+        othersButton.layer.cornerRadius = 10
+        othersButton.layer.borderColor = UIColor.black.cgColor
+        othersButton.addTarget(self, action: #selector(selectOrDeselectIAmButtons(_:)), for: .touchUpInside)
+        self.view.addSubview(othersButton)
+        
+        
+        let iAmFeelingLabel = UILabel.init()
+        iAmFeelingLabel.frame = CGRect(x: 15, y: walkingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        let iAmFeelingLabelLocationX = iAmFeelingLabel.frame.width + iAmFeelingLabel.frame.origin.x
+        
+        let iAmFeelingLabelLocationY = iAmFeelingLabel.frame.height + iAmFeelingLabel.frame.origin.y
+        iAmFeelingLabel.text = "I am feeling"
+        iAmFeelingLabel.textColor = UIColor.black
+        iAmFeelingLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        self.view.addSubview(iAmFeelingLabel)
+        
+        happyFaceButton.frame = CGRect(x: 15, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        let happyFaceButtonLocationX = happyFaceButton.frame.origin.x + happyFaceButton.frame.width
+        let happyFaceButtonLocationY = happyFaceButton.frame.origin.y + happyFaceButton.frame.height
+        happyFaceButton.titleLabel?.text = "Happy"
+        happyFaceButton.setBackgroundImage(UIImage(named: "Icon_Happy Face.png"), for: .normal)
+        happyFaceButton.setTitleColor(UIColor.black, for: .normal)
+        happyFaceButton.layer.borderWidth = 2.0
+        happyFaceButton.layer.cornerRadius = 10
+        happyFaceButton.layer.borderColor = UIColor.black.cgColor
+        happyFaceButton.addTarget(self, action: #selector(selectOrDeselectFaces(_:)), for: .touchUpInside)
         curvingButtonRounder(button: happyFaceButton)
-        curvingButtonRounder(button: identifyNoiseSourceButton)
+        self.view.addSubview(happyFaceButton)
         
-        //adding borders
-        addingBorder(button: homeButton)
-        addingBorder(button: elsewhereButton)
-        addingBorder(button: sleepingButton)
-        addingBorder(button: parentingButton)
-        addingBorder(button: workingButton)
-        addingBorder(button: othersButton)
-        addingBorder(button: restingButton)
-        addingBorder(button: walkingButton)
-        addingBorder(button: identifyNoiseSourceButton)
         
-        addingBorder(button: constructionButton)
-        addingBorder(button: nightLifeButton)
-        addingBorder(button: musicButton)
-        addingBorder(button: deliveryButton)
-        addingBorder(button: garbageButton)
-        addingBorder(button: noiseTypeOtherButton)
+        mehFaceButton.frame = CGRect(x: happyFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        let mehFaceButtonLocationX = mehFaceButton.frame.origin.x + mehFaceButton.frame.width
+        let mehFaceButtonLocationY = mehFaceButton.frame.origin.y + mehFaceButton.frame.height
+        mehFaceButton.titleLabel?.text = "Meh"
+        mehFaceButton.setTitleColor(UIColor.black, for: .normal)
+        mehFaceButton.setBackgroundImage(UIImage(named: "Icon_meh face.png"), for: .normal)
+        mehFaceButton.layer.borderWidth = 2.0
+        mehFaceButton.layer.cornerRadius = 10
+        mehFaceButton.layer.borderColor = UIColor.black.cgColor
+        mehFaceButton.addTarget(self, action: #selector(selectOrDeselectFaces(_:)), for: .touchUpInside)
+        curvingButtonRounder(button: mehFaceButton)
+        self.view.addSubview(mehFaceButton)
         
-        //adding border colors
-        addingBorderColorBlack(button: homeButton)
-        addingBorderColorBlack(button: elsewhereButton)
-        addingBorderColorBlack(button: sleepingButton)
-        addingBorderColorBlack(button: parentingButton)
-        addingBorderColorBlack(button: workingButton)
-        addingBorderColorBlack(button: othersButton)
-        addingBorderColorBlack(button: restingButton)
-        addingBorderColorBlack(button: walkingButton)
-        addingBorderColorBlack(button: identifyNoiseSourceButton)
-        addingBorderColorBlack(button: constructionButton)
-        addingBorderColorBlack(button: nightLifeButton)
-        addingBorderColorBlack(button: musicButton)
-        addingBorderColorBlack(button: deliveryButton)
-        addingBorderColorBlack(button: garbageButton)
-        addingBorderColorBlack(button: noiseTypeOtherButton)
         
-        myView.roundCorners(cornerRadius: 20.0)
+        frustratedFaceButton.frame = CGRect(x: mehFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        let frustratedFaceButtonLocationX = frustratedFaceButton.frame.origin.x + frustratedFaceButton.frame.width
+        let frustratedFaceButtonLocationY = frustratedFaceButton.frame.origin.y + frustratedFaceButton.frame.height
+        frustratedFaceButton.titleLabel?.text = "Frustrated"
+        frustratedFaceButton.setTitleColor(UIColor.black, for: .normal)
+        frustratedFaceButton.setBackgroundImage(UIImage(named: "Frustrated face.png"), for: .normal)
+        frustratedFaceButton.layer.borderWidth = 2.0
+        frustratedFaceButton.layer.cornerRadius = 10
+        frustratedFaceButton.layer.borderColor = UIColor.black.cgColor
+        frustratedFaceButton.addTarget(self, action: #selector(selectOrDeselectFaces(_:)), for: .touchUpInside)
+        curvingButtonRounder(button: frustratedFaceButton)
+        self.view.addSubview(frustratedFaceButton)
+        
+        
+        angryFaceButton.frame = CGRect(x: frustratedFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        let angryFaceButtonLocationX = angryFaceButton.frame.origin.x + angryFaceButton.frame.width
+        angryFaceButton.titleLabel?.text = "Angry"
+        angryFaceButton.setTitleColor(UIColor.black, for: .normal)
+        angryFaceButton.setBackgroundImage(UIImage(named: "Icon_Angry Face.png"), for: .normal)
+        angryFaceButton.layer.borderWidth = 2.0
+        angryFaceButton.layer.cornerRadius = 10
+        angryFaceButton.layer.borderColor = UIColor.black.cgColor
+        angryFaceButton.addTarget(self, action: #selector(selectOrDeselectFaces(_:)), for: .touchUpInside)
+        curvingButtonRounder(button: angryFaceButton)
+        self.view.addSubview(angryFaceButton)
+        
+        annoyedFaceButton.frame = CGRect(x: angryFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        let annoyedFaceButtonLocationX = annoyedFaceButton.frame.origin.x + annoyedFaceButton.frame.width
+        annoyedFaceButton.titleLabel?.text = "Annoyed"
+        annoyedFaceButton.setTitleColor(UIColor.black, for: .normal)
+        annoyedFaceButton.setBackgroundImage(UIImage(named: "Icon_Annoyed Face.png"), for: .normal)
+        annoyedFaceButton.layer.borderWidth = 2.0
+        annoyedFaceButton.layer.cornerRadius = 10
+        annoyedFaceButton.layer.borderColor = UIColor.black.cgColor
+        annoyedFaceButton.addTarget(self, action: #selector(selectOrDeselectFaces(_:)), for: .touchUpInside)
+        curvingButtonRounder(button: annoyedFaceButton)
+        self.view.addSubview(annoyedFaceButton)
+        
+        
+        dizzyFaceButton.frame = CGRect(x: annoyedFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        dizzyFaceButton.titleLabel?.text = "Dizzy"
+        dizzyFaceButton.setTitleColor(UIColor.black, for: .normal)
+        dizzyFaceButton.setBackgroundImage(UIImage(named: "Icon_Dizzy Face.png"), for: .normal)
+        dizzyFaceButton.layer.borderWidth = 2.0
+        dizzyFaceButton.layer.cornerRadius = 10
+        dizzyFaceButton.layer.borderColor = UIColor.black.cgColor
+        dizzyFaceButton.addTarget(self, action: #selector(selectOrDeselectFaces(_:)), for: .touchUpInside)
+        curvingButtonRounder(button: dizzyFaceButton)
+        self.view.addSubview(dizzyFaceButton)
+        
+        
+        identifyNoiseSourceButton.frame = CGRect(x: 15, y: happyFaceButtonLocationY + screenHeight/30, width: screenWidth - 30, height: 40)
+        identifyNoiseSourceButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        identifyNoiseSourceButton.setTitleColor(UIColor.black, for: .normal)
+        identifyNoiseSourceButton.setTitle("Locate the noise", for: .normal)
+        identifyNoiseSourceButton.layer.borderWidth = 2.0
+        identifyNoiseSourceButton.layer.cornerRadius = 10
+        identifyNoiseSourceButton.layer.borderColor = UIColor.black.cgColor
+        identifyNoiseSourceButton.addTarget(self, action: #selector(locateTheNoise(_:)), for: .touchUpInside)
+        self.view.addSubview(identifyNoiseSourceButton)
+        
+        
+        
         
     }
     //noise type buttons
-    @IBAction func noiseTypeButtonsSelect(_ sender: UIButton) {
+    @objc func noiseTypeButtonsSelect(_ sender: UIButton) {
         //all the buttons have a background color of white and are not selected
-        noiseTypeArray.forEach({ $0.backgroundColor = UIColor.white
+        sender.setTitleColor(UIColor.black, for: .normal)
+        noiseTypeArray.forEach({ $0.tintColor = UIColor.clear
+            $0.backgroundColor = nil
             sender.isSelected = false
         })
         
         //when a button is pressed, the background color changes to the custom color below. Is selected and only 1 button is selected at 1 time
+        sender.setTitleColor(UIColor.black, for: .selected)
         sender.backgroundColor = UIColor.buttonSelected()
         sender.isSelected = true
         
         //saving button information in core data
-        newTask.setValue(sender.title(for: .normal), forKey: "noiseType")
+        newTask.setValue(sender.titleLabel?.text, forKey: "noiseType")
         savingData()
         let _ = navigationController?.popViewController(animated: true)
     }
     
-    //for the first row of buttons, home or elsewhere
-    @IBAction func selectOrDeselect(_ sender: UIButton) {
+    //    //for the first row of buttons, home or elsewhere
+    @objc func selectOrDeselect(_ sender: UIButton) {
         //all the buttons have a background color of white and are not selected
         locationButtonArray.forEach({ $0.backgroundColor = UIColor.white
             sender.isSelected = false
@@ -158,9 +387,9 @@ class SlideUpView: UIViewController {
         savingData()
         let _ = navigationController?.popViewController(animated: true)
     }
-    
-    //for the second row of buttons, I am section of buttons
-    @IBAction func selectOrDeselectIAmButtons(_ sender: UIButton) {
+    //
+    //    //for the second row of buttons, I am section of buttons
+    @objc func selectOrDeselectIAmButtons(_ sender: UIButton) {
         //all the buttons have a background color of white and are not selected
         iAmButtonsArray.forEach({ $0.backgroundColor = UIColor.white
             sender.isSelected = false
@@ -180,15 +409,15 @@ class SlideUpView: UIViewController {
         savingData()
         let _ = navigationController?.popViewController(animated: true)
     }
-    
-    
+    //
+    //
     //the face buttons
-    @IBAction func selectOrDeselectFaces(_ sender: UIButton) {
+    @objc func selectOrDeselectFaces(_ sender: UIButton) {
         
         sender.layer.borderWidth = 2
         
         //all the buttons have a border color of gray and are not selected
-        faceButtonArray.forEach({ $0.layer.borderColor = UIColor.gray.cgColor
+        faceButtonArray.forEach({ $0.layer.borderColor = UIColor.black.cgColor
             sender.isSelected = false
         })
         
@@ -197,21 +426,18 @@ class SlideUpView: UIViewController {
         sender.isSelected = true
         
         //saving button information in core data
-        newTask.setValue(sender.title(for: .normal), forKey: "faceButton")
+        newTask.setValue(sender.titleLabel?.text, forKey: "faceButton")
         savingData()
         let _ = navigationController?.popViewController(animated: true)
     }
-    
-    //locate the noise button action
-    @IBAction func locateTheNoise(_ sender: Any) {
+    //
+    //    //locate the noise button action
+    @objc func locateTheNoise(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "map") ; // details the storyboard ID
         self.present(vc, animated: true, completion: nil);
         savingData()
         let _ = navigationController?.popViewController(animated: true)
-        
-        
     }
-    
     
 }

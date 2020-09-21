@@ -31,11 +31,12 @@ func curvingButton(button: UIButton){
 
 //button styling (curves edges with a bigger radius)
 func curvingButtonRounder(button: UIButton){
-    button.layer.cornerRadius = 20;
+    button.layer.cornerRadius = 20
+    
 }
 
 func curvingButtonSensor(button: UIButton){
-    button.layer.cornerRadius = 140;
+    button.layer.cornerRadius = 300;
 }
 
 extension UIView{
