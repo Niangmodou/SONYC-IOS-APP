@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06A1B8B10BF3DFABB226B2AC /* Pods_SonycApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943B05580CC87F80DCEB6199 /* Pods_SonycApp.framework */; };
+		2643CC422519298F00A28D6E /* ButtonInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643CC412519298F00A28D6E /* ButtonInformation.swift */; };
 		265D43B024D75C8E0027B148 /* selectLocationPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D43AF24D75C8E0027B148 /* selectLocationPopUp.swift */; };
 		265D43B224D75D940027B148 /* identifyPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D43B124D75D940027B148 /* identifyPopUp.swift */; };
 		265D43B424D75DD90027B148 /* confirmedPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D43B324D75DD90027B148 /* confirmedPopUp.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		21B91119390A55624E979AF5 /* Pods-SonycAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonycAppTests.release.xcconfig"; path = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		2643CC412519298F00A28D6E /* ButtonInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonInformation.swift; sourceTree = "<group>"; };
 		265D43AF24D75C8E0027B148 /* selectLocationPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectLocationPopUp.swift; sourceTree = "<group>"; };
 		265D43B124D75D940027B148 /* identifyPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = identifyPopUp.swift; sourceTree = "<group>"; };
 		265D43B324D75DD90027B148 /* confirmedPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confirmedPopUp.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				2671C56424E0BB3500AB0DCF /* TableCell.swift */,
 				26741F4124E9B27E0079C11C /* PlayBackFromRecordings.swift */,
 				5201CC4224EF1930006532B1 /* MapCardCell.swift */,
+				2643CC412519298F00A28D6E /* ButtonInformation.swift */,
 			);
 			path = SonycApp;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				26741F4224E9B27E0079C11C /* PlayBackFromRecordings.swift in Sources */,
 				5201CC4324EF1931006532B1 /* MapCardCell.swift in Sources */,
 				269E135A24C94FC900D09E90 /* Colors.swift in Sources */,
+				2643CC422519298F00A28D6E /* ButtonInformation.swift in Sources */,
 				265D43B224D75D940027B148 /* identifyPopUp.swift in Sources */,
 				269E132524C94EDA00D09E90 /* ViewController.swift in Sources */,
 				26678FF024CC654F00067A9F /* Filters&Conversions.swift in Sources */,
