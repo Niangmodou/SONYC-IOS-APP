@@ -28,7 +28,7 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
     var barTool2 = UIBarButtonItem.init()
     let cancelButton = UIButton.init()
     let selectButton = UIButton.init()
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.identifier, for: indexPath)
         positionRecording = indexPath.row
@@ -56,7 +56,6 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fillDict()
         //does not show the cells that are not in use
         tableView.tableFooterView = UIView()
         //allows the tableview to be edited for the multiple selection
@@ -82,6 +81,10 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.rightBarButtonItem = barTool2
+        
+        if(selectButton.titleLabel?.text == "Select"){
+            cancelButton.isHidden = true
+        }
         
         
     }

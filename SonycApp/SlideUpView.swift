@@ -49,12 +49,13 @@ class SlideUpView: UIViewController {
         super.viewDidLoad()
         
         let noiseTypeLabel = UILabel.init()
-        noiseTypeLabel.frame = CGRect(x: 15, y: screenHeight/9, width: screenWidth/3.5, height: 40)
+        noiseTypeLabel.frame = CGRect(x: 15, y: screenHeight/20, width: screenWidth/3.5, height: 25)
+        let noiseTypeLabelLocationY = labelYPosition(label: noiseTypeLabel)
         noiseTypeLabel.text = "Noise Type"
         noiseTypeLabel.textColor = UIColor.black
         self.view.addSubview(noiseTypeLabel)
         
-        constructionButton.frame = CGRect(x: 15, y: screenHeight/6, width: screenWidth/3.5, height: 40)
+        constructionButton.frame = CGRect(x: 15, y: noiseTypeLabelLocationY + screenHeight/20, width: screenWidth/3.5, height: screenHeight/25)
         let constructionButtonLocationX = buttonXPosition(button: constructionButton)
         let constructionButtonLocationY = buttonYPosition(button: constructionButton)
         constructionButton.setTitle(" Construction", for: .normal)
@@ -68,7 +69,7 @@ class SlideUpView: UIViewController {
         self.view.addSubview(constructionButton)
         
         
-        nightLifeButton.frame = CGRect(x: constructionButtonLocationX + screenWidth/24, y: screenHeight/6, width: screenWidth/3.5, height: 40)
+        nightLifeButton.frame = CGRect(x: constructionButtonLocationX + screenWidth/24, y: noiseTypeLabelLocationY + screenHeight/20, width: screenWidth/3.5, height: screenHeight/25)
         let nightLifeButtonLocationX = buttonXPosition(button: nightLifeButton)
         let nightLifeButtonLocationY = buttonYPosition(button: nightLifeButton)
         nightLifeButton.setTitle(" NightLife", for: .normal)
@@ -82,8 +83,8 @@ class SlideUpView: UIViewController {
         self.view.addSubview(nightLifeButton)
         
         
-        musicButton.frame = CGRect(x: nightLifeButtonLocationX + screenWidth/24, y: screenHeight/6, width: screenWidth/3.5, height: 40)
-        let musicButtonLocationY = buttonXPosition(button: musicButton)
+        musicButton.frame = CGRect(x: nightLifeButtonLocationX + screenWidth/24, y: noiseTypeLabelLocationY + screenHeight/20, width: screenWidth/3.5, height: screenHeight/25)
+        let musicButtonLocationY = buttonYPosition(button: musicButton)
         musicButton.setTitle(" Music", for: .normal)
         musicButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         musicButton.setTitleColor(UIColor.black, for: .normal)
@@ -94,7 +95,7 @@ class SlideUpView: UIViewController {
         musicButton.addTarget(self, action: #selector(noiseTypeButtonsSelect(_:)), for: .touchUpInside)
         self.view.addSubview(musicButton)
         
-        deliveryButton.frame = CGRect(x: 15, y: constructionButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        deliveryButton.frame = CGRect(x: 15, y: constructionButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: screenHeight/25)
         let deliveryButtonLocationY = buttonYPosition(button: deliveryButton)
         deliveryButton.setTitle(" Delivery", for: .normal)
         deliveryButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
@@ -106,7 +107,7 @@ class SlideUpView: UIViewController {
         deliveryButton.addTarget(self, action: #selector(noiseTypeButtonsSelect(_:)), for: .touchUpInside)
         self.view.addSubview(deliveryButton)
         
-        garbageButton.frame = CGRect(x: nightLifeButton.frame.origin.x, y: nightLifeButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        garbageButton.frame = CGRect(x: nightLifeButton.frame.origin.x, y: nightLifeButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: screenHeight/25)
         garbageButton.setTitle(" Garbage", for: .normal)
         garbageButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         garbageButton.setTitleColor(UIColor.black, for: .normal)
@@ -118,7 +119,7 @@ class SlideUpView: UIViewController {
         self.view.addSubview(garbageButton)
         
         
-        noiseTypeOtherButton.frame = CGRect(x: musicButton.frame.origin.x, y: musicButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        noiseTypeOtherButton.frame = CGRect(x: musicButton.frame.origin.x, y: musicButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: screenHeight/25)
         noiseTypeOtherButton.setTitle("Other", for: .normal)
         noiseTypeOtherButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         noiseTypeOtherButton.setTitleColor(UIColor.black, for: .normal)
@@ -129,13 +130,13 @@ class SlideUpView: UIViewController {
         self.view.addSubview(noiseTypeOtherButton)
         
         let locationLabel = UILabel.init()
-        locationLabel.frame = CGRect(x: 15, y: deliveryButtonLocationY + screenHeight/30, width: screenWidth/3, height: 40)
+        locationLabel.frame = CGRect(x: 15, y: deliveryButtonLocationY + screenHeight/30, width: screenWidth/3, height: screenHeight/20)
         let locationLabelLocationY = labelYPosition(label: locationLabel)
         locationLabel.text = "Location"
         locationLabel.textColor = UIColor.black
         self.view.addSubview(locationLabel)
         
-        homeButton.frame = CGRect(x: 15, y: locationLabelLocationY + screenHeight/36, width: screenWidth/3, height: 40)
+        homeButton.frame = CGRect(x: 15, y: locationLabelLocationY + screenHeight/36, width: screenWidth/3, height: screenHeight/25)
         let homeButtonLocationX = buttonXPosition(button: homeButton)
         let homeButtonLocationY = buttonYPosition(button: homeButton)
         homeButton.setTitle(" Home", for: .normal)
@@ -148,7 +149,7 @@ class SlideUpView: UIViewController {
         homeButton.addTarget(self, action: #selector(selectOrDeselect(_:)), for: .touchUpInside)
         self.view.addSubview(homeButton)
         
-        elsewhereButton.frame = CGRect(x: homeButtonLocationX + screenWidth/4, y: locationLabelLocationY + screenHeight/36, width: screenWidth/3, height: 40)
+        elsewhereButton.frame = CGRect(x: homeButtonLocationX + screenWidth/4, y: locationLabelLocationY + screenHeight/36, width: screenWidth/3, height: screenHeight/25)
         elsewhereButton.setTitle(" Elsewhere", for: .normal)
         elsewhereButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         elsewhereButton.setTitleColor(UIColor.black, for: .normal)
@@ -160,14 +161,14 @@ class SlideUpView: UIViewController {
         self.view.addSubview(elsewhereButton)
         
         let iAmLabel = UILabel.init()
-        iAmLabel.frame = CGRect(x: 15, y: homeButtonLocationY + screenHeight/10, width: screenWidth/10, height: 40)
+        iAmLabel.frame = CGRect(x: 15, y: homeButtonLocationY + screenHeight/30, width: screenWidth/10, height: screenHeight/25)
         let iAmLabelLocationY = labelYPosition(label: iAmLabel)
         iAmLabel.text = "I am"
         iAmLabel.font = UIFont.boldSystemFont(ofSize: 14)
         iAmLabel.textColor = UIColor.black
         self.view.addSubview(iAmLabel)
         
-        sleepingButton.frame = CGRect(x: 15, y: iAmLabelLocationY + screenHeight/36, width: screenWidth/3.5, height: 40)
+        sleepingButton.frame = CGRect(x: 15, y: iAmLabelLocationY + screenHeight/36, width: screenWidth/3.5, height: screenHeight/25)
         let sleepingButtonLocationX = buttonXPosition(button: sleepingButton)
         let sleepingButtonLocationY = buttonYPosition(button: sleepingButton)
         sleepingButton.setTitle(" Sleeping", for: .normal)
@@ -181,7 +182,7 @@ class SlideUpView: UIViewController {
         self.view.addSubview(sleepingButton)
         
         
-        workingButton.frame = CGRect(x: sleepingButtonLocationX + screenWidth/36, y: iAmLabelLocationY + screenHeight/36, width: screenWidth/3.5, height: 40)
+        workingButton.frame = CGRect(x: sleepingButtonLocationX + screenWidth/36, y: iAmLabelLocationY + screenHeight/36, width: screenWidth/3.5, height: screenHeight/25)
         let workingButtonLocationX = buttonXPosition(button: workingButton)
         let workingButtonLocationY = buttonYPosition(button: workingButton)
         workingButton.setTitle(" Working", for: .normal)
@@ -195,7 +196,7 @@ class SlideUpView: UIViewController {
         self.view.addSubview(workingButton)
         
         
-        restingButton.frame = CGRect(x: workingButtonLocationX + screenWidth/36, y: iAmLabelLocationY + screenHeight/36, width: screenWidth/3.5, height: 40)
+        restingButton.frame = CGRect(x: workingButtonLocationX + screenWidth/36, y: iAmLabelLocationY + screenHeight/36, width: screenWidth/3.5, height: screenHeight/25)
         let restingButtonLocationY = buttonYPosition(button: restingButton)
         restingButton.setTitle(" Resting", for: .normal)
         restingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
@@ -207,7 +208,7 @@ class SlideUpView: UIViewController {
         restingButton.addTarget(self, action: #selector(selectOrDeselectIAmButtons(_:)), for: .touchUpInside)
         self.view.addSubview(restingButton)
         
-        walkingButton.frame = CGRect(x: 15, y: sleepingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        walkingButton.frame = CGRect(x: 15, y: sleepingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: screenHeight/25)
         let walkingButtonLocationY = buttonYPosition(button: walkingButton)
         walkingButton.setTitle(" Walking", for: .normal)
         walkingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
@@ -219,7 +220,7 @@ class SlideUpView: UIViewController {
         walkingButton.addTarget(self, action: #selector(selectOrDeselectIAmButtons(_:)), for: .touchUpInside)
         self.view.addSubview(walkingButton)
         
-        parentingButton.frame = CGRect(x: workingButton.frame.origin.x, y: workingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        parentingButton.frame = CGRect(x: workingButton.frame.origin.x, y: workingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: screenHeight/25)
         parentingButton.setTitle(" Parenting", for: .normal)
         parentingButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         parentingButton.setTitleColor(UIColor.black, for: .normal)
@@ -231,7 +232,7 @@ class SlideUpView: UIViewController {
         self.view.addSubview(parentingButton)
         
         
-        othersButton.frame = CGRect(x: restingButton.frame.origin.x, y: restingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        othersButton.frame = CGRect(x: restingButton.frame.origin.x, y: restingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: screenHeight/25)
         othersButton.setTitle("Other", for: .normal)
         othersButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         othersButton.setTitleColor(UIColor.black, for: .normal)
@@ -243,7 +244,7 @@ class SlideUpView: UIViewController {
         
         
         let iAmFeelingLabel = UILabel.init()
-        iAmFeelingLabel.frame = CGRect(x: 15, y: walkingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: 40)
+        iAmFeelingLabel.frame = CGRect(x: 15, y: walkingButtonLocationY + screenHeight/30, width: screenWidth/3.5, height: screenHeight/25)
         
         let iAmFeelingLabelLocationY = labelYPosition(label: iAmFeelingLabel)
         iAmFeelingLabel.text = "I am feeling"
@@ -251,7 +252,7 @@ class SlideUpView: UIViewController {
         iAmFeelingLabel.font = UIFont.boldSystemFont(ofSize: 14)
         self.view.addSubview(iAmFeelingLabel)
         
-        happyFaceButton.frame = CGRect(x: 15, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        happyFaceButton.frame = CGRect(x: 15, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: screenHeight/25)
         let happyFaceButtonLocationX = buttonXPosition(button: happyFaceButton)
         let happyFaceButtonLocationY = buttonYPosition(button: happyFaceButton)
         happyFaceButton.titleLabel?.text = "Happy"
@@ -265,7 +266,7 @@ class SlideUpView: UIViewController {
         self.view.addSubview(happyFaceButton)
         
         
-        mehFaceButton.frame = CGRect(x: happyFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        mehFaceButton.frame = CGRect(x: happyFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: screenHeight/25)
         let mehFaceButtonLocationX = buttonXPosition(button: mehFaceButton)
         mehFaceButton.titleLabel?.text = "Meh"
         mehFaceButton.setTitleColor(UIColor.black, for: .normal)
@@ -278,7 +279,7 @@ class SlideUpView: UIViewController {
         self.view.addSubview(mehFaceButton)
         
         
-        frustratedFaceButton.frame = CGRect(x: mehFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        frustratedFaceButton.frame = CGRect(x: mehFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: screenHeight/25)
         let frustratedFaceButtonLocationX = buttonXPosition(button: frustratedFaceButton)
         frustratedFaceButton.titleLabel?.text = "Frustrated"
         frustratedFaceButton.setTitleColor(UIColor.black, for: .normal)
@@ -291,7 +292,7 @@ class SlideUpView: UIViewController {
         self.view.addSubview(frustratedFaceButton)
         
         
-        angryFaceButton.frame = CGRect(x: frustratedFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        angryFaceButton.frame = CGRect(x: frustratedFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: screenHeight/25)
         let angryFaceButtonLocationX = buttonXPosition(button: angryFaceButton)
         angryFaceButton.titleLabel?.text = "Angry"
         angryFaceButton.setTitleColor(UIColor.black, for: .normal)
@@ -303,7 +304,7 @@ class SlideUpView: UIViewController {
         curvingButtonRounder(button: angryFaceButton)
         self.view.addSubview(angryFaceButton)
         
-        annoyedFaceButton.frame = CGRect(x: angryFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        annoyedFaceButton.frame = CGRect(x: angryFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: screenHeight/25)
         let annoyedFaceButtonLocationX = buttonXPosition(button: annoyedFaceButton)
         annoyedFaceButton.titleLabel?.text = "Annoyed"
         annoyedFaceButton.setTitleColor(UIColor.black, for: .normal)
@@ -316,7 +317,7 @@ class SlideUpView: UIViewController {
         self.view.addSubview(annoyedFaceButton)
         
         
-        dizzyFaceButton.frame = CGRect(x: annoyedFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: 40)
+        dizzyFaceButton.frame = CGRect(x: annoyedFaceButtonLocationX + screenWidth/20, y: iAmFeelingLabelLocationY + screenHeight/48, width: screenWidth/9, height: screenHeight/25)
         dizzyFaceButton.titleLabel?.text = "Dizzy"
         dizzyFaceButton.setTitleColor(UIColor.black, for: .normal)
         dizzyFaceButton.setBackgroundImage(UIImage(named: "Icon_Dizzy Face.png"), for: .normal)
@@ -328,7 +329,7 @@ class SlideUpView: UIViewController {
         self.view.addSubview(dizzyFaceButton)
         
         
-        identifyNoiseSourceButton.frame = CGRect(x: 15, y: happyFaceButtonLocationY + screenHeight/30, width: screenWidth - 30, height: 40)
+        identifyNoiseSourceButton.frame = CGRect(x: 15, y: happyFaceButtonLocationY + screenHeight/30, width: screenWidth - 30, height: screenHeight/25)
         identifyNoiseSourceButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         identifyNoiseSourceButton.setTitleColor(UIColor.black, for: .normal)
         identifyNoiseSourceButton.setTitle("Locate the noise", for: .normal)

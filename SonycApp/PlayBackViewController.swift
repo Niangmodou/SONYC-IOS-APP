@@ -98,7 +98,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         self.view.addSubview(newYorkLabel)
         
         timeLabel.frame = CGRect(x:  dateLabel.frame.origin.x, y:  locationLabelLocationY + screenHeight/60, width: screenWidth/2.5, height: screenHeight/30)
-        let timeLabelLocationY = labelXPosition(label: timeLabel)
+        let timeLabelLocationY = labelYPosition(label: timeLabel)
         timeLabel.font = UIFont.systemFont(ofSize: 15)
         timeLabel.textColor = UIColor.black
         timeLabel.text = time
@@ -136,26 +136,26 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         self.view.addSubview(avgWordLabel)
         
         maxWordLabel.frame = CGRect(x: avgWordLabelLocationX + screenWidth/6, y: mapViewLocationY  + screenHeight/42, width: screenWidth/6, height: screenHeight/30)
-        let maxWordLabelLocationY = labelXPosition(label: maxWordLabel)
+        let maxWordLabelLocationY = labelYPosition(label: maxWordLabel)
         maxWordLabel.font = UIFont.systemFont(ofSize: 15)
         maxWordLabel.textColor = UIColor.black
         maxWordLabel.text = "Max"
         self.view.addSubview(maxWordLabel)
         
-        minDecibelsLabel.frame = CGRect(x: minWordLabel.frame.origin.x, y: minWordLabelLocationY + screenHeight/60, width: screenWidth/6, height: screenHeight/30)
+        minDecibelsLabel.frame = CGRect(x: minWordLabel.frame.origin.x - screenWidth/40, y: minWordLabelLocationY + screenHeight/60, width: screenWidth/6, height: screenHeight/30)
         let minDecibelsLabelLocationY = labelYPosition(label: minDecibelsLabel)
         minDecibelsLabel.font = UIFont.systemFont(ofSize: 15)
         minDecibelsLabel.textColor = UIColor.black
         minDecibelsLabel.text = min + " db"
         self.view.addSubview(minDecibelsLabel)
         
-        avgDecibelsLabel.frame = CGRect(x: avgWordLabel.frame.origin.x, y: avgWordLabelLocationY + screenHeight/60, width: screenWidth/6, height: screenHeight/30)
+        avgDecibelsLabel.frame = CGRect(x: avgWordLabel.frame.origin.x - screenWidth/40, y: avgWordLabelLocationY + screenHeight/60, width: screenWidth/6, height: screenHeight/30)
         avgDecibelsLabel.font = UIFont.systemFont(ofSize: 15)
         avgDecibelsLabel.textColor = UIColor.black
         avgDecibelsLabel.text = avg + " db"
         self.view.addSubview(avgDecibelsLabel)
         
-        maxDecibelsLabel.frame = CGRect(x: maxWordLabel.frame.origin.x, y: maxWordLabelLocationY + screenHeight/60, width: screenWidth/6, height: screenHeight/30)
+        maxDecibelsLabel.frame = CGRect(x: maxWordLabel.frame.origin.x - screenWidth/40, y: maxWordLabelLocationY + screenHeight/60, width: screenWidth/6, height: screenHeight/30)
         maxDecibelsLabel.font = UIFont.systemFont(ofSize: 15)
         maxDecibelsLabel.textColor = UIColor.black
         maxDecibelsLabel.text = max + " db"
@@ -275,7 +275,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
             audioPlay.stop()
         }
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "recordingsSaved") ; // recordingSaved is the storyboard ID
+        let vc = storyboard.instantiateViewController(withIdentifier: "recordings") ; // recordings is the storyboard ID
         self.present(vc, animated: true, completion: nil);
         
     }

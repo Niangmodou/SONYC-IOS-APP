@@ -19,9 +19,9 @@ import UIKit
         }
     }
     
-    @IBInspectable var counter: Int = 0 {
+    @IBInspectable var counter: Float = 0 {
         didSet {
-            if counter <=  Constants.numberOfDecibels {
+            if Int(counter) <=  Constants.numberOfDecibels {
                 setNeedsDisplay()
             }
         }

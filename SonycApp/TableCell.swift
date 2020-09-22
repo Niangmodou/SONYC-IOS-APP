@@ -69,16 +69,17 @@ class TableCell: UITableViewCell{
         
         let pictureSize = TableCell.picture.sizeThatFits(contentView.frame.size)
         let picSize = pictureSize
-        TableCell.picture.frame = CGRect(x: 30, y: (contentView.frame.size.height - picSize.height)/3, width: picSize.width, height: 50)
+        TableCell.picture.frame = CGRect(x: 30, y: (contentView.frame.size.height - picSize.height)/3, width: picSize.width, height: contentView.frame.height/2)
         let pictureX = TableCell.picture.frame.origin.x + TableCell.picture.frame.width
-        TableCell.location.frame = CGRect(x: pictureX + 30, y: (contentView.frame.size.height - picSize.height)/8, width: 300, height: 40)
+        TableCell.location.frame = CGRect(x: pictureX + 30, y: (contentView.frame.size.height - picSize.height)/8, width: contentView.frame.width - 125, height: contentView.frame.height/2.5)
         let locationY = TableCell.location.frame.origin.y + TableCell.location.frame.height
         let locationX = TableCell.location.frame.origin.x + TableCell.location.frame.width
-        TableCell.average.frame = CGRect(x: locationX - 50, y: TableCell.location.frame.origin.y, width: 40, height: 40)
-        TableCell.date.frame = CGRect(x: TableCell.location.frame.origin.x, y: locationY, width: 75, height: 40)
+        TableCell.average.frame = CGRect(x: locationX - 45, y: TableCell.location.frame.origin.y, width: contentView.frame.width/10, height: contentView.frame.height/2.5)
+        TableCell.date.frame = CGRect(x: TableCell.location.frame.origin.x, y: locationY, width: contentView.frame.width/5.5, height: contentView.frame.height/2.5)
         let dateX = TableCell.date.frame.origin.x + TableCell.date.frame.width
-        TableCell.time.frame = CGRect(x: dateX, y: locationY, width: 75 , height: 40)
-        TableCell.averageDecibels.frame = CGRect(x: TableCell.average.frame.origin.x, y: TableCell.date.frame.origin.y, width: 60, height: 40)
+        TableCell.time.frame = CGRect(x: dateX, y: locationY, width: screenWidth/5.5 , height: 40)
+        TableCell.averageDecibels.frame = CGRect(x: TableCell.average.frame.origin.x - contentView.frame.width/40, y: TableCell.date.frame.origin.y, width: screenWidth/5, height: contentView.frame.height/2.5)
+        print(contentView.frame.height)
     }
 }
 

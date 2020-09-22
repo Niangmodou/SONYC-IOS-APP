@@ -31,6 +31,7 @@ var forwardDCT_PreProcessed = [Float](repeating: 0,
 var forwardDCT_PostProcessed = [Float](repeating: 0,
                                        count: bufferSize)
 
+
 var inverseDCT_Result = [Float](repeating: 0,
                                 count: bufferSize)
 

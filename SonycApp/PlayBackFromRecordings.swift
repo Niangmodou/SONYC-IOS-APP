@@ -89,12 +89,12 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
         self.view.addSubview(minLabel)
         self.view.addSubview(avgLabel)
         self.view.addSubview(maxLabel)
-        minDecibelsLabel.frame = CGRect(x: minLabel.frame.origin.x, y: minLabelLocationY + screenHeight/60, width: screenWidth/6, height: 40)
+        minDecibelsLabel.frame = CGRect(x: minLabel.frame.origin.x - screenWidth/40, y: minLabelLocationY + screenHeight/60, width: screenWidth/5, height: 40)
         minDecibelsLabel.text = min + " db"
         let minDecibelsLabelLocationY = labelYPosition(label: minDecibelsLabel)
-        avgDecibelsLabel.frame = CGRect(x: avgLabel.frame.origin.x, y: avgLabelLocationY + screenHeight/60, width: screenWidth/6, height: 40)
+        avgDecibelsLabel.frame = CGRect(x: avgLabel.frame.origin.x - screenWidth/40, y: avgLabelLocationY + screenHeight/60, width: screenWidth/5, height: 40)
         avgDecibelsLabel.text = avg + " db"
-        maxDecibelsLabel.frame = CGRect(x: maxLabel.frame.origin.x, y: maxLabelLocationY + screenHeight/60, width: screenWidth/6, height: 40)
+        maxDecibelsLabel.frame = CGRect(x: maxLabel.frame.origin.x - screenWidth/40, y: maxLabelLocationY + screenHeight/60, width: screenWidth/5, height: 40)
         maxDecibelsLabel.text = max + " db"
         self.view.addSubview(minDecibelsLabel)
         self.view.addSubview(avgDecibelsLabel)
@@ -143,7 +143,7 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
         locationTypeLabel.frame = CGRect(x: locationTypeImageLocationX + screenWidth/40 , y:  locationWordLabelLocationY + screenHeight/100 , width: screenWidth/5, height: 40)
         locationTypeLabel.text = "Test Type"
         locationTypeLabel.font = UIFont.systemFont(ofSize: 17)
-        let locationTypeLabelLocationY = labelXPosition(label: locationTypeLabel)
+        let locationTypeLabelLocationY = labelYPosition(label: locationTypeLabel)
         
         self.view.addSubview(locationLabel)
         self.view.addSubview(locationTypeImage)
