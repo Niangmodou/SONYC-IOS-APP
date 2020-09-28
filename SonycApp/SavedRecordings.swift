@@ -29,15 +29,16 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
     let cancelButton = UIButton.init()
     let selectButton = UIButton.init()
     
+    @IBOutlet var myTableView: UITableView!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "saved", for: indexPath) as! TableCell
         positionRecording = indexPath.row
-        
-        TableCell.date.text = (audioCards[indexPath.row].value(forKey: "date") as? String)
-        TableCell.averageDecibels.text = (audioCards[indexPath.row].value(forKey: "averageDec") as? String ?? "no avg") + " db"
-        TableCell.time.text = (audioCards[indexPath.row].value(forKey: "time") as? String)
-        TableCell.picture.image = wordsToImage[audioCards[indexPath.row].value(forKey: "noiseType") as? String ?? "other"]
-        TableCell.location.text = (audioCards[indexPath.row].value(forKey: "reportAddress") as? String)
+        cell.average.text = "Avg"
+        cell.date.text = (audioCards[indexPath.row].value(forKey: "date") as? String)
+        cell.averageDecibels.text = (audioCards[indexPath.row].value(forKey: "averageDec") as? String ?? "no avg") + " db"
+        cell.time.text = (audioCards[indexPath.row].value(forKey: "time") as? String)
+        cell.picture.image = wordsToImage[audioCards[indexPath.row].value(forKey: "noiseType") as? String ?? "other"]
+        cell.location.text = (audioCards[indexPath.row].value(forKey: "reportAddress") as? String)
         savingData()
         let _ = navigationController?.popViewController(animated: true)
         
@@ -47,23 +48,16 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         return 100;
     }
     
-    
-    public let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(TableCell.self, forCellReuseIdentifier: TableCell.identifier)
-        return tableView
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //does not show the cells that are not in use
-        tableView.tableFooterView = UIView()
+        myTableView.tableFooterView = UIView()
         //allows the tableview to be edited for the multiple selection
-        tableView.allowsMultipleSelectionDuringEditing = true
-        tableView.backgroundColor = UIColor.white
-        tableView.dataSource = self
-        tableView.delegate = self
-        view.addSubview(tableView)
+        myTableView.allowsMultipleSelectionDuringEditing = true
+//        tableView.backgroundColor = UIColor.white
+//        tableView.dataSource = self
+//        tableView.delegate = self
+//        view.addSubview(tableView)
         
         cancelButton.frame = CGRect(x: screenWidth/60, y: 0, width: screenWidth/3, height: screenHeight/30)
         cancelButton.titleLabel?.textColor = UIColor.black
@@ -88,15 +82,10 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         
     }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
-        
-    }
     
     @objc func cancelAction(_ sender: Any) {
         //makes sure the the table view cannot be editing anymore
-        self.tableView.setEditing(false, animated: true)
+        self.myTableView.setEditing(false, animated: true)
         cancelButton.isHidden = true
         //deselects and un-highlights the select button
         selectButton.isSelected = false
@@ -107,7 +96,7 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
     //    //action for selecting mutiple table cells to do a mutliple deleting of data
     @objc func selectAndDelete(button: UIBarButtonItem) {
         //allows the table view to be edited
-        self.tableView.setEditing(true, animated: true)
+        self.myTableView.setEditing(true, animated: true)
         self.navigationItem.leftBarButtonItem = barTool
         //        button.isSelected.toggle()
         //if the select button is pressed, it will turn into a delete button where you can select the audio files that you wish to delete
@@ -116,7 +105,7 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         //shows that the select button is selected
         buttonSelected = true
         
-        if let selectedRows = tableView.indexPathsForSelectedRows {
+        if let selectedRows = myTableView.indexPathsForSelectedRows {
             //temporary array to hold the audio files that need to be deleted
             var tempAudioCards = [NSManagedObject]()
             for indexPath in selectedRows  {
@@ -131,7 +120,7 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
                         context.delete(audioCards[index])
                         try context.save()
                         audioCards.remove(at: index)
-                        self.tableView.reloadData()
+                        self.myTableView.reloadData()
                     }
                     catch{
                         print(error)
@@ -162,7 +151,7 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
             print("failed")
         }
         //reloads the table view to see the changes
-        tableView.reloadData()
+        myTableView.reloadData()
     }
     
     
@@ -197,7 +186,7 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
                 try context.save()
                 //remove the audioFile from the array
                 audioCards.remove(at: indexPath.row)
-                self.tableView.reloadData()
+                self.myTableView.reloadData()
                 
             }
             catch{

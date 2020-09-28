@@ -21,9 +21,9 @@ import UIKit
     
     @IBInspectable var counter: Float = 0 {
         didSet {
-            if Int(counter) <=  Constants.numberOfDecibels {
-                setNeedsDisplay()
-            }
+                if Int(counter) <=  Constants.numberOfDecibels{
+                    setNeedsDisplay()
+                }
         }
     }
     @IBInspectable var outlineColor: UIColor = UIColor.specificBlueFill()

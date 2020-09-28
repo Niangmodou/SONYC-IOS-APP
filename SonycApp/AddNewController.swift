@@ -28,6 +28,7 @@ var minArray: [Float] = [200]
 var avgArray: [Float] = [50]
 var avgDec: Int!
 var decibelsHolderArray: [Float] = [50]
+var timer: Timer!
 
 let slidingUp = FloatingPanelController()
 
@@ -182,7 +183,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
                 //if the recorder is recording, find the average, minimum, and maximum decibels. Also stores those values in core data
                 if recorder.isRecording{
                     self!.keepDoing(decibels: decibels, min: Float(minimumDecibels), max: Float(maximumDecibels))
-//                    self!.keepDoing(decibels: Float(avgDec), min: Float(minimumDecibels), max: Float(maximumDecibels))
+                    //                    self!.keepDoing(decibels: Float(avgDec), min: Float(minimumDecibels), max: Float(maximumDecibels))
                     newTask.setValue(String(format: "%.2f",avgDec), forKey: "averageDec")
                     newTask.setValue(String(format: "%.2f",minimumDecibels), forKey: "min")
                     newTask.setValue(String(format: "%.2f",maximumDecibels), forKey: "max")
@@ -190,8 +191,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
                 
             }
             
-            
-        }
+    }
         //changes the microphone tapping to true
         micTapped = true
         //starts the avaudioengine if it was not already started
