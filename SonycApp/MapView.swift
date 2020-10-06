@@ -12,6 +12,7 @@ import CoreLocation
 import FloatingPanel
 import CoreData
 import MapKitGoogleStyler
+import DropDown
 
 class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate,UISearchBarDelegate {
     
@@ -38,11 +39,16 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     
     @IBOutlet weak var mapView: MKMapView!
     
+    var data: [String] = ["apple","appear","Azhar","code","BCom"]
+    var dataFiltered: [String] = []
+    var dropButton = DropDown()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //deleteAllData()
-        setUpSearchBar()
         getData()
+        setUpSearchBar()
+        
         buildingButton.isHidden = true
         streetButton.isHidden = true
         reportButton.isHidden = true
@@ -97,6 +103,187 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         
         mapView.addAnnotation(loc)
         
+        //dataFiltered = data
+
+        dropButton.anchorView = searchBar
+        dropButton.bottomOffset = CGPoint(x: 0, y:(dropButton.anchorView?.plainView.bounds.height)!)
+        dropButton.backgroundColor = .white
+        dropButton.direction = .bottom
+
+        dropButton.selectionAction = { [unowned self] (index: Int, item: String) in
+            
+            let searchRequest = MKLocalSearch.Request()
+            searchRequest.naturalLanguageQuery = item
+            
+            //print(item)
+            let activeSearch = MKLocalSearch(request: searchRequest)
+            
+            activeSearch.start{ (response,error) in
+                //activityIndicator.stopAnimating()
+                //UIApplication.shared.endIgnoringInteractionEvents()
+                if response == nil {
+                    print("Error")
+                }else{
+                    //let annotations = self.mapView.annotations
+                    //self.mapView.removeAnnotations(annotations)
+
+                    let geocoder = CLGeocoder()
+                    geocoder.geocodeAddressString(item) {
+                        placemarks, error in
+                        let placemark = placemarks?.first
+                        let latitude = placemark?.location?.coordinate.latitude as! CLLocationDegrees
+                        let longitude = placemark?.location?.coordinate.longitude as! CLLocationDegrees
+                        
+                        print(latitude, longitude)
+                        
+                        let annotation = MKPointAnnotation()
+                            annotation.title = "Map Search"
+                            
+                            annotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+                            
+                            self.mapView.addAnnotation(annotation)
+                            
+                            //Centering map on coordinate
+                            let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+                            
+                            self.centerMapOnLocation(coordinate, mapView: self.mapView)
+                            
+                            for NSManagedObject in self.allData {
+                                let currLat = NSManagedObject.value(forKey: "latitude") as! Float
+                                let currLon = NSManagedObject.value(forKey: "longitude") as! Float
+                                
+                                let coord = CLLocation(latitude: latitude, longitude: longitude)
+                                let currCoordinate = CLLocation(latitude: CLLocationDegrees(currLat), longitude: CLLocationDegrees(currLon))
+                                
+                                let distanceInMeters = coord.distance(from: currCoordinate)
+                                
+                                if(distanceInMeters <= 1600){
+                                    self.currData.append(NSManagedObject)
+                                    //print("hiiiiiii")
+                                }
+                            }
+                            
+                            self.plotAnnotations(data: self.currData)
+                            self.tableView.reloadData()
+                        }
+                    
+                       
+                    }
+                    
+                    /*
+                    let latitude = self.getLatitudeFromAddress(address: item)
+                    let longitude = self.getLongitudeFromAddress(address: item)
+                    */
+                    
+                    //Creating Annotation and adding annotation to map
+                    
+                
+            }
+            print("Selected item: \(item) at index: \(index)") //Selected item: code at index: 0
+            
+            
+            
+        }
+        
+    }
+    /*
+    func getLatitudeFromAddress(address: String) -> CLLocationDegrees {
+        var geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) {
+            placemarks, error in
+            let placemark = placemarks?.first
+            let lat = placemark?.location?.coordinate.latitude
+            let lon = placemark?.location?.coordinate.longitude
+            
+            return lat
+        }
+    }
+    
+    func getLongitudeFromAddress(address: String) -> CLLocationDegrees {
+        
+    }
+ */
+    
+    func parseAddress(selectedItem:MKPlacemark) -> String {
+        // put a space between "4" and "Melrose Place"
+        let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : ""
+        // put a comma between street and city/state
+        let comma = (selectedItem.subThoroughfare != nil || selectedItem.thoroughfare != nil) && (selectedItem.subAdministrativeArea != nil || selectedItem.administrativeArea != nil) ? ", " : ""
+        // put a space between "Washington" and "DC"
+        let secondSpace = (selectedItem.subAdministrativeArea != nil && selectedItem.administrativeArea != nil) ? " " : ""
+        let addressLine = String(
+            format:"%@%@%@%@%@%@%@",
+            // street number
+            selectedItem.subThoroughfare ?? "",
+            firstSpace,
+            // street name
+            selectedItem.thoroughfare ?? "",
+            comma,
+            // city
+            selectedItem.locality ?? "",
+            secondSpace,
+            // state
+            selectedItem.administrativeArea ?? ""
+        )
+        return addressLine
+    }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        /*
+        dataFiltered = searchText.isEmpty ? data : data.filter({ (dat) -> Bool in
+            dat.range(of: searchText, options: .caseInsensitive) != nil
+        })
+         */
+        
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = searchText
+        request.region = mapView.region
+        
+        let search = MKLocalSearch(request: request)
+        search.start {response, _ in
+            guard let response = response else{
+                return
+            }
+            //print(response.mapItems)
+            self.dataFiltered = []
+            
+            
+            for each in response.mapItems {
+                let currAddress = self.parseAddress(selectedItem: each.placemark)
+                print(currAddress)
+                self.dataFiltered.append(currAddress)
+            }
+            
+            self.tableView.reloadData()
+            
+        }
+        
+
+        dropButton.dataSource = dataFiltered
+        dropButton.show()
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+        for ob: UIView in ((searchBar.subviews[0] )).subviews {
+            if let z = ob as? UIButton {
+                let btn: UIButton = z
+                btn.setTitleColor(UIColor.white, for: .normal)
+            }
+        }
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+        dataFiltered = []
+        dropButton.hide()
     }
     
     /*
@@ -120,6 +307,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     
     //Function to process the search query when the search button has been clicked
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         //UIApplication.shared.beginIgnoringInteractionEvents()
         /*
          let activityIndicator = UIActivityIndicatorView()
@@ -136,6 +324,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = searchBar.text
+        
         //print(searchBar.text)
         let activeSearch = MKLocalSearch(request: searchRequest)
         
@@ -164,9 +353,27 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
                 
                 self.centerMapOnLocation(coordinate, mapView: self.mapView)
                 
+                for NSManagedObject in self.allData {
+                    let currLat = NSManagedObject.value(forKey: "latitude") as! Float
+                    let currLon = NSManagedObject.value(forKey: "longitude") as! Float
+                    
+                    let coord = CLLocation(latitude: latitude!, longitude: longitude!)
+                    let currCoordinate = CLLocation(latitude: CLLocationDegrees(currLat), longitude: CLLocationDegrees(currLon))
+                    
+                    let distanceInMeters = coord.distance(from: currCoordinate)
+                    
+                    if(distanceInMeters <= 1600){
+                        self.currData.append(NSManagedObject)
+                        print("hiiiiiii")
+                    }
+                }
+                
+                self.plotAnnotations(data: self.currData)
+                self.tableView.reloadData()
             }
             
         }
+        print("Done")
     }
     //if the buttons/clips are pressed
     @IBAction func buttonPressed(button: UIButton){
@@ -270,10 +477,10 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         if annotation.title == "311 pin" {
             annotationView?.image = UIImage(named: "Pin_311_non-color.png")
         }else if annotation.title == "DOB" || annotation.title == "AHV" {
-            print("hi")
+            //print("hi")
             annotationView?.image = UIImage(named: "Pin_dob_non-color.png")
         }else if annotation.title == "Current"{
-            print("hi1")
+            //print("hi1")
             annotationView?.image = UIImage(named: "Location_Original.png")
         }else if annotation.title == "Map Search"{
             annotationView?.image = UIImage(named: "Icon_Pink location.png")
@@ -295,7 +502,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
             allData = try context.fetch(fetch)
             
             //Plot Annotations on the Map
-            plotAnnotations(data: allData)
+            //plotAnnotations(data: allData)
             
             //Sort Data array
             /*
@@ -416,14 +623,14 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
 
 extension MapView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allData.count
+        return currData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mapCardCell", for: indexPath) as! MapCardCell
         
         //Get the contents of the current row
-        let currentRow = allData[indexPath.row]
+        let currentRow = currData[indexPath.row]
         
         //Parsing information from currentRow
         let api = currentRow.value(forKey: "sonycType") as! String
@@ -504,7 +711,7 @@ extension MapView: UITableViewDelegate{
     //Displaying a tapped location on the map
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Get the contents of the current row
-        let currentRow = allData[indexPath.row]
+        let currentRow = currData[indexPath.row]
         
         //Extracting lat and lon
         let latitude = currentRow.value(forKey: "latitude") as! CLLocationDegrees
