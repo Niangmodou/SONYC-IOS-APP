@@ -15,7 +15,8 @@ import AudioToolbox
 import FloatingPanel
 
 let bufferSize = 1024
-let calibrationOffset = 145
+var samplesArray: [Float] = []
+let calibrationOffset = 100
 var mic: AVAudioInputNode!
 var audioEngine: AVAudioEngine!
 var micTapped = false
@@ -25,11 +26,10 @@ var big: Float = -1000
 var small: Float = 100000
 var maxArray: [Float] = [10]
 var minArray: [Float] = [200]
-var avgArray: [Float] = [50]
+var avgArray: [Float] = []
 var avgDec: Int!
-var decibelsHolderArray: [Float] = [50]
+var decibelsHolderArray: [Float] = []
 var timer: Timer!
-
 let slidingUp = FloatingPanelController()
 
 class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanelControllerDelegate{
@@ -116,13 +116,26 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
         self.view.addSubview(counterLabel)
         self.view.addSubview(createAReportButton)
         
+        
+        
         audioEngine = AVAudioEngine()
         //the input to the audioEngine is the microphone
+        
         mic = audioEngine.inputNode
+        
+        
         //counterLabel will be the same as the gaugeView meter
         counterLabel.text = String(gaugeView.counter) + " db"
         
         recordingSession = AVAudioSession.sharedInstance()
+        
+        do{
+            try recordingSession.setPreferredSampleRate(48000)
+        }
+        catch{
+            print(error)
+        }
+        
         
         //keeps track of the up to date recordings
         if let number: Int = UserDefaults.standard.object(forKey: "recordings") as? Int {
@@ -135,6 +148,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
                 print("Accepted")
             }
         }
+        
         //deals with the tap of the microphone
         if micTapped {
             mic.removeTap(onBus: 0)
@@ -145,58 +159,50 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
         let micFormat = mic.inputFormat(forBus: audioBus)
         //installs the tap on the microphone
         mic.installTap(
-            onBus: audioBus, bufferSize: AVAudioFrameCount(bufferSize), format: micFormat // I choose a buffer size of 1024
-            //                 onBus: audioBus, bufferSize: AVAudioFrameCount(bufferSize), format: nil
-        ) { [weak self] (buffer, _) in //self is now a weak reference, to prevent retain cycles
-            
-            
-            buffer.frameLength = AVAudioFrameCount(bufferSize)
+            onBus: audioBus, bufferSize: AVAudioFrameCount(bufferSize), format: micFormat// I choose a buffer size of 1024
+        ) { [weak self] (buffer, _)  in //self is now a weak reference, to prevent retain cycles
             
             let offset = Int(buffer.frameCapacity - buffer.frameLength)
             if let tail = buffer.floatChannelData?[0] {
-                
                 // convert the content of the buffer to a swift array
                 //samples array that will hold the audio samples
                 let samples = Array(UnsafeBufferPointer(start: &tail[offset], count: bufferSize))
-                
-                //ending credit above
-                
-                //applying the filter to the samples
-                //also multiplying the audio samples array by the dctHighPass array for float values: dctHighPass array -> interpolatedVectorFrom(magnitudes:  [0,   0,   1,    1], indices:     [0, 340, 350, 1024], count: bufferSize)
-                let arr1 = apply(dctMultiplier: EqualizationFilters.dctHighPass, toInput: samples)
-                
-                //does the spl calculations
-                let array = decibelsConvert(array: arr1)
-                
-                //finds the average decibels
-                let decibels = applyMean(toInput: array)
-                
-                decibelsHolderArray.append(decibels)
-                
-                //gets the minimum decibel value from the array of audio samples
-                let minimumDecibels = getMin(array: decibelsHolderArray)
-                //gets the maximum decibel value from the array of audio samples
-                let maximumDecibels = getMax(array: decibelsHolderArray)
-                
-                //gets the average amount of decibels from the array of audio samples
-                let avgDec = getAvg(decibels: decibels)
-                //if the recorder is recording, find the average, minimum, and maximum decibels. Also stores those values in core data
-                if recorder.isRecording{
-                    self!.keepDoing(decibels: decibels, min: Float(minimumDecibels), max: Float(maximumDecibels))
-                    //                    self!.keepDoing(decibels: Float(avgDec), min: Float(minimumDecibels), max: Float(maximumDecibels))
-                    newTask.setValue(String(format: "%.2f",avgDec), forKey: "averageDec")
-                    newTask.setValue(String(format: "%.2f",minimumDecibels), forKey: "min")
-                    newTask.setValue(String(format: "%.2f",maximumDecibels), forKey: "max")
+                if samplesArray.count == 4096{
+                    samplesArray = [];
                 }
-                
+                samplesArray.append(contentsOf: samples)
+                //ending credit above
+                //only calculates the decibels when 4 arrays of samples are taken in
+                if (samplesArray.count == 4096){
+                    let arr1 = apply(dctMultiplier: EqualizationFilters.dctHighPass, toInput: samples)
+                    //does the spl calculations
+                    let array = decibelsConvert(array: arr1)
+                    
+                    //finds the average decibels
+                    let decibels = applyMean(toInput: array)
+                    
+                    decibelsHolderArray.append(decibels)
+                    //gets the minimum decibel value from the array of audio samples
+                    let minimumDecibels = getMin(array: decibelsHolderArray)
+                    //gets the maximum decibel value from the array of audio samples
+                    let maximumDecibels = getMax(array: decibelsHolderArray)
+                    //gets the average amount of decibels from the array of audio samples
+                    let avgDec = getAvg(decibels: decibels)
+                    //if the recorder is recording, find the average, minimum, and maximum decibels. Also stores those values in core data
+                    if recorder.isRecording{
+                        
+                        self!.keepDoing(decibels: decibels, min: Float(minimumDecibels), max: Float(maximumDecibels))
+                        newTask.setValue(String(format: "%.2f",avgDec), forKey: "averageDec")
+                        newTask.setValue(String(format: "%.2f",minimumDecibels), forKey: "min")
+                        newTask.setValue(String(format: "%.2f",maximumDecibels), forKey: "max")
+                    }
+                }
             }
-            
-    }
+        }
         //changes the microphone tapping to true
         micTapped = true
         //starts the avaudioengine if it was not already started
         startEngine()
-        
         
         do{
             //tries to start the audioEngine
@@ -215,8 +221,6 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
             recorder.record(forDuration: 10)
             //when the 10 seconds is up, if it was not stopped before, the recorder is stopped and it goes to a new screen
             tenSecondsUp()
-            
-            
             //set and save the recording number of the file
             newTask.setValue("\(recordings)",forKey: "recordings")
             //save the name of the the audio file
@@ -247,7 +251,6 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
         }
         //for the slide up panel
         slidingUp.delegate = self
-        
         slidingUp.set(contentViewController: contentVC)
         slidingUp.addPanel(toParent: self)
         //hides the slide up panel until the recording session is finished
@@ -265,7 +268,6 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
             self.minDecibels.text = String(format: "%.2f",min) + " db"
             self.maxDecibels.text = String(format: "%.2f",max) + " db"
         }
-        
     }
     //stops the audioEngine and recorder
     //also stops the audioEngine and stored the stage of the recordings in the userDefaults
@@ -283,10 +285,9 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
             if (self.isShowing == false){
                 slidingUp.show()
             }
-            
+            micTapped = false
         }
     }
-    
 }
 
 //takes in a float array and returns a single float
@@ -295,7 +296,6 @@ func getMin(array: [Float]) -> Float{
     if(small >= 0){
         minArray.append(small)
     }
-    
     var minimum = Double.infinity
     for num in minArray {
         if num < Float(minimum){
@@ -322,7 +322,6 @@ func getAvg(decibels: Float)-> Float{
     let sumArray = avgArray.reduce(0, +)
     let avg = sumArray/Float(avgArray.count)
     return Float(avg)
-    
 }
 
 //function to get the date
@@ -354,3 +353,4 @@ func savingData(){
         print(error)
     }
 }
+

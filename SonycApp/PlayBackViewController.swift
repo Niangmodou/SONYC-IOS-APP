@@ -30,6 +30,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     let maxWordLabel = UILabel.init()
     let mapView = MKMapView.init()
     
+    @IBOutlet weak var playButton: UIButton!
     let warningImage = UIImageView.init()
     let mapViewReportDetails = MKMapView.init()
     let locationLabel = UILabel.init()
@@ -43,7 +44,6 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     let reportButton = UIButton.init()
     let dateLabel = UILabel.init()
     let timeLabel = UILabel.init()
-    let playButton = UIButton.init()
     let progressView = UIProgressView.init()
     let locationTypeLabel = UILabel.init()
     let locationTypeImage = UIImageView.init()
@@ -173,7 +173,6 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         
         
         playButton.frame = CGRect(x: avgDecibelsLabel.frame.origin.x, y: progressViewLocationY + screenHeight/36, width: screenWidth/14, height: screenHeight/60)
-        playButton.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
         playButton.addTarget(self, action: #selector(play(button:)), for: .touchUpInside)
         self.view.addSubview(playButton)
         

@@ -22,7 +22,7 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
     var path: String!
     var location: String!
     let progressView = UIProgressView.init()
-    let playButton = UIButton.init()
+    @IBOutlet weak var playButton: UIButton!
     let youFeelImage = UIImageView.init()
     let youAreImage = UIImageView.init()
     let maxDecibelsLabel = UILabel.init()
@@ -54,7 +54,7 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
         path = (audioCards[positionRecording].value(forKey: "path") as? String)
         location = (audioCards[positionRecording].value(forKey: "reportAddress") as? String)
         
-        titleRecordingDetails.frame = CGRect(x: screenWidth/2 - (screenWidth/4), y: screenHeight/12, width: screenWidth/2, height: 40)
+        titleRecordingDetails.frame = CGRect(x: screenWidth/2 - (screenWidth/4.2), y: screenHeight/12, width: screenWidth/2, height: 40)
         let titleRecordingDetailsLocationY = labelYPosition(label: titleRecordingDetails)
         titleRecordingDetails.font = UIFont.systemFont(ofSize: 24)
         titleRecordingDetails.textColor = UIColor.black
@@ -100,14 +100,13 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
         self.view.addSubview(avgDecibelsLabel)
         self.view.addSubview(maxDecibelsLabel)
         
-        progressView.frame = CGRect(x: minLabel.frame.origin.x - (screenWidth/100) , y: minDecibelsLabelLocationY + screenHeight/20, width: screenWidth - ( minLabelLocationX - (screenWidth/20)) , height: 40)
+        progressView.frame = CGRect(x: minLabel.frame.origin.x - (screenWidth/100) , y: minDecibelsLabelLocationY + screenHeight/20, width: screenWidth - ( minLabelLocationX - (screenWidth/18)) , height: 40)
         let progressViewLLocationY = progressView.frame.origin.y + progressView.frame.height
         self.view.addSubview(progressView)
         
-        rewindButton.frame = CGRect(x: minDecibelsLabel.frame.origin.x , y: progressViewLLocationY + screenHeight/25, width: screenWidth/16, height: screenHeight/60)
+        rewindButton.frame = CGRect(x: minDecibelsLabel.frame.origin.x + screenWidth/20, y: progressViewLLocationY + screenHeight/25, width: screenWidth/16, height: screenHeight/60)
         rewindButton.setBackgroundImage(UIImage(systemName: "backward.end.fill"), for: .normal)
         playButton.frame = CGRect(x: avgDecibelsLabel.frame.origin.x , y: progressViewLLocationY + screenHeight/25, width: screenWidth/16, height: screenHeight/60)
-        playButton.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
         let playButtonLocationY = buttonYPosition(button: playButton)
         fastForwardButton.frame = CGRect(x: maxDecibelsLabel.frame.origin.x , y: progressViewLLocationY + screenHeight/25, width: screenWidth/16, height: screenHeight/60)
         fastForwardButton.setBackgroundImage(UIImage(systemName: "forward.end.fill"), for: .normal)
@@ -194,13 +193,14 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
     //plays the file and shows the progress on the progress view.
     @objc func play(_ button: UIButton) {
         button.isSelected.toggle()
+        button.setImage(UIImage(named: "pause.fill"), for: [.highlighted, .selected])
         if (button.isSelected){
             //play the file
             playFileBack()
             //the progressview
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
             progressView.setProgress(Float(audioPlay.currentTime/audioPlay.duration), animated: false)
-            button.setImage(UIImage(named: "pause.fill"), for: [.highlighted, .selected])
+//            button.setImage(UIImage(named: "pause.fill"), for: [.highlighted, .selected])
         }
         else{
             //pausing the audio

@@ -54,10 +54,10 @@ enum EqualizationMode: String, CaseIterable {
 }
 
 struct EqualizationFilters {
-    //dctHighPass array values
+    //dctHighPass array values, changed indices to coordinate with the size of the 4096 sample array
     static let dctHighPass: [Float] = {
-        return interpolatedVectorFrom(magnitudes:  [0,   0,   1,    1],
-                                      indices:     [0, 340, 350, 1024],
+        return interpolatedVectorFrom(magnitudes:  [1,   1,   1,    1],
+                                      indices:     [0, 1360, 1400, 4096],
                                       count: bufferSize)
     }()
     //dctLowPass array values
