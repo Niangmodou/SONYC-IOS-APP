@@ -16,7 +16,7 @@ import FloatingPanel
 
 let bufferSize = 1024
 var samplesArray: [Float] = []
-let calibrationOffset = 100
+let calibrationOffset = 93
 var mic: AVAudioInputNode!
 var audioEngine: AVAudioEngine!
 var micTapped = false
@@ -263,10 +263,10 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
             //displays the decibels values when the recorder is recording
             self.gaugeView.counter = decibels
             //adds on the db text onto the number of the decibels converted to a string
-            self.counterLabel.text = String(format: "%.2f",decibels) + " db"
-            self.avgDecibels.text = String(format: "%.2f",decibels) + " db"
-            self.minDecibels.text = String(format: "%.2f",min) + " db"
-            self.maxDecibels.text = String(format: "%.2f",max) + " db"
+            self.counterLabel.text = String(format: "%.1f",decibels) + " db"
+            self.avgDecibels.text = String(format: "%.1f",decibels) + " db"
+            self.minDecibels.text = String(format: "%.1f",min) + " db"
+            self.maxDecibels.text = String(format: "%.1f",max) + " db"
         }
     }
     //stops the audioEngine and recorder

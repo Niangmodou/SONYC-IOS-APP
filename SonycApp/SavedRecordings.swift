@@ -28,6 +28,7 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
     var barTool2 = UIBarButtonItem.init()
     let cancelButton = UIButton.init()
     let selectButton = UIButton.init()
+    let noRecordingsLabel = UILabel.init()
     
     @IBOutlet var myTableView: UITableView!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,10 +55,10 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         myTableView.tableFooterView = UIView()
         //allows the tableview to be edited for the multiple selection
         myTableView.allowsMultipleSelectionDuringEditing = true
-//        tableView.backgroundColor = UIColor.white
-//        tableView.dataSource = self
-//        tableView.delegate = self
-//        view.addSubview(tableView)
+        //        tableView.backgroundColor = UIColor.white
+        //        tableView.dataSource = self
+        //        tableView.delegate = self
+        //        view.addSubview(tableView)
         
         cancelButton.frame = CGRect(x: screenWidth/60, y: 0, width: screenWidth/3, height: screenHeight/30)
         cancelButton.titleLabel?.textColor = UIColor.black
@@ -146,6 +147,14 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
                     audioCards.append(data)
                 }
             }
+            if(audioCards.count == 0){
+                noRecordingsLabel.frame = CGRect(x: screenWidth/2 - (screenWidth/3)/1.6, y: screenHeight/2 - (screenHeight/10), width: screenWidth/2, height: screenHeight/20)
+                noRecordingsLabel.textColor = UIColor.gray
+                noRecordingsLabel.font = UIFont.boldSystemFont(ofSize: 30)
+                noRecordingsLabel.text = "No Recordings"
+                self.view.addSubview(noRecordingsLabel)
+                threeSecondsUp();
+            }
         }
         catch{
             print("failed")
@@ -187,6 +196,14 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
                 //remove the audioFile from the array
                 audioCards.remove(at: indexPath.row)
                 self.myTableView.reloadData()
+                if(audioCards.count == 0){
+                    noRecordingsLabel.frame = CGRect(x: screenWidth/2 - (screenWidth/3)/1.6, y: screenHeight/2 - (screenHeight/10), width: screenWidth/2, height: screenHeight/20)
+                    noRecordingsLabel.font = UIFont.boldSystemFont(ofSize: 30)
+                    noRecordingsLabel.textColor = UIColor.gray
+                    noRecordingsLabel.text = "No Recordings"
+                    self.view.addSubview(noRecordingsLabel)
+                    threeSecondsUp();
+                }
                 
             }
             catch{
@@ -195,5 +212,12 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
         
         
+    }
+    func threeSecondsUp(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil);
+            let vc = storyboard.instantiateViewController(withIdentifier: "home") ; // home the storyboard ID
+            self.present(vc, animated: true, completion: nil);
+        }
     }
 }
