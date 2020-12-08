@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-SonycApp/Pods-SonycApp-frameworks.sh
+${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
 ${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework
 ${BUILT_PRODUCTS_DIR}/MapKitGoogleStyler/MapKitGoogleStyler.framework
 ${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework

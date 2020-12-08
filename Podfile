@@ -10,6 +10,7 @@ target 'SonycApp' do
 	pod 'SideMenu'
 	pod 'SwiftCSV'
 	pod 'MapKitGoogleStyler'
+	pod 'DropDown'
 
   target 'SonycAppTests' do
     inherit! :search_paths

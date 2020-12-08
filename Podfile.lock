@@ -1,10 +1,12 @@
 PODS:
+  - DropDown (2.3.13)
   - FloatingPanel (1.7.5)
   - MapKitGoogleStyler (0.1.1)
   - SideMenu (6.4.8)
   - SwiftCSV (0.5.6)
 
 DEPENDENCIES:
+  - DropDown
   - FloatingPanel
   - MapKitGoogleStyler
   - SideMenu
@@ -12,17 +14,19 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - DropDown
     - FloatingPanel
     - MapKitGoogleStyler
     - SideMenu
     - SwiftCSV
 
 SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FloatingPanel: bb17fd6fc7ae519f877f7bd30f4f6115a78acf07
   MapKitGoogleStyler: 8efdceb664fc1748a62a9e3b50a34b67a34247bc
   SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
   SwiftCSV: efb4a15dd7f2f1212b3d6986f97a3369ff6c5100
 
-PODFILE CHECKSUM: bb3f2838875ddfd40cad8a63f213b5702722f900
+PODFILE CHECKSUM: fae60ddfffb231f4477a39575a880384eef9d969
 
 COCOAPODS: 1.9.3

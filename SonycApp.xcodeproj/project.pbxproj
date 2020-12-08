@@ -35,7 +35,6 @@
 		269E136024C9503300D09E90 /* SlideUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E135F24C9503300D09E90 /* SlideUpView.swift */; };
 		269E136224C9505F00D09E90 /* PlayBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E136124C9505F00D09E90 /* PlayBackViewController.swift */; };
 		269E136424C9507800D09E90 /* ButtonStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E136324C9507800D09E90 /* ButtonStyling.swift */; };
-		26D69AA8250BE8A6004C9DAC /* Whitney Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26D69AA7250BE8A6004C9DAC /* Whitney Medium.ttf */; };
 		5201CC4324EF1931006532B1 /* MapCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5201CC4224EF1930006532B1 /* MapCardCell.swift */; };
 		5261913C2509DDE2009E4653 /* overlay.json in Resources */ = {isa = PBXBuildFile; fileRef = 5261913B2509DDE2009E4653 /* overlay.json */; };
 		935D2A3F765034DB00C8D521 /* Pods_SonycApp_SonycAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D2AF6086CEC7FBC9E4A489 /* Pods_SonycApp_SonycAppUITests.framework */; };
@@ -94,7 +93,6 @@
 		269E135F24C9503300D09E90 /* SlideUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpView.swift; sourceTree = "<group>"; };
 		269E136124C9505F00D09E90 /* PlayBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackViewController.swift; sourceTree = "<group>"; };
 		269E136324C9507800D09E90 /* ButtonStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyling.swift; sourceTree = "<group>"; };
-		26D69AA7250BE8A6004C9DAC /* Whitney Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Whitney Medium.ttf"; path = "../Whitney Medium/Whitney Medium.ttf"; sourceTree = "<group>"; };
 		28D2AF6086CEC7FBC9E4A489 /* Pods_SonycApp_SonycAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SonycApp_SonycAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5201CC4224EF1930006532B1 /* MapCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCardCell.swift; sourceTree = "<group>"; };
 		5261913B2509DDE2009E4653 /* overlay.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = overlay.json; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 		269E131424C94EDA00D09E90 = {
 			isa = PBXGroup;
 			children = (
-				26D69AA7250BE8A6004C9DAC /* Whitney Medium.ttf */,
 				269E131F24C94EDA00D09E90 /* SonycApp */,
 				269E133924C94EDC00D09E90 /* SonycAppTests */,
 				269E134424C94EDC00D09E90 /* SonycAppUITests */,
@@ -346,7 +343,6 @@
 				269E133024C94EDB00D09E90 /* LaunchScreen.storyboard in Resources */,
 				269E132D24C94EDB00D09E90 /* Assets.xcassets in Resources */,
 				5261913C2509DDE2009E4653 /* overlay.json in Resources */,
-				26D69AA8250BE8A6004C9DAC /* Whitney Medium.ttf in Resources */,
 				269E132824C94EDA00D09E90 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
