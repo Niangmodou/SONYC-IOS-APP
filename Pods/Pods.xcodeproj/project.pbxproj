@@ -1,0 +1,1717 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		071D52F82B602FB85E35CA8583EEF456 /* FloatingPanelSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F2A8637582D61E660CD296AE8555D3 /* FloatingPanelSurfaceView.swift */; };
+		0741320F4029C077E6C87F24FBBE1921 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C889E01E3F41AAF888DE54CA985DF1D1 /* CSV.swift */; };
+		082F230E358EA3BDDDDB5A620440583E /* Pods-SonycAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DFFA3A58E7CDBB4039890C6A727EA30D /* Pods-SonycAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08B5B89F28224381711F45A680C292D9 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052BA4027333ACA6D5DC923A39BCB6D /* SideMenu-dummy.m */; };
+		09A0A5D3733F69E93F553ABBCF02FB77 /* SideMenuTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7718B5F90A507CF981A54591845AECF /* SideMenuTransitionController.swift */; };
+		0EF88DEF4AB6E4F65D270270D3757546 /* Pods-SonycAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C80AFCFDF0ACC5CB67C8BC824D7FE6 /* Pods-SonycAppTests-dummy.m */; };
+		154DA87F9CFE7544E755F5D133AD4E2E /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D708190EF905CFA7BE2169D922C7A2 /* Parser.swift */; };
+		18E8699E19BF79678DE08904FCB53F2B /* String+Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042ADE74922C11ED5B9ED739B2284FDF /* String+Lines.swift */; };
+		247FAAE57CD280F33A723C6F21E39D73 /* MapKitGoogleStyler-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 907EB35BD588141ADBF27BD988387344 /* MapKitGoogleStyler-dummy.m */; };
+		27D830F1CAC60B99CC0A135F583BFFF2 /* SideMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C171F45E134060E6D772878FF16E9EE6 /* SideMenuPresentationController.swift */; };
+		2C000FFD2D40FD9F728E1F83134FDB1B /* FloatingPanel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98498FE23130144E1CCF8170F1F5243A /* FloatingPanel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2ED518A3FA8DCBE08E621AC5C32844A9 /* SideMenuPushCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F72DFDD534D6C19CCBF1C6AB82EBCE /* SideMenuPushCoordinator.swift */; };
+		3846AFE38D1B63A9F0D9073C4ABC6DAA /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C23168EECCCCDCAF8F6A22CE87E05E8 /* SideMenuNavigationController.swift */; };
+		3D408305B29250792B2CDDC90990ECAC /* FloatingPanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEB8288C71735777095559C0064F8B9 /* FloatingPanelCore.swift */; };
+		3E18B004D34ED5441A193684EEB25BD3 /* SideMenuPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E9BCED397665A65369770D93313F4 /* SideMenuPresentationStyle.swift */; };
+		4473A97DE451B1D65864D2CF5528EFFD /* Pods-SonycApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5992229ACD283FC93854F686880B23 /* Pods-SonycApp-dummy.m */; };
+		4569D12EE21687562A47065F91120B55 /* StylerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA106F35B8D5EA6BF0CBFDA4E3E53D /* StylerType.swift */; };
+		49FF6A72A953E3733DA318DB65238AB9 /* StyleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43FE825BB82A20499E33697A3986AA /* StyleElement.swift */; };
+		4B4B817A22A48F9C7DF534A126760F13 /* MapKit+GoogleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B46C4B74123EBBDB8D68BBC0106FC /* MapKit+GoogleStyle.swift */; };
+		4E88B70410F6837FBD463EA4B6C33155 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418DC9386F4F65AB0E2E573A2A6F2CE6 /* Extensions.swift */; };
+		5011E29CDE30A43CF2A7F781A30974FB /* FeatureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9B71D29011EB4E1A45B325E909A418 /* FeatureType.swift */; };
+		59BEC0846A2C65972752CEC948139714 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906BB317BC0B1AE3C24C62C3E17BD49 /* ElementType.swift */; };
+		5D7F9243C47FDAE33C85C4E38E3420F2 /* EnumeratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C3A5B2402003D3BFF02233A23CC244 /* EnumeratedView.swift */; };
+		749A04C51F03FE37128E186CA30A0938 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D890BC086331CFA5853025C62B1CD9 /* Foundation.framework */; };
+		77AF2098DDCCAAE0CE4A20725C466905 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F99AA56FAFA9A16377C640F19BB0FEB /* SideMenuManager.swift */; };
+		7FA96F5D3B8F4CE9C95C35D1CD4D6A91 /* FloatingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647262C76B0B3392A23AA4A982258D69 /* FloatingPanelController.swift */; };
+		837565F200CD03AD302FB1FEADDBD6DB /* ParsingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486A155014C5F01BE92A7FE39EBE526 /* ParsingState.swift */; };
+		86AA9FC981C6AD5D03CA1D4BFD51FD1D /* SwiftCSV-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1569B754F5F8C3529F1548523737B6A6 /* SwiftCSV-dummy.m */; };
+		890FF25D0CCFF9BADECBA64DCCEFF4FF /* SideMenuAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94D2100EF27C9829547117BAD56535 /* SideMenuAnimationController.swift */; };
+		8C06632AA14D12278B1277AC0CC6A0B2 /* SideMenuInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C72275B8CA55ADB50791DD986F1AA4 /* SideMenuInteractionController.swift */; };
+		905A503F069C27E841BAD9F4EFD4F1AF /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1D149A67E69EF2901BFFD7972B98C1 /* Protected.swift */; };
+		970E5351EB7A3C92CD346BCDCC6652A3 /* FloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9CA9002003BA2036B6622DBE59008 /* FloatingPanelLayout.swift */; };
+		A04D8B3B3650926C5F7D42B22A67DE7D /* FloatingPanelBackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BABB18D2DB0D2AF97BDAF791CDCAFC /* FloatingPanelBackdropView.swift */; };
+		A19095E61060BC45F2790E9FCB8FE927 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D890BC086331CFA5853025C62B1CD9 /* Foundation.framework */; };
+		A3673FD39025DE753731C568DB5E23B9 /* FloatingPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1271E64490917CEA02DFD8FAA031A419 /* FloatingPanelView.swift */; };
+		A49977EF1D94933CE588A5F237D5DD7C /* GrabberHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A71BF7838C762768616925C35B2978 /* GrabberHandleView.swift */; };
+		A696FE118006841FB09A5E76C11B8978 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7072A0E2C7BE472E5CEB38B7A6B7D6D7 /* Logger.swift */; };
+		A6DB10D310FD18E8B6C25EA33D81DF4E /* FloatingPanel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD7E1032DA59EEE2EC7BD950231191 /* FloatingPanel-dummy.m */; };
+		A86CFB0F97C95200549E59C87E18DD82 /* SwiftCSV-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 181A197D014B059EDDE8A4007F20D89F /* SwiftCSV-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9914A6BD06B94D19517C18FEC4D36FB /* MapStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4853F09652C074AB05CD96A343CC89 /* MapStyle.swift */; };
+		AAE1B9134D32C7B612C5CEAE638F0D9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D890BC086331CFA5853025C62B1CD9 /* Foundation.framework */; };
+		AC3A9BBBC696D7F15419180CBE24DE2A /* NamedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7EEE5709D8292F820DB674B121081E /* NamedView.swift */; };
+		ADB711F9FDA7908F2B40BDF85BDF505A /* GoogleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52398411B77D83BF323B4E00C40D910E /* GoogleStyle.swift */; };
+		B27B12C5D2EF1BE7B3CBBBC8FA98110E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D890BC086331CFA5853025C62B1CD9 /* Foundation.framework */; };
+		B31A8515386081B70C5A5ACC5150F203 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D890BC086331CFA5853025C62B1CD9 /* Foundation.framework */; };
+		B90A330D45450B31F8612C9BEA95A350 /* Pods-SonycApp-SonycAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FE427243A511359C27C5EF312B0F4C /* Pods-SonycApp-SonycAppUITests-dummy.m */; };
+		BB0A7D66FCF088A2548AD2ECB19A699E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D890BC086331CFA5853025C62B1CD9 /* Foundation.framework */; };
+		C17DD90FDB535CC886156FEA4A17B02C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B31A15AEF545E8EBA9DB87FB9D5747D /* UIKit.framework */; };
+		C798DA148F7F666F393F2009DDF73E35 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B611E7987499C71726D3010F73F8C3D /* Initializable.swift */; };
+		C96A55C2A869A97AC4CA628A7F2A2A21 /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60251443B94AEDACB2366BDF65181111 /* UITableViewVibrantCell.swift */; };
+		CD3C35081A0BBCE913F6C8B62C976F85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D890BC086331CFA5853025C62B1CD9 /* Foundation.framework */; };
+		CF925E8C4C99A77E1C9FE0049826FCE4 /* FloatingPanelBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8CD3E89C8FEB49C995E47AF2F18775 /* FloatingPanelBehavior.swift */; };
+		D13AC4B3EDF1F6A5973A039FCE488B92 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331EBEA8188FAA46C05122F971F32A6 /* UIExtensions.swift */; };
+		D1BD7393C7934049B3E51D9C5A5CD8A0 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87553B808958F2EA09E04C53D56580 /* Print.swift */; };
+		D3D22BB8C279DC03EA91BFE3F5412477 /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA497BF807299476813CEA554C2257B8 /* Deprecations.swift */; };
+		D777716F0B6C0754B7B0230531743BC4 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290A16330AF31FA771C2BF9F0D1FC47 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBAD66EBC1B67410EC995E411D464DC8 /* Pods-SonycApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 143278E030C63102D77E469336FCE245 /* Pods-SonycApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E11A87451D8A3729886D5E1CAD97FA13 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5463EDB7D7C34B483552ABC921A26BE3 /* MapKit.framework */; };
+		E4326632509DC119D9F20A4ADF1A5EDB /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DCD32E5CBE4BDBB31FAA702DE389F /* Description.swift */; };
+		E62E543CA9182791942A0DE76D3E6C6C /* FloatingPanelTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB591BF2B585D3C9CDD86D5A530C4C7D /* FloatingPanelTransitioning.swift */; };
+		EF6B11E38F399E2DAD9DBCD4D5E2A7FD /* Pods-SonycApp-SonycAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE130CCFCF25BA370035A76F6F487CA6 /* Pods-SonycApp-SonycAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFC7013EA1CF0C158E68FCE8123F9AB4 /* MapKitGoogleStyler-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 14364071EE46ED61CC894D88C6529F6D /* MapKitGoogleStyler-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		026272F53AC9D57B02195F4DC3CD1622 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED4CF05D6F9AD53D39CC38CA8F5C769A;
+			remoteInfo = "Pods-SonycApp";
+		};
+		04CF272EAC38646DD771835709229926 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4874E7E655CEB4C01E4572AD903AEA21;
+			remoteInfo = FloatingPanel;
+		};
+		3295F68F08AB2F77C11FBEFAB05A4826 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4A0A7D8591B67FB75E2E8D215E3735B;
+			remoteInfo = SideMenu;
+		};
+		56245058AFF1D8324B310EB3EEC7B9C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4A0A7D8591B67FB75E2E8D215E3735B;
+			remoteInfo = SideMenu;
+		};
+		6E49CBFE10D0F73441E8FD63FF14819C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4874E7E655CEB4C01E4572AD903AEA21;
+			remoteInfo = FloatingPanel;
+		};
+		7DAFD2A3BF995542873A36A05F89F49A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7465E4C13FFC9CE6D359E31F65D6825;
+			remoteInfo = SwiftCSV;
+		};
+		B155C5F38351F27A328D0549F4C022EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7465E4C13FFC9CE6D359E31F65D6825;
+			remoteInfo = SwiftCSV;
+		};
+		F656135FCF8DFDD1C0FD2042984007A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A384F059A39EEEC92C37F789F58DF8B0;
+			remoteInfo = MapKitGoogleStyler;
+		};
+		FDD0C2270627687050443B8BC7550326 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A384F059A39EEEC92C37F789F58DF8B0;
+			remoteInfo = MapKitGoogleStyler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0052BA4027333ACA6D5DC923A39BCB6D /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		030E9BCED397665A65369770D93313F4 /* SideMenuPresentationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationStyle.swift; path = Pod/Classes/SideMenuPresentationStyle.swift; sourceTree = "<group>"; };
+		032E6D24620BE6A8FD7C49C92E713A64 /* FloatingPanel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FloatingPanel.debug.xcconfig; sourceTree = "<group>"; };
+		042ADE74922C11ED5B9ED739B2284FDF /* String+Lines.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Lines.swift"; path = "SwiftCSV/String+Lines.swift"; sourceTree = "<group>"; };
+		043D6D3EF9BDFA5A43CFFC1AB1575F12 /* Pods-SonycApp-SonycAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycApp-SonycAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		080B65272424884342E304A644E33730 /* MapKitGoogleStyler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MapKitGoogleStyler.release.xcconfig; sourceTree = "<group>"; };
+		0D43FE825BB82A20499E33697A3986AA /* StyleElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StyleElement.swift; path = MapKitGoogleStyler/Classes/StyleElement.swift; sourceTree = "<group>"; };
+		114DCD32E5CBE4BDBB31FAA702DE389F /* Description.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Description.swift; path = SwiftCSV/Description.swift; sourceTree = "<group>"; };
+		1271E64490917CEA02DFD8FAA031A419 /* FloatingPanelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelView.swift; path = Framework/Sources/FloatingPanelView.swift; sourceTree = "<group>"; };
+		143278E030C63102D77E469336FCE245 /* Pods-SonycApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SonycApp-umbrella.h"; sourceTree = "<group>"; };
+		14364071EE46ED61CC894D88C6529F6D /* MapKitGoogleStyler-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapKitGoogleStyler-umbrella.h"; sourceTree = "<group>"; };
+		1569B754F5F8C3529F1548523737B6A6 /* SwiftCSV-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftCSV-dummy.m"; sourceTree = "<group>"; };
+		181A197D014B059EDDE8A4007F20D89F /* SwiftCSV-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCSV-umbrella.h"; sourceTree = "<group>"; };
+		183AB06C4F5D6C43D08E0DBA1BBA7786 /* Pods-SonycApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SonycApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2290A16330AF31FA771C2BF9F0D1FC47 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
+		26FB9F438AE2C949AF715E56E4C7858B /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
+		2CB0E5E0E2C9A29E6390FDDD611D56F0 /* MapKitGoogleStyler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MapKitGoogleStyler.debug.xcconfig; sourceTree = "<group>"; };
+		2D8EDB69E6F9CB9AA07096F6E755674D /* FloatingPanel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FloatingPanel-Info.plist"; sourceTree = "<group>"; };
+		319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36BF1BB3F7F007716CB99D8E14ACAF07 /* Pods-SonycAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		36F2A8637582D61E660CD296AE8555D3 /* FloatingPanelSurfaceView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelSurfaceView.swift; path = Framework/Sources/FloatingPanelSurfaceView.swift; sourceTree = "<group>"; };
+		37055EBE5D8D02C2535E34381F91A709 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
+		38C80AFCFDF0ACC5CB67C8BC824D7FE6 /* Pods-SonycAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SonycAppTests-dummy.m"; sourceTree = "<group>"; };
+		3906BB317BC0B1AE3C24C62C3E17BD49 /* ElementType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementType.swift; path = MapKitGoogleStyler/Classes/ElementType.swift; sourceTree = "<group>"; };
+		3EA1D9B874CE5F60FCD7E1397731A100 /* FloatingPanel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FloatingPanel-prefix.pch"; sourceTree = "<group>"; };
+		418DC9386F4F65AB0E2E573A2A6F2CE6 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Pod/Classes/Extensions.swift; sourceTree = "<group>"; };
+		43786724BF2FD29956894FA21F3FD398 /* MapKitGoogleStyler.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MapKitGoogleStyler.modulemap; sourceTree = "<group>"; };
+		46E6C29CDD9A0FABD2EEE4BD521CF2E1 /* Pods-SonycApp-SonycAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SonycApp-SonycAppUITests.modulemap"; sourceTree = "<group>"; };
+		478C880E5FB3675154E2EE486E9A5516 /* SwiftCSV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftCSV.debug.xcconfig; sourceTree = "<group>"; };
+		47A8EA755BEE8CFDAF32F00F92BF7976 /* SideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SideMenu-Info.plist"; sourceTree = "<group>"; };
+		4D5992229ACD283FC93854F686880B23 /* Pods-SonycApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SonycApp-dummy.m"; sourceTree = "<group>"; };
+		4DFD7E1032DA59EEE2EC7BD950231191 /* FloatingPanel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FloatingPanel-dummy.m"; sourceTree = "<group>"; };
+		4E4188420C47F7CC702F26D4FDD27767 /* Pods-SonycAppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycAppTests-Info.plist"; sourceTree = "<group>"; };
+		52398411B77D83BF323B4E00C40D910E /* GoogleStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GoogleStyle.swift; path = MapKitGoogleStyler/Classes/GoogleStyle.swift; sourceTree = "<group>"; };
+		52D890BC086331CFA5853025C62B1CD9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5463EDB7D7C34B483552ABC921A26BE3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		58A075ECFF2C1C4D3023F6B9893921B7 /* Pods-SonycApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SonycApp.modulemap"; sourceTree = "<group>"; };
+		5A6CBEAC7212DCE694AC28667C36D2D1 /* SwiftCSV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftCSV.framework; path = SwiftCSV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B31A15AEF545E8EBA9DB87FB9D5747D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5FE9CA9002003BA2036B6622DBE59008 /* FloatingPanelLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelLayout.swift; path = Framework/Sources/FloatingPanelLayout.swift; sourceTree = "<group>"; };
+		60251443B94AEDACB2366BDF65181111 /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
+		647262C76B0B3392A23AA4A982258D69 /* FloatingPanelController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelController.swift; path = Framework/Sources/FloatingPanelController.swift; sourceTree = "<group>"; };
+		6486A155014C5F01BE92A7FE39EBE526 /* ParsingState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParsingState.swift; path = SwiftCSV/ParsingState.swift; sourceTree = "<group>"; };
+		66B6285E1A482495B01C3AE421A45E4D /* Pods-SonycAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		66C72275B8CA55ADB50791DD986F1AA4 /* SideMenuInteractionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuInteractionController.swift; path = Pod/Classes/SideMenuInteractionController.swift; sourceTree = "<group>"; };
+		6B1692758C1AE89BADA513C3DD49F88F /* Pods-SonycApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SonycApp-frameworks.sh"; sourceTree = "<group>"; };
+		6FAAB7D3DE9B2564509ABD18687E938E /* FloatingPanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FloatingPanel.framework; path = FloatingPanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7072A0E2C7BE472E5CEB38B7A6B7D6D7 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Framework/Sources/Logger.swift; sourceTree = "<group>"; };
+		71A71BF7838C762768616925C35B2978 /* GrabberHandleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GrabberHandleView.swift; path = Framework/Sources/GrabberHandleView.swift; sourceTree = "<group>"; };
+		71D51E54FCAA41E8E41B6DADC5D4F7F1 /* Pods-SonycAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SonycAppTests.modulemap"; sourceTree = "<group>"; };
+		75FD597D78FDD955E096063BA752F132 /* SwiftCSV-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCSV-prefix.pch"; sourceTree = "<group>"; };
+		76BABB18D2DB0D2AF97BDAF791CDCAFC /* FloatingPanelBackdropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelBackdropView.swift; path = Framework/Sources/FloatingPanelBackdropView.swift; sourceTree = "<group>"; };
+		7B7EEE5709D8292F820DB674B121081E /* NamedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NamedView.swift; path = SwiftCSV/NamedView.swift; sourceTree = "<group>"; };
+		7CC6C3872DA3B4D1A6081B2D713BE3E9 /* Pods_SonycApp_SonycAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SonycApp_SonycAppUITests.framework; path = "Pods-SonycApp-SonycAppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1D149A67E69EF2901BFFD7972B98C1 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Pod/Classes/Protected.swift; sourceTree = "<group>"; };
+		7E4853F09652C074AB05CD96A343CC89 /* MapStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapStyle.swift; path = MapKitGoogleStyler/Classes/MapStyle.swift; sourceTree = "<group>"; };
+		7FDEC8923CBCF0B08DEE2BD812AA6119 /* FloatingPanel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FloatingPanel.release.xcconfig; sourceTree = "<group>"; };
+		8A187FC9A4A38075510E7EF48531F482 /* Pods-SonycApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycApp-Info.plist"; sourceTree = "<group>"; };
+		8B611E7987499C71726D3010F73F8C3D /* Initializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Initializable.swift; path = Pod/Classes/Initializable.swift; sourceTree = "<group>"; };
+		8C23168EECCCCDCAF8F6A22CE87E05E8 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuNavigationController.swift; path = Pod/Classes/SideMenuNavigationController.swift; sourceTree = "<group>"; };
+		8E650D71B5B582DAEE51E8B74D4E9FCD /* Pods-SonycApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycApp.release.xcconfig"; sourceTree = "<group>"; };
+		907EB35BD588141ADBF27BD988387344 /* MapKitGoogleStyler-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MapKitGoogleStyler-dummy.m"; sourceTree = "<group>"; };
+		90FE427243A511359C27C5EF312B0F4C /* Pods-SonycApp-SonycAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SonycApp-SonycAppUITests-dummy.m"; sourceTree = "<group>"; };
+		98498FE23130144E1CCF8170F1F5243A /* FloatingPanel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FloatingPanel-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F99AA56FAFA9A16377C640F19BB0FEB /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
+		A3CFBDAF9B044DB46C8259397DC78933 /* Pods_SonycApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SonycApp.framework; path = "Pods-SonycApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA497BF807299476813CEA554C2257B8 /* Deprecations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecations.swift; path = Pod/Classes/Deprecations.swift; sourceTree = "<group>"; };
+		AAA0BED9AC25A967AC179EBB80B30EB5 /* SwiftCSV-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftCSV-Info.plist"; sourceTree = "<group>"; };
+		ADEB8288C71735777095559C0064F8B9 /* FloatingPanelCore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelCore.swift; path = Framework/Sources/FloatingPanelCore.swift; sourceTree = "<group>"; };
+		AF02BCD364CC464F5598541ABEBBB897 /* MapKitGoogleStyler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MapKitGoogleStyler.framework; path = MapKitGoogleStyler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4D2463FA89E4DB37FCE111B6E7A0EDE /* Pods_SonycAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SonycAppTests.framework; path = "Pods-SonycAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7718B5F90A507CF981A54591845AECF /* SideMenuTransitionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransitionController.swift; path = Pod/Classes/SideMenuTransitionController.swift; sourceTree = "<group>"; };
+		B8D708190EF905CFA7BE2169D922C7A2 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = SwiftCSV/Parser.swift; sourceTree = "<group>"; };
+		BE57F745AADC3C39EA3C792F64392826 /* FloatingPanel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FloatingPanel.modulemap; sourceTree = "<group>"; };
+		BE9B71D29011EB4E1A45B325E909A418 /* FeatureType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeatureType.swift; path = MapKitGoogleStyler/Classes/FeatureType.swift; sourceTree = "<group>"; };
+		C028ACC8E0CDFAF0CDDC3E0ED350E481 /* SwiftCSV.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftCSV.modulemap; sourceTree = "<group>"; };
+		C02C355DE3685D9AF294F3CEFA7958DA /* MapKitGoogleStyler-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapKitGoogleStyler-prefix.pch"; sourceTree = "<group>"; };
+		C08585DEED626DFC58A1BAFF9A8087C6 /* MapKitGoogleStyler-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MapKitGoogleStyler-Info.plist"; sourceTree = "<group>"; };
+		C171F45E134060E6D772878FF16E9EE6 /* SideMenuPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationController.swift; path = Pod/Classes/SideMenuPresentationController.swift; sourceTree = "<group>"; };
+		C889E01E3F41AAF888DE54CA985DF1D1 /* CSV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSV.swift; path = SwiftCSV/CSV.swift; sourceTree = "<group>"; };
+		C8D762F016D4F82DFC8D0186AAFA1D4E /* Pods-SonycApp-SonycAppUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycApp-SonycAppUITests-Info.plist"; sourceTree = "<group>"; };
+		CE130CCFCF25BA370035A76F6F487CA6 /* Pods-SonycApp-SonycAppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SonycApp-SonycAppUITests-umbrella.h"; sourceTree = "<group>"; };
+		CF8CD3E89C8FEB49C995E47AF2F18775 /* FloatingPanelBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelBehavior.swift; path = Framework/Sources/FloatingPanelBehavior.swift; sourceTree = "<group>"; };
+		D2C54925CC34364EE007913B871D939A /* SideMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.release.xcconfig; sourceTree = "<group>"; };
+		D3C3A5B2402003D3BFF02233A23CC244 /* EnumeratedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumeratedView.swift; path = SwiftCSV/EnumeratedView.swift; sourceTree = "<group>"; };
+		D3F72DFDD534D6C19CCBF1C6AB82EBCE /* SideMenuPushCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPushCoordinator.swift; path = Pod/Classes/SideMenuPushCoordinator.swift; sourceTree = "<group>"; };
+		D4060F959AAE6913906341AEF7CAF228 /* SideMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.debug.xcconfig; sourceTree = "<group>"; };
+		D4C6BA7CF1A66970A008A11929D64306 /* Pods-SonycAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D7C9F2E168B4F55A5CC965E5BB6EDC66 /* Pods-SonycApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DA94D2100EF27C9829547117BAD56535 /* SideMenuAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuAnimationController.swift; path = Pod/Classes/SideMenuAnimationController.swift; sourceTree = "<group>"; };
+		DE318DD638510D866BF3DFB1ACDAB635 /* SwiftCSV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftCSV.release.xcconfig; sourceTree = "<group>"; };
+		DFFA3A58E7CDBB4039890C6A727EA30D /* Pods-SonycAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SonycAppTests-umbrella.h"; sourceTree = "<group>"; };
+		E3A5E94A07249154A24EACA504D923C0 /* Pods-SonycApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		EB116664A560991AD2C2086BA3295159 /* Pods-SonycApp-SonycAppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SonycApp-SonycAppUITests-frameworks.sh"; sourceTree = "<group>"; };
+		F1FA106F35B8D5EA6BF0CBFDA4E3E53D /* StylerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StylerType.swift; path = MapKitGoogleStyler/Classes/StylerType.swift; sourceTree = "<group>"; };
+		F331EBEA8188FAA46C05122F971F32A6 /* UIExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIExtensions.swift; path = Framework/Sources/UIExtensions.swift; sourceTree = "<group>"; };
+		F5C47B9AE85EA6DD747331BBFBB6EA2A /* Pods-SonycApp-SonycAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SonycApp-SonycAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F7C5ACC1EEEB9CE2324C45005F846AD0 /* Pods-SonycApp-SonycAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SonycApp-SonycAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F7D689D64A3100D85B706AC7AE41A6EB /* Pods-SonycAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SonycAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FA1F3AB3EBE90398FF2DC95BAF322846 /* Pods-SonycApp-SonycAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SonycApp-SonycAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA87553B808958F2EA09E04C53D56580 /* Print.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Print.swift; path = Pod/Classes/Print.swift; sourceTree = "<group>"; };
+		FB591BF2B585D3C9CDD86D5A530C4C7D /* FloatingPanelTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatingPanelTransitioning.swift; path = Framework/Sources/FloatingPanelTransitioning.swift; sourceTree = "<group>"; };
+		FB9B46C4B74123EBBDB8D68BBC0106FC /* MapKit+GoogleStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MapKit+GoogleStyle.swift"; path = "MapKitGoogleStyler/Classes/MapKit+GoogleStyle.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E25907FC421D8E714ADD71C47A8FDC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE1B9134D32C7B612C5CEAE638F0D9B /* Foundation.framework in Frameworks */,
+				C17DD90FDB535CC886156FEA4A17B02C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C546B19E5C8B464C9B3A294ED2FE99F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A19095E61060BC45F2790E9FCB8FE927 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95C2121F23D1529DA9152E5CA1DC2B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B31A8515386081B70C5A5ACC5150F203 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D3AB976F006A0F0C4BCC973F3AC6285 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB0A7D66FCF088A2548AD2ECB19A699E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D824FB5C1353FD7EDE11119E5C72A0F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				749A04C51F03FE37128E186CA30A0938 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9D87C2BC8D3C4B8382407D4C6B16014 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B27B12C5D2EF1BE7B3CBBBC8FA98110E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E30F5B2544F8A940603A0AC5CF9CB41D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD3C35081A0BBCE913F6C8B62C976F85 /* Foundation.framework in Frameworks */,
+				E11A87451D8A3729886D5E1CAD97FA13 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC90E5EBC833FCBC57C4D2FD1986197C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		40E2459FEF6ED1085CBEC540C9821D37 /* MapKitGoogleStyler */ = {
+			isa = PBXGroup;
+			children = (
+				3906BB317BC0B1AE3C24C62C3E17BD49 /* ElementType.swift */,
+				BE9B71D29011EB4E1A45B325E909A418 /* FeatureType.swift */,
+				52398411B77D83BF323B4E00C40D910E /* GoogleStyle.swift */,
+				FB9B46C4B74123EBBDB8D68BBC0106FC /* MapKit+GoogleStyle.swift */,
+				7E4853F09652C074AB05CD96A343CC89 /* MapStyle.swift */,
+				0D43FE825BB82A20499E33697A3986AA /* StyleElement.swift */,
+				F1FA106F35B8D5EA6BF0CBFDA4E3E53D /* StylerType.swift */,
+				97521E323C52506EC9903AA055CBB593 /* Support Files */,
+			);
+			name = MapKitGoogleStyler;
+			path = MapKitGoogleStyler;
+			sourceTree = "<group>";
+		};
+		41007891BEEA7AA3D7D1D47345D545F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FAAB7D3DE9B2564509ABD18687E938E /* FloatingPanel.framework */,
+				AF02BCD364CC464F5598541ABEBBB897 /* MapKitGoogleStyler.framework */,
+				A3CFBDAF9B044DB46C8259397DC78933 /* Pods_SonycApp.framework */,
+				7CC6C3872DA3B4D1A6081B2D713BE3E9 /* Pods_SonycApp_SonycAppUITests.framework */,
+				B4D2463FA89E4DB37FCE111B6E7A0EDE /* Pods_SonycAppTests.framework */,
+				319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */,
+				5A6CBEAC7212DCE694AC28667C36D2D1 /* SwiftCSV.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DD2689AFA2992AF672F0FE587EA63F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E446780B138F676766C888BC59D9905E /* FloatingPanel */,
+				40E2459FEF6ED1085CBEC540C9821D37 /* MapKitGoogleStyler */,
+				EDD44F86BEFAAE778A2E67252EB5947D /* SideMenu */,
+				F265D7B717E087DAC3EF5FF2CA9DE8E9 /* SwiftCSV */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		97521E323C52506EC9903AA055CBB593 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				43786724BF2FD29956894FA21F3FD398 /* MapKitGoogleStyler.modulemap */,
+				907EB35BD588141ADBF27BD988387344 /* MapKitGoogleStyler-dummy.m */,
+				C08585DEED626DFC58A1BAFF9A8087C6 /* MapKitGoogleStyler-Info.plist */,
+				C02C355DE3685D9AF294F3CEFA7958DA /* MapKitGoogleStyler-prefix.pch */,
+				14364071EE46ED61CC894D88C6529F6D /* MapKitGoogleStyler-umbrella.h */,
+				2CB0E5E0E2C9A29E6390FDDD611D56F0 /* MapKitGoogleStyler.debug.xcconfig */,
+				080B65272424884342E304A644E33730 /* MapKitGoogleStyler.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MapKitGoogleStyler";
+			sourceTree = "<group>";
+		};
+		A5A80030742663543E33ABBBF358B335 /* Pods-SonycApp-SonycAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46E6C29CDD9A0FABD2EEE4BD521CF2E1 /* Pods-SonycApp-SonycAppUITests.modulemap */,
+				F5C47B9AE85EA6DD747331BBFBB6EA2A /* Pods-SonycApp-SonycAppUITests-acknowledgements.markdown */,
+				F7C5ACC1EEEB9CE2324C45005F846AD0 /* Pods-SonycApp-SonycAppUITests-acknowledgements.plist */,
+				90FE427243A511359C27C5EF312B0F4C /* Pods-SonycApp-SonycAppUITests-dummy.m */,
+				EB116664A560991AD2C2086BA3295159 /* Pods-SonycApp-SonycAppUITests-frameworks.sh */,
+				C8D762F016D4F82DFC8D0186AAFA1D4E /* Pods-SonycApp-SonycAppUITests-Info.plist */,
+				CE130CCFCF25BA370035A76F6F487CA6 /* Pods-SonycApp-SonycAppUITests-umbrella.h */,
+				FA1F3AB3EBE90398FF2DC95BAF322846 /* Pods-SonycApp-SonycAppUITests.debug.xcconfig */,
+				043D6D3EF9BDFA5A43CFFC1AB1575F12 /* Pods-SonycApp-SonycAppUITests.release.xcconfig */,
+			);
+			name = "Pods-SonycApp-SonycAppUITests";
+			path = "Target Support Files/Pods-SonycApp-SonycAppUITests";
+			sourceTree = "<group>";
+		};
+		AC90E5EBC833FCBC57C4D2FD1986197C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				52D890BC086331CFA5853025C62B1CD9 /* Foundation.framework */,
+				5463EDB7D7C34B483552ABC921A26BE3 /* MapKit.framework */,
+				5B31A15AEF545E8EBA9DB87FB9D5747D /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
+				5DD2689AFA2992AF672F0FE587EA63F3 /* Pods */,
+				41007891BEEA7AA3D7D1D47345D545F3 /* Products */,
+				F48B1C6C70734AFE1392D4010D9BB785 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D466759B1C57E143A3B4B3331172E56C /* Pods-SonycApp */ = {
+			isa = PBXGroup;
+			children = (
+				58A075ECFF2C1C4D3023F6B9893921B7 /* Pods-SonycApp.modulemap */,
+				183AB06C4F5D6C43D08E0DBA1BBA7786 /* Pods-SonycApp-acknowledgements.markdown */,
+				E3A5E94A07249154A24EACA504D923C0 /* Pods-SonycApp-acknowledgements.plist */,
+				4D5992229ACD283FC93854F686880B23 /* Pods-SonycApp-dummy.m */,
+				6B1692758C1AE89BADA513C3DD49F88F /* Pods-SonycApp-frameworks.sh */,
+				8A187FC9A4A38075510E7EF48531F482 /* Pods-SonycApp-Info.plist */,
+				143278E030C63102D77E469336FCE245 /* Pods-SonycApp-umbrella.h */,
+				D7C9F2E168B4F55A5CC965E5BB6EDC66 /* Pods-SonycApp.debug.xcconfig */,
+				8E650D71B5B582DAEE51E8B74D4E9FCD /* Pods-SonycApp.release.xcconfig */,
+			);
+			name = "Pods-SonycApp";
+			path = "Target Support Files/Pods-SonycApp";
+			sourceTree = "<group>";
+		};
+		D4B6F3BDB0307E2F150CE7DABB6ABD40 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				26FB9F438AE2C949AF715E56E4C7858B /* SideMenu.modulemap */,
+				0052BA4027333ACA6D5DC923A39BCB6D /* SideMenu-dummy.m */,
+				47A8EA755BEE8CFDAF32F00F92BF7976 /* SideMenu-Info.plist */,
+				37055EBE5D8D02C2535E34381F91A709 /* SideMenu-prefix.pch */,
+				2290A16330AF31FA771C2BF9F0D1FC47 /* SideMenu-umbrella.h */,
+				D4060F959AAE6913906341AEF7CAF228 /* SideMenu.debug.xcconfig */,
+				D2C54925CC34364EE007913B871D939A /* SideMenu.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SideMenu";
+			sourceTree = "<group>";
+		};
+		E3ACCEF2069A84D4AEFAA4CBB505DACD /* Pods-SonycAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				71D51E54FCAA41E8E41B6DADC5D4F7F1 /* Pods-SonycAppTests.modulemap */,
+				F7D689D64A3100D85B706AC7AE41A6EB /* Pods-SonycAppTests-acknowledgements.markdown */,
+				D4C6BA7CF1A66970A008A11929D64306 /* Pods-SonycAppTests-acknowledgements.plist */,
+				38C80AFCFDF0ACC5CB67C8BC824D7FE6 /* Pods-SonycAppTests-dummy.m */,
+				4E4188420C47F7CC702F26D4FDD27767 /* Pods-SonycAppTests-Info.plist */,
+				DFFA3A58E7CDBB4039890C6A727EA30D /* Pods-SonycAppTests-umbrella.h */,
+				66B6285E1A482495B01C3AE421A45E4D /* Pods-SonycAppTests.debug.xcconfig */,
+				36BF1BB3F7F007716CB99D8E14ACAF07 /* Pods-SonycAppTests.release.xcconfig */,
+			);
+			name = "Pods-SonycAppTests";
+			path = "Target Support Files/Pods-SonycAppTests";
+			sourceTree = "<group>";
+		};
+		E446780B138F676766C888BC59D9905E /* FloatingPanel */ = {
+			isa = PBXGroup;
+			children = (
+				76BABB18D2DB0D2AF97BDAF791CDCAFC /* FloatingPanelBackdropView.swift */,
+				CF8CD3E89C8FEB49C995E47AF2F18775 /* FloatingPanelBehavior.swift */,
+				647262C76B0B3392A23AA4A982258D69 /* FloatingPanelController.swift */,
+				ADEB8288C71735777095559C0064F8B9 /* FloatingPanelCore.swift */,
+				5FE9CA9002003BA2036B6622DBE59008 /* FloatingPanelLayout.swift */,
+				36F2A8637582D61E660CD296AE8555D3 /* FloatingPanelSurfaceView.swift */,
+				FB591BF2B585D3C9CDD86D5A530C4C7D /* FloatingPanelTransitioning.swift */,
+				1271E64490917CEA02DFD8FAA031A419 /* FloatingPanelView.swift */,
+				71A71BF7838C762768616925C35B2978 /* GrabberHandleView.swift */,
+				7072A0E2C7BE472E5CEB38B7A6B7D6D7 /* Logger.swift */,
+				F331EBEA8188FAA46C05122F971F32A6 /* UIExtensions.swift */,
+				F46D2060C9FCDCA5C9986F2803E6F68D /* Support Files */,
+			);
+			name = FloatingPanel;
+			path = FloatingPanel;
+			sourceTree = "<group>";
+		};
+		EDD44F86BEFAAE778A2E67252EB5947D /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				AA497BF807299476813CEA554C2257B8 /* Deprecations.swift */,
+				418DC9386F4F65AB0E2E573A2A6F2CE6 /* Extensions.swift */,
+				8B611E7987499C71726D3010F73F8C3D /* Initializable.swift */,
+				FA87553B808958F2EA09E04C53D56580 /* Print.swift */,
+				7D1D149A67E69EF2901BFFD7972B98C1 /* Protected.swift */,
+				DA94D2100EF27C9829547117BAD56535 /* SideMenuAnimationController.swift */,
+				66C72275B8CA55ADB50791DD986F1AA4 /* SideMenuInteractionController.swift */,
+				9F99AA56FAFA9A16377C640F19BB0FEB /* SideMenuManager.swift */,
+				8C23168EECCCCDCAF8F6A22CE87E05E8 /* SideMenuNavigationController.swift */,
+				C171F45E134060E6D772878FF16E9EE6 /* SideMenuPresentationController.swift */,
+				030E9BCED397665A65369770D93313F4 /* SideMenuPresentationStyle.swift */,
+				D3F72DFDD534D6C19CCBF1C6AB82EBCE /* SideMenuPushCoordinator.swift */,
+				B7718B5F90A507CF981A54591845AECF /* SideMenuTransitionController.swift */,
+				60251443B94AEDACB2366BDF65181111 /* UITableViewVibrantCell.swift */,
+				D4B6F3BDB0307E2F150CE7DABB6ABD40 /* Support Files */,
+			);
+			name = SideMenu;
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		F10A86959BA13430B488BDF5C57426F1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C028ACC8E0CDFAF0CDDC3E0ED350E481 /* SwiftCSV.modulemap */,
+				1569B754F5F8C3529F1548523737B6A6 /* SwiftCSV-dummy.m */,
+				AAA0BED9AC25A967AC179EBB80B30EB5 /* SwiftCSV-Info.plist */,
+				75FD597D78FDD955E096063BA752F132 /* SwiftCSV-prefix.pch */,
+				181A197D014B059EDDE8A4007F20D89F /* SwiftCSV-umbrella.h */,
+				478C880E5FB3675154E2EE486E9A5516 /* SwiftCSV.debug.xcconfig */,
+				DE318DD638510D866BF3DFB1ACDAB635 /* SwiftCSV.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftCSV";
+			sourceTree = "<group>";
+		};
+		F265D7B717E087DAC3EF5FF2CA9DE8E9 /* SwiftCSV */ = {
+			isa = PBXGroup;
+			children = (
+				C889E01E3F41AAF888DE54CA985DF1D1 /* CSV.swift */,
+				114DCD32E5CBE4BDBB31FAA702DE389F /* Description.swift */,
+				D3C3A5B2402003D3BFF02233A23CC244 /* EnumeratedView.swift */,
+				7B7EEE5709D8292F820DB674B121081E /* NamedView.swift */,
+				B8D708190EF905CFA7BE2169D922C7A2 /* Parser.swift */,
+				6486A155014C5F01BE92A7FE39EBE526 /* ParsingState.swift */,
+				042ADE74922C11ED5B9ED739B2284FDF /* String+Lines.swift */,
+				F10A86959BA13430B488BDF5C57426F1 /* Support Files */,
+			);
+			name = SwiftCSV;
+			path = SwiftCSV;
+			sourceTree = "<group>";
+		};
+		F46D2060C9FCDCA5C9986F2803E6F68D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE57F745AADC3C39EA3C792F64392826 /* FloatingPanel.modulemap */,
+				4DFD7E1032DA59EEE2EC7BD950231191 /* FloatingPanel-dummy.m */,
+				2D8EDB69E6F9CB9AA07096F6E755674D /* FloatingPanel-Info.plist */,
+				3EA1D9B874CE5F60FCD7E1397731A100 /* FloatingPanel-prefix.pch */,
+				98498FE23130144E1CCF8170F1F5243A /* FloatingPanel-umbrella.h */,
+				032E6D24620BE6A8FD7C49C92E713A64 /* FloatingPanel.debug.xcconfig */,
+				7FDEC8923CBCF0B08DEE2BD812AA6119 /* FloatingPanel.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FloatingPanel";
+			sourceTree = "<group>";
+		};
+		F48B1C6C70734AFE1392D4010D9BB785 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D466759B1C57E143A3B4B3331172E56C /* Pods-SonycApp */,
+				A5A80030742663543E33ABBBF358B335 /* Pods-SonycApp-SonycAppUITests */,
+				E3ACCEF2069A84D4AEFAA4CBB505DACD /* Pods-SonycAppTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1378CB7913AF782CC4E02A09969ED4CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBAD66EBC1B67410EC995E411D464DC8 /* Pods-SonycApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2249DDD64247BAB0575CC2C38588A841 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082F230E358EA3BDDDDB5A620440583E /* Pods-SonycAppTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28761BD3C505CCB36997450A19676357 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D777716F0B6C0754B7B0230531743BC4 /* SideMenu-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		762B49C0AF1BD4B956053A6E4C37A52C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C000FFD2D40FD9F728E1F83134FDB1B /* FloatingPanel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9454A035013F19F5F9313F2C6B6FD591 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A86CFB0F97C95200549E59C87E18DD82 /* SwiftCSV-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99466057BF1EA801EA92A72692937322 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF6B11E38F399E2DAD9DBCD4D5E2A7FD /* Pods-SonycApp-SonycAppUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB540150764B08EFCEC2D8D154FFF47D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFC7013EA1CF0C158E68FCE8123F9AB4 /* MapKitGoogleStyler-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6044DE3C7C1CBDBFC5A9C046CA3BD8D7 /* Build configuration list for PBXNativeTarget "FloatingPanel" */;
+			buildPhases = (
+				762B49C0AF1BD4B956053A6E4C37A52C /* Headers */,
+				AAD82367C4E6F146582EDE6D9A440D57 /* Sources */,
+				0E25907FC421D8E714ADD71C47A8FDC9 /* Frameworks */,
+				5FDD3CD220FC9D412FCF202F7E122871 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FloatingPanel;
+			productName = FloatingPanel;
+			productReference = 6FAAB7D3DE9B2564509ABD18687E938E /* FloatingPanel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A384F059A39EEEC92C37F789F58DF8B0 /* MapKitGoogleStyler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6413ABC62522143D9BE05DCFC33E759 /* Build configuration list for PBXNativeTarget "MapKitGoogleStyler" */;
+			buildPhases = (
+				CB540150764B08EFCEC2D8D154FFF47D /* Headers */,
+				D184D034D4399D5637C965A370DA9B4A /* Sources */,
+				E30F5B2544F8A940603A0AC5CF9CB41D /* Frameworks */,
+				1620D72585300F248BBDDD6D74C7BE5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapKitGoogleStyler;
+			productName = MapKitGoogleStyler;
+			productReference = AF02BCD364CC464F5598541ABEBBB897 /* MapKitGoogleStyler.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ACC627FA69B7E4E3F9169ED12547BADA /* Pods-SonycAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B9565520B9A34964093921676433E7C /* Build configuration list for PBXNativeTarget "Pods-SonycAppTests" */;
+			buildPhases = (
+				2249DDD64247BAB0575CC2C38588A841 /* Headers */,
+				91479B246D45620910371559794BA7FC /* Sources */,
+				9D3AB976F006A0F0C4BCC973F3AC6285 /* Frameworks */,
+				F550094D3C838774E1191997BD333FF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA88387CD69672D4532C951CDC8501BC /* PBXTargetDependency */,
+			);
+			name = "Pods-SonycAppTests";
+			productName = "Pods-SonycAppTests";
+			productReference = B4D2463FA89E4DB37FCE111B6E7A0EDE /* Pods_SonycAppTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B7465E4C13FFC9CE6D359E31F65D6825 /* SwiftCSV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDCBB878FE817CF7378757F7C30D1616 /* Build configuration list for PBXNativeTarget "SwiftCSV" */;
+			buildPhases = (
+				9454A035013F19F5F9313F2C6B6FD591 /* Headers */,
+				5DB8683FD4EC2E07E03B765DEC4CAA24 /* Sources */,
+				95C2121F23D1529DA9152E5CA1DC2B3A /* Frameworks */,
+				A8645B289EFCD27C4334F0DF62673388 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftCSV;
+			productName = SwiftCSV;
+			productReference = 5A6CBEAC7212DCE694AC28667C36D2D1 /* SwiftCSV.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C1AE02AC6A364E249C2489D784F57CA3 /* Pods-SonycApp-SonycAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4F9CC214E17817EC32202B7CC7FA702 /* Build configuration list for PBXNativeTarget "Pods-SonycApp-SonycAppUITests" */;
+			buildPhases = (
+				99466057BF1EA801EA92A72692937322 /* Headers */,
+				FF837960C065B8261C22DB0063DF6F6A /* Sources */,
+				D824FB5C1353FD7EDE11119E5C72A0F0 /* Frameworks */,
+				1705EE741D20129E982B987E6430BA3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1995341325D9B27621FB2DFE4A148E1 /* PBXTargetDependency */,
+				61614AD2C3A1A65E87DEBBBC256DBE07 /* PBXTargetDependency */,
+				EDD0C9A3E96EBA6FF0A04D3E39C6D89C /* PBXTargetDependency */,
+				A604CFA642CF518F72518BE28499C529 /* PBXTargetDependency */,
+			);
+			name = "Pods-SonycApp-SonycAppUITests";
+			productName = "Pods-SonycApp-SonycAppUITests";
+			productReference = 7CC6C3872DA3B4D1A6081B2D713BE3E9 /* Pods_SonycApp_SonycAppUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92707F899E1CD6FD63DCC66A3882B68C /* Build configuration list for PBXNativeTarget "SideMenu" */;
+			buildPhases = (
+				28761BD3C505CCB36997450A19676357 /* Headers */,
+				8B7A6B51F5DD73DE3F3F294B1BF713BE /* Sources */,
+				D9D87C2BC8D3C4B8382407D4C6B16014 /* Frameworks */,
+				E880A6A8817A45BC1BDE085DEC3399E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SideMenu;
+			productName = SideMenu;
+			productReference = 319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED4CF05D6F9AD53D39CC38CA8F5C769A /* Pods-SonycApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEA17BDBEEB0FA32A26387C151B8208A /* Build configuration list for PBXNativeTarget "Pods-SonycApp" */;
+			buildPhases = (
+				1378CB7913AF782CC4E02A09969ED4CF /* Headers */,
+				8FCECD7108619A11A6608347E7E7315F /* Sources */,
+				8C546B19E5C8B464C9B3A294ED2FE99F /* Frameworks */,
+				9DB8D0275EA579C916C182C711565839 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DC3A5DF7E3C8E11E5091FC138AF41E5 /* PBXTargetDependency */,
+				7A5E634B0C73E8FC81A3DBBA5B748EF6 /* PBXTargetDependency */,
+				AA99AB34FB9683CB93CA28190DF2BF70 /* PBXTargetDependency */,
+				46A8E5806D6B7E58216AFBC8CC2AA67F /* PBXTargetDependency */,
+			);
+			name = "Pods-SonycApp";
+			productName = "Pods-SonycApp";
+			productReference = A3CFBDAF9B044DB46C8259397DC78933 /* Pods_SonycApp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 41007891BEEA7AA3D7D1D47345D545F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */,
+				A384F059A39EEEC92C37F789F58DF8B0 /* MapKitGoogleStyler */,
+				ED4CF05D6F9AD53D39CC38CA8F5C769A /* Pods-SonycApp */,
+				C1AE02AC6A364E249C2489D784F57CA3 /* Pods-SonycApp-SonycAppUITests */,
+				ACC627FA69B7E4E3F9169ED12547BADA /* Pods-SonycAppTests */,
+				C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */,
+				B7465E4C13FFC9CE6D359E31F65D6825 /* SwiftCSV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1620D72585300F248BBDDD6D74C7BE5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1705EE741D20129E982B987E6430BA3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FDD3CD220FC9D412FCF202F7E122871 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB8D0275EA579C916C182C711565839 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8645B289EFCD27C4334F0DF62673388 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E880A6A8817A45BC1BDE085DEC3399E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F550094D3C838774E1191997BD333FF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DB8683FD4EC2E07E03B765DEC4CAA24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0741320F4029C077E6C87F24FBBE1921 /* CSV.swift in Sources */,
+				E4326632509DC119D9F20A4ADF1A5EDB /* Description.swift in Sources */,
+				5D7F9243C47FDAE33C85C4E38E3420F2 /* EnumeratedView.swift in Sources */,
+				AC3A9BBBC696D7F15419180CBE24DE2A /* NamedView.swift in Sources */,
+				154DA87F9CFE7544E755F5D133AD4E2E /* Parser.swift in Sources */,
+				837565F200CD03AD302FB1FEADDBD6DB /* ParsingState.swift in Sources */,
+				18E8699E19BF79678DE08904FCB53F2B /* String+Lines.swift in Sources */,
+				86AA9FC981C6AD5D03CA1D4BFD51FD1D /* SwiftCSV-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B7A6B51F5DD73DE3F3F294B1BF713BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D22BB8C279DC03EA91BFE3F5412477 /* Deprecations.swift in Sources */,
+				4E88B70410F6837FBD463EA4B6C33155 /* Extensions.swift in Sources */,
+				C798DA148F7F666F393F2009DDF73E35 /* Initializable.swift in Sources */,
+				D1BD7393C7934049B3E51D9C5A5CD8A0 /* Print.swift in Sources */,
+				905A503F069C27E841BAD9F4EFD4F1AF /* Protected.swift in Sources */,
+				08B5B89F28224381711F45A680C292D9 /* SideMenu-dummy.m in Sources */,
+				890FF25D0CCFF9BADECBA64DCCEFF4FF /* SideMenuAnimationController.swift in Sources */,
+				8C06632AA14D12278B1277AC0CC6A0B2 /* SideMenuInteractionController.swift in Sources */,
+				77AF2098DDCCAAE0CE4A20725C466905 /* SideMenuManager.swift in Sources */,
+				3846AFE38D1B63A9F0D9073C4ABC6DAA /* SideMenuNavigationController.swift in Sources */,
+				27D830F1CAC60B99CC0A135F583BFFF2 /* SideMenuPresentationController.swift in Sources */,
+				3E18B004D34ED5441A193684EEB25BD3 /* SideMenuPresentationStyle.swift in Sources */,
+				2ED518A3FA8DCBE08E621AC5C32844A9 /* SideMenuPushCoordinator.swift in Sources */,
+				09A0A5D3733F69E93F553ABBCF02FB77 /* SideMenuTransitionController.swift in Sources */,
+				C96A55C2A869A97AC4CA628A7F2A2A21 /* UITableViewVibrantCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FCECD7108619A11A6608347E7E7315F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4473A97DE451B1D65864D2CF5528EFFD /* Pods-SonycApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91479B246D45620910371559794BA7FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EF88DEF4AB6E4F65D270270D3757546 /* Pods-SonycAppTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAD82367C4E6F146582EDE6D9A440D57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6DB10D310FD18E8B6C25EA33D81DF4E /* FloatingPanel-dummy.m in Sources */,
+				A04D8B3B3650926C5F7D42B22A67DE7D /* FloatingPanelBackdropView.swift in Sources */,
+				CF925E8C4C99A77E1C9FE0049826FCE4 /* FloatingPanelBehavior.swift in Sources */,
+				7FA96F5D3B8F4CE9C95C35D1CD4D6A91 /* FloatingPanelController.swift in Sources */,
+				3D408305B29250792B2CDDC90990ECAC /* FloatingPanelCore.swift in Sources */,
+				970E5351EB7A3C92CD346BCDCC6652A3 /* FloatingPanelLayout.swift in Sources */,
+				071D52F82B602FB85E35CA8583EEF456 /* FloatingPanelSurfaceView.swift in Sources */,
+				E62E543CA9182791942A0DE76D3E6C6C /* FloatingPanelTransitioning.swift in Sources */,
+				A3673FD39025DE753731C568DB5E23B9 /* FloatingPanelView.swift in Sources */,
+				A49977EF1D94933CE588A5F237D5DD7C /* GrabberHandleView.swift in Sources */,
+				A696FE118006841FB09A5E76C11B8978 /* Logger.swift in Sources */,
+				D13AC4B3EDF1F6A5973A039FCE488B92 /* UIExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D184D034D4399D5637C965A370DA9B4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59BEC0846A2C65972752CEC948139714 /* ElementType.swift in Sources */,
+				5011E29CDE30A43CF2A7F781A30974FB /* FeatureType.swift in Sources */,
+				ADB711F9FDA7908F2B40BDF85BDF505A /* GoogleStyle.swift in Sources */,
+				4B4B817A22A48F9C7DF534A126760F13 /* MapKit+GoogleStyle.swift in Sources */,
+				247FAAE57CD280F33A723C6F21E39D73 /* MapKitGoogleStyler-dummy.m in Sources */,
+				A9914A6BD06B94D19517C18FEC4D36FB /* MapStyle.swift in Sources */,
+				49FF6A72A953E3733DA318DB65238AB9 /* StyleElement.swift in Sources */,
+				4569D12EE21687562A47065F91120B55 /* StylerType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF837960C065B8261C22DB0063DF6F6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B90A330D45450B31F8612C9BEA95A350 /* Pods-SonycApp-SonycAppUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46A8E5806D6B7E58216AFBC8CC2AA67F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftCSV;
+			target = B7465E4C13FFC9CE6D359E31F65D6825 /* SwiftCSV */;
+			targetProxy = B155C5F38351F27A328D0549F4C022EF /* PBXContainerItemProxy */;
+		};
+		4DC3A5DF7E3C8E11E5091FC138AF41E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FloatingPanel;
+			target = 4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */;
+			targetProxy = 04CF272EAC38646DD771835709229926 /* PBXContainerItemProxy */;
+		};
+		61614AD2C3A1A65E87DEBBBC256DBE07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MapKitGoogleStyler;
+			target = A384F059A39EEEC92C37F789F58DF8B0 /* MapKitGoogleStyler */;
+			targetProxy = F656135FCF8DFDD1C0FD2042984007A8 /* PBXContainerItemProxy */;
+		};
+		7A5E634B0C73E8FC81A3DBBA5B748EF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MapKitGoogleStyler;
+			target = A384F059A39EEEC92C37F789F58DF8B0 /* MapKitGoogleStyler */;
+			targetProxy = FDD0C2270627687050443B8BC7550326 /* PBXContainerItemProxy */;
+		};
+		A604CFA642CF518F72518BE28499C529 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftCSV;
+			target = B7465E4C13FFC9CE6D359E31F65D6825 /* SwiftCSV */;
+			targetProxy = 7DAFD2A3BF995542873A36A05F89F49A /* PBXContainerItemProxy */;
+		};
+		AA99AB34FB9683CB93CA28190DF2BF70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SideMenu;
+			target = C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */;
+			targetProxy = 56245058AFF1D8324B310EB3EEC7B9C7 /* PBXContainerItemProxy */;
+		};
+		BA88387CD69672D4532C951CDC8501BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-SonycApp";
+			target = ED4CF05D6F9AD53D39CC38CA8F5C769A /* Pods-SonycApp */;
+			targetProxy = 026272F53AC9D57B02195F4DC3CD1622 /* PBXContainerItemProxy */;
+		};
+		E1995341325D9B27621FB2DFE4A148E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FloatingPanel;
+			target = 4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */;
+			targetProxy = 6E49CBFE10D0F73441E8FD63FF14819C /* PBXContainerItemProxy */;
+		};
+		EDD0C9A3E96EBA6FF0A04D3E39C6D89C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SideMenu;
+			target = C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */;
+			targetProxy = 3295F68F08AB2F77C11FBEFAB05A4826 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0DCCF7160BD2BDF5362EEE6E0C818A7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36BF1BB3F7F007716CB99D8E14ACAF07 /* Pods-SonycAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		13967C5C8F4B10B3EE4D6C208A0A7BEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		1C8A687A8AC1620ECDFCDED2FAC17C9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2C54925CC34364EE007913B871D939A /* SideMenu.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/SideMenu-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				PRODUCT_MODULE_NAME = SideMenu;
+				PRODUCT_NAME = SideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		45B6D36435972CBBC59A481A20E44C4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4060F959AAE6913906341AEF7CAF228 /* SideMenu.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/SideMenu-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				PRODUCT_MODULE_NAME = SideMenu;
+				PRODUCT_NAME = SideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		56E987F1EF7C04C2FF4184AB59AF28FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA1F3AB3EBE90398FF2DC95BAF322846 /* Pods-SonycApp-SonycAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		58B62F74CEEF30DE4B633F456F350179 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 478C880E5FB3675154E2EE486E9A5516 /* SwiftCSV.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftCSV/SwiftCSV-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftCSV/SwiftCSV-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftCSV/SwiftCSV.modulemap";
+				PRODUCT_MODULE_NAME = SwiftCSV;
+				PRODUCT_NAME = SwiftCSV;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		75F623D8B268C33BD155C9631CE28690 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66B6285E1A482495B01C3AE421A45E4D /* Pods-SonycAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycAppTests/Pods-SonycAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		871B6E28ABA34DAE69824AB9D22D3B7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		8C99E11C628E1D571F2070B959E5AB79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FDEC8923CBCF0B08DEE2BD812AA6119 /* FloatingPanel.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FloatingPanel/FloatingPanel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FloatingPanel/FloatingPanel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FloatingPanel/FloatingPanel.modulemap";
+				PRODUCT_MODULE_NAME = FloatingPanel;
+				PRODUCT_NAME = FloatingPanel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9DB8280FE60576053883B268C221499A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 080B65272424884342E304A644E33730 /* MapKitGoogleStyler.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MapKitGoogleStyler/MapKitGoogleStyler-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MapKitGoogleStyler/MapKitGoogleStyler-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MapKitGoogleStyler/MapKitGoogleStyler.modulemap";
+				PRODUCT_MODULE_NAME = MapKitGoogleStyler;
+				PRODUCT_NAME = MapKitGoogleStyler;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A0A65300A74C69437AE5F136ED3445A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CB0E5E0E2C9A29E6390FDDD611D56F0 /* MapKitGoogleStyler.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MapKitGoogleStyler/MapKitGoogleStyler-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MapKitGoogleStyler/MapKitGoogleStyler-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MapKitGoogleStyler/MapKitGoogleStyler.modulemap";
+				PRODUCT_MODULE_NAME = MapKitGoogleStyler;
+				PRODUCT_NAME = MapKitGoogleStyler;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AFB59A63610B7FCF9A2D5159CDFEE739 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7C9F2E168B4F55A5CC965E5BB6EDC66 /* Pods-SonycApp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycApp/Pods-SonycApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycApp/Pods-SonycApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CE27FA8F8255B4FAB32BA5D9DF7E548D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 043D6D3EF9BDFA5A43CFFC1AB1575F12 /* Pods-SonycApp-SonycAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D23F00CB5F32436A3129135BC8C05C14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E650D71B5B582DAEE51E8B74D4E9FCD /* Pods-SonycApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SonycApp/Pods-SonycApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SonycApp/Pods-SonycApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DBA43334BF2EE90EA4F8C961236FA6E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE318DD638510D866BF3DFB1ACDAB635 /* SwiftCSV.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftCSV/SwiftCSV-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftCSV/SwiftCSV-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftCSV/SwiftCSV.modulemap";
+				PRODUCT_MODULE_NAME = SwiftCSV;
+				PRODUCT_NAME = SwiftCSV;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EC041AABABF9CC69FAC10B0017CC53DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 032E6D24620BE6A8FD7C49C92E713A64 /* FloatingPanel.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FloatingPanel/FloatingPanel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FloatingPanel/FloatingPanel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FloatingPanel/FloatingPanel.modulemap";
+				PRODUCT_MODULE_NAME = FloatingPanel;
+				PRODUCT_NAME = FloatingPanel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13967C5C8F4B10B3EE4D6C208A0A7BEB /* Debug */,
+				871B6E28ABA34DAE69824AB9D22D3B7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B9565520B9A34964093921676433E7C /* Build configuration list for PBXNativeTarget "Pods-SonycAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75F623D8B268C33BD155C9631CE28690 /* Debug */,
+				0DCCF7160BD2BDF5362EEE6E0C818A7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6044DE3C7C1CBDBFC5A9C046CA3BD8D7 /* Build configuration list for PBXNativeTarget "FloatingPanel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC041AABABF9CC69FAC10B0017CC53DF /* Debug */,
+				8C99E11C628E1D571F2070B959E5AB79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92707F899E1CD6FD63DCC66A3882B68C /* Build configuration list for PBXNativeTarget "SideMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B6D36435972CBBC59A481A20E44C4A /* Debug */,
+				1C8A687A8AC1620ECDFCDED2FAC17C9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEA17BDBEEB0FA32A26387C151B8208A /* Build configuration list for PBXNativeTarget "Pods-SonycApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFB59A63610B7FCF9A2D5159CDFEE739 /* Debug */,
+				D23F00CB5F32436A3129135BC8C05C14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6413ABC62522143D9BE05DCFC33E759 /* Build configuration list for PBXNativeTarget "MapKitGoogleStyler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0A65300A74C69437AE5F136ED3445A1 /* Debug */,
+				9DB8280FE60576053883B268C221499A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4F9CC214E17817EC32202B7CC7FA702 /* Build configuration list for PBXNativeTarget "Pods-SonycApp-SonycAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56E987F1EF7C04C2FF4184AB59AF28FA /* Debug */,
+				CE27FA8F8255B4FAB32BA5D9DF7E548D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDCBB878FE817CF7378757F7C30D1616 /* Build configuration list for PBXNativeTarget "SwiftCSV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58B62F74CEEF30DE4B633F456F350179 /* Debug */,
+				DBA43334BF2EE90EA4F8C961236FA6E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

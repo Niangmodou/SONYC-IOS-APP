@@ -1,0 +1,6 @@
+framework module Pods_SonycApp {
+  umbrella header "Pods-SonycApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

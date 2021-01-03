@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-SonycApp-SonycAppUITests/Pods-SonycApp-SonycAppUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework
+${BUILT_PRODUCTS_DIR}/MapKitGoogleStyler/MapKitGoogleStyler.framework
+${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
+${BUILT_PRODUCTS_DIR}/SwiftCSV/SwiftCSV.framework
