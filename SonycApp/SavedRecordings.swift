@@ -147,14 +147,14 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
                     audioCards.append(data)
                 }
             }
-            if(audioCards.count == 0){
-                noRecordingsLabel.frame = CGRect(x: screenWidth/2 - (screenWidth/3)/1.6, y: screenHeight/2 - (screenHeight/10), width: screenWidth/2, height: screenHeight/20)
-                noRecordingsLabel.textColor = UIColor.gray
-                noRecordingsLabel.font = UIFont.boldSystemFont(ofSize: 30)
-                noRecordingsLabel.text = "No Recordings"
-                self.view.addSubview(noRecordingsLabel)
-                threeSecondsUp();
-            }
+//            if(audioCards.count == 0){
+//                noRecordingsLabel.frame = CGRect(x: screenWidth/2 - (screenWidth/3)/1.6, y: screenHeight/2 - (screenHeight/10), width: screenWidth/2, height: screenHeight/20)
+//                noRecordingsLabel.textColor = UIColor.gray
+//                noRecordingsLabel.font = UIFont.boldSystemFont(ofSize: 30)
+//                noRecordingsLabel.text = "No Recordings"
+//                self.view.addSubview(noRecordingsLabel)
+//                threeSecondsUp();
+//            }
         }
         catch{
             print("failed")
@@ -196,14 +196,14 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
                 //remove the audioFile from the array
                 audioCards.remove(at: indexPath.row)
                 self.myTableView.reloadData()
-                if(audioCards.count == 0){
-                    noRecordingsLabel.frame = CGRect(x: screenWidth/2 - (screenWidth/3)/1.6, y: screenHeight/2 - (screenHeight/10), width: screenWidth/2, height: screenHeight/20)
-                    noRecordingsLabel.font = UIFont.boldSystemFont(ofSize: 30)
-                    noRecordingsLabel.textColor = UIColor.gray
-                    noRecordingsLabel.text = "No Recordings"
-                    self.view.addSubview(noRecordingsLabel)
-                    threeSecondsUp();
-                }
+//                if(audioCards.count == 0){
+//                    noRecordingsLabel.frame = CGRect(x: screenWidth/2 - (screenWidth/3)/1.6, y: screenHeight/2 - (screenHeight/10), width: screenWidth/2, height: screenHeight/20)
+//                    noRecordingsLabel.font = UIFont.boldSystemFont(ofSize: 30)
+//                    noRecordingsLabel.textColor = UIColor.gray
+//                    noRecordingsLabel.text = "No Recordings"
+//                    self.view.addSubview(noRecordingsLabel)
+//                    threeSecondsUp();
+//                }
                 
             }
             catch{
@@ -213,11 +213,11 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         
     }
-    func threeSecondsUp(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil);
-            let vc = storyboard.instantiateViewController(withIdentifier: "home") ; // home the storyboard ID
-            self.present(vc, animated: true, completion: nil);
-        }
-    }
+//    func threeSecondsUp(){
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil);
+//            let vc = storyboard.instantiateViewController(withIdentifier: "home") ; // home the storyboard ID
+//            self.present(vc, animated: true, completion: nil);
+//        }
+//    }
 }

@@ -14,7 +14,7 @@ import CoreData
 import MapKitGoogleStyler
 import DropDown
 
-class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate,UISearchBarDelegate {
+class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate,UISearchBarDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -52,6 +52,9 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         streetButton.isHidden = true
         reportButton.isHidden = true
         historyButton.isHidden = true
+        
+        
+        self.setMapview()
         
         configureTileOverlay()
         
@@ -113,6 +116,39 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
                 print("Selected item: \(item) at index: \(index)") //Selected item: code at index: 0
             }
         
+    }
+//
+//    func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+//        if gestureReconizer.state != UIGestureRecognizer.State.ended {
+//            let touchLocation = gestureReconizer.location(in: mapView)
+//            let locationCoordinate = mapView.convert(touchLocation,toCoordinateFrom: mapView)
+//            print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
+//            return
+//        }
+//        if gestureReconizer.state != UIGestureRecognizer.State.began {
+//            return
+//        }
+//    }
+    
+    func setMapview(){
+      let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(MapView.handleLongPress(gestureReconizer:)))
+      lpgr.minimumPressDuration = 0.5
+      lpgr.delaysTouchesBegan = true
+      lpgr.delegate = self
+      self.mapView.addGestureRecognizer(lpgr)
+    }
+    
+    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizer.State.ended {
+        let touchLocation = gestureReconizer.location(in: mapView)
+        let locationCoordinate = mapView.convert(touchLocation,toCoordinateFrom: mapView)
+        print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
+            plotAnnotation(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
+        return
+      }
+        if gestureReconizer.state != UIGestureRecognizer.State.began {
+        return
+      }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -198,12 +234,12 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
                 let longitude = response?.boundingRegion.center.longitude
                 
                 //Creating Annotation and adding annotation to map
-                let annotation = MKPointAnnotation()
-                annotation.title = "Map Search"
-                
-                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
-                
-                self.mapView.addAnnotation(annotation)
+//                let annotation = MKPointAnnotation()
+//                annotation.title = "Map Search"
+//
+//                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+//
+//                self.mapView.addAnnotation(annotation)
                 
                 //Centering map on coordinate
                 let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!)
@@ -214,6 +250,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
             
         }
     }
+    
     //if the buttons/clips are pressed
     @IBAction func buttonPressed(button: UIButton){
         
@@ -261,23 +298,32 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         for each in data {
             let latitude = each.value(forKey: "latitude")
             let longitude = each.value(forKey: "longitude")
-            let title = each.value(forKey: "sonycType")
+//            let title = each.value(forKey: "sonycType")
             
             //Creating and plotting the DOB annotation on the map
-            plotAnnotation(title: title as! String, latitude: latitude as! CLLocationDegrees, longitude: longitude as! CLLocationDegrees)
+            plotAnnotation(latitude: latitude as! CLLocationDegrees, longitude: longitude as! CLLocationDegrees)
         }
     }
     
     //Function to plot annotations on the map
-    func plotAnnotation(title: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees){
+    func plotAnnotation(latitude: CLLocationDegrees, longitude: CLLocationDegrees){
         
         let loc = MKPointAnnotation()
         
         loc.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        loc.title = title
+//        loc.title = title
         
         mapView.addAnnotation(loc)
     }
+//    func plotAnnotation(title: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees){
+//
+//        let loc = MKPointAnnotation()
+//
+//        loc.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//        loc.title = title
+//
+//        mapView.addAnnotation(loc)
+//    }
     
     //Function to center map on New York City
     func centerMapOnLocation(_ location: CLLocationCoordinate2D, mapView: MKMapView) {
@@ -305,28 +351,28 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     }
     
     //Fucntion to add image to an annotation
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        //print("hi")
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
-        
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
-        }
-        
-        if annotation.title == "311 pin" {
-            annotationView?.image = UIImage(named: "Pin_311_non-color.png")
-        }else if annotation.title == "DOB" || annotation.title == "AHV" {
-            print("hi")
-            annotationView?.image = UIImage(named: "Pin_dob_non-color.png")
-        }else if annotation.title == "Current"{
-            print("hi1")
-            annotationView?.image = UIImage(named: "Location_Original.png")
-        }else if annotation.title == "Map Search"{
-            annotationView?.image = UIImage(named: "Icon_Pink location.png")
-        }
-        
-        return annotationView
-    }
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        //print("hi")
+//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
+//
+//        if annotationView == nil {
+//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
+//        }
+//
+//        if annotation.title == "311 pin" {
+//            annotationView?.image = UIImage(named: "Pin_311_non-color.png")
+//        }else if annotation.title == "DOB" || annotation.title == "AHV" {
+//            print("hi")
+//            annotationView?.image = UIImage(named: "Pin_dob_non-color.png")
+//        }else if annotation.title == "Current"{
+//            print("hi1")
+//            annotationView?.image = UIImage(named: "Location_Original.png")
+//        }else if annotation.title == "Map Search"{
+//            annotationView?.image = UIImage(named: "Icon_Pink location.png")
+//        }
+//
+//        return annotationView
+//    }
     
     private func getData(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
@@ -341,7 +387,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
             allData = try context.fetch(fetch)
             
             //Plot Annotations on the Map
-            plotAnnotations(data: allData)
+//            plotAnnotations(data: allData)
             
             //Sort Data array
             /*
@@ -364,11 +410,12 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         var image: UIImage!
         if reportType == "DOB" || reportType == "AHV" {
             image = UIImage(named: "dob.png")
-        }else if reportType == "311" {
-            image = UIImage(named: "Logo_311_non color.png")
-        }else if reportType == "DOT" {
-            image = UIImage(named: "Logo_Dot_not color.png")
         }
+//        else if reportType == "311" {
+//            image = UIImage(named: "Logo_311_non color.png")
+//        }else if reportType == "DOT" {
+//            image = UIImage(named: "Logo_Dot_not color.png")
+//        }
         
         return image
     }
