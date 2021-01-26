@@ -130,6 +130,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
 //        }
 //    }
     
+//    https://stackoverflow.com/questions/14580269/get-tapped-coordinates-with-iphone-mapkit (holding down mouse to drop pin in certain location) - setMapview, handleLongPress
     func setMapview(){
       let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(MapView.handleLongPress(gestureReconizer:)))
       lpgr.minimumPressDuration = 0.5
