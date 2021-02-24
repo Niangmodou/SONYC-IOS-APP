@@ -24,6 +24,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     var noiseType: String!
     var date: String!
     var time: String!
+    var place: String!
     
     let minWordLabel = UILabel.init()
     let avgWordLabel = UILabel.init()
@@ -65,10 +66,12 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         avg = (newTask.value(forKey: "averageDec") as? String)
         max = (newTask.value(forKey: "max") as? String)
         noiseType = (newTask.value(forKey: "noiseType") as? String)
+        
+        print((newTask.value(forKey: "reportAddress") as? String) ?? "gone")
         location = (newTask.value(forKey: "reportAddress") as? String)
         date = newTask.value(forKey: "date") as? String
         time = newTask.value(forKey: "time") as? String
-        
+        place = newTask.value(forKey: "reportCity") as? String
         
         recordingDetailsLabel.frame = CGRect(x: screenWidth/2 - (screenWidth/4), y: screenHeight/12, width: screenWidth/2, height: 40)
         let recordingDetailsLabelLocationY = labelYPosition(label: recordingDetailsLabel)
@@ -83,6 +86,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         locationLabel.font = UIFont.systemFont(ofSize: 15)
         locationLabel.textColor = UIColor.black
         locationLabel.text = location
+        locationLabel.sizeToFit()
         self.view.addSubview(locationLabel)
         
         dateLabel.frame = CGRect(x: locationLabelLocationX + screenWidth/5, y: recordingDetailsLabelLocationY + screenHeight/48, width: screenWidth/2.5, height: screenHeight/30)
@@ -94,7 +98,8 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         newYorkLabel.frame = CGRect(x: locationLabel.frame.origin.x, y: locationLabelLocationY + screenHeight/60, width: screenWidth/2.5, height: screenHeight/30)
         newYorkLabel.font = UIFont.systemFont(ofSize: 15)
         newYorkLabel.textColor = UIColor.black
-        newYorkLabel.text = "New York, NY, 11225"
+        newYorkLabel.text = place
+        newYorkLabel.sizeToFit()
         self.view.addSubview(newYorkLabel)
         
         timeLabel.frame = CGRect(x:  dateLabel.frame.origin.x, y:  locationLabelLocationY + screenHeight/60, width: screenWidth/2.5, height: screenHeight/30)
@@ -247,6 +252,8 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         plotAnnotation(title: "report",
                        latitude: CLLocationDegrees(latitude),
                        longitude: CLLocationDegrees(longitude))
+        
+        print(newTask.value(forKey: "reportAddress") as Any, "playbackviewcontroller")
         
     }
     

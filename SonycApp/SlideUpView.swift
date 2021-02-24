@@ -339,7 +339,7 @@ class SlideUpView: UIViewController {
         identifyNoiseSourceButton.addTarget(self, action: #selector(locateTheNoise(_:)), for: .touchUpInside)
         self.view.addSubview(identifyNoiseSourceButton)
         
-        
+        print(newTask.value(forKey: "reportAddress"), "slideupview")
         
         
     }

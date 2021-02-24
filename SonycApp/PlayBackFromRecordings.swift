@@ -173,7 +173,7 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
         self.view.addSubview(youAreImage)
         
         prepareToPlayFileBack()
-        
+        print(newTask.value(forKey: "reportAddress") as Any, "playbackfromreocrding")
     }
     
     //    fast forward the audioPlayer

@@ -129,6 +129,8 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
         
         recordingSession = AVAudioSession.sharedInstance()
         
+        print(newTask.value(forKey: "reportAddress"), "addnewcontroller")
+        
         do{
             try recordingSession.setPreferredSampleRate(48000)
         }

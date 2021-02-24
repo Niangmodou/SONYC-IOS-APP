@@ -73,6 +73,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
                 print("Accepted")
             }
         }
+        
+        print(newTask.value(forKey: "reportAddress"), "viewcontroller")
     }
     
     //button for the hamburger that makes the slide out happen

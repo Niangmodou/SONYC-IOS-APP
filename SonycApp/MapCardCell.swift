@@ -15,93 +15,66 @@ class MapCardCell: UITableViewCell {
     @IBOutlet weak var cardView: UIView!
     
     @IBOutlet weak var logoImage: UIImageView!
-    @IBOutlet weak var distanceLabel: UILabel!
+//    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var idLabel: UILabel!
+//    @IBOutlet weak var locationLabel: UILabel!
+//    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var apiLabel: UILabel!
-    @IBOutlet weak var permitLabel: UILabel!
+//    @IBOutlet weak var permitLabel: UILabel!
     
     @IBOutlet weak var confirmButton: UIButton!
     //Varaibles to store report incident for the card
-    var api: String!
+//    var api: String!
     var userLocation: String!
     var reportLocation: String!
-    var reportLatitude: String!
-    var reportLongitude: String!
+    var cityLocation: String!
+//    var reportLatitude: String!
+//    var reportLongitude: String!
+    
     
     @IBAction func confirm(_ sender: Any) {
         
         print("Confirm Clicked")
         
         //Updating CoreData associated with the current Report
-        newTask.setValue(api, forKey: "api")
-        newTask.setValue(reportLocation, forKey: "reportAddress")
-        newTask.setValue(reportLatitude, forKey: "reportLatitude")
-        newTask.setValue(reportLongitude, forKey: "reportLongitude")
+//        newTask.setValue(api, forKey: "api")
+        print(newTask.value(forKey: "reportAddress"))
+        print(newTask.value(forKey: "reportLatitude"))
+        print(newTask.value(forKey: "reportLongitude"))
+//        newTask.setValue(reportLocation, forKey: "reportAddress")
+//        newTask.setValue(reportLatitude, forKey: "reportLatitude")
+//        newTask.setValue(reportLongitude, forKey: "reportLongitude")
         
         savingData()
     }
     
-    /*
-     @IBAction func confirm(_ sender: Any) {
-     print("Confirm Clicked")
-     print(api)
-     print(reportLocation)
-     print(reportLatitude)
-     print(reportLongitude)
-     //Updating CoreData associated with the current Report
-     newTask.setValue(api, forKey: "api")
-     newTask.setValue(reportLocation, forKey: "reportAddress")
-     newTask.setValue(reportLatitude, forKey: "reportLatitude")
-     newTask.setValue(reportLongitude, forKey: "reportLongitude")
-     
-     savingData()
-     
-     }\*/
     
-    
-    func configure(id: String,
-                   apiType: String,
-                   logo: UIImage,
-                   distance: String,
+    func configure(
                    address: String,
-                   location: String,
-                   start: String = "0",
-                   end: String = "0",
-                   incidentDate: String = "0",
                    currLocation: String,
-                   latitude: Float,
-                   longitude: Float) {
+        city: String
+                   ) {
         
         //Setting labels to update each report
-        api = apiType
+//        api = apiType
         userLocation = currLocation
-        reportLocation = address
-        reportLatitude = String(latitude)
-        reportLongitude = String(longitude)
+        reportLocation = String(address)
+        cityLocation = String(city)
+//        reportLatitude = String(latitude)
+//        reportLongitude = String(longitude)
         
         //Setting labels to update each report
-        idLabel.text = id
-        logoImage.image = logo
-        distanceLabel.text = "\(distance) mi"
-        addressLabel.text = address
-        locationLabel.text = location
-        apiLabel.text = api
-        
-        if incidentDate != "0"{
-            permitLabel.text = "Incident Date: \(incidentDate)"
-        }else{
-            permitLabel.text = "Permit: \(start) to \(end)"
-        }
-        
+        addressLabel.text = String(address)
+        apiLabel.text = String(city)
+
+        logoImage.image = wordsToImage[newTask.value(forKey: "noiseType") as? String ?? "other"]
         //Fitting text to label
-        idLabel.sizeToFit()
+//        idLabel.sizeToFit()
         apiLabel.sizeToFit()
-        distanceLabel.sizeToFit()
+//        distanceLabel.sizeToFit()
         addressLabel.sizeToFit()
-        locationLabel.sizeToFit()
-        permitLabel.sizeToFit()
+//        locationLabel.sizeToFit()
+//        permitLabel.sizeToFit()
         
         //Styling the card
         cardView.layer.shadowColor = UIColor.gray.cgColor
@@ -112,4 +85,5 @@ class MapCardCell: UITableViewCell {
         
         confirmButton.layer.cornerRadius = 15.0
     }
+    
 }

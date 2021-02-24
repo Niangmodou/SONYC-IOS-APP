@@ -23,6 +23,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     //9th Avenue and 34th Street latitude and longitude
     let startLatitude = 40.753365
     let startLongitude = -73.996367
+    let address = CLGeocoder.init()
     
     //Varaible to store retrieved data from CoreData
     var allData: [NSManagedObject] = []
@@ -52,6 +53,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         streetButton.isHidden = true
         reportButton.isHidden = true
         historyButton.isHidden = true
+        tableView.isHidden = true
         
         
         self.setMapview()
@@ -85,6 +87,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         addingBorderColorWhite(button: reportButton)
         addingBorderColorWhite(button: streetButton)
         addingBorderColorWhite(button: buildingButton)
+//        print(newTask.value(forKey: "reportAddress"), "mapview")
         
         
         self.tableView.delegate = self
@@ -117,18 +120,6 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
             }
         
     }
-//
-//    func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
-//        if gestureReconizer.state != UIGestureRecognizer.State.ended {
-//            let touchLocation = gestureReconizer.location(in: mapView)
-//            let locationCoordinate = mapView.convert(touchLocation,toCoordinateFrom: mapView)
-//            print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
-//            return
-//        }
-//        if gestureReconizer.state != UIGestureRecognizer.State.began {
-//            return
-//        }
-//    }
     
 //    https://stackoverflow.com/questions/14580269/get-tapped-coordinates-with-iphone-mapkit (holding down mouse to drop pin in certain location) - setMapview, handleLongPress
     func setMapview(){
@@ -144,7 +135,65 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         let touchLocation = gestureReconizer.location(in: mapView)
         let locationCoordinate = mapView.convert(touchLocation,toCoordinateFrom: mapView)
         print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
+            
+            
+//            let annotations = self.mapView.annotations
+//            self.mapView.removeAnnotations(annotations)
+            
+            //removing annotations when a new one is added
+            self.mapView.removeAnnotations(mapView.annotations)
+            
             plotAnnotation(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
+            
+            //replots the user location
+            let currentLoc = MKPointAnnotation()
+
+            currentLoc.coordinate = CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
+            currentLoc.title = "Current"
+
+            mapView.addAnnotation(currentLoc)
+            
+            newTask.setValue(String(locationCoordinate.latitude), forKey: "reportLatitude")
+            newTask.setValue(String(locationCoordinate.longitude), forKey: "reportLongitude")
+            address.reverseGeocodeLocation(CLLocation.init(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)){ (places, error) in
+                if error == nil{
+                    
+                    let pm = places! as [CLPlacemark]
+                    if pm.count > 0 {
+                        
+                        let pm = places![0]
+                        
+                        print(pm.name ?? "none", " ")
+                        print(pm.subLocality ?? "none", " ")
+                        print(pm.locality ?? "none", " ")
+                        print(pm.postalCode ?? "none", " ")
+                        print(pm.country ?? "none", " ")
+                        
+//                        let address = String(pm.name ?? "Unknown number")  + " " + String(pm.subLocality ?? "Unknown number") + " " + " " + String(pm.locality ?? "Unknown number") + ", " + String(pm.postalCode ?? "Unknown number") + ", " + String(pm.country ?? "United States")
+                        let address = String(pm.name ?? "Unknown number")  + " " + String(pm.subLocality ?? "Unknown number")
+                        
+                        let city = String(pm.locality ?? "Unknown number") + ", " + String(pm.postalCode ?? "Unknown number") + ", " + String(pm.country ?? "United States")
+                        
+                        newTask.setValue(String(address), forKey: "reportAddress")
+                        newTask.setValue(String(city), forKey: "reportCity")
+                        
+      
+                        
+                        
+                        self.tableView.isHidden = false
+                        
+                        self.tableView.reloadData()
+                        
+                    }
+                    
+//                    if let place = places{
+//                        print(place)
+//
+//
+//                    }
+                }
+            }
+
         return
       }
         if gestureReconizer.state != UIGestureRecognizer.State.began {
@@ -182,40 +231,12 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         dropButton.hide()
     }
     
-    /*
-     override func viewDidDisappear(_ animated: Bool) {
-     super.viewDidDisappear(animated)
-     //finding the user's location
-     self.manager.requestWhenInUseAuthorization()
-     self.manager.desiredAccuracy = kCLLocationAccuracyBest
-     self.manager.delegate = self
-     self.manager.startUpdatingLocation()
-     if CLLocationManager.locationServicesEnabled() {
-     self.manager.delegate = self
-     self.manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-     self.manager.startUpdatingLocation()
-     }
-     }
-     */
     func setUpSearchBar() {
         searchBar.delegate = self
     }
     
     //Function to process the search query when the search button has been clicked
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //UIApplication.shared.beginIgnoringInteractionEvents()
-        /*
-         let activityIndicator = UIActivityIndicatorView()
-         activityIndicator.style = UIActivityIndicatorView.Style.gray
-         activityIndicator.center = self.view.center
-         activityIndicator.hidesWhenStopped = true
-         
-         activityIndicator.startAnimating()
-         
-         self.view.addSubview(activityIndicator)
-         */
-        //searchBar.resignFirstResponder()
-        //dismiss(animated: true, completion: nil)
         
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = searchBar.text
@@ -313,7 +334,6 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         
         loc.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 //        loc.title = title
-        
         mapView.addAnnotation(loc)
     }
 //    func plotAnnotation(title: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees){
@@ -351,29 +371,6 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         }
     }
     
-    //Fucntion to add image to an annotation
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        //print("hi")
-//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
-//
-//        if annotationView == nil {
-//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
-//        }
-//
-//        if annotation.title == "311 pin" {
-//            annotationView?.image = UIImage(named: "Pin_311_non-color.png")
-//        }else if annotation.title == "DOB" || annotation.title == "AHV" {
-//            print("hi")
-//            annotationView?.image = UIImage(named: "Pin_dob_non-color.png")
-//        }else if annotation.title == "Current"{
-//            print("hi1")
-//            annotationView?.image = UIImage(named: "Location_Original.png")
-//        }else if annotation.title == "Map Search"{
-//            annotationView?.image = UIImage(named: "Icon_Pink location.png")
-//        }
-//
-//        return annotationView
-//    }
     
     private func getData(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
@@ -387,19 +384,6 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
             //Loading data from CoreData
             allData = try context.fetch(fetch)
             
-            //Plot Annotations on the Map
-//            plotAnnotations(data: allData)
-            
-            //Sort Data array
-            /*
-             allData.sort(by: {
-             guard let first: Float = ($0.value(forKey: "distance") as! Float) else {}
-             guard let second: Float = ($1.value(forKey: "distance") as! Float) else {}
-             
-             return first < second
-             
-             })
-             */
             
         }catch let error{
             print("Error: \(error)")
@@ -506,109 +490,59 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         }
     }
     
+    
 }
 
 extension MapView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allData.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mapCardCell", for: indexPath) as! MapCardCell
         
-        //Get the contents of the current row
-        let currentRow = allData[indexPath.row]
         
-        //Parsing information from currentRow
-        let api = currentRow.value(forKey: "sonycType") as! String
-        let type = getType(api: api)
+                var address: String!
+                var city: String!
+//                var startDate: String!
+//                var endDate: String!
+//                var incidentDate: String!
         
-        //Location Data
-        let id = currentRow.value(forKey: "unique_id") as! String
+//                if api == "DOB" {
+//                    let house = currentRow.value(forKey: "house_num") as! String
+//                    let street = currentRow.value(forKey: "street") as! String
+        print(newTask.value(forKey: "reportAddress"))
+                
         
-        var address: String!
-        var startDate: String!
-        var endDate: String!
-        var incidentDate: String!
+//                    address = "\(house) \(street)"
+//        address = "\(String(describing: newTask.value(forKey: "reportAddress")))"
+        address = newTask.value(forKey: "reportAddress") as? String ?? "none"
+
+//            ?? "none"
         
-        if api == "DOB" {
-            let house = currentRow.value(forKey: "house_num") as! String
-            let street = currentRow.value(forKey: "street") as! String
-            
-            address = "\(house) \(street)"
-            
-            startDate = (currentRow.value(forKey: "startDate") as! String)
-            endDate = (currentRow.value(forKey: "endDate") as! String)
-        }else if api == "AHV"  {
-            address = (currentRow.value(forKey: "street") as! String)
-            startDate = (currentRow.value(forKey: "startDate") as! String)
-            endDate = (currentRow.value(forKey: "endDate") as! String)
-        }else if api == "311" {
-            address = (currentRow.value(forKey: "street") as! String)
-            
-            incidentDate = (currentRow.value(forKey: "created_date") as! String)
-        }
+        city = newTask.value(forKey: "reportCity") as? String ?? "none"
         
-        let borough = currentRow.value(forKey: "borough") as! String
-        let zipcode = currentRow.value(forKey: "zipcode") as! String
-        
-        let latitude = currentRow.value(forKey: "latitude") as! Float
-        let longitude = currentRow.value(forKey: "longitude") as! Float
-        
-        //Getting the logo image based on which type of recording
-        let image = getImage(reportType: api)
-        
-        let distance = currentRow.value(forKey: "distance") as! String
-        
-        let location = "\(borough),NY \(zipcode)"
+
         
         let currLocation = getCurrentLocation()
         
-        if api == "311" {
+//        if api == "311" {
             print("BENCHMARK 3 ---------------------")
-            cell.configure(id: id,
-                           apiType: type,
-                           logo: image,
-                           distance: distance,
+
+            cell.configure(
                            address: address,
-                           location: location,
-                           incidentDate: incidentDate,
                            currLocation: currLocation,
-                           latitude: latitude,
-                           longitude: longitude)
-        }else {
-            cell.configure(id: id,
-                           apiType: type,
-                           logo: image,
-                           distance: distance,
-                           address: address,
-                           location: location,
-                           start: startDate,
-                           end: endDate,
-                           currLocation: currLocation,
-                           latitude: latitude,
-                           longitude: longitude)
-        }
+                city: city
+                        )
+        
+     
         
         return cell
     }
 }
 
 extension MapView: UITableViewDelegate{
-    //Displaying a tapped location on the map
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //Get the contents of the current row
-        let currentRow = allData[indexPath.row]
-        
-        //Extracting lat and lon
-        let latitude = currentRow.value(forKey: "latitude") as! CLLocationDegrees
-        let longitude = currentRow.value(forKey: "longitude") as! CLLocationDegrees
-        print(latitude, longitude)
-        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        
-        //Focusing map on that location
-        centerMapOnLocation(location, mapView: mapView)
-        
-    }
+
     
 }
+

@@ -30,6 +30,7 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
     let selectButton = UIButton.init()
     let noRecordingsLabel = UILabel.init()
     
+    @IBOutlet weak var backToHome: UIBarButtonItem!
     @IBOutlet var myTableView: UITableView!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "saved", for: indexPath) as! TableCell
@@ -180,6 +181,13 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
             let vc = storyboard.instantiateViewController(withIdentifier: "recordingDetailsSaved") ; // recordings the storyboard ID
             self.present(vc, animated: true, completion: nil);
         }
+    }
+    
+    
+    @IBAction func backHome(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc = storyboard.instantiateViewController(withIdentifier: "home") ; // recordings the storyboard ID
+        self.present(vc, animated: true, completion: nil);
     }
     
     
