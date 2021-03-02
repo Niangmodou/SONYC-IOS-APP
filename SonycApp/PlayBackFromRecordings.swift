@@ -133,6 +133,7 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
         locationLabel.frame = CGRect(x: locationWordLabel.frame.origin.x, y:  locationWordLabelLocationY + screenHeight/100 , width: screenWidth/2, height: 40)
         locationLabel.text = location
         locationLabel.font = UIFont.systemFont(ofSize: 15)
+        locationLabel.sizeToFit()
         let locationLabelLocationY = labelYPosition(label: locationLabel)
         
         locationTypeImage.frame = CGRect(x: locationTypeWordLabel.frame.origin.x, y: locationWordLabelLocationY + screenHeight/100, width: screenWidth/10, height: 30)

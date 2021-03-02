@@ -86,6 +86,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
     @objc func record(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "secondScreen") ; // MySecondSecreen is the storyboard ID
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil);
         
     }

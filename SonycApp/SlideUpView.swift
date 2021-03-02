@@ -427,6 +427,7 @@ class SlideUpView: UIViewController {
     @objc func locateTheNoise(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "map") ; // details the storyboard ID
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil);
         savingData()
         let _ = navigationController?.popViewController(animated: true)

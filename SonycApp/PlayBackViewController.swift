@@ -282,6 +282,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         }
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "recordings") ; // recordings is the storyboard ID
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil);
         
     }
@@ -355,6 +356,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "recordingsSaved") ; // recordingsSaved is the storyboard ID
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil);
     }
     
