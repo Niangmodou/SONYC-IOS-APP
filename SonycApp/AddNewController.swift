@@ -236,8 +236,8 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
             newTask.setValue(dateNow, forKey: "date")
             newTask.setValue(timeNow, forKey: "time")
             //saves the data to the persistent container to be accessed later
-            savingData()
-            let _ = navigationController?.popViewController(animated: true)
+//            savingData()
+//            let _ = navigationController?.popViewController(animated: true)
             //end of core data saving
         }
         catch{

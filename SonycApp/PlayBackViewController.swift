@@ -284,6 +284,8 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
         let vc = storyboard.instantiateViewController(withIdentifier: "recordings") ; // recordings is the storyboard ID
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil);
+        savingData()
+        let _ = navigationController?.popViewController(animated: true)
         
     }
     //have to connect the fastFoward and the rewind to the playerNode

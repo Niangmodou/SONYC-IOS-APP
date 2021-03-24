@@ -34,7 +34,7 @@ class TableCell: UITableViewCell{
         picture.frame = CGRect(x: 30, y: (contentView.frame.size.height - picSize.height)/3, width: picSize.width, height: contentView.frame.height/2)
         let pictureX = picture.frame.origin.x + picture.frame.width
         location.frame = CGRect(x: pictureX + 30, y: (contentView.frame.size.height - picSize.height)/8, width: contentView.frame.width - 125, height: contentView.frame.height/2.5)
-        location.sizeToFit()
+//        location.sizeToFit()
         let locationY = location.frame.origin.y + location.frame.height
         let locationX = location.frame.origin.x + location.frame.width
         average.frame = CGRect(x: locationX - 45, y: location.frame.origin.y, width: contentView.frame.width/10, height: contentView.frame.height/2.5)
@@ -44,6 +44,6 @@ class TableCell: UITableViewCell{
         time.frame = CGRect(x: dateX, y: locationY, width: screenWidth/5.5 , height: 40)
         averageDecibels.frame = CGRect(x: average.frame.origin.x - contentView.frame.width/40, y: date.frame.origin.y, width: screenWidth/5, height: contentView.frame.height/2.5)
 //        averageDecibels.sizeToFit()
-        location.sizeToFit()
+//        location.sizeToFit()
     }
 }

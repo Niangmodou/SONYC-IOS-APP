@@ -41,8 +41,8 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         cell.time.text = (audioCards[indexPath.row].value(forKey: "time") as? String)
         cell.picture.image = wordsToImage[audioCards[indexPath.row].value(forKey: "noiseType") as? String ?? "other"]
         cell.location.text = (audioCards[indexPath.row].value(forKey: "reportAddress") as? String)
-        savingData()
-        let _ = navigationController?.popViewController(animated: true)
+//        savingData()
+//        let _ = navigationController?.popViewController(animated: true)
         
         return cell
     }
@@ -56,10 +56,6 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         myTableView.tableFooterView = UIView()
         //allows the tableview to be edited for the multiple selection
         myTableView.allowsMultipleSelectionDuringEditing = true
-        //        tableView.backgroundColor = UIColor.white
-        //        tableView.dataSource = self
-        //        tableView.delegate = self
-        //        view.addSubview(tableView)
         
         cancelButton.frame = CGRect(x: screenWidth/60, y: 0, width: screenWidth/3, height: screenHeight/30)
         cancelButton.titleLabel?.textColor = UIColor.black
@@ -88,11 +84,14 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
     @objc func cancelAction(_ sender: Any) {
         //makes sure the the table view cannot be editing anymore
         self.myTableView.setEditing(false, animated: true)
-        cancelButton.isHidden = true
         //deselects and un-highlights the select button
         selectButton.isSelected = false
         selectButton.isHighlighted = false
         self.navigationItem.leftBarButtonItem = nil
+        cancelButton.isHidden = true
+//        self.selectButton.titleLabel?.text = "Select"
+        barTool2 = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(selectAndDelete(button:)))
+        self.navigationItem.rightBarButtonItem = barTool2
         
     }
     //    //action for selecting mutiple table cells to do a mutliple deleting of data
@@ -100,9 +99,7 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         //allows the table view to be edited
         self.myTableView.setEditing(true, animated: true)
         self.navigationItem.leftBarButtonItem = barTool
-        //        button.isSelected.toggle()
-        //if the select button is pressed, it will turn into a delete button where you can select the audio files that you wish to delete
-        //        button.setTitle("Delete", for: [.highlighted, .selected])
+//                button.isSelected.toggle()
         button.title = "Delete"
         //shows that the select button is selected
         buttonSelected = true
@@ -118,11 +115,14 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
             for item in tempAudioCards {
                 if let index = audioCards.firstIndex(of: item) {
                     do{
+                        button.title = "Select"
                         //delets the file from core data
+                        self.navigationItem.leftBarButtonItem = nil
                         context.delete(audioCards[index])
                         try context.save()
                         audioCards.remove(at: index)
                         self.myTableView.reloadData()
+                        
                     }
                     catch{
                         print(error)

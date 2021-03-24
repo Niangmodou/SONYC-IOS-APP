@@ -359,8 +359,8 @@ class SlideUpView: UIViewController {
         
         //saving button information in core data
         newTask.setValue(sender.titleLabel?.text, forKey: "noiseType")
-        savingData()
-        let _ = navigationController?.popViewController(animated: true)
+//        savingData()
+//        let _ = navigationController?.popViewController(animated: true)
     }
     
     //    //for the first row of buttons, home or elsewhere
@@ -376,8 +376,8 @@ class SlideUpView: UIViewController {
         
         //saving button information in core data
         newTask.setValue(sender.title(for: .normal), forKey: "inOrOut")
-        savingData()
-        let _ = navigationController?.popViewController(animated: true)
+//        savingData()
+//        let _ = navigationController?.popViewController(animated: true)
     }
     //
     //    //for the second row of buttons, I am section of buttons
@@ -398,8 +398,8 @@ class SlideUpView: UIViewController {
         
         //saving button information in core data
         newTask.setValue(sender.title(for: .normal), forKey: "iAm")
-        savingData()
-        let _ = navigationController?.popViewController(animated: true)
+//        savingData()
+//        let _ = navigationController?.popViewController(animated: true)
     }
     //
     //
@@ -419,8 +419,8 @@ class SlideUpView: UIViewController {
         
         //saving button information in core data
         newTask.setValue(sender.titleLabel?.text, forKey: "faceButton")
-        savingData()
-        let _ = navigationController?.popViewController(animated: true)
+//        savingData()
+//        let _ = navigationController?.popViewController(animated: true)
     }
     //
     //    //locate the noise button action
@@ -429,8 +429,8 @@ class SlideUpView: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "map") ; // details the storyboard ID
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil);
-        savingData()
-        let _ = navigationController?.popViewController(animated: true)
+//        savingData()
+//        let _ = navigationController?.popViewController(animated: true)
     }
     
 }

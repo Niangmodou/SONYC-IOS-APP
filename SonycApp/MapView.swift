@@ -21,6 +21,8 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     @IBOutlet weak var searchBar: UISearchBar!
     
     //9th Avenue and 34th Street latitude and longitude
+    var userLocation = CLLocation()
+    let locationManager = CLLocationManager()
     let startLatitude = 40.753365
     let startLongitude = -73.996367
     let address = CLGeocoder.init()
@@ -55,6 +57,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         historyButton.isHidden = true
         tableView.isHidden = true
         
+//        userLocation = locationManager.location
         
         self.setMapview()
         
@@ -68,6 +71,27 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         reportSlide.delegate = self
         
         mapView.delegate = self
+        self.mapView.showsUserLocation = true
+        
+        self.locationManager.requestAlwaysAuthorization()
+
+            // For use in foreground
+            self.locationManager.requestWhenInUseAuthorization()
+
+            if CLLocationManager.locationServicesEnabled() {
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.startUpdatingLocation()
+            }
+
+            mapView.delegate = self
+            mapView.mapType = .standard
+            mapView.isZoomEnabled = true
+            mapView.isScrollEnabled = true
+
+            if let coor = mapView.userLocation.location?.coordinate{
+                mapView.setCenter(coor, animated: true)
+            }
         
         //button styling
         curvingButton(button: historyButton)
@@ -101,12 +125,14 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         centerMapOnLocation(location, mapView: mapView)
         
         //Adding 34th Street and 9th Avenue annotation
-        let loc = MKPointAnnotation()
-        
-        loc.coordinate = CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
-        loc.title = "Current"
-        
-        mapView.addAnnotation(loc)
+//        let loc = MKPointAnnotation()
+//
+//        loc.coordinate = CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
+//        loc.title = "Current"
+//
+//
+//
+//        mapView.addAnnotation(loc)
         
         dataFiltered = data
 
@@ -146,12 +172,13 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
             plotAnnotation(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
             
             //replots the user location
-            let currentLoc = MKPointAnnotation()
-
-            currentLoc.coordinate = CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
-            currentLoc.title = "Current"
-
-            mapView.addAnnotation(currentLoc)
+//            let currentLoc = MKPointAnnotation()
+//
+//            currentLoc.coordinate = CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
+//            currentLoc.title = "Current"
+//
+//
+//            mapView.addAnnotation(currentLoc)
             
             newTask.setValue(String(locationCoordinate.latitude), forKey: "reportLatitude")
             newTask.setValue(String(locationCoordinate.longitude), forKey: "reportLongitude")
@@ -298,8 +325,8 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         //stores which button was selected when the report was made
         newTask.setValue(button.title(for: .normal), forKey: "locationType")
         //saving the data stored
-        savingData()
-        let _ = navigationController?.popViewController(animated: true)
+//        savingData()
+//        let _ = navigationController?.popViewController(animated: true)
     }
     
     //makes the back button hidden
@@ -335,6 +362,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
         loc.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 //        loc.title = title
         mapView.addAnnotation(loc)
+        
     }
 //    func plotAnnotation(title: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees){
 //
@@ -526,6 +554,7 @@ extension MapView: UITableViewDataSource {
         
         let currLocation = getCurrentLocation()
         
+        
 //        if api == "311" {
             print("BENCHMARK 3 ---------------------")
 
@@ -539,6 +568,14 @@ extension MapView: UITableViewDataSource {
         
         return cell
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last{
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            self.mapView.setRegion(region, animated: true)
+        }
+    }
 }
 
 extension MapView: UITableViewDelegate{
@@ -546,3 +583,32 @@ extension MapView: UITableViewDelegate{
     
 }
 
+//func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//    let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
+//    if annotation.title == "Current"{
+//        annotationView.glyphImage = UIImage(named: "Location_Original.png")
+//    }
+//    return annotationView
+//}
+func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
+   {
+       if !(annotation is MKPointAnnotation) {
+           return nil
+       }
+       
+       let annotationIdentifier = "AnnotationIdentifier"
+    var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
+       
+       if annotationView == nil {
+           annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+           annotationView!.canShowCallout = true
+       }
+       else {
+           annotationView!.annotation = annotation
+       }
+       
+       let pinImage = UIImage(named: "Location_Original.png")
+       annotationView!.image = pinImage
+
+      return annotationView
+   }
