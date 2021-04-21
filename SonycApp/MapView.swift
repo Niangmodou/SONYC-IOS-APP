@@ -49,6 +49,7 @@ class MapView: UIViewController, FloatingPanelControllerDelegate, CLLocationMana
     override func viewDidLoad() {
         super.viewDidLoad()
         //deleteAllData()
+        overrideUserInterfaceStyle = .light
         setUpSearchBar()
         getData()
         buildingButton.isHidden = true

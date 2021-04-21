@@ -59,7 +59,7 @@ class PlayBackViewController: UIViewController, AVAudioRecorderDelegate, MFMessa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        overrideUserInterfaceStyle = .light
         feeling = (newTask.value(forKey: "faceButton") as? String)
         youAre = (newTask.value(forKey: "iAm") as? String)
         min = (newTask.value(forKey: "min") as? String)

@@ -47,7 +47,7 @@ class SlideUpView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        overrideUserInterfaceStyle = .light
         let noiseTypeLabel = UILabel.init()
         noiseTypeLabel.frame = CGRect(x: 15, y: screenHeight/20, width: screenWidth/3.5, height: 25)
         let noiseTypeLabelLocationY = labelYPosition(label: noiseTypeLabel)

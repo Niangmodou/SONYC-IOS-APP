@@ -46,6 +46,7 @@ class PlayBackFromRecordings: UIViewController, AVAudioRecorderDelegate{
     let youAreWordLabel = UILabel.init()
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         feeling = (audioCards[positionRecording].value(forKey: "faceButton") as? String)
         youAre = (audioCards[positionRecording].value(forKey: "iAm") as? String)
         min = (audioCards[positionRecording].value(forKey: "min") as? String)

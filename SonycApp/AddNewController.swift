@@ -60,7 +60,7 @@ class AddNewController: UIViewController, AVAudioRecorderDelegate, FloatingPanel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        overrideUserInterfaceStyle = .light
         currentSoundTitle.frame = CGRect(x: screenWidth/7, y: screenHeight/20, width: screenWidth - 30, height: screenHeight/35)
         currentSoundTitle.text = "Current Sound Level (dBA)"
         currentSoundTitle.font = UIFont.boldSystemFont(ofSize: 25)

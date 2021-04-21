@@ -37,6 +37,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
         //Getting API data
         loadData()
         //styling for the sensor button
+        overrideUserInterfaceStyle = .light
         
         //populates the dictionary of images and respected keywords
         fillDict()

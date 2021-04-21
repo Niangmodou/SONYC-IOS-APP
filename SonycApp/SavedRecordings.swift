@@ -52,6 +52,7 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         //does not show the cells that are not in use
         myTableView.tableFooterView = UIView()
         //allows the tableview to be edited for the multiple selection
@@ -89,7 +90,6 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         selectButton.isHighlighted = false
         self.navigationItem.leftBarButtonItem = nil
         cancelButton.isHidden = true
-//        self.selectButton.titleLabel?.text = "Select"
         barTool2 = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(selectAndDelete(button:)))
         self.navigationItem.rightBarButtonItem = barTool2
         
@@ -99,7 +99,6 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         //allows the table view to be edited
         self.myTableView.setEditing(true, animated: true)
         self.navigationItem.leftBarButtonItem = barTool
-//                button.isSelected.toggle()
         button.title = "Delete"
         //shows that the select button is selected
         buttonSelected = true
@@ -148,14 +147,6 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
                     audioCards.append(data)
                 }
             }
-//            if(audioCards.count == 0){
-//                noRecordingsLabel.frame = CGRect(x: screenWidth/2 - (screenWidth/3)/1.6, y: screenHeight/2 - (screenHeight/10), width: screenWidth/2, height: screenHeight/20)
-//                noRecordingsLabel.textColor = UIColor.gray
-//                noRecordingsLabel.font = UIFont.boldSystemFont(ofSize: 30)
-//                noRecordingsLabel.text = "No Recordings"
-//                self.view.addSubview(noRecordingsLabel)
-//                threeSecondsUp();
-//            }
         }
         catch{
             print("failed")
@@ -205,14 +196,6 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
                 //remove the audioFile from the array
                 audioCards.remove(at: indexPath.row)
                 self.myTableView.reloadData()
-//                if(audioCards.count == 0){
-//                    noRecordingsLabel.frame = CGRect(x: screenWidth/2 - (screenWidth/3)/1.6, y: screenHeight/2 - (screenHeight/10), width: screenWidth/2, height: screenHeight/20)
-//                    noRecordingsLabel.font = UIFont.boldSystemFont(ofSize: 30)
-//                    noRecordingsLabel.textColor = UIColor.gray
-//                    noRecordingsLabel.text = "No Recordings"
-//                    self.view.addSubview(noRecordingsLabel)
-//                    threeSecondsUp();
-//                }
                 
             }
             catch{
@@ -222,11 +205,4 @@ class SavedRecordings: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         
     }
-//    func threeSecondsUp(){
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil);
-//            let vc = storyboard.instantiateViewController(withIdentifier: "home") ; // home the storyboard ID
-//            self.present(vc, animated: true, completion: nil);
-//        }
-//    }
 }
